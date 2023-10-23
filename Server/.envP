@@ -1,0 +1,8 @@
+DB_USER=default
+DB_PASSWORD=9CHEGueMoi1x
+DB_HOST=ep-lucky-unit-71168531.us-east-1.postgres.vercel-storage.com
+DB_PORT=5432
+DB_NAME=rickandmorty
+videogamesApiUrl=https://rickandmortyapi.com/api/character/
+PORT=3001
+SECURE=true
