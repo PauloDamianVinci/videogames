@@ -4,7 +4,7 @@
 const makeObject = (data, iteraciones) => {
     if (iteraciones > 1) {
         // Esta búsqueda tiene un límite de resultados, según lo solicitado:
-        if (!data[0]) { throw Error("No data"); }
+        if (!data[0]) { return []; }
         let aux = [];
         let salida = [];
         for (let i = 0; i < iteraciones; i++) {
@@ -14,7 +14,7 @@ const makeObject = (data, iteraciones) => {
                 name: data[i].name,
                 image: data[i].background_image,
                 description: '', // este dato no viene pero lo mantengo por compatibilidad
-                released: data[i].released_at,
+                released_date: data[i].released,
                 rating: data[i].rating,
                 platform: data[i].platforms.map(el => el.platform.name),
                 genre: data[i].genres.map(el => el.name),
@@ -29,7 +29,7 @@ const makeObject = (data, iteraciones) => {
             name: data.name,
             image: data.background_image,
             description: data.description,
-            released: data.released,
+            released_date: data.released,
             rating: data.rating,
             platform: data.platforms.map(el => el.platform.name),
             genre: data.genres.map(el => el.name),

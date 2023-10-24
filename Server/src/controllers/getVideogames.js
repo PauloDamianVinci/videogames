@@ -1,15 +1,18 @@
-const axios = require('axios');
+// Acá se resuelven las diversas funciones de obtención de videojuegos.
 require('dotenv').config();
+const axios = require('axios');
 const { Videogame, Genre, Platform } = require('../DB_connection');
 const videogamesApiUrl = process.env.videogamesApiUrl || 'https://api.rawg.io/api';
 const apiKey = process.env.API_KEY || 'cb546394d1b84c418611a07508ddf047';
 const showLog = require("../functions/showLog");
+const { Op } = require('sequelize');
 const makeObject = require("../functions/makeObject");
 
 const getVideogames = async (req, res) => {
-    // Si no tengo params ni query -> obtengo todos los videojuegos de DB + API
-    // Si tengo params -> obtengo todos los videojuegos de DB + API por id
-    // Si tengo query -> obtengo todos los videojuegos de DB + API por name
+    // Criterios de operación:
+    // Si no tengo params ni query -> obtengo todos los videojuegos de DB + API.
+    // Si tengo params -> obtengo todos los videojuegos de DB + API por id.
+    // Si tengo query -> obtengo todos los videojuegos de DB + API por name.
     try {
         const { id } = req.params;
         const { source, search } = req.query;
@@ -19,10 +22,16 @@ const getVideogames = async (req, res) => {
             resp = await getFromDB(id, search);
         } else if (source === '2') { // origen API
             resp = await getFromAPI(id, search);
-        } else { // ambos orígenes
+        } else if (source === '3') { // ambos orígenes
             const fromDB = await getFromDB(id, search);
             const fromAPI = await getFromAPI(id, search);
             resp = fromDB.concat(fromAPI);
+        } else { // no se indica source cuando se busca por id, ya que se determina dónde buscar en base al tipo de id recibido
+            if (isNaN(id)) {
+                resp = await getFromDB(id, search);
+            } else {
+                resp = await getFromAPI(id, search);
+            }
         }
         res.status(200).json(resp);
     } catch (err) {
@@ -32,59 +41,94 @@ const getVideogames = async (req, res) => {
 };
 
 const getFromDB = async (idV, nameV) => {
-    // Obtengo los videojuegos de la DB
+    // Función llamada internamente. Obtengo los videojuegos de la DB.
     try {
-        let criteria;
-        if (id) {
-            showLog(`by id=${id}`);
-            criteria = { id: id };
-        } else if (name) {
-            showLog(`by name=${name}`);
-            criteria = { name: name };
-        } else {
-            showLog(`all`);
-            criteria = {};
+        let reg;
+        if (idV) { // por id
+            showLog(`by id=${idV} (DB)`);
+            reg = await Videogame.findAll({
+                attributes: ["id", "name", "image", "description", "released_date", "rating"],
+                where: { id: idV },
+                include: [
+                    {
+                        model: Platform,
+                        attributes: ["name"],
+                        through: { attributes: [], },
+                    },
+                    {
+                        model: Genre,
+                        attributes: ["name"],
+                        through: { attributes: [], },
+                    },
+                ]
+            });
+        } else if (nameV) { // por nombre. No es case sensitive y además es aproximada.
+            showLog(`by name=${nameV} (DB)`);
+            reg = await Videogame.findAll({
+                attributes: ["id", "name", "image", "description", "released_date", "rating"],
+                where: {
+                    name: {
+                        [Op.iLike]: `%${nameV}%`
+                    }
+                },
+                include: [
+                    {
+                        model: Platform,
+                        attributes: ["name"],
+                        through: { attributes: [], },
+                    },
+                    {
+                        model: Genre,
+                        attributes: ["name"],
+                        through: { attributes: [], },
+                    },
+                ]
+            });
+        } else { // trae todos los videojuegos
+            showLog(`all (DB)`);
+            reg = await Videogame.findAll({
+                attributes: ["id", "name", "image", "description", "released_date", "rating"],
+                include: [
+                    {
+                        model: Platform,
+                        attributes: ["name"],
+                        through: { attributes: [], },
+                    },
+                    {
+                        model: Genre,
+                        attributes: ["name"],
+                        through: {
+                            attributes: [],
+                        },
+                    },
+                ]
+            });
         };
-
-        const reg = await Videogame.findAll({
-            where: criteria,
-            attributes: ['id', 'name', 'description', 'image', 'released_date', 'rating'],
-            model: Genre,
-            attributes: ['name'],
-            through: {
-                attributes: []
-            },
-            model: Platform,
-            attributes: ['name'],
-            through: {
-                attributes: []
-            },
-        });
         return reg;
     } catch (err) {
         showLog(`ERROR-> ${err.message}`);
-        return res.status(err.response.status).send(err.message);
+        return err.message;
     }
 };
 
 const getFromAPI = async (idV, nameV) => {
-    // Obtengo los videojuegos de la API
+    // Función llamada internamente. Obtengo los videojuegos de la API.
     try {
         let response;
         let dataRes;
         let res;
         if (idV) { // por id
-            showLog(`by id=${idV}`);
+            showLog(`by id=${idV} (API)`);
             response = await axios.get(`${videogamesApiUrl}/games/${idV}?key=${apiKey}`)
             dataRes = response.data;
             res = makeObject(dataRes, 1);
         } else if (nameV) { // por nombre
-            showLog(`by name=${nameV}`);
+            showLog(`by name=${nameV} (API)`);
             response = await axios.get(`${videogamesApiUrl}/games?key=${apiKey}&search=${nameV}`)
             dataRes = response.data.results;
             res = makeObject(dataRes, 15); // búsqueda limitada a 15 resultados
         } else { // trae todos los videojuegos
-            showLog(`all`);
+            showLog(`all (API)`);
             response = await axios.get(`${videogamesApiUrl}/games?key=${apiKey}`)
             dataRes = response.data.results;
             res = makeObject(dataRes, 100); // búsqueda limitada a 100 resultados
@@ -97,21 +141,3 @@ const getFromAPI = async (idV, nameV) => {
 };
 
 module.exports = { getVideogames, getFromDB, getFromAPI };
-
-// Videojuegos: "https://api.rawg.io/api/games"
-// Por id: "https://api.rawg.io/api/games/{id}"
-// Por nombre: "https://api.rawg.io/api/games?search={game}"
-// Por genero: "https://api.rawg.io/api/genres"
-
-//? 📍 GET | /videogames
-// Obtiene un arreglo de objetos, donde cada objeto es un videojuego con su información.
-//? 📍 GET | /videogames/:idVideogame
-// Esta ruta obtiene el detalle de un videojuego específico. Es decir que devuelve un objeto con la información pedida en el detalle de un videojuego.
-// El videojuego es recibido por parámetro (ID).
-// Tiene que incluir los datos del género del videojuego al que está asociado.
-// Debe funcionar tanto para los videojuegos de la API como para los de la base de datos.
-//? 📍 GET | /videogames/name?="..."
-// Esta ruta debe obtener los primeros 15 videojuegos que se encuentren con la palabra recibida por query.
-// Debe poder buscarlo independientemente de mayúsculas o minúsculas.
-// Si no existe el videojuego, debe mostrar un mensaje adecuado.
-// Debe buscar tanto los de la API como los de la base de datos.

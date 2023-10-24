@@ -1,6 +1,6 @@
 require('dotenv').config();
-const { Platform } = require('../DB_connection');
 const axios = require('axios');
+const { Platform } = require('../DB_connection');
 const videogamesApiUrl = process.env.videogamesApiUrl || 'https://api.rawg.io/api';
 const apiKey = process.env.API_KEY || 'cb546394d1b84c418611a07508ddf047';
 const showLog = require("../functions/showLog");
