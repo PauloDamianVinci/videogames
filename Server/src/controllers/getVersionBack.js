@@ -1,13 +1,14 @@
 // Obtengo la versión del programa
 const packageJson = require('../../package.json');
+const showLog = require("../functions/showLog");
 
 const getVersionBack = async (req, res) => {
     try {
         const version = packageJson.version;
-        console.log("getVersionBack ", version);
+        showLog("getVersionBack ", version);
         return res.status(200).json({ version: version });
     } catch (err) {
-        console.log("ERROR-> ", err.message);
+        showLog(`ERROR-> ${err.message}`);
         return res.status(err.response.status).send(err.message);
     }
 };

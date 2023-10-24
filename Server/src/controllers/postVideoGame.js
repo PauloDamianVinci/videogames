@@ -1,12 +1,13 @@
-const { Favorite } = require('../DB_connection');
-const { User } = require('../DB_connection');
-const getAllFav = require("./getAllFav");
+// const { Favorite } = require('../DB_connection');
+// const { User } = require('../DB_connection');
+// const getAllFav = require("./getAllFav");
+const showLog = require("../functions/showLog");
 
 const postVideoGame = async (req, res) => {
-    const { userId, id, name, origin, status, image, species, gender } = req.body;
+    //const { userId, id, name, origin, status, image, species, gender } = req.body;
     try {
         // if (id && userId && name && origin && status && image && species && gender) {
-        //     console.log("postFav id ", id, ", user  ", userId);
+        //     showLog("postFav id ", id, ", user  ", userId);
         //     // Busco el usuario:
         //     const user = await User.findByPk(userId);
         //     if (!user) { throw Error("user not found"); }
@@ -28,14 +29,14 @@ const postVideoGame = async (req, res) => {
         //     const allFav = await getAllFav(userId);
         //     return res.status(200).json(allFav);
         // } else {
-        //     console.log("postFav id = all, user  ", userId);
+        //     showLog("postFav id = all, user  ", userId);
         //     // si no me carga los datos sólo devuelvo lo que tengo. Es para que al iniciar el programa, se traiga los fav almacenados para mostrar.
         //     // Devuelvo todos los favoritos del usuario:
         //     const allFav = await getAllFav(userId);
         //     return res.status(200).json(allFav);
         // }
     } catch (err) {
-        console.log("ERROR-> ", err.message);
+        showLog(`ERROR-> ${err.message}`);
         return res.status(500).send(err.message);
     }
 }

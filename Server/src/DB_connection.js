@@ -9,8 +9,9 @@ const DB_PORT = process.env.DB_PORT || 5432;
 const DB_NAME = process.env.DB_NAME || 'videogames';
 const SECURE = process.env.SECURE || false;
 // Definición de modelos:
-const GenreModel = require('../src/models/Genre');
 const VideogameModel = require('../src/models/Videogame');
+const GenreModel = require('../src/models/Genre');
+const PlatformModel = require('../src/models/Platform');
 // Determino la conexión según el entorno:
 let strConn = '';
 if (SECURE) {
@@ -24,17 +25,17 @@ const database = new Sequelize(
    strConn,
    { logging: false, native: false }
 );
-GenreModel(database);
 VideogameModel(database);
+GenreModel(database);
+PlatformModel(database);
 // Relacionar modelos:
 const { Videogame, Genre, Platform } = database.models;
 
 Videogame.belongsToMany(Genre, { through: "videogame_genre" });
 Genre.belongsToMany(Videogame, { through: "videogame_genre" });
 
-Videogame.belongsToMany(Platform, { through: "videogame_plaftorm" });
-Platform.belongsToMany(Videogame, { through: "videogame_plaftorm" });
-
+Videogame.belongsToMany(Platform, { through: "videogame_platform" });
+Platform.belongsToMany(Videogame, { through: "videogame_platform" });
 
 module.exports = {
    Genre,
