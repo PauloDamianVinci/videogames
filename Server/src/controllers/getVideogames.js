@@ -77,17 +77,17 @@ const getFromAPI = async (idV, nameV) => {
             showLog(`by id=${idV}`);
             response = await axios.get(`${videogamesApiUrl}/games/${idV}?key=${apiKey}`)
             dataRes = response.data;
-            res = makeObject(dataRes, false);
+            res = makeObject(dataRes, 1);
         } else if (nameV) { // por nombre
             showLog(`by name=${nameV}`);
             response = await axios.get(`${videogamesApiUrl}/games?key=${apiKey}&search=${nameV}`)
             dataRes = response.data.results;
-            res = makeObject(dataRes, true);
+            res = makeObject(dataRes, 15); // búsqueda limitada a 15 resultados
         } else { // trae todos los videojuegos
             showLog(`all`);
             response = await axios.get(`${videogamesApiUrl}/games?key=${apiKey}`)
             dataRes = response.data.results;
-            res = makeObject(dataRes, true);
+            res = makeObject(dataRes, 100); // búsqueda limitada a 100 resultados
         };
         return res;
     } catch (err) {

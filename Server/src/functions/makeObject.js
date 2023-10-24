@@ -1,22 +1,29 @@
 // Cargo y devuelvo los datos recibidos en el objeto. Se usa para los videojuegos, ya que pueden solicitarse de diferentes maneras.
 //const showLog = require("./showLog");
 
-const makeObject = (data, iterar) => {
-    if (iterar) {
+const makeObject = (data, iteraciones) => {
+    if (iteraciones > 1) {
+        // Esta búsqueda tiene un límite de resultados, según lo solicitado:
         if (!data[0]) { throw Error("No data"); }
-        return data.map(el => {
-            return {
-                id: el.id,
-                name: el.name,
-                image: el.background_image,
+        let aux = [];
+        let salida = [];
+        for (let i = 0; i < iteraciones; i++) {
+            if (!data[i]) { break; } // se acabaron los resultados antes del límite
+            aux = {
+                id: data[i].id,
+                name: data[i].name,
+                image: data[i].background_image,
                 description: '', // este dato no viene pero lo mantengo por compatibilidad
-                released: el.released_at,
-                rating: el.rating,
-                platform: el.platforms.map(el => el.platform.name),
-                genre: el.genres.map(el => el.name),
-            };
-        });
+                released: data[i].released_at,
+                rating: data[i].rating,
+                platform: data[i].platforms.map(el => el.platform.name),
+                genre: data[i].genres.map(el => el.name),
+            }
+            salida.push(aux);
+        }
+        return salida;
     } else {
+        // Esta búsqueda no itera, es de un sólo resultado:
         return {
             id: data.id,
             name: data.name,
