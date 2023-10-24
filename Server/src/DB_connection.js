@@ -40,5 +40,6 @@ Platform.belongsToMany(Videogame, { through: "videogame_platform" });
 module.exports = {
    Genre,
    Videogame,
+   Platform,
    conn: database,
 };

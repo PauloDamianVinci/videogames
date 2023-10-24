@@ -1,28 +1,31 @@
 require('dotenv').config();
+const { Genre } = require('../DB_connection');
 const axios = require('axios');
-const videogamesApiUrl = process.env.videogamesApiUrl || 'https://api.rawg.io/api/games';
+const videogamesApiUrl = process.env.videogamesApiUrl || 'https://api.rawg.io/api';
 const apiKey = process.env.API_KEY || 'cb546394d1b84c418611a07508ddf047';
 const showLog = require("../functions/showLog");
 
 const getGenres = async (req, res) => {
-
     try {
-        // const { id: charId } = req.params;
-        // showLog("getCharById ", charId);
-        // const response = await axios.get(`${videogamesApiUrl}${charId}`)
-
-        // const { id, name, gender, species, origin, image, status } = response.data;
-        // const character = { id, name, gender, species, origin, image, status };
-        // res.json(character);
+        showLog(`getGenres:`);
+        response = await axios.get(`${videogamesApiUrl}/genres?key=${apiKey}`)
+        const dataRes = response.data.results;
+        const allGenres = dataRes.map(el => {
+            return {
+                id: el.id,
+                name: el.name,
+            };
+        });
+        for (let dato of allGenres) {
+            await Genre.findOrCreate({
+                where: { id: dato.id, name: dato.name },
+            })
+        }
+        const resp = await Genre.findAll();
+        res.status(200).json(resp);
     } catch (err) {
         showLog(`ERROR-> ${err.message}`);
-        return res.status(err.response.status).send(err.message);
+        return res.status(500).send(err.message);
     }
 };
 module.exports = getGenres;
-
-
-// Videojuegos: "https://api.rawg.io/api/games"
-// Por id: "https://api.rawg.io/api/games/{id}"
-// Por nombre: "https://api.rawg.io/api/games?search={game}"
-// Por genero: "https://api.rawg.io/api/genres"

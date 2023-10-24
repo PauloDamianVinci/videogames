@@ -5,6 +5,6 @@ DB_PORT=5432
 DB_NAME=videogames
 API_KEY=cb546394d1b84c418611a07508ddf047
 PORT=3001
-videogamesApiUrl=https://api.rawg.io/api/games
+videogamesApiUrl=https://api.rawg.io/api
 SECURE=true
 LOG=false

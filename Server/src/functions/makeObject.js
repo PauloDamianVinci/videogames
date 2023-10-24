@@ -1,4 +1,4 @@
-// Cargo y devuelvo los datos recibidos en el objeto.
+// Cargo y devuelvo los datos recibidos en el objeto. Se usa para los videojuegos, ya que pueden solicitarse de diferentes maneras.
 //const showLog = require("./showLog");
 
 const makeObject = (data, iterar) => {

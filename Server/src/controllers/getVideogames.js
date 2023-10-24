@@ -1,7 +1,7 @@
 const axios = require('axios');
 require('dotenv').config();
 const { Videogame, Genre, Platform } = require('../DB_connection');
-const videogamesApiUrl = process.env.videogamesApiUrl || 'https://api.rawg.io/api/games';
+const videogamesApiUrl = process.env.videogamesApiUrl || 'https://api.rawg.io/api';
 const apiKey = process.env.API_KEY || 'cb546394d1b84c418611a07508ddf047';
 const showLog = require("../functions/showLog");
 const makeObject = require("../functions/makeObject");
@@ -31,7 +31,7 @@ const getVideogames = async (req, res) => {
     }
 };
 
-const getFromDB = async (id, name) => {
+const getFromDB = async (idV, nameV) => {
     // Obtengo los videojuegos de la DB
     try {
         let criteria;
@@ -69,24 +69,23 @@ const getFromDB = async (id, name) => {
 
 const getFromAPI = async (idV, nameV) => {
     // Obtengo los videojuegos de la API
-    //showLog(`id: ${idV} name: ${nameV}`);
     try {
         let response;
         let dataRes;
         let res;
-        if (idV) { //por id
+        if (idV) { // por id
             showLog(`by id=${idV}`);
-            response = await axios.get(`${videogamesApiUrl}/${idV}?key=${apiKey}`)
+            response = await axios.get(`${videogamesApiUrl}/games/${idV}?key=${apiKey}`)
             dataRes = response.data;
             res = makeObject(dataRes, false);
         } else if (nameV) { // por nombre
             showLog(`by name=${nameV}`);
-            response = await axios.get(`${videogamesApiUrl}?key=${apiKey}&search=${nameV}`)
+            response = await axios.get(`${videogamesApiUrl}/games?key=${apiKey}&search=${nameV}`)
             dataRes = response.data.results;
             res = makeObject(dataRes, true);
-        } else { // todos
+        } else { // trae todos los videojuegos
             showLog(`all`);
-            response = await axios.get(`${videogamesApiUrl}?key=${apiKey}`)
+            response = await axios.get(`${videogamesApiUrl}/games?key=${apiKey}`)
             dataRes = response.data.results;
             res = makeObject(dataRes, true);
         };
