@@ -1,6 +1,6 @@
 const router = require("express").Router();
 // Controllers:
-const getVideogames = require("../controllers/getVideogames");
+const { getVideogames } = require("../controllers/getVideogames");
 const getGenres = require("../controllers/getGenres");
 const getPlatforms = require("../controllers/getPlatforms");
 const postVideoGame = require("../controllers/postVideoGame");
