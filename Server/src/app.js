@@ -2,7 +2,15 @@ const express = require("express");
 const router = require("./routes/index");
 const server = express();
 
-// middleware para tener acceso sin seguridad:
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+
+
+server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
+server.use(bodyParser.json({ limit: '50mb' }));
+server.use(cookieParser());
+
+// Middleware para tener acceso sin seguridad:
 server.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Credentials", "true");
@@ -13,9 +21,8 @@ server.use((req, res, next) => {
     res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     next();
 });
-// middleware para manejar formato json (body):
+// Middleware para manejar formato json (body):
 server.use(express.json());
-// middleware para anteponerle "/rickandmorty" a las rutas:
-server.use("/rickandmorty", router);
-
+// Middleware para anteponerle "/videogames" a las rutas:
+server.use("/videogames", router);
 module.exports = server;
