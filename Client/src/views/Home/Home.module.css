@@ -1,17 +1,27 @@
 .container {
     background-color: rgba(172, 48, 48, 0.774);
+    color: antiquewhite;
 }
 
 .mainTitle {
     background-color: rgba(106, 48, 172, 0.774);
+    color: antiquewhite;
 }
 
 .secondText {
     background-color: rgba(13, 45, 148, 0.897);
+    color: antiquewhite;
+}
+
+.ThirdText {
+    background-color: rgb(42, 247, 15);
+    color: antiquewhite;
+    margin: 50%;
 }
 
 .startButton {
     background-color: rgba(16, 180, 131, 0.774);
+    color: antiquewhite;
 }
 
 .imgBack {

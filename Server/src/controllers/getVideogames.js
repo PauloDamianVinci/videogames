@@ -51,7 +51,7 @@ const getFromDB = async (idV, nameV) => {
         if (idV) { // por id
             showLog(`by id=${idV} (DB)`);
             reg = await Videogame.findAll({
-                attributes: ["id", "name", "image", "description", "released_date", "rating"],
+                attributes: ["id", "name", "image", "description", "released_date", "rating", "OriginDB"],
                 where: { id: idV },
                 include: [
                     {
@@ -69,7 +69,7 @@ const getFromDB = async (idV, nameV) => {
         } else if (nameV) { // por nombre. No es case sensitive y además es aproximada.
             showLog(`by name=${nameV} (DB)`);
             reg = await Videogame.findAll({
-                attributes: ["id", "name", "image", "description", "released_date", "rating"],
+                attributes: ["id", "name", "image", "description", "released_date", "rating", "OriginDB"],
                 where: {
                     name: {
                         [Op.iLike]: `%${nameV}%`
@@ -91,7 +91,7 @@ const getFromDB = async (idV, nameV) => {
         } else { // trae todos los videojuegos
             showLog(`all (DB)`);
             reg = await Videogame.findAll({
-                attributes: ["id", "name", "image", "description", "released_date", "rating"],
+                attributes: ["id", "name", "image", "description", "released_date", "rating", "OriginDB"],
                 include: [
                     {
                         model: Platform,

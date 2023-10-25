@@ -1,7 +1,7 @@
 {
-  "name": "videogames-backend",
+  "name": "pi-video-games-backend",
   "version": "1.0.0",
-  "description": "Videogames backend",
+  "description": "PI Video games backend",
   "main": "index.js",
   "directories": {
     "test": "test"

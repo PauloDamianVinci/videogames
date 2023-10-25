@@ -15,7 +15,7 @@ const postVideoGame = async (req, res) => {
         });
         if (esRepe) { throw Error("It already exists"); }
         const [VideogameCreated, created] = await Videogame.findOrCreate({
-            where: { name, description, image, released_date, rating, },
+            where: { name, description, image, released_date, rating, OriginDB: true },
         });
         let genreCreated = await Genre.findAll({
             where: { name: genre }

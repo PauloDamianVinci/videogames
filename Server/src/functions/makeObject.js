@@ -17,8 +17,9 @@ const makeObject = (data, iteraciones) => {
                 description: '', // este dato no viene pero lo mantengo por compatibilidad
                 released_date: data[i].released,
                 rating: data[i].rating,
-                platform: data[i].platforms.map(el => el.platform.name),
-                genre: data[i].genres.map(el => el.name),
+                Platforms: data[i].platforms.map(el => el.platform.name),
+                Genres: data[i].genres.map(el => el.name),
+                OriginDB: false,
             }
             salida.push(aux);
         }
@@ -32,8 +33,9 @@ const makeObject = (data, iteraciones) => {
             description: data.description,
             released_date: data.released,
             rating: data.rating,
-            platform: data.platforms.map(el => el.platform.name),
-            genre: data.genres.map(el => el.name),
+            Platforms: data.platforms.map(el => el.platform.name),
+            Genres: data.genres.map(el => el.name),
+            OriginDB: false,
         };
     }
 };

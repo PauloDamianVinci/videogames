@@ -1,19 +1,16 @@
-VITE_API_URL_BASE=https://rick-and-morty-back-one.vercel.app/videogames
-
+VITE_API_URL_BASE=https://blablablabla/videogames
 VITE_ROOT=/
-VITE_LOGIN=/
 VITE_HOME=/home
 VITE_ABOUT=/about
+VITE_CREATE=/create
 VITE_DETAIL=/detail/:id
-VITE_DETAILBASE=/detail
-VITE_FAVORITES=/favorites
 
 VITE_VG_VIDEOGAMES=/videogames
-VITE_VG_LOGIN=/genres
-VITE_VG_FAV=/platforms
+VITE_VG_GENRES=/genres
+VITE_VG_PLATFORMS=/platforms
 VITE_VG_VER_BACK=/versionback
 
-VITE_IMG_LOGIN=https://res.cloudinary.com/dvptbowso/image/upload/v1697742883/Rick_and_Morty/srnsisb52lzkfygao5y0.png
+VITE_IMG_LAND=https://res.cloudinary.com/dvptbowso/image/upload/v1698263302/PI_Videogames/dssoxlddoefzg2qoipln.jpg
 VITE_IMG_ESPERA=https://res.cloudinary.com/dvptbowso/image/upload/v1697742883/Rick_and_Morty/skrctytiotydaoqxwdxa.gif
 VITE_IMG_ERR_DETAIL=https://res.cloudinary.com/dvptbowso/image/upload/v1697742882/Rick_and_Morty/w4bnxqelrrxbml18k6hi.jpg
 VITE_IMG_ABOUT=https://res.cloudinary.com/dvptbowso/image/upload/v1697742882/Rick_and_Morty/qagerxc1avfvlbmeobcf.jpg

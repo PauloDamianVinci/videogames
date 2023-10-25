@@ -1,12 +1,12 @@
-import style from "./Search.module.css";
+import style from "./About.module.css";
 const { container, mainTitle, secondText, startButton, imgBack } = style;
 
-const Search = () => {
+const About = () => {
     return (
         <div>
-            <h2>Search</h2>
+            <h2>About</h2>
         </div>
     )
 }
 
-export default Search
+export default About

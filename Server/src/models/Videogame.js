@@ -28,6 +28,10 @@ module.exports = (sequelize) => {
          type: DataTypes.DECIMAL,
          allowNull: false,
       },
+      OriginDB: {
+         type: DataTypes.BOOLEAN,
+         allowNull: false,
+      },
    }, { timestamps: false });
 };
 

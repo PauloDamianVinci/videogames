@@ -17,6 +17,7 @@ const getGenres = async (req, res) => {
                 name: el.name,
             };
         });
+        // Obtenidos los datos de la API, los guardo en BD, sin pisar:
         for (let dato of allGenres) {
             await Genre.findOrCreate({
                 where: { id: dato.id, name: dato.name },
