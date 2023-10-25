@@ -1,0 +1,7 @@
+24/10/2023, 21:16:43 - Server running into 3001 Port. DB Connection: NOT SECURE
+24/10/2023, 21:17:23 - Server running into 3001 Port. DB Connection: NOT SECURE
+24/10/2023, 21:18:07 - Server running into 3001 Port. DB Connection: NOT SECURE
+24/10/2023, 21:18:23 - Server running into 3001 Port. DB Connection: NOT SECURE
+24/10/2023, 21:18:28 - Server running into 3001 Port. DB Connection: NOT SECURE
+24/10/2023, 21:18:50 - Server running into 3001 Port. DB Connection: NOT SECURE
+24/10/2023, 21:19:00 - Server running into 3001 Port. DB Connection: NOT SECURE

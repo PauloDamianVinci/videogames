@@ -1,3 +1,4 @@
+// Se obtienen y almacenan en BD los géneros.
 require('dotenv').config();
 const axios = require('axios');
 const { Genre } = require('../DB_connection');

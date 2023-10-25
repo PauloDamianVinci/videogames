@@ -11,6 +11,6 @@ router.get("/videogames/name", getVideogames); // obtiene el detalle de un video
 router.get("/videogames/:id", getVideogames); // obtiene el detalle de un videojuego por id
 router.get("/genres", getGenres); // obtiene el listado de géneros
 router.get("/platforms", getPlatforms); //  obtiene el listado de plataformas
-router.post("/videogames", postVideoGame); //  crea un nuevo videojuegos
+router.post("/videogames", postVideoGame); //  crea un nuevo videojuego
 router.get("/versionback", getVersionBack); // obtiene la versión del backend para que el front lo muestre en el about
 module.exports = router;

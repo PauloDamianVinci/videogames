@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('pg'); // requerido por Vercel para deploy
+require('pg'); // requerido por Vercel para el deploy
 const { Sequelize } = require('sequelize');
 // Parámetros de entorno:
 const DB_USER = process.env.DB_USER || 'postgres';
@@ -15,10 +15,10 @@ const PlatformModel = require('../src/models/Platform');
 // Determino la conexión según el entorno:
 let strConn = '';
 if (SECURE) {
-   // conexión segura (para BDD remota):
+   // conexión segura (para BD remota):
    strConn = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=require`;
 } else {
-   // conexión no segura (para BDD local):
+   // conexión no segura (para BD local):
    strConn = `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 }
 const database = new Sequelize(

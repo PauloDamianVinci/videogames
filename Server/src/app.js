@@ -2,14 +2,7 @@ const express = require("express");
 const router = require("./routes/index");
 const server = express();
 
-// const cookieParser = require('cookie-parser');
-// const bodyParser = require('body-parser');
-
-// server.use(bodyParser.urlencoded({ extended: true, limit: '250mb' }));
-// server.use(bodyParser.json({ limit: '250mb' }));
-// server.use(cookieParser());
-
-// Middleware para tener acceso sin seguridad:
+// Middleware para tener acceso sin seguridad (uso local):
 server.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Credentials", "true");

@@ -1,4 +1,4 @@
-// Acá se resuelven las diversas funciones de obtención de videojuegos.
+// Se realizan las diversas funciones de obtención de videojuegos.
 require('dotenv').config();
 const axios = require('axios');
 const { Videogame, Genre, Platform } = require('../DB_connection');
@@ -18,20 +18,24 @@ const getVideogames = async (req, res) => {
         const { source, search } = req.query;
         let resp;
         showLog(`getVideogames:`);
-        if (source === '1') { // origen DB
-            resp = await getFromDB(id, search);
-        } else if (source === '2') { // origen API
-            resp = await getFromAPI(id, search);
-        } else if (source === '3') { // ambos orígenes
-            const fromDB = await getFromDB(id, search);
-            const fromAPI = await getFromAPI(id, search);
-            resp = fromDB.concat(fromAPI);
-        } else { // no se indica source cuando se busca por id, ya que se determina dónde buscar en base al tipo de id recibido
-            if (isNaN(id)) {
+        switch (source) {
+            case '1': // origen DB
                 resp = await getFromDB(id, search);
-            } else {
+                break;
+            case '2': // origen API
                 resp = await getFromAPI(id, search);
-            }
+                break;
+            case '3': // ambos orígenes
+                const fromDB = await getFromDB(id, search);
+                const fromAPI = await getFromAPI(id, search);
+                resp = fromDB.concat(fromAPI);
+                break;
+            default: // no se indica source cuando se busca por id, ya que se determina dónde buscar en base al tipo de id recibido
+                if (isNaN(id)) {
+                    resp = await getFromDB(id, search);
+                } else {
+                    resp = await getFromAPI(id, search);
+                }
         }
         res.status(200).json(resp);
     } catch (err) {
@@ -140,4 +144,4 @@ const getFromAPI = async (idV, nameV) => {
     }
 };
 
-module.exports = { getVideogames, getFromDB, getFromAPI };
+module.exports = { getVideogames };
