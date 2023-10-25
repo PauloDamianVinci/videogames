@@ -7,7 +7,6 @@ const postVideoGame = require("../controllers/postVideoGame");
 const getVersionBack = require("../controllers/getVersionBack");
 // Rutas:
 router.get("/videogames", getVideogames); // obtiene un arreglo de objetos con los videojuegos
-router.get("/videogames/name", getVideogames); // obtiene el detalle de un videojuego por query
 router.get("/videogames/:id", getVideogames); // obtiene el detalle de un videojuego por id
 router.get("/genres", getGenres); // obtiene el listado de géneros
 router.get("/platforms", getPlatforms); //  obtiene el listado de plataformas

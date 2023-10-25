@@ -5,3 +5,10 @@
 24/10/2023, 21:18:28 - Server running into 3001 Port. DB Connection: NOT SECURE
 24/10/2023, 21:18:50 - Server running into 3001 Port. DB Connection: NOT SECURE
 24/10/2023, 21:19:00 - Server running into 3001 Port. DB Connection: NOT SECURE
+25/10/2023, 12:22:24 - Server running into 3001 Port. DB Connection: NOT SECURE
+25/10/2023, 12:22:34 - getVideogames:
+25/10/2023, 12:22:34 - all (DB)
+25/10/2023, 12:22:34 - all (API)
+25/10/2023, 12:23:05 - Server running into 3001 Port. DB Connection: NOT SECURE
+25/10/2023, 12:23:11 - getVideogames:
+25/10/2023, 12:23:11 - by id=6826fa8a-fd70-499f-90c4-6fdb0433213f (DB)
