@@ -5,27 +5,25 @@ import Pagination from "../../components/Pagination/Pagination";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import {
-    getVideogames,
-    getGenres,
-    filterVideogamesByGenre,
-    filterOriginData,
-    // orderByRating,
-    // orderByalphabet,
-    // reset,
-} from "../../redux/actions";
+import { getVideogames, getGenres, filterOriginData, filterVideogamesByGenre, orderByRating, orderByAZ, resetFilterOrder, } from "../../redux/actions";
+// Variables de entorno:
+const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
 import style from "./Home.module.css";
-const { container, mainTitle, secondText, startButton, imgBack, ThirdText } = style;
+const { container, imgBack, containerImgCargando, imgCargando, containerCards, containerSec, containerFiltrosOrden, containerFiltrosOrigen, filtroOrigen, containerFiltrosGenero, filtroGenero, containerOrdenRating, containerOrdenAZ, containerReset, ordenRating, ordenAZ, reset } = style;
 
 const Home = () => {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
-    let allVideogames = useSelector((state) => state.videogames);
-    let genres = useSelector((state) => state.genres);
+    const [selectedOptionRating, setSelectedOptionRating] = useState('');
+    const [selectedOptionAZ, setSelectedOptionAZ] = useState('');
+    const [selectedOrigin, setSelectedOrigin] = useState('All');
+    const [selectedGenre, setSelectedGenre] = useState('All');
+    let allVideogames = useSelector((state) => state.videogames); // tengo en el store todos los video juegos
+    let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
 
     useEffect(() => {
-        // Cargo los videojuegos, géneros y plataformas desde la BD y API.
+        // Cargo los videojuegos y géneros desde la BD y API.
         // Se van a actualizar automáticameente cuando se hagan cambios:
         setIsLoading(true);
         dispatch(getVideogames());
@@ -33,8 +31,8 @@ const Home = () => {
         setIsLoading(false);
     }, [dispatch]);
 
-    // Preparo la lógica para el componente de paginado:
-    const [currentPage, setCurrentPage] = useState(1); // siempre comienza en 1
+    // Lógica para el componente de paginado:
+    const [currentPage, setCurrentPage] = useState(1); // siempre comienza en página 1
     const [videogamesPerPage, setVideogamesPerPage] = useState(15); // 15 videojuegos por página
     const indexLastGame = currentPage * videogamesPerPage; // hasta
     const indexFirstGame = indexLastGame - videogamesPerPage; //desde
@@ -44,68 +42,71 @@ const Home = () => {
     } else {
         currentGame = [];
     }
-
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
-
-    function handleFilterByGenre(e) {
-        dispatch(filterVideogamesByGenre(e.target.value))
-        setCurrentPage(1);
-    }
-
+    //Función de filtrado por origen de los datos:
     function handleOriginData(e) {
+        setSelectedOrigin(e.target.value);
         dispatch(filterOriginData(e.target.value));
         setCurrentPage(1);
     }
-    function handleOrder(e) {
+    //Función de filtrado por género:
+    function handleFilterByGenre(e) {
+        setSelectedGenre(e.target.value);
+        dispatch(filterVideogamesByGenre(e.target.value))
+        setCurrentPage(1);
+    }
+    //Función de ordenamiento por rating:
+    function handleOrderRating(e) {
+        setSelectedOptionRating(e.target.value);
         dispatch(orderByRating(e.target.value));
         setCurrentPage(1);
     }
-
-    function handleAlphabetOrder(e) {
-        dispatch(orderByalphabet(e.target.value));
+    //Función de ordenamiento por orden alfabético:
+    function handleOrderAZ(e) {
+        setSelectedOptionAZ(e.target.value);
+        dispatch(orderByAZ(e.target.value));
         setCurrentPage(1);
     }
-
+    // Función de reset de filtros y ordenamientos:
     function handleReset() {
-        dispatch(reset());
+        dispatch(resetFilterOrder());
+        setSelectedOptionRating('');
+        setSelectedOptionAZ('');
+        setSelectedGenre('All');
+        setSelectedOrigin('All');
     }
-
 
     // mostrar un reloj mientras se carga todo
     return (
         <div className={container}>
             {isLoading ? (
-                <div className={container}>
-                    {/* <img className={imgCargando} src={IMG_ESPERA} alt="" /> */}
-                    <h1 className={ThirdText}>Cargando...</h1>
+                <div className={containerImgCargando}>
+                    <img className={imgCargando} src={IMG_ESPERA} alt="" />
                 </div>
             ) : allVideogames ? (
-                <div className={container}>
+                <div className={containerSec}>
                     <div>
                         {/* Cargo el componente navegador: */}
                         <Nav />
                     </div>
-                    <div className={mainTitle}>
-                        <h1>My video games</h1>
-                    </div>
-                    {/* Filtrado por origen de datos: */}
-                    <div className={secondText}>
-                        <div className={startButton}>
-                            <h2 className={container}>Origin</h2>
-                            <select onChange={handleOriginData}>
-                                {" "}
+                    <div className={containerFiltrosOrden}>
+                        {/* Filtrado por origen de datos: */}
+                        <div className={containerFiltrosOrigen}>
+                            <h2 className={filtroOrigen}>Origin</h2>
+                            <select onChange={handleOriginData} value={selectedOrigin}>
+                                {/* {" "} */}
                                 <option value="All">All</option>
                                 <option value="False">Api</option>
                                 <option value="True">Database</option>
                             </select>
                         </div>
                         {/* Filtrado por género: */}
-                        <div className={startButton}>
-                            <h2 className={imgBack}>Genre</h2>
-                            <select onChange={handleFilterByGenre}>
-                                {" "}
+                        <div className={containerFiltrosGenero}>
+                            <h2 className={filtroGenero}>Genre</h2>
+                            <select onChange={handleFilterByGenre} value={selectedGenre}>
+                                {/* {" "} */}
                                 <option value="All">All</option>
                                 {genres.map((genre) => {
                                     return (
@@ -116,31 +117,60 @@ const Home = () => {
                                 })}
                             </select>
                         </div>
-                        {/* Modo de ordenamiento: */}
-                        <div className={startButton}>
-                            <h2 className={container}>Rating</h2>
-                            <select onChange={handleOrder}>
-                                {" "}
-                                <option value="Descendente">Mayor</option>
-                                <option value="Ascendente">Minor</option>
-                            </select>
+                        {/* Ordenamiento por rating: */}
+                        <div className={containerOrdenRating}>
+                            <h2 className={ordenRating}>Rating</h2>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="Ascending"
+                                    value="Ascending"
+                                    checked={selectedOptionRating === 'Ascending'}
+                                    onChange={handleOrderRating}
+                                />
+                                Ascending
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="Descending"
+                                    value="Descending"
+                                    checked={selectedOptionRating === 'Descending'}
+                                    onChange={handleOrderRating}
+                                />
+                                Descending
+                            </label>
                         </div>
-                        {/* Ordenamiento alafbético: */}
-                        <div className={imgBack}>
-                            <h2 className={container}>Order</h2>
-                            <select onChange={handleAlphabetOrder}>
-                                {" "}
-                                <option value="All">...</option>
-                                <option value="AscendenteAlp">A-Z</option>
-                                <option value="Descendentealp">Z-A</option>
-                            </select>
+                        {/* Ordenamiento alafabético: */}
+                        <div className={containerOrdenAZ}>
+                            <h2 className={ordenAZ}>Ordenamiento</h2>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="AZ"
+                                    value="AZ"
+                                    checked={selectedOptionAZ === 'AZ'}
+                                    onChange={handleOrderAZ}
+                                />
+                                A-Z
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="ZA"
+                                    value="ZA"
+                                    checked={selectedOptionAZ === 'ZA'}
+                                    onChange={handleOrderAZ}
+                                />
+                                Z-A
+                            </label>
                         </div>
-                        <div className={container}>
-                            <button className={container} onClick={handleReset}>Reset</button>
+                        <div className={containerReset}>
+                            <button className={reset} onClick={handleReset}>Reset</button>
                         </div>
                     </div>
                     {/* Cargo los componentes card con los datos actualizados: */}
-                    <div className={container}>
+                    <div className={containerCards}>
                         {currentGame?.map((el) => {
                             return (
                                 <Card
@@ -150,6 +180,8 @@ const Home = () => {
                                     image={el.image}
                                     genre={el.genre}
                                     genres={el.genres}
+                                    rating={el.rating}
+
                                 />
                             );
                         })}
