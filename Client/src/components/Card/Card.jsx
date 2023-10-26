@@ -6,7 +6,7 @@ const Card = (props) => {
 
     return (
         <div>
-            <h2 className={style.container}>{name} - {rating} </h2>
+            <h2 className={style.container}>{id} - {name} - {rating}   </h2>
         </div>
     )
 }

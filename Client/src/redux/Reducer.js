@@ -13,6 +13,9 @@ import {
     CLEAR_DETAIL
 } from "./actions";
 
+// allVideogames: están todos los obtenidos desde el back. Sólo se actualiza cuando cambian desde la BD
+// videogames: están los que se van filtrando y ordenando
+// filteredVideogames: resultados de búsquedas
 const initialState = {
     allVideogames: [],
     videogames: [],
@@ -87,7 +90,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 videogames: filteredByGenre,
-                filteredVideoGames: filteredByGenre,
+                filteredVideogames: filteredByGenre,
                 // Establezco el filtro actual para recordar al combinar con otros a futuro:
                 filters: {
                     ...state.filters,
