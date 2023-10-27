@@ -10,7 +10,9 @@ const IMG_ERROR = import.meta.env.VITE_IMG_ERR_DETAIL || '/src/assets/NoPhoto.pn
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
 import style from "./Detail.module.css";
-const { container, containerImg, img, features, featuresCard, ButtMore } = style;
+const { container, imgBack, img, features, featuresCard, ButtMore } = style;
+// Funciones:
+import formatDate from "../../functions/formatDate";
 
 const Detail = () => {
     const dispatch = useDispatch();
@@ -46,13 +48,20 @@ const Detail = () => {
         name = detail[0].name;
         description = detail[0].description;
         image = detail[0].image;
-        released_date = detail[0].released_date;
         rating = detail[0].rating;
         Genres = detail[0].Genres;
         Platforms = detail[0].Platforms;
-        genreList = Genres.map(genre => genre.name).join(', ');
-        platformList = Platforms.map(platform => platform.name).join(', ');
         detail[0].OriginDB ? OriginDB = "Database" : OriginDB = "API";
+        // Las listas y fecha se llenaron diferente según el origen. Las trato por separado:
+        if (isNaN(id)) { // desde BD
+            genreList = Genres.map(genre => genre.name).join(' - ');
+            platformList = Platforms.map(platform => platform.name).join(', ');
+            released_date = formatDate(detail[0].released_date, 1);
+        } else { //desde API
+            genreList = Genres.map(genre => genre).join(" - ");
+            platformList = Platforms.map(plat => plat).join(" - ");
+            released_date = formatDate(detail[0].released_date, 2);
+        }
     }
 
     return (
@@ -63,7 +72,7 @@ const Detail = () => {
                 </div>
             ) : name ? (
                 <div className={container}>
-                    <img className={container} src={image} alt="" />
+                    <img className={imgBack} src={image} alt="" />
                     <h2 className={features}>{name}</h2>
                     <h2 className={features}>ID {id}</h2>
                     <h2 className={features}>Source: {OriginDB}</h2>

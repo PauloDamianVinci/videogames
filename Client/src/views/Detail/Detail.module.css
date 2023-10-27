@@ -16,4 +16,6 @@
 
 .imgBack {
     background-color: rgba(212, 149, 30, 0.774);
+    max-width: 40%;
+    height: auto;
 }

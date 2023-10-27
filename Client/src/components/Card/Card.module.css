@@ -11,6 +11,8 @@
 .img {
     background-color: rgba(13, 45, 148, 0.897);
     color: antiquewhite;
+    max-width: 20%;
+    height: auto;
 }
 
 .containerFeatures {

@@ -36,15 +36,10 @@ const makeObject = (data, iteraciones) => {
             description: data.description_raw, // este dato no viene pero lo mantengo por compatibilidad
             released_date: data.released,
             rating: data.rating,
-            // Adaptar formato al de la DB:
-            Platforms: data.platforms.map(el => `{name:'${el.platform.name}'}`),
-            Genres: data.genres.map(el => `{name:'${el.name}'}`),
-
+            Platforms: data.platforms.map(el => el.platform.name),
+            Genres: data.genres.map(el => el.name),
             //Platforms: data.platforms.map(el => el.platform.name),
             //Genres: data.genres.map(el => el.name),
-
-
-
             OriginDB: false,
         }
         salida.push(aux);

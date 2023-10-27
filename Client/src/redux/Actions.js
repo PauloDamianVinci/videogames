@@ -111,6 +111,7 @@ export function getVideogameById(id) {
         }
     };
 }
+
 export function clearDetails() {
     return {
         type: CLEAR_DETAIL,
