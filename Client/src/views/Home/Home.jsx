@@ -23,27 +23,21 @@ const Home = () => {
 
     useEffect(() => {
         // Cargo los videojuegos y géneros desde la BD y API.
-        // Se van a actualizar automáticamente cuando se hagan cambios:
         setIsLoading(true);
-        if (!dataLoaded) {
-            console.log("sin datos previos");
-
+        if (!dataLoaded) { // no hay hay datos. Los obtengo
+            //console.log("sin datos previos");
             const tiempoEspera = 200; // espera temporaria para ver imagen de espera
             const timerId = setTimeout(() => {
                 dispatch(getVideogames());
                 dispatch(getGenres());
                 // Indico que ya tengo datos cargados, para que no refresque cada vez que vuelva:
                 dispatch(setDataLoaded(true));
-
             }, tiempoEspera);
-        } else {
+        } else { // hay datos previamente obtenidos. No necesito refrescarlos
             setCurrentPage(curPageSaved);
-            console.log("CON datos previos - pag", curPageSaved);
+            //            console.log("CON datos previos - pag", curPageSaved);
         }
-
-        //console.log("useEffect currentPage: ", currentPage);
         setIsLoading(false);
-
     }, [dispatch]);
 
     // Lógica para el componente de paginado:
@@ -58,7 +52,7 @@ const Home = () => {
         currentGame = [];
     }
     const paginado = (pageNumber) => {
-        console.log("paginado-> pageNumber: ", pageNumber);
+        //console.log("paginado-> pageNumber: ", pageNumber);
         setCurrentPage(pageNumber);
         // memorizo la página actual para cuando salga de la vista:
         dispatch(setCurrPage(pageNumber));
@@ -82,8 +76,7 @@ const Home = () => {
                                     key={el.id}
                                     name={el.name}
                                     image={el.image}
-                                    genre={el.genre}
-                                    genres={el.genres}
+                                    genresV={el.Genres}
                                     rating={el.rating}
                                 />
                             );

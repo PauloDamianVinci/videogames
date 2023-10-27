@@ -9,11 +9,18 @@ const { container, containerImg, img, containerFeatures, featuresCard, ButtMore 
 
 const Card = (props) => {
     const navigate = useNavigate()
-    const { id, name, image, genre } = props;
+    const { id, name, image, genresV, rating } = props;
     const [isLoading, setIsLoading] = useState(true);
     const linkDetail = `${DETAIL_BASE}/${id}`;
+    const [genreList, setGenreList] = useState('');
 
     useEffect(() => {
+        // Las listas se llenaron diferente según el origen. Las trato por separado:
+        if (isNaN(id)) { // desde BD
+            setGenreList(genresV.map(genre => genre.name).join(' - '));
+        } else { //desde API
+            setGenreList(genresV.map(genre => genre).join(" - "));
+        }
         setIsLoading(false);
     }, []);
 
@@ -24,15 +31,16 @@ const Card = (props) => {
                     {/* <img className={imgCargando} src={IMG_ESPERA} alt="" /> */}
                     <p>Loading..</p>
                 </div>
-            ) : id ? (
+            ) : genreList ? (
                 <div className={container}>
                     <div className={containerImg}>
                         <img className={img} src={image} alt="" />
                         <button className={ButtMore} onClick={() => navigate(linkDetail)} >Details</button>
                         <div className={containerFeatures}>
-                            <h2 className={featuresCard}>{id}</h2>
-                            <h2 className={featuresCard}>{name}</h2>
-                            <h2 className={featuresCard}>{genre}</h2>
+                            <h2 className={featuresCard}>ID: {id}</h2>
+                            <h2 className={featuresCard}>Nombre: {name}</h2>
+                            <h2 className={featuresCard}>Gén: {genreList}</h2>
+                            <h2 className={featuresCard}>Rating: {rating}</h2>
                         </div>
                     </div>
                 </div>

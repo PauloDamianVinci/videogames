@@ -8,7 +8,6 @@ const Pagination = (props) => {
     for (let i = 0; i < Math.ceil(allVideogames / videogamePerPage); i++) {
         pgNum.push(i + 1)
     }
-    //console.log(pgNum);
     return (
         <nav className={paginados}>
             <ul>

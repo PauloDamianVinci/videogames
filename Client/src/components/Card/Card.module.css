@@ -1,11 +1,13 @@
 .container {
     background-color: rgba(172, 48, 48, 0.774);
     color: antiquewhite;
+    font-size: 14px;
 }
 
 .containerImg {
     background-color: rgba(106, 48, 172, 0.774);
     color: antiquewhite;
+    font-size: 14px;
 }
 
 .img {
@@ -13,17 +15,22 @@
     color: antiquewhite;
     max-width: 20%;
     height: auto;
+    font-size: 14px;
 }
 
 .containerFeatures {
     background-color: rgba(16, 180, 131, 0.774);
     color: antiquewhite;
+    font-size: 14px;
 }
 
 .featuresCard {
     background-color: rgba(212, 149, 30, 0.774);
+    font-size: 14px;
+    color: rgb(19, 18, 18);
 }
 
 .ButtMore {
     background-color: rgba(212, 149, 30, 0.774);
+    font-size: 14px;
 }
