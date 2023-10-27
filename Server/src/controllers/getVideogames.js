@@ -30,7 +30,8 @@ const getVideogames = async (req, res) => {
                 const fromAPI = await getFromAPI(id, search);
                 resp = fromDB.concat(fromAPI);
                 break;
-            default: // no se indica source cuando se busca por id, ya que se determina dónde buscar en base al tipo de id recibido
+            default: // no se indica source cuando se busca por id, ya que se
+                // determina dónde buscar en base al tipo de id recibido
                 if (isNaN(id)) {
                     resp = await getFromDB(id, search);
                 } else {

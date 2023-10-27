@@ -26,17 +26,29 @@ const makeObject = (data, iteraciones) => {
         return salida;
     } else {
         // Esta búsqueda no itera, es de un sólo resultado:
-        return {
+        let aux = [];
+        let salida = [];
+        //let Platforms = [];
+        aux = {
             id: data.id,
             name: data.name,
             image: data.background_image,
-            description: data.description,
+            description: data.description_raw, // este dato no viene pero lo mantengo por compatibilidad
             released_date: data.released,
             rating: data.rating,
-            Platforms: data.platforms.map(el => el.platform.name),
-            Genres: data.genres.map(el => el.name),
+            // Adaptar formato al de la DB:
+            Platforms: data.platforms.map(el => `{name:'${el.platform.name}'}`),
+            Genres: data.genres.map(el => `{name:'${el.name}'}`),
+
+            //Platforms: data.platforms.map(el => el.platform.name),
+            //Genres: data.genres.map(el => el.name),
+
+
+
             OriginDB: false,
-        };
+        }
+        salida.push(aux);
+        return salida;
     }
 };
 module.exports = makeObject;

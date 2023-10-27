@@ -3457,3 +3457,2177 @@
 26/10/2023, 16:10:42 - getVideogames:
 26/10/2023, 16:10:42 - all (DB)
 26/10/2023, 16:10:42 - all (API)
+26/10/2023, 16:14:03 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 17:16:46 - all (DB)
+26/10/2023, 17:16:46 - getVideogames:
+26/10/2023, 17:16:46 - getGenres:
+26/10/2023, 17:16:46 - all (API)
+26/10/2023, 17:16:47 - getGenres:
+26/10/2023, 17:16:47 - getVideogames:
+26/10/2023, 17:16:47 - all (DB)
+26/10/2023, 17:16:47 - all (API)
+26/10/2023, 17:18:02 - all (DB)
+26/10/2023, 17:18:02 - getVideogames:
+26/10/2023, 17:18:02 - getGenres:
+26/10/2023, 17:18:02 - all (API)
+26/10/2023, 17:18:03 - getGenres:
+26/10/2023, 17:18:04 - getVideogames:
+26/10/2023, 17:18:04 - all (DB)
+26/10/2023, 17:18:04 - all (API)
+26/10/2023, 17:20:58 - getVideogames:
+26/10/2023, 17:20:58 - all (DB)
+26/10/2023, 17:20:58 - getGenres:
+26/10/2023, 17:20:58 - all (API)
+26/10/2023, 17:23:09 - getVideogames:
+26/10/2023, 17:23:09 - all (DB)
+26/10/2023, 17:23:09 - getGenres:
+26/10/2023, 17:23:09 - all (API)
+26/10/2023, 17:23:10 - getGenres:
+26/10/2023, 17:23:10 - getVideogames:
+26/10/2023, 17:23:10 - all (DB)
+26/10/2023, 17:23:10 - all (API)
+26/10/2023, 17:25:22 - all (DB)
+26/10/2023, 17:25:22 - getVideogames:
+26/10/2023, 17:25:22 - getGenres:
+26/10/2023, 17:25:23 - all (API)
+26/10/2023, 17:25:23 - getGenres:
+26/10/2023, 17:25:24 - all (DB)
+26/10/2023, 17:25:24 - getVideogames:
+26/10/2023, 17:25:24 - all (API)
+26/10/2023, 17:29:08 - getVideogames:
+26/10/2023, 17:29:08 - all (DB)
+26/10/2023, 17:29:08 - getGenres:
+26/10/2023, 17:29:08 - all (API)
+26/10/2023, 17:29:09 - getGenres:
+26/10/2023, 17:29:09 - all (DB)
+26/10/2023, 17:29:09 - getVideogames:
+26/10/2023, 17:29:09 - all (API)
+26/10/2023, 17:30:01 - getVideogames:
+26/10/2023, 17:30:01 - all (DB)
+26/10/2023, 17:30:01 - getGenres:
+26/10/2023, 17:30:02 - all (API)
+26/10/2023, 17:30:02 - getGenres:
+26/10/2023, 17:30:03 - getVideogames:
+26/10/2023, 17:30:03 - all (DB)
+26/10/2023, 17:30:03 - all (API)
+26/10/2023, 17:31:03 - getVideogames:
+26/10/2023, 17:31:03 - all (DB)
+26/10/2023, 17:31:03 - getGenres:
+26/10/2023, 17:31:03 - all (API)
+26/10/2023, 17:31:04 - getGenres:
+26/10/2023, 17:31:04 - getVideogames:
+26/10/2023, 17:31:04 - all (DB)
+26/10/2023, 17:31:04 - all (API)
+26/10/2023, 17:31:25 - getVideogames:
+26/10/2023, 17:31:25 - all (DB)
+26/10/2023, 17:31:25 - getGenres:
+26/10/2023, 17:31:26 - all (API)
+26/10/2023, 17:31:26 - getGenres:
+26/10/2023, 17:31:28 - getVideogames:
+26/10/2023, 17:31:28 - all (DB)
+26/10/2023, 17:31:28 - all (API)
+26/10/2023, 17:32:34 - getVideogames:
+26/10/2023, 17:32:34 - all (DB)
+26/10/2023, 17:32:34 - getGenres:
+26/10/2023, 17:32:34 - all (API)
+26/10/2023, 17:32:35 - getGenres:
+26/10/2023, 17:32:35 - getVideogames:
+26/10/2023, 17:32:35 - all (DB)
+26/10/2023, 17:32:35 - all (API)
+26/10/2023, 17:33:50 - getVideogames:
+26/10/2023, 17:33:50 - all (DB)
+26/10/2023, 17:33:50 - getGenres:
+26/10/2023, 17:33:50 - all (API)
+26/10/2023, 17:33:51 - getGenres:
+26/10/2023, 17:33:51 - getVideogames:
+26/10/2023, 17:33:51 - all (DB)
+26/10/2023, 17:33:51 - all (API)
+26/10/2023, 17:35:45 - getVideogames:
+26/10/2023, 17:35:45 - all (DB)
+26/10/2023, 17:35:45 - getGenres:
+26/10/2023, 17:35:45 - all (API)
+26/10/2023, 17:35:46 - getGenres:
+26/10/2023, 17:35:46 - getVideogames:
+26/10/2023, 17:35:46 - all (DB)
+26/10/2023, 17:35:46 - all (API)
+26/10/2023, 17:45:04 - all (DB)
+26/10/2023, 17:45:04 - getVideogames:
+26/10/2023, 17:45:04 - getGenres:
+26/10/2023, 17:45:04 - all (API)
+26/10/2023, 17:45:05 - getGenres:
+26/10/2023, 17:45:05 - all (DB)
+26/10/2023, 17:45:05 - getVideogames:
+26/10/2023, 17:45:05 - all (API)
+26/10/2023, 17:46:14 - getVideogames:
+26/10/2023, 17:46:14 - by name=Grand Theft Auto V (API)
+26/10/2023, 17:49:50 - getVideogames:
+26/10/2023, 17:49:50 - all (DB)
+26/10/2023, 17:49:50 - all (API)
+26/10/2023, 17:52:08 - getVideogames:
+26/10/2023, 17:52:08 - all (DB)
+26/10/2023, 17:52:08 - getGenres:
+26/10/2023, 17:52:08 - all (API)
+26/10/2023, 17:52:09 - getGenres:
+26/10/2023, 17:52:09 - getVideogames:
+26/10/2023, 17:52:09 - all (DB)
+26/10/2023, 17:52:09 - all (API)
+26/10/2023, 17:53:03 - getVideogames:
+26/10/2023, 17:53:03 - all (DB)
+26/10/2023, 17:53:03 - getGenres:
+26/10/2023, 17:53:03 - all (API)
+26/10/2023, 17:53:26 - getVideogames:
+26/10/2023, 17:53:26 - all (DB)
+26/10/2023, 17:53:26 - getGenres:
+26/10/2023, 17:53:26 - all (API)
+26/10/2023, 17:53:27 - getGenres:
+26/10/2023, 17:53:27 - getVideogames:
+26/10/2023, 17:53:27 - all (DB)
+26/10/2023, 17:53:27 - all (API)
+26/10/2023, 17:54:34 - all (DB)
+26/10/2023, 17:54:34 - getVideogames:
+26/10/2023, 17:54:34 - getGenres:
+26/10/2023, 17:54:34 - all (API)
+26/10/2023, 17:54:35 - getGenres:
+26/10/2023, 17:54:36 - getVideogames:
+26/10/2023, 17:54:36 - all (DB)
+26/10/2023, 17:54:36 - all (API)
+26/10/2023, 17:54:58 - getVideogames:
+26/10/2023, 17:54:58 - all (DB)
+26/10/2023, 17:54:58 - getGenres:
+26/10/2023, 17:54:58 - all (API)
+26/10/2023, 17:54:59 - getGenres:
+26/10/2023, 17:54:59 - getVideogames:
+26/10/2023, 17:54:59 - all (DB)
+26/10/2023, 17:54:59 - all (API)
+26/10/2023, 17:55:26 - getVideogames:
+26/10/2023, 17:55:26 - all (DB)
+26/10/2023, 17:55:26 - getGenres:
+26/10/2023, 17:55:26 - all (API)
+26/10/2023, 17:55:27 - getGenres:
+26/10/2023, 17:55:27 - getVideogames:
+26/10/2023, 17:55:27 - all (DB)
+26/10/2023, 17:55:27 - all (API)
+26/10/2023, 17:55:32 - getVideogames:
+26/10/2023, 17:55:32 - all (DB)
+26/10/2023, 17:55:32 - getGenres:
+26/10/2023, 17:55:32 - all (API)
+26/10/2023, 17:55:33 - getGenres:
+26/10/2023, 17:55:33 - getVideogames:
+26/10/2023, 17:55:33 - all (DB)
+26/10/2023, 17:55:33 - all (API)
+26/10/2023, 17:55:43 - getVideogames:
+26/10/2023, 17:55:43 - all (DB)
+26/10/2023, 17:55:43 - getGenres:
+26/10/2023, 17:55:43 - all (API)
+26/10/2023, 17:55:44 - getGenres:
+26/10/2023, 17:55:44 - all (DB)
+26/10/2023, 17:55:44 - getVideogames:
+26/10/2023, 17:55:44 - all (API)
+26/10/2023, 17:55:48 - getVideogames:
+26/10/2023, 17:55:48 - all (DB)
+26/10/2023, 17:55:48 - getGenres:
+26/10/2023, 17:55:48 - all (API)
+26/10/2023, 17:55:49 - getGenres:
+26/10/2023, 17:55:49 - getVideogames:
+26/10/2023, 17:55:49 - all (DB)
+26/10/2023, 17:55:49 - all (API)
+26/10/2023, 17:56:00 - getVideogames:
+26/10/2023, 17:56:00 - all (DB)
+26/10/2023, 17:56:00 - getGenres:
+26/10/2023, 17:56:00 - all (API)
+26/10/2023, 17:56:01 - getGenres:
+26/10/2023, 17:56:01 - all (DB)
+26/10/2023, 17:56:01 - getVideogames:
+26/10/2023, 17:56:01 - all (API)
+26/10/2023, 17:56:04 - all (DB)
+26/10/2023, 17:56:04 - getVideogames:
+26/10/2023, 17:56:04 - getGenres:
+26/10/2023, 17:56:04 - all (API)
+26/10/2023, 17:56:04 - getGenres:
+26/10/2023, 17:56:05 - getVideogames:
+26/10/2023, 17:56:05 - all (DB)
+26/10/2023, 17:56:05 - all (API)
+26/10/2023, 17:56:42 - all (DB)
+26/10/2023, 17:56:42 - getVideogames:
+26/10/2023, 17:56:42 - getGenres:
+26/10/2023, 17:56:42 - all (API)
+26/10/2023, 17:56:42 - getGenres:
+26/10/2023, 17:56:43 - getVideogames:
+26/10/2023, 17:56:43 - all (DB)
+26/10/2023, 17:56:43 - all (API)
+26/10/2023, 17:59:04 - getVideogames:
+26/10/2023, 17:59:04 - all (DB)
+26/10/2023, 17:59:04 - getGenres:
+26/10/2023, 17:59:04 - all (API)
+26/10/2023, 17:59:05 - getGenres:
+26/10/2023, 17:59:05 - all (DB)
+26/10/2023, 17:59:05 - getVideogames:
+26/10/2023, 17:59:05 - all (API)
+26/10/2023, 17:59:11 - getVideogames:
+26/10/2023, 17:59:11 - all (DB)
+26/10/2023, 17:59:11 - all (API)
+26/10/2023, 17:59:11 - getGenres:
+26/10/2023, 17:59:12 - getGenres:
+26/10/2023, 17:59:12 - getVideogames:
+26/10/2023, 17:59:12 - all (DB)
+26/10/2023, 17:59:12 - all (API)
+26/10/2023, 17:59:38 - all (DB)
+26/10/2023, 17:59:38 - getVideogames:
+26/10/2023, 17:59:38 - getGenres:
+26/10/2023, 17:59:38 - all (API)
+26/10/2023, 17:59:39 - getGenres:
+26/10/2023, 17:59:39 - all (DB)
+26/10/2023, 17:59:39 - getVideogames:
+26/10/2023, 17:59:39 - all (API)
+26/10/2023, 17:59:57 - all (DB)
+26/10/2023, 17:59:57 - getVideogames:
+26/10/2023, 17:59:57 - all (API)
+26/10/2023, 17:59:57 - getGenres:
+26/10/2023, 17:59:58 - getGenres:
+26/10/2023, 17:59:58 - all (DB)
+26/10/2023, 17:59:58 - getVideogames:
+26/10/2023, 17:59:58 - all (API)
+26/10/2023, 18:17:56 - getVideogames:
+26/10/2023, 18:17:56 - all (DB)
+26/10/2023, 18:17:56 - getGenres:
+26/10/2023, 18:17:56 - all (API)
+26/10/2023, 18:17:57 - getGenres:
+26/10/2023, 18:17:57 - getVideogames:
+26/10/2023, 18:17:57 - all (DB)
+26/10/2023, 18:17:57 - all (API)
+26/10/2023, 18:19:19 - getVideogames:
+26/10/2023, 18:19:19 - all (DB)
+26/10/2023, 18:19:19 - getGenres:
+26/10/2023, 18:19:19 - all (API)
+26/10/2023, 18:19:20 - getGenres:
+26/10/2023, 18:19:20 - getVideogames:
+26/10/2023, 18:19:20 - all (DB)
+26/10/2023, 18:19:20 - all (API)
+26/10/2023, 18:21:29 - all (DB)
+26/10/2023, 18:21:29 - getVideogames:
+26/10/2023, 18:21:29 - getGenres:
+26/10/2023, 18:21:29 - all (API)
+26/10/2023, 18:21:30 - getGenres:
+26/10/2023, 18:21:30 - getVideogames:
+26/10/2023, 18:21:30 - all (DB)
+26/10/2023, 18:21:30 - all (API)
+26/10/2023, 18:22:40 - getVideogames:
+26/10/2023, 18:22:40 - all (DB)
+26/10/2023, 18:22:40 - getGenres:
+26/10/2023, 18:22:40 - all (API)
+26/10/2023, 18:22:40 - getGenres:
+26/10/2023, 18:22:41 - getVideogames:
+26/10/2023, 18:22:41 - all (DB)
+26/10/2023, 18:22:41 - all (API)
+26/10/2023, 18:23:16 - getVideogames:
+26/10/2023, 18:23:16 - all (DB)
+26/10/2023, 18:23:16 - getGenres:
+26/10/2023, 18:23:16 - all (API)
+26/10/2023, 18:23:18 - getGenres:
+26/10/2023, 18:23:18 - getVideogames:
+26/10/2023, 18:23:18 - all (DB)
+26/10/2023, 18:23:18 - all (API)
+26/10/2023, 18:32:26 - all (DB)
+26/10/2023, 18:32:26 - getVideogames:
+26/10/2023, 18:32:26 - getGenres:
+26/10/2023, 18:32:26 - all (API)
+26/10/2023, 18:32:27 - getVideogames:
+26/10/2023, 18:32:27 - all (DB)
+26/10/2023, 18:32:27 - all (API)
+26/10/2023, 18:32:27 - getGenres:
+26/10/2023, 18:33:27 - getVideogames:
+26/10/2023, 18:33:27 - by id=undefined (DB)
+26/10/2023, 18:33:27 - ERROR-> la sintaxis de entrada no es válida para tipo uuid: «undefined»
+26/10/2023, 18:33:27 - ERROR-> la sintaxis de entrada no es válida para tipo uuid: «undefined»
+26/10/2023, 18:33:27 - by id=undefined (DB)
+26/10/2023, 18:33:27 - getVideogames:
+26/10/2023, 18:33:30 - getVideogames:
+26/10/2023, 18:33:30 - all (DB)
+26/10/2023, 18:33:30 - getGenres:
+26/10/2023, 18:33:30 - all (API)
+26/10/2023, 18:33:30 - getGenres:
+26/10/2023, 18:33:31 - getVideogames:
+26/10/2023, 18:33:31 - all (DB)
+26/10/2023, 18:33:31 - all (API)
+26/10/2023, 18:33:34 - getVideogames:
+26/10/2023, 18:33:34 - by id=undefined (DB)
+26/10/2023, 18:33:34 - ERROR-> la sintaxis de entrada no es válida para tipo uuid: «undefined»
+26/10/2023, 18:33:34 - getVideogames:
+26/10/2023, 18:33:34 - by id=undefined (DB)
+26/10/2023, 18:33:34 - ERROR-> la sintaxis de entrada no es válida para tipo uuid: «undefined»
+26/10/2023, 18:35:00 - getVideogames:
+26/10/2023, 18:35:00 - by id=undefined (DB)
+26/10/2023, 18:35:00 - ERROR-> la sintaxis de entrada no es válida para tipo uuid: «undefined»
+26/10/2023, 18:35:00 - getVideogames:
+26/10/2023, 18:35:00 - by id=undefined (DB)
+26/10/2023, 18:35:00 - ERROR-> la sintaxis de entrada no es válida para tipo uuid: «undefined»
+26/10/2023, 18:35:21 - getVideogames:
+26/10/2023, 18:35:21 - all (DB)
+26/10/2023, 18:35:21 - getGenres:
+26/10/2023, 18:35:21 - all (API)
+26/10/2023, 18:35:22 - getGenres:
+26/10/2023, 18:35:22 - getVideogames:
+26/10/2023, 18:35:22 - all (DB)
+26/10/2023, 18:35:22 - all (API)
+26/10/2023, 18:35:26 - getVideogames:
+26/10/2023, 18:35:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:35:26 - getVideogames:
+26/10/2023, 18:35:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:36:53 - getVideogames:
+26/10/2023, 18:36:53 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:37:40 - getVideogames:
+26/10/2023, 18:37:40 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:37:40 - getVideogames:
+26/10/2023, 18:37:40 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:37:51 - getVideogames:
+26/10/2023, 18:37:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:37:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:37:51 - getVideogames:
+26/10/2023, 18:38:15 - getVideogames:
+26/10/2023, 18:38:15 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:38:16 - getVideogames:
+26/10/2023, 18:38:16 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:38:24 - getVideogames:
+26/10/2023, 18:38:24 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:38:24 - getVideogames:
+26/10/2023, 18:38:24 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:39:45 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 18:40:22 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 18:40:40 - getVideogames:
+26/10/2023, 18:40:40 - all (DB)
+26/10/2023, 18:40:40 - getGenres:
+26/10/2023, 18:40:40 - all (API)
+26/10/2023, 18:40:41 - getGenres:
+26/10/2023, 18:40:41 - getVideogames:
+26/10/2023, 18:40:41 - all (DB)
+26/10/2023, 18:40:41 - all (API)
+26/10/2023, 18:40:58 - getVideogames:
+26/10/2023, 18:40:58 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:40:58 - getVideogames:
+26/10/2023, 18:40:58 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:41:03 - getVideogames:
+26/10/2023, 18:41:03 - all (DB)
+26/10/2023, 18:41:03 - getGenres:
+26/10/2023, 18:41:03 - all (API)
+26/10/2023, 18:41:04 - getGenres:
+26/10/2023, 18:41:04 - getVideogames:
+26/10/2023, 18:41:04 - all (DB)
+26/10/2023, 18:41:04 - all (API)
+26/10/2023, 18:41:08 - getVideogames:
+26/10/2023, 18:41:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:41:08 - getVideogames:
+26/10/2023, 18:41:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:41:38 - getVideogames:
+26/10/2023, 18:41:38 - all (DB)
+26/10/2023, 18:41:38 - getGenres:
+26/10/2023, 18:41:38 - all (API)
+26/10/2023, 18:41:39 - getGenres:
+26/10/2023, 18:41:39 - all (DB)
+26/10/2023, 18:41:39 - getVideogames:
+26/10/2023, 18:41:39 - all (API)
+26/10/2023, 18:41:46 - getVideogames:
+26/10/2023, 18:41:46 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:41:46 - getVideogames:
+26/10/2023, 18:41:46 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:42:01 - getVideogames:
+26/10/2023, 18:42:01 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:42:56 - getVideogames:
+26/10/2023, 18:42:56 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:42:56 - getVideogames:
+26/10/2023, 18:42:56 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:43:09 - getVideogames:
+26/10/2023, 18:43:09 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:43:09 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:43:09 - getVideogames:
+26/10/2023, 18:43:44 - getVideogames:
+26/10/2023, 18:43:44 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:43:44 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:43:44 - getVideogames:
+26/10/2023, 18:44:08 - getVideogames:
+26/10/2023, 18:44:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:44:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:44:08 - getVideogames:
+26/10/2023, 18:44:51 - getVideogames:
+26/10/2023, 18:44:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:44:51 - getVideogames:
+26/10/2023, 18:44:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:44:57 - getVideogames:
+26/10/2023, 18:44:57 - all (DB)
+26/10/2023, 18:44:57 - all (API)
+26/10/2023, 18:44:57 - getGenres:
+26/10/2023, 18:44:58 - getGenres:
+26/10/2023, 18:44:58 - getVideogames:
+26/10/2023, 18:44:58 - all (DB)
+26/10/2023, 18:44:58 - all (API)
+26/10/2023, 18:45:02 - getVideogames:
+26/10/2023, 18:45:02 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:45:02 - getVideogames:
+26/10/2023, 18:45:02 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:46:03 - getVideogames:
+26/10/2023, 18:46:03 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:46:45 - getVideogames:
+26/10/2023, 18:46:45 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:46:45 - getVideogames:
+26/10/2023, 18:46:45 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:52:24 - getVideogames:
+26/10/2023, 18:52:24 - all (DB)
+26/10/2023, 18:52:24 - getGenres:
+26/10/2023, 18:52:24 - all (API)
+26/10/2023, 18:52:25 - getGenres:
+26/10/2023, 18:52:25 - all (DB)
+26/10/2023, 18:52:25 - getVideogames:
+26/10/2023, 18:52:25 - all (API)
+26/10/2023, 18:52:43 - getVideogames:
+26/10/2023, 18:52:43 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:52:43 - getVideogames:
+26/10/2023, 18:52:43 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:53:21 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:53:21 - getVideogames:
+26/10/2023, 18:53:21 - getVideogames:
+26/10/2023, 18:53:21 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:53:25 - getVideogames:
+26/10/2023, 18:53:25 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:53:25 - getVideogames:
+26/10/2023, 18:53:25 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:53:29 - getVideogames:
+26/10/2023, 18:53:29 - all (DB)
+26/10/2023, 18:53:29 - getGenres:
+26/10/2023, 18:53:29 - all (API)
+26/10/2023, 18:53:30 - getGenres:
+26/10/2023, 18:53:30 - getVideogames:
+26/10/2023, 18:53:30 - all (DB)
+26/10/2023, 18:53:30 - all (API)
+26/10/2023, 18:53:33 - getVideogames:
+26/10/2023, 18:53:33 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:53:33 - getVideogames:
+26/10/2023, 18:53:33 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:53:52 - getVideogames:
+26/10/2023, 18:53:52 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:53:52 - getVideogames:
+26/10/2023, 18:53:52 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:54:06 - getVideogames:
+26/10/2023, 18:54:06 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:54:06 - getVideogames:
+26/10/2023, 18:54:06 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:54:30 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:54:30 - getVideogames:
+26/10/2023, 18:54:30 - getVideogames:
+26/10/2023, 18:54:30 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:54:43 - getVideogames:
+26/10/2023, 18:54:43 - all (DB)
+26/10/2023, 18:54:43 - getGenres:
+26/10/2023, 18:54:43 - all (API)
+26/10/2023, 18:54:44 - getGenres:
+26/10/2023, 18:54:44 - getVideogames:
+26/10/2023, 18:54:44 - all (DB)
+26/10/2023, 18:54:44 - all (API)
+26/10/2023, 18:54:47 - getVideogames:
+26/10/2023, 18:54:47 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:54:47 - getVideogames:
+26/10/2023, 18:54:47 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:55:00 - getVideogames:
+26/10/2023, 18:55:00 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:55:29 - getVideogames:
+26/10/2023, 18:55:29 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:55:57 - getVideogames:
+26/10/2023, 18:55:57 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:56:31 - getVideogames:
+26/10/2023, 18:56:31 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:56:44 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:56:44 - getVideogames:
+26/10/2023, 18:56:57 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:56:57 - getVideogames:
+26/10/2023, 18:57:16 - getVideogames:
+26/10/2023, 18:57:16 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:57:22 - getVideogames:
+26/10/2023, 18:57:22 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:57:30 - getVideogames:
+26/10/2023, 18:57:30 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:57:54 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:57:54 - getVideogames:
+26/10/2023, 18:57:54 - getVideogames:
+26/10/2023, 18:57:54 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:58:08 - getVideogames:
+26/10/2023, 18:58:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:58:11 - all (DB)
+26/10/2023, 18:58:11 - getVideogames:
+26/10/2023, 18:58:11 - getGenres:
+26/10/2023, 18:58:11 - all (API)
+26/10/2023, 18:58:12 - getGenres:
+26/10/2023, 18:58:12 - getVideogames:
+26/10/2023, 18:58:12 - all (DB)
+26/10/2023, 18:58:12 - all (API)
+26/10/2023, 18:58:24 - getVideogames:
+26/10/2023, 18:58:24 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:58:24 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:58:24 - getVideogames:
+26/10/2023, 18:59:17 - getVideogames:
+26/10/2023, 18:59:17 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:59:47 - getVideogames:
+26/10/2023, 18:59:47 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:59:53 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 18:59:53 - getVideogames:
+26/10/2023, 19:00:02 - getVideogames:
+26/10/2023, 19:00:02 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:00:22 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:00:22 - getVideogames:
+26/10/2023, 19:00:26 - getVideogames:
+26/10/2023, 19:00:26 - all (DB)
+26/10/2023, 19:00:26 - all (API)
+26/10/2023, 19:00:26 - getGenres:
+26/10/2023, 19:00:27 - getGenres:
+26/10/2023, 19:00:28 - getVideogames:
+26/10/2023, 19:00:28 - all (DB)
+26/10/2023, 19:00:28 - all (API)
+26/10/2023, 19:00:32 - getVideogames:
+26/10/2023, 19:00:32 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:00:32 - getVideogames:
+26/10/2023, 19:00:32 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:00:55 - getVideogames:
+26/10/2023, 19:00:55 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:01:00 - getVideogames:
+26/10/2023, 19:01:00 - all (DB)
+26/10/2023, 19:01:00 - getGenres:
+26/10/2023, 19:01:00 - all (API)
+26/10/2023, 19:01:00 - getGenres:
+26/10/2023, 19:01:00 - getVideogames:
+26/10/2023, 19:01:00 - all (DB)
+26/10/2023, 19:01:00 - all (API)
+26/10/2023, 19:01:03 - getVideogames:
+26/10/2023, 19:01:03 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:01:03 - getVideogames:
+26/10/2023, 19:01:03 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:01:49 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:01:49 - getVideogames:
+26/10/2023, 19:01:54 - getVideogames:
+26/10/2023, 19:01:54 - all (DB)
+26/10/2023, 19:01:54 - getGenres:
+26/10/2023, 19:01:54 - all (API)
+26/10/2023, 19:02:00 - getGenres:
+26/10/2023, 19:02:01 - all (DB)
+26/10/2023, 19:02:01 - getVideogames:
+26/10/2023, 19:02:01 - all (API)
+26/10/2023, 19:02:03 - getVideogames:
+26/10/2023, 19:02:03 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:02:03 - getVideogames:
+26/10/2023, 19:02:03 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:02:42 - getVideogames:
+26/10/2023, 19:02:42 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:02:54 - getVideogames:
+26/10/2023, 19:02:54 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:03:19 - getVideogames:
+26/10/2023, 19:03:19 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:03:19 - getVideogames:
+26/10/2023, 19:03:19 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:03:37 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:03:37 - getVideogames:
+26/10/2023, 19:03:37 - getVideogames:
+26/10/2023, 19:03:37 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:03:57 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:03:57 - getVideogames:
+26/10/2023, 19:03:57 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:03:57 - getVideogames:
+26/10/2023, 19:04:00 - getVideogames:
+26/10/2023, 19:04:00 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:04:00 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:04:00 - getVideogames:
+26/10/2023, 19:04:17 - getVideogames:
+26/10/2023, 19:04:17 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:04:17 - getVideogames:
+26/10/2023, 19:04:17 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:04:31 - getVideogames:
+26/10/2023, 19:04:31 - all (DB)
+26/10/2023, 19:04:31 - getGenres:
+26/10/2023, 19:04:31 - all (API)
+26/10/2023, 19:04:32 - getGenres:
+26/10/2023, 19:04:32 - all (DB)
+26/10/2023, 19:04:32 - getVideogames:
+26/10/2023, 19:04:32 - all (API)
+26/10/2023, 19:04:34 - getVideogames:
+26/10/2023, 19:04:34 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:04:34 - getVideogames:
+26/10/2023, 19:04:34 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:05:06 - getVideogames:
+26/10/2023, 19:05:06 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:05:07 - getVideogames:
+26/10/2023, 19:05:07 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:05:28 - getVideogames:
+26/10/2023, 19:05:28 - all (DB)
+26/10/2023, 19:05:28 - getGenres:
+26/10/2023, 19:05:28 - all (API)
+26/10/2023, 19:05:29 - getGenres:
+26/10/2023, 19:05:29 - getVideogames:
+26/10/2023, 19:05:29 - all (DB)
+26/10/2023, 19:05:29 - all (API)
+26/10/2023, 19:05:31 - getVideogames:
+26/10/2023, 19:05:31 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:05:31 - getVideogames:
+26/10/2023, 19:05:31 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:06:23 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:06:23 - getVideogames:
+26/10/2023, 19:06:23 - getVideogames:
+26/10/2023, 19:06:23 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:06:39 - getVideogames:
+26/10/2023, 19:06:39 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:06:39 - getVideogames:
+26/10/2023, 19:06:39 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:06:42 - getVideogames:
+26/10/2023, 19:06:42 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:06:42 - getVideogames:
+26/10/2023, 19:06:42 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:07:03 - getVideogames:
+26/10/2023, 19:07:03 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:07:03 - getVideogames:
+26/10/2023, 19:07:03 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:10:04 - getVideogames:
+26/10/2023, 19:10:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:11:59 - getVideogames:
+26/10/2023, 19:11:59 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:12:48 - getVideogames:
+26/10/2023, 19:12:48 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:12:48 - getVideogames:
+26/10/2023, 19:12:48 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:13:05 - getVideogames:
+26/10/2023, 19:13:05 - all (DB)
+26/10/2023, 19:13:05 - getGenres:
+26/10/2023, 19:13:05 - all (API)
+26/10/2023, 19:13:06 - getGenres:
+26/10/2023, 19:13:06 - getVideogames:
+26/10/2023, 19:13:06 - all (DB)
+26/10/2023, 19:13:06 - all (API)
+26/10/2023, 19:13:08 - getVideogames:
+26/10/2023, 19:13:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:13:08 - getVideogames:
+26/10/2023, 19:13:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:14:02 - getVideogames:
+26/10/2023, 19:14:02 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:14:30 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:14:30 - getVideogames:
+26/10/2023, 19:14:30 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:14:30 - getVideogames:
+26/10/2023, 19:14:34 - getVideogames:
+26/10/2023, 19:14:34 - all (DB)
+26/10/2023, 19:14:34 - getGenres:
+26/10/2023, 19:14:34 - all (API)
+26/10/2023, 19:14:35 - getGenres:
+26/10/2023, 19:14:35 - getVideogames:
+26/10/2023, 19:14:35 - all (DB)
+26/10/2023, 19:14:35 - all (API)
+26/10/2023, 19:14:37 - getVideogames:
+26/10/2023, 19:14:37 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:14:37 - getVideogames:
+26/10/2023, 19:14:37 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:15:11 - getVideogames:
+26/10/2023, 19:15:11 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:15:15 - getVideogames:
+26/10/2023, 19:15:15 - all (DB)
+26/10/2023, 19:15:15 - all (API)
+26/10/2023, 19:15:15 - getGenres:
+26/10/2023, 19:15:16 - getGenres:
+26/10/2023, 19:15:16 - getVideogames:
+26/10/2023, 19:15:16 - all (DB)
+26/10/2023, 19:15:16 - all (API)
+26/10/2023, 19:15:18 - getVideogames:
+26/10/2023, 19:15:18 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:15:18 - getVideogames:
+26/10/2023, 19:15:18 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:15:57 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:15:57 - getVideogames:
+26/10/2023, 19:16:01 - getVideogames:
+26/10/2023, 19:16:01 - all (DB)
+26/10/2023, 19:16:01 - getGenres:
+26/10/2023, 19:16:01 - all (API)
+26/10/2023, 19:16:02 - getGenres:
+26/10/2023, 19:16:02 - getVideogames:
+26/10/2023, 19:16:02 - all (DB)
+26/10/2023, 19:16:02 - all (API)
+26/10/2023, 19:16:04 - getVideogames:
+26/10/2023, 19:16:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:16:04 - getVideogames:
+26/10/2023, 19:16:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:16:57 - getVideogames:
+26/10/2023, 19:16:57 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:17:02 - getVideogames:
+26/10/2023, 19:17:02 - all (DB)
+26/10/2023, 19:17:02 - getGenres:
+26/10/2023, 19:17:02 - all (API)
+26/10/2023, 19:17:03 - getGenres:
+26/10/2023, 19:17:03 - getVideogames:
+26/10/2023, 19:17:03 - all (DB)
+26/10/2023, 19:17:03 - all (API)
+26/10/2023, 19:17:05 - getVideogames:
+26/10/2023, 19:17:05 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:17:05 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:17:05 - getVideogames:
+26/10/2023, 19:17:51 - getVideogames:
+26/10/2023, 19:17:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:17:51 - getVideogames:
+26/10/2023, 19:17:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:17:54 - getVideogames:
+26/10/2023, 19:17:54 - all (DB)
+26/10/2023, 19:17:54 - all (API)
+26/10/2023, 19:17:54 - getGenres:
+26/10/2023, 19:17:55 - getGenres:
+26/10/2023, 19:17:56 - all (DB)
+26/10/2023, 19:17:56 - getVideogames:
+26/10/2023, 19:17:56 - all (API)
+26/10/2023, 19:17:58 - getVideogames:
+26/10/2023, 19:17:58 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:17:58 - getVideogames:
+26/10/2023, 19:17:58 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:18:25 - getVideogames:
+26/10/2023, 19:18:25 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:18:25 - getVideogames:
+26/10/2023, 19:18:25 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:18:28 - all (DB)
+26/10/2023, 19:18:28 - getVideogames:
+26/10/2023, 19:18:28 - getGenres:
+26/10/2023, 19:18:28 - all (API)
+26/10/2023, 19:18:29 - getGenres:
+26/10/2023, 19:18:29 - getVideogames:
+26/10/2023, 19:18:29 - all (DB)
+26/10/2023, 19:18:29 - all (API)
+26/10/2023, 19:18:31 - getVideogames:
+26/10/2023, 19:18:31 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:18:31 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:18:31 - getVideogames:
+26/10/2023, 19:19:29 - getVideogames:
+26/10/2023, 19:19:29 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:19:30 - getVideogames:
+26/10/2023, 19:19:30 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:19:33 - all (DB)
+26/10/2023, 19:19:33 - getVideogames:
+26/10/2023, 19:19:33 - all (API)
+26/10/2023, 19:19:33 - getGenres:
+26/10/2023, 19:19:34 - getGenres:
+26/10/2023, 19:19:34 - all (DB)
+26/10/2023, 19:19:34 - getVideogames:
+26/10/2023, 19:19:34 - all (API)
+26/10/2023, 19:19:38 - getVideogames:
+26/10/2023, 19:19:38 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:19:38 - getVideogames:
+26/10/2023, 19:19:38 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:20:03 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:20:03 - getVideogames:
+26/10/2023, 19:20:09 - getVideogames:
+26/10/2023, 19:20:09 - all (DB)
+26/10/2023, 19:20:09 - getGenres:
+26/10/2023, 19:20:09 - all (API)
+26/10/2023, 19:20:10 - getGenres:
+26/10/2023, 19:20:13 - getVideogames:
+26/10/2023, 19:20:13 - all (DB)
+26/10/2023, 19:20:13 - all (API)
+26/10/2023, 19:20:15 - getVideogames:
+26/10/2023, 19:20:15 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:20:15 - getVideogames:
+26/10/2023, 19:20:15 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:20:45 - getVideogames:
+26/10/2023, 19:20:45 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:20:45 - getVideogames:
+26/10/2023, 19:20:45 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:21:26 - getVideogames:
+26/10/2023, 19:21:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:21:27 - getVideogames:
+26/10/2023, 19:21:27 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:21:32 - getVideogames:
+26/10/2023, 19:21:32 - all (DB)
+26/10/2023, 19:21:32 - getGenres:
+26/10/2023, 19:21:32 - all (API)
+26/10/2023, 19:21:33 - getGenres:
+26/10/2023, 19:21:33 - getVideogames:
+26/10/2023, 19:21:33 - all (DB)
+26/10/2023, 19:21:33 - all (API)
+26/10/2023, 19:21:35 - getVideogames:
+26/10/2023, 19:21:35 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:21:36 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:21:36 - getVideogames:
+26/10/2023, 19:22:36 - getVideogames:
+26/10/2023, 19:22:36 - all (DB)
+26/10/2023, 19:22:36 - getGenres:
+26/10/2023, 19:22:36 - all (API)
+26/10/2023, 19:22:37 - getGenres:
+26/10/2023, 19:22:38 - getVideogames:
+26/10/2023, 19:22:38 - all (DB)
+26/10/2023, 19:22:38 - all (API)
+26/10/2023, 19:22:50 - getVideogames:
+26/10/2023, 19:22:50 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:22:50 - getVideogames:
+26/10/2023, 19:22:50 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:22:55 - getVideogames:
+26/10/2023, 19:22:55 - all (DB)
+26/10/2023, 19:22:55 - all (API)
+26/10/2023, 19:22:55 - getGenres:
+26/10/2023, 19:22:56 - getGenres:
+26/10/2023, 19:22:56 - getVideogames:
+26/10/2023, 19:22:56 - all (DB)
+26/10/2023, 19:22:56 - all (API)
+26/10/2023, 19:22:58 - getVideogames:
+26/10/2023, 19:22:58 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:22:58 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:22:58 - getVideogames:
+26/10/2023, 19:23:51 - getVideogames:
+26/10/2023, 19:23:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:26:00 - getVideogames:
+26/10/2023, 19:26:00 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:26:07 - getVideogames:
+26/10/2023, 19:26:07 - all (DB)
+26/10/2023, 19:26:07 - all (API)
+26/10/2023, 19:26:07 - getGenres:
+26/10/2023, 19:26:08 - getGenres:
+26/10/2023, 19:26:08 - getVideogames:
+26/10/2023, 19:26:08 - all (DB)
+26/10/2023, 19:26:08 - all (API)
+26/10/2023, 19:26:10 - getVideogames:
+26/10/2023, 19:26:10 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:26:10 - getVideogames:
+26/10/2023, 19:26:10 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:30:26 - getVideogames:
+26/10/2023, 19:30:26 - all (DB)
+26/10/2023, 19:30:26 - getGenres:
+26/10/2023, 19:30:26 - all (API)
+26/10/2023, 19:30:27 - getGenres:
+26/10/2023, 19:30:27 - getVideogames:
+26/10/2023, 19:30:27 - all (DB)
+26/10/2023, 19:30:27 - all (API)
+26/10/2023, 19:30:46 - getVideogames:
+26/10/2023, 19:30:46 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:30:46 - getVideogames:
+26/10/2023, 19:30:46 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:30:51 - getVideogames:
+26/10/2023, 19:30:51 - all (DB)
+26/10/2023, 19:30:51 - all (API)
+26/10/2023, 19:30:51 - getGenres:
+26/10/2023, 19:30:52 - getGenres:
+26/10/2023, 19:30:52 - getVideogames:
+26/10/2023, 19:30:52 - all (DB)
+26/10/2023, 19:30:52 - all (API)
+26/10/2023, 19:30:54 - getVideogames:
+26/10/2023, 19:30:54 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:30:54 - getVideogames:
+26/10/2023, 19:30:54 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:31:26 - getVideogames:
+26/10/2023, 19:31:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:31:32 - getVideogames:
+26/10/2023, 19:31:33 - all (DB)
+26/10/2023, 19:31:33 - getGenres:
+26/10/2023, 19:31:33 - all (API)
+26/10/2023, 19:31:33 - getGenres:
+26/10/2023, 19:31:34 - all (DB)
+26/10/2023, 19:31:34 - getVideogames:
+26/10/2023, 19:31:34 - all (API)
+26/10/2023, 19:31:37 - getVideogames:
+26/10/2023, 19:31:37 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:31:37 - getVideogames:
+26/10/2023, 19:31:37 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:31:46 - getVideogames:
+26/10/2023, 19:31:46 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:31:53 - getVideogames:
+26/10/2023, 19:31:53 - all (DB)
+26/10/2023, 19:31:53 - getGenres:
+26/10/2023, 19:31:53 - all (API)
+26/10/2023, 19:31:54 - getGenres:
+26/10/2023, 19:31:55 - getVideogames:
+26/10/2023, 19:31:55 - all (DB)
+26/10/2023, 19:31:55 - all (API)
+26/10/2023, 19:31:57 - getVideogames:
+26/10/2023, 19:31:57 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:31:57 - getVideogames:
+26/10/2023, 19:31:57 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:33:16 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:33:16 - getVideogames:
+26/10/2023, 19:33:16 - getVideogames:
+26/10/2023, 19:33:16 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:34:34 - getVideogames:
+26/10/2023, 19:34:34 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:34:35 - getVideogames:
+26/10/2023, 19:34:35 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:34:38 - getVideogames:
+26/10/2023, 19:34:38 - all (DB)
+26/10/2023, 19:34:38 - getGenres:
+26/10/2023, 19:34:38 - all (API)
+26/10/2023, 19:34:39 - getGenres:
+26/10/2023, 19:34:39 - getVideogames:
+26/10/2023, 19:34:39 - all (DB)
+26/10/2023, 19:34:39 - all (API)
+26/10/2023, 19:34:41 - getVideogames:
+26/10/2023, 19:34:41 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:34:41 - getVideogames:
+26/10/2023, 19:34:41 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:35:24 - getVideogames:
+26/10/2023, 19:35:24 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:35:24 - getVideogames:
+26/10/2023, 19:35:24 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:35:28 - getVideogames:
+26/10/2023, 19:35:28 - all (DB)
+26/10/2023, 19:35:28 - all (API)
+26/10/2023, 19:35:28 - getGenres:
+26/10/2023, 19:35:29 - getGenres:
+26/10/2023, 19:35:29 - getVideogames:
+26/10/2023, 19:35:29 - all (DB)
+26/10/2023, 19:35:29 - all (API)
+26/10/2023, 19:35:31 - getVideogames:
+26/10/2023, 19:35:31 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:35:31 - getVideogames:
+26/10/2023, 19:35:31 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:35:45 - getVideogames:
+26/10/2023, 19:35:45 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:35:46 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:35:46 - getVideogames:
+26/10/2023, 19:35:48 - getVideogames:
+26/10/2023, 19:35:48 - all (DB)
+26/10/2023, 19:35:48 - all (API)
+26/10/2023, 19:35:48 - getGenres:
+26/10/2023, 19:35:49 - getGenres:
+26/10/2023, 19:35:50 - all (DB)
+26/10/2023, 19:35:50 - getVideogames:
+26/10/2023, 19:35:50 - all (API)
+26/10/2023, 19:35:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:35:51 - getVideogames:
+26/10/2023, 19:35:51 - getVideogames:
+26/10/2023, 19:35:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:37:58 - getVideogames:
+26/10/2023, 19:37:58 - all (DB)
+26/10/2023, 19:37:58 - getGenres:
+26/10/2023, 19:37:58 - all (API)
+26/10/2023, 19:37:59 - getGenres:
+26/10/2023, 19:37:59 - getVideogames:
+26/10/2023, 19:37:59 - all (DB)
+26/10/2023, 19:37:59 - all (API)
+26/10/2023, 19:38:39 - getVideogames:
+26/10/2023, 19:38:39 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:38:39 - getVideogames:
+26/10/2023, 19:38:39 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:38:52 - getVideogames:
+26/10/2023, 19:38:52 - all (DB)
+26/10/2023, 19:38:52 - getGenres:
+26/10/2023, 19:38:52 - all (API)
+26/10/2023, 19:38:53 - getGenres:
+26/10/2023, 19:38:53 - getVideogames:
+26/10/2023, 19:38:53 - all (DB)
+26/10/2023, 19:38:53 - all (API)
+26/10/2023, 19:38:55 - getVideogames:
+26/10/2023, 19:38:55 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:38:55 - getVideogames:
+26/10/2023, 19:38:55 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:39:20 - getVideogames:
+26/10/2023, 19:39:20 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:39:20 - getVideogames:
+26/10/2023, 19:39:20 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:39:24 - getVideogames:
+26/10/2023, 19:39:24 - all (DB)
+26/10/2023, 19:39:24 - getGenres:
+26/10/2023, 19:39:24 - all (API)
+26/10/2023, 19:39:25 - getGenres:
+26/10/2023, 19:39:25 - getVideogames:
+26/10/2023, 19:39:25 - all (DB)
+26/10/2023, 19:39:25 - all (API)
+26/10/2023, 19:39:27 - getVideogames:
+26/10/2023, 19:39:27 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:39:27 - getVideogames:
+26/10/2023, 19:39:27 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:39:46 - getVideogames:
+26/10/2023, 19:39:46 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:39:46 - getVideogames:
+26/10/2023, 19:39:46 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:41:53 - getVideogames:
+26/10/2023, 19:41:53 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:41:53 - getVideogames:
+26/10/2023, 19:41:53 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:42:03 - getVideogames:
+26/10/2023, 19:42:03 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:42:03 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:42:03 - getVideogames:
+26/10/2023, 19:43:16 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:43:16 - getVideogames:
+26/10/2023, 19:43:16 - getVideogames:
+26/10/2023, 19:43:16 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:43:23 - getVideogames:
+26/10/2023, 19:43:23 - all (DB)
+26/10/2023, 19:43:23 - getGenres:
+26/10/2023, 19:43:23 - all (API)
+26/10/2023, 19:43:24 - getGenres:
+26/10/2023, 19:43:24 - getVideogames:
+26/10/2023, 19:43:24 - all (DB)
+26/10/2023, 19:43:24 - all (API)
+26/10/2023, 19:43:26 - getVideogames:
+26/10/2023, 19:43:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:43:26 - getVideogames:
+26/10/2023, 19:43:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:44:41 - getVideogames:
+26/10/2023, 19:44:41 - all (DB)
+26/10/2023, 19:44:41 - getGenres:
+26/10/2023, 19:44:41 - all (API)
+26/10/2023, 19:44:42 - getGenres:
+26/10/2023, 19:44:42 - getVideogames:
+26/10/2023, 19:44:42 - all (DB)
+26/10/2023, 19:44:42 - all (API)
+26/10/2023, 19:45:20 - getVideogames:
+26/10/2023, 19:45:20 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:45:21 - getVideogames:
+26/10/2023, 19:45:21 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:45:25 - getVideogames:
+26/10/2023, 19:45:25 - all (DB)
+26/10/2023, 19:45:25 - all (API)
+26/10/2023, 19:45:25 - getGenres:
+26/10/2023, 19:45:26 - getGenres:
+26/10/2023, 19:45:26 - getVideogames:
+26/10/2023, 19:45:26 - all (DB)
+26/10/2023, 19:45:26 - all (API)
+26/10/2023, 19:45:28 - getVideogames:
+26/10/2023, 19:45:28 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:45:28 - getVideogames:
+26/10/2023, 19:45:28 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:45:49 - getVideogames:
+26/10/2023, 19:45:49 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:45:49 - getVideogames:
+26/10/2023, 19:45:49 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:45:52 - getVideogames:
+26/10/2023, 19:45:52 - all (DB)
+26/10/2023, 19:45:52 - all (API)
+26/10/2023, 19:45:52 - getGenres:
+26/10/2023, 19:45:53 - getGenres:
+26/10/2023, 19:45:53 - all (DB)
+26/10/2023, 19:45:53 - getVideogames:
+26/10/2023, 19:45:53 - all (API)
+26/10/2023, 19:45:55 - getVideogames:
+26/10/2023, 19:45:55 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:45:55 - getVideogames:
+26/10/2023, 19:45:55 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:46:26 - getVideogames:
+26/10/2023, 19:46:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:46:29 - getVideogames:
+26/10/2023, 19:46:29 - all (DB)
+26/10/2023, 19:46:29 - getGenres:
+26/10/2023, 19:46:29 - all (API)
+26/10/2023, 19:46:30 - getGenres:
+26/10/2023, 19:46:31 - all (DB)
+26/10/2023, 19:46:31 - getVideogames:
+26/10/2023, 19:46:31 - all (API)
+26/10/2023, 19:46:33 - getVideogames:
+26/10/2023, 19:46:33 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:46:33 - getVideogames:
+26/10/2023, 19:46:33 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:46:47 - getVideogames:
+26/10/2023, 19:46:47 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:46:51 - getVideogames:
+26/10/2023, 19:46:51 - all (DB)
+26/10/2023, 19:46:51 - all (API)
+26/10/2023, 19:46:51 - getGenres:
+26/10/2023, 19:46:52 - getGenres:
+26/10/2023, 19:46:53 - getVideogames:
+26/10/2023, 19:46:53 - all (DB)
+26/10/2023, 19:46:53 - all (API)
+26/10/2023, 19:46:54 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:46:54 - getVideogames:
+26/10/2023, 19:46:54 - getVideogames:
+26/10/2023, 19:46:54 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:47:08 - getVideogames:
+26/10/2023, 19:47:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:47:12 - all (DB)
+26/10/2023, 19:47:12 - getVideogames:
+26/10/2023, 19:47:12 - all (API)
+26/10/2023, 19:47:12 - getGenres:
+26/10/2023, 19:47:13 - getGenres:
+26/10/2023, 19:47:13 - getVideogames:
+26/10/2023, 19:47:13 - all (DB)
+26/10/2023, 19:47:13 - all (API)
+26/10/2023, 19:47:51 - getVideogames:
+26/10/2023, 19:47:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:47:51 - getVideogames:
+26/10/2023, 19:47:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:47:57 - getVideogames:
+26/10/2023, 19:47:57 - all (DB)
+26/10/2023, 19:47:57 - getGenres:
+26/10/2023, 19:47:57 - all (API)
+26/10/2023, 19:47:58 - getGenres:
+26/10/2023, 19:47:59 - all (DB)
+26/10/2023, 19:47:59 - getVideogames:
+26/10/2023, 19:47:59 - all (API)
+26/10/2023, 19:48:01 - getVideogames:
+26/10/2023, 19:48:01 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:48:01 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:48:01 - getVideogames:
+26/10/2023, 19:48:07 - getVideogames:
+26/10/2023, 19:48:07 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:48:39 - getVideogames:
+26/10/2023, 19:48:39 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:48:39 - getVideogames:
+26/10/2023, 19:48:39 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:48:43 - getVideogames:
+26/10/2023, 19:48:43 - all (DB)
+26/10/2023, 19:48:43 - getGenres:
+26/10/2023, 19:48:43 - all (API)
+26/10/2023, 19:48:44 - getGenres:
+26/10/2023, 19:48:47 - getVideogames:
+26/10/2023, 19:48:47 - all (DB)
+26/10/2023, 19:48:47 - all (API)
+26/10/2023, 19:48:49 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:48:49 - getVideogames:
+26/10/2023, 19:48:49 - getVideogames:
+26/10/2023, 19:48:49 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:49:19 - getVideogames:
+26/10/2023, 19:49:19 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:49:19 - getVideogames:
+26/10/2023, 19:49:19 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:49:22 - getVideogames:
+26/10/2023, 19:49:22 - all (DB)
+26/10/2023, 19:49:22 - getGenres:
+26/10/2023, 19:49:22 - all (API)
+26/10/2023, 19:49:22 - getGenres:
+26/10/2023, 19:49:25 - getVideogames:
+26/10/2023, 19:49:25 - all (DB)
+26/10/2023, 19:49:25 - all (API)
+26/10/2023, 19:49:27 - getVideogames:
+26/10/2023, 19:49:27 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:49:27 - getVideogames:
+26/10/2023, 19:49:27 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:49:51 - getVideogames:
+26/10/2023, 19:49:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:50:41 - all (DB)
+26/10/2023, 19:50:41 - getVideogames:
+26/10/2023, 19:50:41 - getGenres:
+26/10/2023, 19:50:41 - all (API)
+26/10/2023, 19:50:42 - getGenres:
+26/10/2023, 19:50:42 - all (DB)
+26/10/2023, 19:50:42 - getVideogames:
+26/10/2023, 19:50:42 - all (API)
+26/10/2023, 19:51:13 - getVideogames:
+26/10/2023, 19:51:13 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:51:14 - getVideogames:
+26/10/2023, 19:51:14 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:51:38 - getVideogames:
+26/10/2023, 19:51:38 - all (DB)
+26/10/2023, 19:51:38 - getGenres:
+26/10/2023, 19:51:38 - all (API)
+26/10/2023, 19:51:39 - getGenres:
+26/10/2023, 19:51:39 - getVideogames:
+26/10/2023, 19:51:39 - all (DB)
+26/10/2023, 19:51:39 - all (API)
+26/10/2023, 19:51:59 - all (DB)
+26/10/2023, 19:51:59 - getVideogames:
+26/10/2023, 19:51:59 - getGenres:
+26/10/2023, 19:52:00 - all (API)
+26/10/2023, 19:52:00 - getGenres:
+26/10/2023, 19:52:01 - getVideogames:
+26/10/2023, 19:52:01 - all (DB)
+26/10/2023, 19:52:01 - all (API)
+26/10/2023, 19:52:35 - getVideogames:
+26/10/2023, 19:52:35 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:52:35 - getVideogames:
+26/10/2023, 19:52:35 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:53:19 - getVideogames:
+26/10/2023, 19:53:19 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:53:19 - getVideogames:
+26/10/2023, 19:53:19 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:53:28 - getVideogames:
+26/10/2023, 19:53:28 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:53:28 - getVideogames:
+26/10/2023, 19:53:28 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:54:54 - getVideogames:
+26/10/2023, 19:54:54 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:54:57 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:54:57 - getVideogames:
+26/10/2023, 19:55:02 - getVideogames:
+26/10/2023, 19:55:02 - all (DB)
+26/10/2023, 19:55:02 - all (API)
+26/10/2023, 19:55:02 - getGenres:
+26/10/2023, 19:55:03 - getGenres:
+26/10/2023, 19:55:05 - getVideogames:
+26/10/2023, 19:55:05 - all (DB)
+26/10/2023, 19:55:05 - all (API)
+26/10/2023, 19:55:06 - getVideogames:
+26/10/2023, 19:55:06 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:55:06 - getVideogames:
+26/10/2023, 19:55:06 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:55:19 - getVideogames:
+26/10/2023, 19:55:19 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:55:28 - getVideogames:
+26/10/2023, 19:55:28 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:56:22 - getVideogames:
+26/10/2023, 19:56:22 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:56:22 - getVideogames:
+26/10/2023, 19:56:22 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:56:26 - getVideogames:
+26/10/2023, 19:56:26 - all (DB)
+26/10/2023, 19:56:26 - all (API)
+26/10/2023, 19:56:26 - getGenres:
+26/10/2023, 19:56:26 - getGenres:
+26/10/2023, 19:56:27 - all (DB)
+26/10/2023, 19:56:27 - getVideogames:
+26/10/2023, 19:56:27 - all (API)
+26/10/2023, 19:56:28 - getVideogames:
+26/10/2023, 19:56:28 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:56:28 - getVideogames:
+26/10/2023, 19:56:28 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 19:58:22 - all (DB)
+26/10/2023, 19:58:22 - getVideogames:
+26/10/2023, 19:58:22 - getGenres:
+26/10/2023, 19:58:22 - all (API)
+26/10/2023, 19:58:23 - getGenres:
+26/10/2023, 19:58:23 - all (DB)
+26/10/2023, 19:58:23 - getVideogames:
+26/10/2023, 19:58:23 - all (API)
+26/10/2023, 19:58:38 - getVideogames:
+26/10/2023, 19:58:38 - all (DB)
+26/10/2023, 19:58:38 - getGenres:
+26/10/2023, 19:58:38 - all (API)
+26/10/2023, 19:58:39 - getGenres:
+26/10/2023, 19:58:39 - getVideogames:
+26/10/2023, 19:58:39 - all (DB)
+26/10/2023, 19:58:39 - all (API)
+26/10/2023, 19:59:00 - getVideogames:
+26/10/2023, 19:59:00 - all (DB)
+26/10/2023, 19:59:00 - getGenres:
+26/10/2023, 19:59:00 - all (API)
+26/10/2023, 19:59:01 - getGenres:
+26/10/2023, 19:59:01 - getVideogames:
+26/10/2023, 19:59:01 - all (DB)
+26/10/2023, 19:59:01 - all (API)
+26/10/2023, 19:59:39 - getVideogames:
+26/10/2023, 19:59:39 - all (DB)
+26/10/2023, 19:59:39 - getGenres:
+26/10/2023, 19:59:39 - all (API)
+26/10/2023, 19:59:40 - getGenres:
+26/10/2023, 19:59:41 - getVideogames:
+26/10/2023, 19:59:41 - all (DB)
+26/10/2023, 19:59:41 - all (API)
+26/10/2023, 20:00:08 - getVideogames:
+26/10/2023, 20:00:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:00:08 - getVideogames:
+26/10/2023, 20:00:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:00:37 - getVideogames:
+26/10/2023, 20:00:37 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:00:51 - getVideogames:
+26/10/2023, 20:00:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:00:55 - getVideogames:
+26/10/2023, 20:00:55 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:01:02 - getVideogames:
+26/10/2023, 20:01:02 - all (DB)
+26/10/2023, 20:01:02 - getGenres:
+26/10/2023, 20:01:02 - all (API)
+26/10/2023, 20:01:03 - getGenres:
+26/10/2023, 20:01:03 - getVideogames:
+26/10/2023, 20:01:03 - all (DB)
+26/10/2023, 20:01:03 - all (API)
+26/10/2023, 20:01:04 - getVideogames:
+26/10/2023, 20:01:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:01:04 - getVideogames:
+26/10/2023, 20:01:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:01:26 - getVideogames:
+26/10/2023, 20:01:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:01:33 - getVideogames:
+26/10/2023, 20:01:33 - all (DB)
+26/10/2023, 20:01:33 - getGenres:
+26/10/2023, 20:01:33 - all (API)
+26/10/2023, 20:01:34 - getGenres:
+26/10/2023, 20:01:35 - getVideogames:
+26/10/2023, 20:01:35 - all (DB)
+26/10/2023, 20:01:35 - all (API)
+26/10/2023, 20:01:56 - all (DB)
+26/10/2023, 20:01:56 - getVideogames:
+26/10/2023, 20:01:56 - getGenres:
+26/10/2023, 20:01:56 - all (API)
+26/10/2023, 20:01:57 - getGenres:
+26/10/2023, 20:01:57 - getVideogames:
+26/10/2023, 20:01:57 - all (DB)
+26/10/2023, 20:01:57 - all (API)
+26/10/2023, 20:02:21 - getVideogames:
+26/10/2023, 20:02:21 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:02:21 - getVideogames:
+26/10/2023, 20:02:21 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:02:24 - getVideogames:
+26/10/2023, 20:02:24 - all (DB)
+26/10/2023, 20:02:24 - all (API)
+26/10/2023, 20:02:24 - getGenres:
+26/10/2023, 20:02:25 - getGenres:
+26/10/2023, 20:02:25 - all (DB)
+26/10/2023, 20:02:25 - getVideogames:
+26/10/2023, 20:02:25 - all (API)
+26/10/2023, 20:02:27 - getVideogames:
+26/10/2023, 20:02:27 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:02:27 - getVideogames:
+26/10/2023, 20:02:27 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:02:50 - getVideogames:
+26/10/2023, 20:02:50 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:02:58 - getVideogames:
+26/10/2023, 20:02:58 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:03:01 - getVideogames:
+26/10/2023, 20:03:01 - all (DB)
+26/10/2023, 20:03:01 - all (API)
+26/10/2023, 20:03:01 - getGenres:
+26/10/2023, 20:03:02 - getGenres:
+26/10/2023, 20:03:02 - getVideogames:
+26/10/2023, 20:03:02 - all (DB)
+26/10/2023, 20:03:02 - all (API)
+26/10/2023, 20:03:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:03:04 - getVideogames:
+26/10/2023, 20:03:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:03:04 - getVideogames:
+26/10/2023, 20:03:13 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:03:13 - getVideogames:
+26/10/2023, 20:03:20 - getVideogames:
+26/10/2023, 20:03:20 - all (DB)
+26/10/2023, 20:03:20 - getGenres:
+26/10/2023, 20:03:20 - all (API)
+26/10/2023, 20:03:21 - getGenres:
+26/10/2023, 20:03:21 - getVideogames:
+26/10/2023, 20:03:21 - all (DB)
+26/10/2023, 20:03:21 - all (API)
+26/10/2023, 20:03:25 - getVideogames:
+26/10/2023, 20:03:25 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:03:25 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:03:25 - getVideogames:
+26/10/2023, 20:03:54 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:03:54 - getVideogames:
+26/10/2023, 20:04:01 - getVideogames:
+26/10/2023, 20:04:01 - all (DB)
+26/10/2023, 20:04:01 - all (API)
+26/10/2023, 20:04:01 - getGenres:
+26/10/2023, 20:04:01 - getGenres:
+26/10/2023, 20:04:02 - getVideogames:
+26/10/2023, 20:04:02 - all (DB)
+26/10/2023, 20:04:02 - all (API)
+26/10/2023, 20:04:04 - getVideogames:
+26/10/2023, 20:04:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:04:04 - getVideogames:
+26/10/2023, 20:04:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:05:33 - getVideogames:
+26/10/2023, 20:05:33 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:06:26 - getVideogames:
+26/10/2023, 20:06:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:06:31 - getVideogames:
+26/10/2023, 20:06:31 - all (DB)
+26/10/2023, 20:06:31 - all (API)
+26/10/2023, 20:06:31 - getGenres:
+26/10/2023, 20:06:32 - getGenres:
+26/10/2023, 20:06:32 - getVideogames:
+26/10/2023, 20:06:32 - all (DB)
+26/10/2023, 20:06:33 - all (API)
+26/10/2023, 20:06:35 - getVideogames:
+26/10/2023, 20:06:35 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:06:35 - getVideogames:
+26/10/2023, 20:06:35 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:06:57 - getVideogames:
+26/10/2023, 20:06:57 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:07:18 - getVideogames:
+26/10/2023, 20:07:18 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:07:43 - getVideogames:
+26/10/2023, 20:07:43 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:07:51 - all (DB)
+26/10/2023, 20:07:51 - getVideogames:
+26/10/2023, 20:07:51 - getGenres:
+26/10/2023, 20:07:51 - all (API)
+26/10/2023, 20:07:52 - getGenres:
+26/10/2023, 20:07:52 - getVideogames:
+26/10/2023, 20:07:52 - all (DB)
+26/10/2023, 20:07:52 - all (API)
+26/10/2023, 20:07:53 - getVideogames:
+26/10/2023, 20:07:53 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:07:53 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:07:53 - getVideogames:
+26/10/2023, 20:08:08 - getVideogames:
+26/10/2023, 20:08:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:08:08 - getVideogames:
+26/10/2023, 20:08:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:08:11 - getVideogames:
+26/10/2023, 20:08:11 - all (DB)
+26/10/2023, 20:08:11 - all (API)
+26/10/2023, 20:08:11 - getGenres:
+26/10/2023, 20:08:12 - getGenres:
+26/10/2023, 20:08:13 - all (DB)
+26/10/2023, 20:08:13 - getVideogames:
+26/10/2023, 20:08:13 - all (API)
+26/10/2023, 20:08:14 - getVideogames:
+26/10/2023, 20:08:14 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:08:14 - getVideogames:
+26/10/2023, 20:08:14 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:08:20 - getVideogames:
+26/10/2023, 20:08:20 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:08:30 - getVideogames:
+26/10/2023, 20:08:30 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:10:07 - getVideogames:
+26/10/2023, 20:10:07 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:10:22 - getVideogames:
+26/10/2023, 20:10:22 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:10:34 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:10:34 - getVideogames:
+26/10/2023, 20:11:18 - getVideogames:
+26/10/2023, 20:11:18 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:11:30 - getVideogames:
+26/10/2023, 20:11:30 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:11:31 - getVideogames:
+26/10/2023, 20:11:31 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:11:32 - getVideogames:
+26/10/2023, 20:11:32 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:11:40 - getVideogames:
+26/10/2023, 20:11:40 - all (DB)
+26/10/2023, 20:11:40 - getGenres:
+26/10/2023, 20:11:40 - all (API)
+26/10/2023, 20:11:41 - getGenres:
+26/10/2023, 20:11:41 - getVideogames:
+26/10/2023, 20:11:41 - all (DB)
+26/10/2023, 20:11:41 - all (API)
+26/10/2023, 20:11:43 - getVideogames:
+26/10/2023, 20:11:43 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:11:43 - getVideogames:
+26/10/2023, 20:11:43 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:12:20 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:12:20 - getVideogames:
+26/10/2023, 20:12:30 - getVideogames:
+26/10/2023, 20:12:30 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:12:34 - getVideogames:
+26/10/2023, 20:12:34 - all (DB)
+26/10/2023, 20:12:34 - getGenres:
+26/10/2023, 20:12:34 - all (API)
+26/10/2023, 20:12:35 - getGenres:
+26/10/2023, 20:12:35 - getVideogames:
+26/10/2023, 20:12:35 - all (DB)
+26/10/2023, 20:12:35 - all (API)
+26/10/2023, 20:12:37 - getVideogames:
+26/10/2023, 20:12:37 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:12:37 - getVideogames:
+26/10/2023, 20:12:37 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:13:34 - getVideogames:
+26/10/2023, 20:13:34 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:14:55 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:14:55 - getVideogames:
+26/10/2023, 20:15:02 - getVideogames:
+26/10/2023, 20:15:02 - all (DB)
+26/10/2023, 20:15:02 - getGenres:
+26/10/2023, 20:15:02 - all (API)
+26/10/2023, 20:15:03 - ERROR-> Request failed with status code 502
+26/10/2023, 20:15:03 - getVideogames:
+26/10/2023, 20:15:03 - all (DB)
+26/10/2023, 20:15:03 - all (API)
+26/10/2023, 20:15:03 - getGenres:
+26/10/2023, 20:15:04 - ERROR-> Request failed with status code 502
+26/10/2023, 20:15:08 - getVideogames:
+26/10/2023, 20:15:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:15:08 - getVideogames:
+26/10/2023, 20:15:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:16:37 - getVideogames:
+26/10/2023, 20:16:37 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:16:42 - getVideogames:
+26/10/2023, 20:16:42 - all (DB)
+26/10/2023, 20:16:42 - all (API)
+26/10/2023, 20:16:42 - getGenres:
+26/10/2023, 20:16:43 - getGenres:
+26/10/2023, 20:16:43 - getVideogames:
+26/10/2023, 20:16:43 - all (DB)
+26/10/2023, 20:16:43 - all (API)
+26/10/2023, 20:16:45 - getVideogames:
+26/10/2023, 20:16:45 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:16:45 - getVideogames:
+26/10/2023, 20:16:45 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:18:40 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:18:40 - getVideogames:
+26/10/2023, 20:18:47 - getVideogames:
+26/10/2023, 20:18:47 - all (DB)
+26/10/2023, 20:18:47 - all (API)
+26/10/2023, 20:18:47 - getGenres:
+26/10/2023, 20:18:48 - getGenres:
+26/10/2023, 20:18:48 - getVideogames:
+26/10/2023, 20:18:48 - all (DB)
+26/10/2023, 20:18:48 - all (API)
+26/10/2023, 20:18:50 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:18:50 - getVideogames:
+26/10/2023, 20:18:50 - getVideogames:
+26/10/2023, 20:18:50 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:20:06 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:20:06 - getVideogames:
+26/10/2023, 20:20:13 - getVideogames:
+26/10/2023, 20:20:13 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:20:18 - getVideogames:
+26/10/2023, 20:20:18 - all (DB)
+26/10/2023, 20:20:18 - getGenres:
+26/10/2023, 20:20:18 - all (API)
+26/10/2023, 20:20:19 - getGenres:
+26/10/2023, 20:20:19 - all (DB)
+26/10/2023, 20:20:19 - getVideogames:
+26/10/2023, 20:20:19 - all (API)
+26/10/2023, 20:20:21 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:20:21 - getVideogames:
+26/10/2023, 20:20:21 - getVideogames:
+26/10/2023, 20:20:21 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:20:41 - getVideogames:
+26/10/2023, 20:20:41 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:20:56 - getVideogames:
+26/10/2023, 20:20:56 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:21:03 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:21:03 - getVideogames:
+26/10/2023, 20:21:05 - getVideogames:
+26/10/2023, 20:21:05 - all (DB)
+26/10/2023, 20:21:05 - getGenres:
+26/10/2023, 20:21:05 - all (API)
+26/10/2023, 20:21:06 - getGenres:
+26/10/2023, 20:21:07 - getVideogames:
+26/10/2023, 20:21:07 - all (DB)
+26/10/2023, 20:21:07 - all (API)
+26/10/2023, 20:21:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:21:08 - getVideogames:
+26/10/2023, 20:21:08 - getVideogames:
+26/10/2023, 20:21:08 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:21:20 - getVideogames:
+26/10/2023, 20:21:20 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:22:29 - getVideogames:
+26/10/2023, 20:22:29 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:22:48 - getVideogames:
+26/10/2023, 20:22:48 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:23:30 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:23:30 - getVideogames:
+26/10/2023, 20:24:58 - getVideogames:
+26/10/2023, 20:24:58 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:24:58 - getVideogames:
+26/10/2023, 20:24:58 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:25:20 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:25:20 - getVideogames:
+26/10/2023, 20:25:20 - getVideogames:
+26/10/2023, 20:25:20 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:25:58 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:25:58 - getVideogames:
+26/10/2023, 20:25:58 - getVideogames:
+26/10/2023, 20:25:58 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:26:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:26:04 - getVideogames:
+26/10/2023, 20:26:04 - getVideogames:
+26/10/2023, 20:26:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:26:06 - getVideogames:
+26/10/2023, 20:26:06 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:26:06 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:26:06 - getVideogames:
+26/10/2023, 20:26:25 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:26:25 - getVideogames:
+26/10/2023, 20:26:25 - getVideogames:
+26/10/2023, 20:26:25 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:26:29 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:26:29 - getVideogames:
+26/10/2023, 20:26:29 - getVideogames:
+26/10/2023, 20:26:29 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:26:37 - getVideogames:
+26/10/2023, 20:26:37 - all (DB)
+26/10/2023, 20:26:37 - getGenres:
+26/10/2023, 20:26:37 - all (API)
+26/10/2023, 20:26:38 - getGenres:
+26/10/2023, 20:26:38 - all (DB)
+26/10/2023, 20:26:38 - getVideogames:
+26/10/2023, 20:26:38 - all (API)
+26/10/2023, 20:26:42 - getVideogames:
+26/10/2023, 20:26:42 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:26:42 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:26:42 - getVideogames:
+26/10/2023, 20:27:29 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:27:29 - getVideogames:
+26/10/2023, 20:27:29 - getVideogames:
+26/10/2023, 20:27:29 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:27:32 - getVideogames:
+26/10/2023, 20:27:32 - all (DB)
+26/10/2023, 20:27:32 - all (API)
+26/10/2023, 20:27:32 - getGenres:
+26/10/2023, 20:27:33 - getGenres:
+26/10/2023, 20:27:33 - getVideogames:
+26/10/2023, 20:27:33 - all (DB)
+26/10/2023, 20:27:33 - all (API)
+26/10/2023, 20:27:35 - getVideogames:
+26/10/2023, 20:27:35 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:27:35 - getVideogames:
+26/10/2023, 20:27:35 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:28:40 - getVideogames:
+26/10/2023, 20:28:40 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:28:40 - getVideogames:
+26/10/2023, 20:28:40 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:28:46 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:28:46 - getVideogames:
+26/10/2023, 20:28:46 - getVideogames:
+26/10/2023, 20:28:46 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:28:49 - getVideogames:
+26/10/2023, 20:28:49 - all (DB)
+26/10/2023, 20:28:49 - all (API)
+26/10/2023, 20:28:49 - getGenres:
+26/10/2023, 20:28:50 - getGenres:
+26/10/2023, 20:28:51 - getVideogames:
+26/10/2023, 20:28:51 - all (DB)
+26/10/2023, 20:28:51 - all (API)
+26/10/2023, 20:28:52 - getVideogames:
+26/10/2023, 20:28:52 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:28:52 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:28:52 - getVideogames:
+26/10/2023, 20:29:36 - getVideogames:
+26/10/2023, 20:29:36 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:29:36 - getVideogames:
+26/10/2023, 20:29:36 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:29:40 - getVideogames:
+26/10/2023, 20:29:40 - all (DB)
+26/10/2023, 20:29:40 - all (API)
+26/10/2023, 20:29:40 - getGenres:
+26/10/2023, 20:29:41 - getGenres:
+26/10/2023, 20:29:41 - getVideogames:
+26/10/2023, 20:29:41 - all (DB)
+26/10/2023, 20:29:41 - all (API)
+26/10/2023, 20:29:42 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:29:42 - getVideogames:
+26/10/2023, 20:29:42 - getVideogames:
+26/10/2023, 20:29:42 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:29:56 - getVideogames:
+26/10/2023, 20:29:56 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:29:56 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:29:56 - getVideogames:
+26/10/2023, 20:30:01 - getVideogames:
+26/10/2023, 20:30:01 - all (DB)
+26/10/2023, 20:30:01 - getGenres:
+26/10/2023, 20:30:01 - all (API)
+26/10/2023, 20:30:02 - getGenres:
+26/10/2023, 20:30:03 - getVideogames:
+26/10/2023, 20:30:03 - all (DB)
+26/10/2023, 20:30:03 - all (API)
+26/10/2023, 20:30:04 - getVideogames:
+26/10/2023, 20:30:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:30:04 - getVideogames:
+26/10/2023, 20:30:04 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:30:10 - getVideogames:
+26/10/2023, 20:30:10 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:30:50 - getVideogames:
+26/10/2023, 20:30:50 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:30:50 - getVideogames:
+26/10/2023, 20:30:50 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:31:14 - getVideogames:
+26/10/2023, 20:31:14 - all (DB)
+26/10/2023, 20:31:14 - getGenres:
+26/10/2023, 20:31:14 - all (API)
+26/10/2023, 20:31:14 - getGenres:
+26/10/2023, 20:31:15 - getVideogames:
+26/10/2023, 20:31:15 - all (DB)
+26/10/2023, 20:31:15 - all (API)
+26/10/2023, 20:31:16 - getVideogames:
+26/10/2023, 20:31:16 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:31:16 - getVideogames:
+26/10/2023, 20:31:16 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:31:25 - getVideogames:
+26/10/2023, 20:31:25 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:31:25 - getVideogames:
+26/10/2023, 20:31:25 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:31:38 - getVideogames:
+26/10/2023, 20:31:38 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:31:51 - getVideogames:
+26/10/2023, 20:31:51 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:32:10 - getVideogames:
+26/10/2023, 20:32:10 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:32:10 - getVideogames:
+26/10/2023, 20:32:10 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:32:26 - getVideogames:
+26/10/2023, 20:32:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:32:43 - getVideogames:
+26/10/2023, 20:32:43 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:32:49 - getVideogames:
+26/10/2023, 20:32:49 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:32:53 - getVideogames:
+26/10/2023, 20:32:53 - all (DB)
+26/10/2023, 20:32:53 - all (API)
+26/10/2023, 20:32:53 - getGenres:
+26/10/2023, 20:32:54 - getGenres:
+26/10/2023, 20:32:54 - all (DB)
+26/10/2023, 20:32:54 - getVideogames:
+26/10/2023, 20:32:54 - all (API)
+26/10/2023, 20:32:56 - getVideogames:
+26/10/2023, 20:32:56 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:32:56 - getVideogames:
+26/10/2023, 20:32:56 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:33:07 - getVideogames:
+26/10/2023, 20:33:07 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:33:16 - getVideogames:
+26/10/2023, 20:33:16 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:33:25 - getVideogames:
+26/10/2023, 20:33:25 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:33:32 - getVideogames:
+26/10/2023, 20:33:32 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:33:41 - getVideogames:
+26/10/2023, 20:33:41 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:33:56 - getVideogames:
+26/10/2023, 20:33:56 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:33:56 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:33:56 - getVideogames:
+26/10/2023, 20:34:47 - getVideogames:
+26/10/2023, 20:34:47 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:34:53 - getVideogames:
+26/10/2023, 20:34:53 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:35:01 - getVideogames:
+26/10/2023, 20:35:01 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:35:07 - getVideogames:
+26/10/2023, 20:35:07 - all (DB)
+26/10/2023, 20:35:07 - getGenres:
+26/10/2023, 20:35:07 - all (API)
+26/10/2023, 20:35:08 - getGenres:
+26/10/2023, 20:35:08 - getVideogames:
+26/10/2023, 20:35:08 - all (DB)
+26/10/2023, 20:35:08 - all (API)
+26/10/2023, 20:35:10 - getVideogames:
+26/10/2023, 20:35:10 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:35:10 - getVideogames:
+26/10/2023, 20:35:10 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:35:24 - getVideogames:
+26/10/2023, 20:35:24 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:35:44 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:35:44 - getVideogames:
+26/10/2023, 20:36:33 - getVideogames:
+26/10/2023, 20:36:33 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:36:33 - getVideogames:
+26/10/2023, 20:36:33 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:37:51 - getVideogames:
+26/10/2023, 20:37:51 - all (DB)
+26/10/2023, 20:37:51 - getGenres:
+26/10/2023, 20:37:51 - all (API)
+26/10/2023, 20:37:52 - getGenres:
+26/10/2023, 20:37:52 - getVideogames:
+26/10/2023, 20:37:52 - all (DB)
+26/10/2023, 20:37:52 - all (API)
+26/10/2023, 20:37:53 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:37:53 - getVideogames:
+26/10/2023, 20:37:53 - getVideogames:
+26/10/2023, 20:37:53 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:38:13 - getVideogames:
+26/10/2023, 20:38:13 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:38:14 - getVideogames:
+26/10/2023, 20:38:14 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:38:22 - getVideogames:
+26/10/2023, 20:38:22 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:38:30 - getVideogames:
+26/10/2023, 20:38:30 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:38:32 - getVideogames:
+26/10/2023, 20:38:32 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:38:35 - getVideogames:
+26/10/2023, 20:38:35 - all (DB)
+26/10/2023, 20:38:35 - getGenres:
+26/10/2023, 20:38:35 - all (API)
+26/10/2023, 20:38:36 - getGenres:
+26/10/2023, 20:38:36 - all (DB)
+26/10/2023, 20:38:36 - getVideogames:
+26/10/2023, 20:38:36 - all (API)
+26/10/2023, 20:38:38 - getVideogames:
+26/10/2023, 20:38:38 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:38:38 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:38:38 - getVideogames:
+26/10/2023, 20:38:49 - getVideogames:
+26/10/2023, 20:38:49 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:38:52 - getVideogames:
+26/10/2023, 20:38:52 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:38:59 - getVideogames:
+26/10/2023, 20:38:59 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:39:06 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:39:06 - getVideogames:
+26/10/2023, 20:39:26 - getVideogames:
+26/10/2023, 20:39:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:39:31 - getVideogames:
+26/10/2023, 20:39:31 - all (DB)
+26/10/2023, 20:39:31 - all (API)
+26/10/2023, 20:39:31 - getGenres:
+26/10/2023, 20:39:31 - getGenres:
+26/10/2023, 20:39:32 - all (DB)
+26/10/2023, 20:39:32 - getVideogames:
+26/10/2023, 20:39:32 - all (API)
+26/10/2023, 20:39:33 - getVideogames:
+26/10/2023, 20:39:33 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:39:33 - getVideogames:
+26/10/2023, 20:39:33 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:39:40 - getVideogames:
+26/10/2023, 20:39:40 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:40:39 - getVideogames:
+26/10/2023, 20:40:39 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:45:28 - getVideogames:
+26/10/2023, 20:45:28 - all (DB)
+26/10/2023, 20:45:28 - getGenres:
+26/10/2023, 20:45:28 - all (API)
+26/10/2023, 20:45:29 - getGenres:
+26/10/2023, 20:45:29 - getVideogames:
+26/10/2023, 20:45:29 - all (DB)
+26/10/2023, 20:45:29 - all (API)
+26/10/2023, 20:45:32 - getVideogames:
+26/10/2023, 20:45:32 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:45:32 - getVideogames:
+26/10/2023, 20:45:32 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:45:36 - getVideogames:
+26/10/2023, 20:45:36 - all (DB)
+26/10/2023, 20:45:36 - getGenres:
+26/10/2023, 20:45:36 - all (API)
+26/10/2023, 20:45:37 - getGenres:
+26/10/2023, 20:45:37 - getVideogames:
+26/10/2023, 20:45:37 - all (DB)
+26/10/2023, 20:45:37 - all (API)
+26/10/2023, 20:46:11 - getVideogames:
+26/10/2023, 20:46:11 - all (DB)
+26/10/2023, 20:46:11 - getGenres:
+26/10/2023, 20:46:11 - all (API)
+26/10/2023, 20:46:14 - getVideogames:
+26/10/2023, 20:46:14 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:46:14 - getVideogames:
+26/10/2023, 20:46:14 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:46:16 - getVideogames:
+26/10/2023, 20:46:16 - all (DB)
+26/10/2023, 20:46:16 - getGenres:
+26/10/2023, 20:46:16 - all (API)
+26/10/2023, 20:46:18 - getGenres:
+26/10/2023, 20:46:18 - getVideogames:
+26/10/2023, 20:46:18 - all (DB)
+26/10/2023, 20:46:18 - all (API)
+26/10/2023, 20:46:36 - getVideogames:
+26/10/2023, 20:46:36 - by id=23eb9c54-ddb6-4c9c-a4ec-0b5c83f2e5ff (DB)
+26/10/2023, 20:46:36 - by id=23eb9c54-ddb6-4c9c-a4ec-0b5c83f2e5ff (DB)
+26/10/2023, 20:46:36 - getVideogames:
+26/10/2023, 20:46:40 - getVideogames:
+26/10/2023, 20:46:40 - all (DB)
+26/10/2023, 20:46:40 - getGenres:
+26/10/2023, 20:46:40 - all (API)
+26/10/2023, 20:46:40 - all (DB)
+26/10/2023, 20:46:40 - getVideogames:
+26/10/2023, 20:46:40 - all (API)
+26/10/2023, 20:46:41 - getGenres:
+26/10/2023, 20:46:46 - getVideogames:
+26/10/2023, 20:46:46 - by id=3498 (API)
+26/10/2023, 20:46:47 - by id=3498 (API)
+26/10/2023, 20:46:47 - getVideogames:
+26/10/2023, 20:46:54 - all (DB)
+26/10/2023, 20:46:54 - getVideogames:
+26/10/2023, 20:46:54 - getGenres:
+26/10/2023, 20:46:55 - all (API)
+26/10/2023, 20:46:55 - getGenres:
+26/10/2023, 20:46:56 - getVideogames:
+26/10/2023, 20:46:56 - all (DB)
+26/10/2023, 20:46:56 - all (API)
+26/10/2023, 20:47:06 - by id=3328 (API)
+26/10/2023, 20:47:06 - getVideogames:
+26/10/2023, 20:47:07 - by id=3328 (API)
+26/10/2023, 20:47:07 - getVideogames:
+26/10/2023, 20:48:44 - getVideogames:
+26/10/2023, 20:48:44 - by id=3328 (API)
+26/10/2023, 20:48:45 - by id=3328 (API)
+26/10/2023, 20:48:45 - getVideogames:
+26/10/2023, 20:48:47 - getVideogames:
+26/10/2023, 20:48:47 - by id=3328 (API)
+26/10/2023, 20:48:48 - getVideogames:
+26/10/2023, 20:48:48 - by id=3328 (API)
+26/10/2023, 20:50:18 - getVideogames:
+26/10/2023, 20:50:18 - all (DB)
+26/10/2023, 20:50:18 - getGenres:
+26/10/2023, 20:50:18 - all (API)
+26/10/2023, 20:50:19 - getGenres:
+26/10/2023, 20:50:19 - getVideogames:
+26/10/2023, 20:50:19 - all (DB)
+26/10/2023, 20:50:19 - all (API)
+26/10/2023, 20:50:24 - getVideogames:
+26/10/2023, 20:50:24 - all (DB)
+26/10/2023, 20:50:24 - getGenres:
+26/10/2023, 20:50:24 - all (API)
+26/10/2023, 20:50:25 - getGenres:
+26/10/2023, 20:50:25 - getVideogames:
+26/10/2023, 20:50:25 - all (DB)
+26/10/2023, 20:50:25 - all (API)
+26/10/2023, 20:50:31 - getVideogames:
+26/10/2023, 20:50:31 - by id=3498 (API)
+26/10/2023, 20:50:32 - getVideogames:
+26/10/2023, 20:50:32 - by id=3498 (API)
+26/10/2023, 20:51:45 - getVideogames:
+26/10/2023, 20:51:45 - all (DB)
+26/10/2023, 20:51:45 - getGenres:
+26/10/2023, 20:51:45 - all (API)
+26/10/2023, 20:51:46 - getGenres:
+26/10/2023, 20:51:47 - getVideogames:
+26/10/2023, 20:51:47 - all (DB)
+26/10/2023, 20:51:47 - all (API)
+26/10/2023, 20:51:55 - getVideogames:
+26/10/2023, 20:51:55 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:51:55 - getVideogames:
+26/10/2023, 20:51:55 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:53:27 - getVideogames:
+26/10/2023, 20:53:27 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:53:30 - getVideogames:
+26/10/2023, 20:53:30 - all (DB)
+26/10/2023, 20:53:30 - all (API)
+26/10/2023, 20:53:30 - getGenres:
+26/10/2023, 20:53:31 - getGenres:
+26/10/2023, 20:53:31 - getVideogames:
+26/10/2023, 20:53:31 - all (DB)
+26/10/2023, 20:53:31 - all (API)
+26/10/2023, 20:53:34 - getVideogames:
+26/10/2023, 20:53:34 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:53:34 - getVideogames:
+26/10/2023, 20:53:34 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:53:41 - getVideogames:
+26/10/2023, 20:53:41 - all (DB)
+26/10/2023, 20:53:41 - all (API)
+26/10/2023, 20:53:41 - getGenres:
+26/10/2023, 20:53:41 - getGenres:
+26/10/2023, 20:53:42 - all (DB)
+26/10/2023, 20:53:42 - getVideogames:
+26/10/2023, 20:53:42 - all (API)
+26/10/2023, 20:53:47 - getVideogames:
+26/10/2023, 20:53:47 - by id=3498 (API)
+26/10/2023, 20:53:48 - getVideogames:
+26/10/2023, 20:53:48 - by id=3498 (API)
+26/10/2023, 20:54:49 - getVideogames:
+26/10/2023, 20:54:49 - by id=3498 (API)
+26/10/2023, 20:55:06 - getVideogames:
+26/10/2023, 20:55:06 - by id=3498 (API)
+26/10/2023, 20:55:08 - getVideogames:
+26/10/2023, 20:55:08 - all (DB)
+26/10/2023, 20:55:09 - getGenres:
+26/10/2023, 20:55:09 - all (API)
+26/10/2023, 20:55:09 - getGenres:
+26/10/2023, 20:55:12 - getVideogames:
+26/10/2023, 20:55:12 - all (DB)
+26/10/2023, 20:55:12 - all (API)
+26/10/2023, 20:55:13 - getVideogames:
+26/10/2023, 20:55:13 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:55:13 - getVideogames:
+26/10/2023, 20:55:13 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:55:17 - all (DB)
+26/10/2023, 20:55:17 - getVideogames:
+26/10/2023, 20:55:17 - getGenres:
+26/10/2023, 20:55:17 - all (API)
+26/10/2023, 20:55:18 - getGenres:
+26/10/2023, 20:55:18 - getVideogames:
+26/10/2023, 20:55:18 - all (DB)
+26/10/2023, 20:55:18 - all (API)
+26/10/2023, 20:55:29 - getVideogames:
+26/10/2023, 20:55:29 - by id=3498 (API)
+26/10/2023, 20:55:30 - getVideogames:
+26/10/2023, 20:55:30 - by id=3498 (API)
+26/10/2023, 20:56:50 - getVideogames:
+26/10/2023, 20:56:50 - all (DB)
+26/10/2023, 20:56:50 - getGenres:
+26/10/2023, 20:56:50 - all (API)
+26/10/2023, 20:56:51 - getGenres:
+26/10/2023, 20:56:51 - getVideogames:
+26/10/2023, 20:56:51 - all (DB)
+26/10/2023, 20:56:51 - all (API)
+26/10/2023, 20:56:55 - getVideogames:
+26/10/2023, 20:56:55 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:56:55 - getVideogames:
+26/10/2023, 20:56:55 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 20:59:37 - getVideogames:
+26/10/2023, 20:59:37 - by id=6826fa8a-fd70-499f-90c4-6fdb0433213f (DB)
+26/10/2023, 20:59:57 - getVideogames:
+26/10/2023, 20:59:57 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:00:21 - getVideogames:
+26/10/2023, 21:00:21 - by id=3328 (API)
+26/10/2023, 21:03:18 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:03:32 - getVideogames:
+26/10/2023, 21:03:32 - by id=3328 (API)
+26/10/2023, 21:03:48 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:03:48 - getVideogames:
+26/10/2023, 21:03:53 - getVideogames:
+26/10/2023, 21:03:53 - by id=3328 (API)
+26/10/2023, 21:04:28 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:04:30 - getVideogames:
+26/10/2023, 21:04:30 - by id=3328 (API)
+26/10/2023, 21:04:39 - getVideogames:
+26/10/2023, 21:04:39 - all (DB)
+26/10/2023, 21:04:39 - getGenres:
+26/10/2023, 21:04:40 - all (API)
+26/10/2023, 21:04:40 - getGenres:
+26/10/2023, 21:04:41 - all (DB)
+26/10/2023, 21:04:41 - getVideogames:
+26/10/2023, 21:04:41 - all (API)
+26/10/2023, 21:04:43 - getVideogames:
+26/10/2023, 21:04:43 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:04:43 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:04:43 - getVideogames:
+26/10/2023, 21:04:46 - all (DB)
+26/10/2023, 21:04:46 - getVideogames:
+26/10/2023, 21:04:46 - getGenres:
+26/10/2023, 21:04:46 - all (API)
+26/10/2023, 21:04:47 - getGenres:
+26/10/2023, 21:04:49 - getVideogames:
+26/10/2023, 21:04:49 - all (DB)
+26/10/2023, 21:04:49 - all (API)
+26/10/2023, 21:04:50 - getVideogames:
+26/10/2023, 21:04:50 - by id=3498 (API)
+26/10/2023, 21:04:51 - getVideogames:
+26/10/2023, 21:04:51 - by id=3498 (API)
+26/10/2023, 21:05:06 - getVideogames:
+26/10/2023, 21:05:06 - all (DB)
+26/10/2023, 21:05:06 - getGenres:
+26/10/2023, 21:05:06 - all (API)
+26/10/2023, 21:05:07 - getGenres:
+26/10/2023, 21:05:07 - getVideogames:
+26/10/2023, 21:05:07 - all (DB)
+26/10/2023, 21:05:07 - all (API)
+26/10/2023, 21:05:13 - by id=3498 (API)
+26/10/2023, 21:05:13 - getVideogames:
+26/10/2023, 21:06:05 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:06:22 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:10:25 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:10:55 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:11:02 - getVideogames:
+26/10/2023, 21:11:02 - by id=3498 (API)
+26/10/2023, 21:11:23 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:11:25 - getVideogames:
+26/10/2023, 21:11:25 - by id=3498 (API)
+26/10/2023, 21:12:11 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:12:11 - getVideogames:
+26/10/2023, 21:12:11 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:12:11 - getVideogames:
+26/10/2023, 21:12:17 - getVideogames:
+26/10/2023, 21:12:17 - all (DB)
+26/10/2023, 21:12:17 - getGenres:
+26/10/2023, 21:12:18 - all (API)
+26/10/2023, 21:12:18 - getGenres:
+26/10/2023, 21:12:19 - getVideogames:
+26/10/2023, 21:12:19 - all (DB)
+26/10/2023, 21:12:19 - all (API)
+26/10/2023, 21:12:23 - getVideogames:
+26/10/2023, 21:12:23 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:12:23 - getVideogames:
+26/10/2023, 21:12:23 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:12:28 - getVideogames:
+26/10/2023, 21:12:28 - all (DB)
+26/10/2023, 21:12:28 - all (API)
+26/10/2023, 21:12:28 - getGenres:
+26/10/2023, 21:12:29 - getGenres:
+26/10/2023, 21:12:29 - getVideogames:
+26/10/2023, 21:12:29 - all (DB)
+26/10/2023, 21:12:29 - all (API)
+26/10/2023, 21:12:41 - getVideogames:
+26/10/2023, 21:12:41 - by id=3498 (API)
+26/10/2023, 21:12:42 - by id=3498 (API)
+26/10/2023, 21:12:42 - getVideogames:
+26/10/2023, 21:13:22 - getVideogames:
+26/10/2023, 21:13:22 - all (DB)
+26/10/2023, 21:13:22 - getGenres:
+26/10/2023, 21:13:22 - all (API)
+26/10/2023, 21:13:23 - getVideogames:
+26/10/2023, 21:13:23 - all (DB)
+26/10/2023, 21:13:23 - all (API)
+26/10/2023, 21:13:23 - getGenres:
+26/10/2023, 21:13:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:13:26 - getVideogames:
+26/10/2023, 21:13:26 - getVideogames:
+26/10/2023, 21:13:26 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:14:42 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:15:06 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:15:06 - getVideogames:
+26/10/2023, 21:15:06 - getVideogames:
+26/10/2023, 21:15:06 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:15:11 - getVideogames:
+26/10/2023, 21:15:11 - all (DB)
+26/10/2023, 21:15:11 - getGenres:
+26/10/2023, 21:15:11 - all (API)
+26/10/2023, 21:15:12 - getGenres:
+26/10/2023, 21:15:13 - getVideogames:
+26/10/2023, 21:15:13 - all (DB)
+26/10/2023, 21:15:13 - all (API)
+26/10/2023, 21:15:15 - getVideogames:
+26/10/2023, 21:15:15 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:15:15 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:15:15 - getVideogames:
+26/10/2023, 21:15:21 - getVideogames:
+26/10/2023, 21:15:21 - all (DB)
+26/10/2023, 21:15:21 - getGenres:
+26/10/2023, 21:15:21 - all (API)
+26/10/2023, 21:15:22 - getGenres:
+26/10/2023, 21:15:23 - getVideogames:
+26/10/2023, 21:15:23 - all (DB)
+26/10/2023, 21:15:23 - all (API)
+26/10/2023, 21:15:51 - getVideogames:
+26/10/2023, 21:15:51 - all (DB)
+26/10/2023, 21:15:51 - getGenres:
+26/10/2023, 21:15:52 - all (API)
+26/10/2023, 21:15:52 - getGenres:
+26/10/2023, 21:15:53 - getVideogames:
+26/10/2023, 21:15:53 - all (DB)
+26/10/2023, 21:15:53 - all (API)
+26/10/2023, 21:16:00 - by id=3498 (API)
+26/10/2023, 21:16:00 - getVideogames:
+26/10/2023, 21:16:01 - getVideogames:
+26/10/2023, 21:16:01 - by id=3498 (API)
+26/10/2023, 21:16:36 - getVideogames:
+26/10/2023, 21:16:36 - all (DB)
+26/10/2023, 21:16:36 - getGenres:
+26/10/2023, 21:16:36 - all (API)
+26/10/2023, 21:16:37 - getGenres:
+26/10/2023, 21:16:37 - getVideogames:
+26/10/2023, 21:16:37 - all (DB)
+26/10/2023, 21:16:37 - all (API)
+26/10/2023, 21:16:39 - getVideogames:
+26/10/2023, 21:16:39 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:16:39 - getVideogames:
+26/10/2023, 21:16:39 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:17:47 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:17:56 - getVideogames:
+26/10/2023, 21:17:56 - all (DB)
+26/10/2023, 21:17:56 - getGenres:
+26/10/2023, 21:17:56 - all (API)
+26/10/2023, 21:17:56 - getGenres:
+26/10/2023, 21:17:57 - all (DB)
+26/10/2023, 21:17:57 - getVideogames:
+26/10/2023, 21:17:57 - all (API)
+26/10/2023, 21:18:04 - getVideogames:
+26/10/2023, 21:18:04 - by id=3498 (API)
+26/10/2023, 21:18:05 - getVideogames:
+26/10/2023, 21:18:05 - by id=3498 (API)
+26/10/2023, 21:19:42 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:20:00 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:20:07 - getVideogames:
+26/10/2023, 21:20:07 - all (DB)
+26/10/2023, 21:20:07 - getGenres:
+26/10/2023, 21:20:07 - all (API)
+26/10/2023, 21:20:09 - getGenres:
+26/10/2023, 21:20:09 - getVideogames:
+26/10/2023, 21:20:09 - all (DB)
+26/10/2023, 21:20:09 - all (API)
+26/10/2023, 21:20:17 - getVideogames:
+26/10/2023, 21:20:17 - by id=3498 (API)
+26/10/2023, 21:20:17 - getVideogames:
+26/10/2023, 21:20:17 - by id=3498 (API)
+26/10/2023, 21:21:29 - all (DB)
+26/10/2023, 21:21:29 - getVideogames:
+26/10/2023, 21:21:29 - getGenres:
+26/10/2023, 21:21:29 - all (API)
+26/10/2023, 21:21:30 - getGenres:
+26/10/2023, 21:21:30 - getVideogames:
+26/10/2023, 21:21:30 - all (DB)
+26/10/2023, 21:21:30 - all (API)
+26/10/2023, 21:21:32 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:21:32 - getVideogames:
+26/10/2023, 21:21:32 - getVideogames:
+26/10/2023, 21:21:32 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:23:26 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:23:37 - getVideogames:
+26/10/2023, 21:23:37 - all (DB)
+26/10/2023, 21:23:37 - getGenres:
+26/10/2023, 21:23:37 - all (API)
+26/10/2023, 21:23:38 - getGenres:
+26/10/2023, 21:23:38 - getVideogames:
+26/10/2023, 21:23:38 - all (DB)
+26/10/2023, 21:23:38 - all (API)
+26/10/2023, 21:24:00 - getVideogames:
+26/10/2023, 21:24:00 - by id=3498 (API)
+26/10/2023, 21:24:00 - getVideogames:
+26/10/2023, 21:24:00 - by id=3498 (API)
+26/10/2023, 21:25:29 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:25:37 - getVideogames:
+26/10/2023, 21:25:37 - all (DB)
+26/10/2023, 21:25:37 - getGenres:
+26/10/2023, 21:25:37 - all (API)
+26/10/2023, 21:25:37 - getGenres:
+26/10/2023, 21:25:38 - getVideogames:
+26/10/2023, 21:25:38 - all (DB)
+26/10/2023, 21:25:38 - all (API)
+26/10/2023, 21:25:42 - getVideogames:
+26/10/2023, 21:25:42 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:25:42 - getVideogames:
+26/10/2023, 21:25:42 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:26:09 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:26:26 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:26:56 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:26:59 - getVideogames:
+26/10/2023, 21:26:59 - all (DB)
+26/10/2023, 21:26:59 - getGenres:
+26/10/2023, 21:26:59 - all (API)
+26/10/2023, 21:27:00 - getGenres:
+26/10/2023, 21:27:00 - getVideogames:
+26/10/2023, 21:27:00 - all (DB)
+26/10/2023, 21:27:00 - all (API)
+26/10/2023, 21:27:05 - getVideogames:
+26/10/2023, 21:27:05 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:27:05 - getVideogames:
+26/10/2023, 21:27:05 - by id=fd492d5b-6ec3-4db2-a3c5-93e1e050a31b (DB)
+26/10/2023, 21:27:35 - Server running into 3001 Port. DB Connection: NOT SECURE
+26/10/2023, 21:27:43 - Server running into 3001 Port. DB Connection: NOT SECURE

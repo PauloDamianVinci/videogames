@@ -21,9 +21,9 @@ const Home = () => {
 
     useEffect(() => {
         // Cargo los videojuegos y géneros desde la BD y API.
-        // Se van a actualizar automáticameente cuando se hagan cambios:
+        // Se van a actualizar automáticamente cuando se hagan cambios:
         setIsLoading(true);
-        const tiempoEspera = 1000; // espera temporaria para ver imagen de espera
+        const tiempoEspera = 200; // espera temporaria para ver imagen de espera
         const timerId = setTimeout(() => {
             dispatch(getVideogames());
             dispatch(getGenres());

@@ -4,6 +4,8 @@ VITE_HOME=/home
 VITE_ABOUT=/about
 VITE_CREATE=/create
 VITE_DETAIL=/detail/:id
+VITE_DETAIL_BASE=/detail
+VITE_ERROR=/error
 
 VITE_VG_VIDEOGAMES=/videogames
 VITE_VG_GENRES=/genres

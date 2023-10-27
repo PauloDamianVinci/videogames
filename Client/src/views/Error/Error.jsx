@@ -4,7 +4,7 @@ const { container, mainTitle, secondText, startButton, imgBack } = style;
 const Error = () => {
     return (
         <div>
-            <h2>Error</h2>
+            <h2>Erroddddr</h2>
         </div>
     )
 }

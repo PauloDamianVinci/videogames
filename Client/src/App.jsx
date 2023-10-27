@@ -13,6 +13,7 @@ const HOME = import.meta.env.VITE_HOME || '/home';
 const CREATE = import.meta.env.VITE_CREATE || '/create';
 const DETAIL = import.meta.env.VITE_DETAIL || '/detail/:id';
 const ABOUT = import.meta.env.VITE_ABOUT || '/about';
+const ERROR = import.meta.env.VITE_ERROR || '/error';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path={CREATE} element={<Create />} />
         <Route path={DETAIL} element={<Detail />} />
         <Route path={ABOUT} element={<About />} />
+        <Route path={ERROR} element={<Error />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>

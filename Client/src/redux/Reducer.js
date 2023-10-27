@@ -7,22 +7,23 @@ import {
     ORDER_BY_RATING,
     ORDER_BY_AZ,
     RESET,
+    GET_VIDEOGAME_BY_ID,
+    CLEAR_DETAIL,
     SEARCH_BY_NAME,
     POST_GAME,
-    GET_VIDEOGAME_BY_ID,
-    CLEAR_DETAIL
 } from "./actions";
 
 // allVideogames: están todos los obtenidos desde el back. Sólo se actualiza cuando cambian desde la BD
 // videogames: están los que se van filtrando y ordenando
 // filteredVideogames: resultados de búsquedas
+// detail: están los detalles de una búsqueda por id
 const initialState = {
     allVideogames: [],
     videogames: [],
     filteredVideogames: [],
     genres: [],
     platforms: [],
-    detail: {},
+    detail: [],
     filters: {
         genre: "All",
         create: "All",
@@ -145,6 +146,20 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     azza: "",
                 },
             };
+        case GET_VIDEOGAME_BY_ID:
+
+            console.log(payload);
+
+            return {
+                ...state,
+                detail: payload,
+            };
+        case CLEAR_DETAIL:
+            return {
+                ...state,
+                detail: [],
+            }
+
         default:
             return { ...state };
     }

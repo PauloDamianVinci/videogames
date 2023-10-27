@@ -97,26 +97,25 @@ export function resetFilterOrder() {
     return { type: RESET }
 }
 
-// export function getGenres() {
-//     return async function (dispatch) {
-//         let json = await axios.get('http://localhost:3001/genres')
-//         return dispatch({
-//             type: GET_GENRES,
-//             payload: json.data
-//         })
-//     }
-// }
-
-// export function getPlatforms() {
-//     return async function (dispatch) {
-//         let json = await axios.get('http://localhost:3001/platforms')
-//         return dispatch({
-//             type: GET_PLATFORMS,
-//             payload: json.data
-//         })
-//     }
-// }
-
+export function getVideogameById(id) {
+    const endpoint = VG_VIDEOGAMES + "/" + id;
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.get(endpoint);
+            return dispatch({
+                type: GET_VIDEOGAME_BY_ID,
+                payload: data,
+            });
+        } catch (error) {
+            console.error("Error fetching details:", error.message);
+        }
+    };
+}
+export function clearDetails() {
+    return {
+        type: CLEAR_DETAIL,
+    }
+}
 
 // export function postVidegame(payload) {
 //     return async function (dispatch) {
@@ -138,8 +137,3 @@ export function resetFilterOrder() {
 //     }
 // }
 
-// export function clearDetail() {
-//     return {
-//         type: CLEAR_DETAIL,
-//     }
-// }
