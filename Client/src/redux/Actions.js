@@ -10,6 +10,10 @@ export const ORDER_BY_AZ = 'ORDER_BY_AZ'
 export const RESET = 'RESET'
 export const DATA_LOADED = 'DATA_LOADED'
 export const SET_CURR_PAGE = 'SET_CURR_PAGE'
+export const SET_CURR_RATING = 'SET_CURR_RATING'
+export const SET_CURR_AZ = 'SET_CURR_AZ'
+export const SET_CURR_GENRE = 'SET_CURR_GENRE'
+export const SET_CURR_ORIGIN = 'SET_CURR_ORIGIN'
 
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME'
 export const POST_GAME = 'POST_GAME'
@@ -134,7 +138,30 @@ export function setCurrPage(payload) {
     }
 }
 
-
+export function setCurrRating(payload) {
+    return {
+        type: SET_CURR_RATING,
+        payload
+    }
+}
+export function setCurrAZ(payload) {
+    return {
+        type: SET_CURR_AZ,
+        payload
+    }
+}
+export function setCurrGenre(payload) {
+    return {
+        type: SET_CURR_GENRE,
+        payload
+    }
+}
+export function setCurrOrigin(payload) {
+    return {
+        type: SET_CURR_ORIGIN,
+        payload
+    }
+}
 
 // export function postVidegame(payload) {
 //     return async function (dispatch) {

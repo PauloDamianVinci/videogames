@@ -19,7 +19,7 @@ const Home = () => {
     let allVideogames = useSelector((state) => state.videogames); // tengo en el store todos los video juegos
     let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
     let dataLoaded = useSelector((state) => state.dataLoaded);
-    let curPageSaved = useSelector((state) => state.curPage);
+    //let curPageSaved = useSelector((state) => state.curPage);
 
     useEffect(() => {
         // Cargo los videojuegos y géneros desde la BD y API.
@@ -34,8 +34,7 @@ const Home = () => {
                 dispatch(setDataLoaded(true));
             }, tiempoEspera);
         } else { // hay datos previamente obtenidos. No necesito refrescarlos
-            setCurrentPage(curPageSaved);
-            //            console.log("CON datos previos - pag", curPageSaved);
+            //setCurrentPage(curPageSaved);
         }
         setIsLoading(false);
     }, [dispatch]);
@@ -52,9 +51,8 @@ const Home = () => {
         currentGame = [];
     }
     const paginado = (pageNumber) => {
-        //console.log("paginado-> pageNumber: ", pageNumber);
         setCurrentPage(pageNumber);
-        // memorizo la página actual para cuando salga de la vista:
+        // Memorizo la página actual para cuando salga de la vista y regrese:
         dispatch(setCurrPage(pageNumber));
     };
     // Cargo los componentes navegador, filtros y ordenamiento, cards y paginación:
@@ -67,18 +65,11 @@ const Home = () => {
             ) : genres ? (
                 <div className={containerSec}>
                     <Nav />
-                    <FilterOrder setCurrentPage={setCurrentPage} dispatch={dispatch} />
+                    <FilterOrder setCurrentPage={setCurrentPage} dispatch={dispatch} dataLoaded={dataLoaded} />
                     <div className={containerCards}>
                         {currentGame?.map((el) => {
                             return (
-                                <Card
-                                    id={el.id}
-                                    key={el.id}
-                                    name={el.name}
-                                    image={el.image}
-                                    genresV={el.Genres}
-                                    rating={el.rating}
-                                />
+                                <Card id={el.id} key={el.id} name={el.name} image={el.image} genresV={el.Genres} rating={el.rating} />
                             );
                         })}
                     </div>

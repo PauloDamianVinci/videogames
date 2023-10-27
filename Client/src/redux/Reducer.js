@@ -9,31 +9,36 @@ import {
     RESET,
     GET_VIDEOGAME_BY_ID,
     CLEAR_DETAIL,
-    SEARCH_BY_NAME,
-    POST_GAME,
     DATA_LOADED,
     SET_CURR_PAGE,
+    SET_CURR_RATING,
+    SET_CURR_AZ,
+    SET_CURR_GENRE,
+    SET_CURR_ORIGIN,
+    SEARCH_BY_NAME,
+    POST_GAME,
+
 } from "./actions";
 
-// allVideogames: están todos los obtenidos desde el back. Sólo se actualiza cuando cambian desde la BD
-// videogames: están los que se van filtrando y ordenando
-// filteredVideogames: resultados de búsquedas
-// detail: están los detalles de una búsqueda por id
 const initialState = {
-    allVideogames: [],
-    videogames: [],
-    filteredVideogames: [],
-    genres: [],
-    platforms: [],
-    detail: [],
-    filters: {
+    allVideogames: [], // están todos los videojuegos obtenidos desde el back. Sólo se actualiza cuando cambian desde la BD
+    videogames: [], // están los videojuegos que se van filtrando y ordenando
+    filteredVideogames: [], // filteredVideogames: resultados de búsquedas
+    genres: [], // están todos los géneros obtenidos desde el back.
+    platforms: [], // están todas las plataformas obtenidos desde el back.
+    detail: [], // están los detalles de una búsqueda por id
+    filters: { // es para que la lógica de los filtros respete las combinaciones previas
         genre: "All",
         create: "All",
         rating: "",
         azza: "",
     },
-    dataLoaded: false,
-    curPage: 1,
+    dataLoaded: false, // flag para saber si tengo previamente cargados los videojuegos y géneros
+    curPage: '1', // recuerdo el número de página para cuando regrese a la página
+    curOptionRating: '', // recuerdo el criterio de ordenamiento para cuando regrese a la página
+    curOptionAZ: '', // recuerdo el criterio de ordenamiento para cuando regrese a la página
+    curGenre: 'All', // recuerdo el filtro de género para cuando regrese a la página
+    curOrigin: 'All', // recuerdo el origen de datos para cuando regrese a la página
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -42,6 +47,26 @@ const rootReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 curPage: payload,
+            };
+        case SET_CURR_RATING:
+            return {
+                ...state,
+                curOptionRating: payload,
+            };
+        case SET_CURR_AZ:
+            return {
+                ...state,
+                curOptionAZ: payload,
+            };
+        case SET_CURR_GENRE:
+            return {
+                ...state,
+                curGenre: payload,
+            };
+        case SET_CURR_ORIGIN:
+            return {
+                ...state,
+                curOrigin: payload,
             };
         case DATA_LOADED:
             return {
@@ -163,9 +188,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 curPage: 1,
             };
         case GET_VIDEOGAME_BY_ID:
-
-            //console.log(payload);
-
             return {
                 ...state,
                 detail: payload,
