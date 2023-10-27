@@ -6,7 +6,7 @@ import Pagination from "../../components/Pagination/Pagination";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { getVideogames, getGenres, setDataLoaded, setCurrPage } from "../../redux/actions";
+import { getVideogames, getVideogamesbyName, getGenres, setDataLoaded, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
@@ -19,7 +19,8 @@ const Home = () => {
     let allVideogames = useSelector((state) => state.videogames); // tengo en el store todos los video juegos
     let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
     let dataLoaded = useSelector((state) => state.dataLoaded);
-    //let curPageSaved = useSelector((state) => state.curPage);
+    let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
+    let origenBusqueda = useSelector((state) => state.origenBusqueda);
 
     useEffect(() => {
         // Cargo los videojuegos y géneros desde la BD y API.
@@ -28,7 +29,15 @@ const Home = () => {
             //console.log("sin datos previos");
             const tiempoEspera = 200; // espera temporaria para ver imagen de espera
             const timerId = setTimeout(() => {
-                dispatch(getVideogames());
+                // Acá se define si voy a traer todos los videojuegos o si se trata de una búsqueda por nombre.
+                // En ambos casos, una vez obtenidos los datos, el tratamiento de filtro y otros criterios es igual:
+                if (!nombreBusqueda) {
+                    console.log("Obtengo todos los videojuegos");
+                    dispatch(getVideogames());
+                } else {
+                    console.log("Busco por nombre ", nombreBusqueda, ", origen ", origenBusqueda);
+                    dispatch(getVideogamesbyName(origenBusqueda));
+                }
                 dispatch(getGenres());
                 // Indico que ya tengo datos cargados, para que no refresque cada vez que vuelva:
                 dispatch(setDataLoaded(true));

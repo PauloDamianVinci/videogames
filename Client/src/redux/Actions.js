@@ -14,6 +14,8 @@ export const SET_CURR_RATING = 'SET_CURR_RATING'
 export const SET_CURR_AZ = 'SET_CURR_AZ'
 export const SET_CURR_GENRE = 'SET_CURR_GENRE'
 export const SET_CURR_ORIGIN = 'SET_CURR_ORIGIN'
+export const VG_VIDEOGAMES_BY_NAME = 'VG_VIDEOGAMES_BY_NAME'
+
 
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME'
 export const POST_GAME = 'POST_GAME'
@@ -39,6 +41,21 @@ export const getVideogames = () => {
             });
         } catch (error) {
             console.error("Error fetching videogames:", error.message);
+        }
+    };
+}
+
+export const getVideogamesbyName = (payload) => {
+    const endpoint = VG_VIDEOGAMES_BY_NAME + "/?source=" + payload;
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.get(endpoint);
+            return dispatch({
+                type: VG_VIDEOGAMES_BY_NAME,
+                payload: data,
+            });
+        } catch (error) {
+            console.error("Error fetching videogames by name:", error.message);
         }
     };
 }

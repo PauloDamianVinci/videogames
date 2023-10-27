@@ -29,10 +29,6 @@ const Detail = () => {
     let OriginDB = "Not found";
     let genreList = "Not found";
     let platformList = "Not found";
-
-
-    //console.log("consulto por id ", id);
-
     if (!id) { navigate(`${ERROR}`); }; // mando al error en caso de que ingresen manualmente a esta dirección sin id
     let detail = useSelector((state) => state.detail); // tengo en el store todos los video juegos
 
@@ -44,9 +40,8 @@ const Detail = () => {
             dispatch(clearDetails()) // limpio la posible consulta previa
         }
     }, [dispatch]);
-
+    // considerar acá o en otras partes:
     //useEffect(() => clearState(), [])
-
 
     if (detail.length > 0) {
         name = detail[0].name;

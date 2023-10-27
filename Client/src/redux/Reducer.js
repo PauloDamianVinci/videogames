@@ -15,13 +15,14 @@ import {
     SET_CURR_AZ,
     SET_CURR_GENRE,
     SET_CURR_ORIGIN,
+    VG_VIDEOGAMES_BY_NAME,
     SEARCH_BY_NAME,
     POST_GAME,
 
 } from "./actions";
 
 const initialState = {
-    allVideogames: [], // están todos los videojuegos obtenidos desde el back. Sólo se actualiza cuando cambian desde la BD
+    allVideogames: [], // están todos los videojuegos obtenidos desde el back. Sólo se actualiza cuando cambian desde la BD o si se hace búsqueda por nombre
     videogames: [], // están los videojuegos que se van filtrando y ordenando
     filteredVideogames: [], // filteredVideogames: resultados de búsquedas
     genres: [], // están todos los géneros obtenidos desde el back.
@@ -39,10 +40,26 @@ const initialState = {
     curOptionAZ: '', // recuerdo el criterio de ordenamiento para cuando regrese a la página
     curGenre: 'All', // recuerdo el filtro de género para cuando regrese a la página
     curOrigin: 'All', // recuerdo el origen de datos para cuando regrese a la página
+    nombreBusqueda: '', // guardo el nombre de la búsqueda. Si está vacío, traigo todos los videojuegos
+    origenBusqueda: '3', // guardo el origen de la búsqueda por nombre. 1: BD, 2: API, 3: ambas
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case GET_VIDEOGAMES:
+            return {
+                ...state,
+                allVideogames: payload,
+                videogames: payload,
+                filteredVideogames: payload,
+            };
+        case VG_VIDEOGAMES_BY_NAME:
+            return {
+                ...state,
+                allVideogames: payload,
+                videogames: payload,
+                filteredVideogames: payload,
+            };
         case SET_CURR_PAGE:
             return {
                 ...state,
@@ -72,13 +89,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 dataLoaded: payload,
-            };
-        case GET_VIDEOGAMES:
-            return {
-                ...state,
-                allVideogames: payload,
-                videogames: payload,
-                filteredVideogames: payload,
             };
         case GET_GENRES:
             return {
