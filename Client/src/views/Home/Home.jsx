@@ -16,6 +16,7 @@ const { container, containerImgCargando, imgCargando, containerCards, containerS
 const Home = () => {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
+    const [refresh, setRefresh] = useState(false);
     let allVideogames = useSelector((state) => state.videogames); // tengo en el store todos los video juegos
     let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
     let dataLoaded = useSelector((state) => state.dataLoaded);
@@ -25,28 +26,35 @@ const Home = () => {
     useEffect(() => {
         // Cargo los videojuegos y géneros desde la BD y API.
         setIsLoading(true);
+        console.log("Cargando home...");
+
         if (!dataLoaded) { // no hay hay datos. Los obtengo
-            //console.log("sin datos previos");
-            const tiempoEspera = 200; // espera temporaria para ver imagen de espera
-            const timerId = setTimeout(() => {
-                // Acá se define si voy a traer todos los videojuegos o si se trata de una búsqueda por nombre.
-                // En ambos casos, una vez obtenidos los datos, el tratamiento de filtro y otros criterios es igual:
-                if (!nombreBusqueda) {
-                    console.log("Obtengo todos los videojuegos");
-                    dispatch(getVideogames());
+            console.log("Sin datos previos");
+            // Acá se define si voy a traer todos los videojuegos o si se trata de una búsqueda por nombre.
+            // En ambos casos, una vez obtenidos los datos, el tratamiento de filtro y otros criterios es igual:
+            if (!nombreBusqueda) {
+                console.log("Obtengo todos los videojuegos");
+                dispatch(getVideogames());
+            } else {
+                let org = '';
+                if (origenBusqueda === '1') {
+                    org = "BD";
+                } else if (origenBusqueda === '2') {
+                    org = "API";
                 } else {
-                    console.log("Busco por nombre ", nombreBusqueda, ", origen ", origenBusqueda);
-                    dispatch(getVideogamesbyName(origenBusqueda));
+                    org = "ALL";
                 }
+                console.log("Busco por nombre ", nombreBusqueda, ", origen ", { org });
+                dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda }));
                 dispatch(getGenres());
                 // Indico que ya tengo datos cargados, para que no refresque cada vez que vuelva:
                 dispatch(setDataLoaded(true));
-            }, tiempoEspera);
+            }
         } else { // hay datos previamente obtenidos. No necesito refrescarlos
-            //setCurrentPage(curPageSaved);
+            console.log("CON datos previos");
         }
         setIsLoading(false);
-    }, [dispatch]);
+    }, [dispatch, refresh]);
 
     // Lógica para el componente de paginado:
     const [currentPage, setCurrentPage] = useState(1); // siempre comienza en página 1
@@ -73,7 +81,7 @@ const Home = () => {
                 </div>
             ) : genres ? (
                 <div className={containerSec}>
-                    <Nav />
+                    <Nav setRefresh={setRefresh} refresh={refresh} />
                     <FilterOrder setCurrentPage={setCurrentPage} dispatch={dispatch} dataLoaded={dataLoaded} />
                     <div className={containerCards}>
                         {currentGame?.map((el) => {

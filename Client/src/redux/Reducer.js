@@ -16,6 +16,8 @@ import {
     SET_CURR_GENRE,
     SET_CURR_ORIGIN,
     VG_VIDEOGAMES_BY_NAME,
+    SET_NAME_SEARCH,
+    SET_SOURCE_SEARCH,
     SEARCH_BY_NAME,
     POST_GAME,
 
@@ -46,6 +48,16 @@ const initialState = {
 
 const rootReducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case SET_NAME_SEARCH:
+            return {
+                ...state,
+                nombreBusqueda: payload,
+            };
+        case SET_SOURCE_SEARCH:
+            return {
+                ...state,
+                origenBusqueda: payload,
+            };
         case GET_VIDEOGAMES:
             return {
                 ...state,
@@ -196,6 +208,8 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 },
                 dataLoaded: false,
                 curPage: 1,
+                nombreBusqueda: '',
+                origenBusqueda: '3',
             };
         case GET_VIDEOGAME_BY_ID:
             return {

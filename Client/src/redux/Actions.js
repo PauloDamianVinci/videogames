@@ -15,6 +15,8 @@ export const SET_CURR_AZ = 'SET_CURR_AZ'
 export const SET_CURR_GENRE = 'SET_CURR_GENRE'
 export const SET_CURR_ORIGIN = 'SET_CURR_ORIGIN'
 export const VG_VIDEOGAMES_BY_NAME = 'VG_VIDEOGAMES_BY_NAME'
+export const SET_NAME_SEARCH = 'SET_NAME_SEARCH'
+export const SET_SOURCE_SEARCH = 'SET_SOURCE_SEARCH'
 
 
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME'
@@ -46,7 +48,10 @@ export const getVideogames = () => {
 }
 
 export const getVideogamesbyName = (payload) => {
-    const endpoint = VG_VIDEOGAMES_BY_NAME + "/?source=" + payload;
+    const endpoint = VG_VIDEOGAMES + "/?source=" + payload.origen + "&search=" + payload.nombre;
+
+    console.log("endpoint: ", endpoint);
+
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint);
@@ -116,10 +121,6 @@ export function orderByAZ(payload) {
     }
 }
 
-export function resetFilterOrder() {
-    return { type: RESET }
-}
-
 export function getVideogameById(id) {
     const endpoint = VG_VIDEOGAMES + "/" + id;
     return async (dispatch) => {
@@ -146,6 +147,10 @@ export function clearDetails() {
     return {
         type: CLEAR_DETAIL,
     }
+}
+
+export function resetFilterOrder() {
+    return { type: RESET }
 }
 
 export function setCurrPage(payload) {
@@ -176,6 +181,20 @@ export function setCurrGenre(payload) {
 export function setCurrOrigin(payload) {
     return {
         type: SET_CURR_ORIGIN,
+        payload
+    }
+}
+
+export function setNombreBusqueda(payload) {
+    return {
+        type: SET_NAME_SEARCH,
+        payload
+    }
+}
+
+export function setOrigenBusqueda(payload) {
+    return {
+        type: SET_SOURCE_SEARCH,
         payload
     }
 }

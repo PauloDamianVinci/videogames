@@ -8,7 +8,7 @@ const HOME = import.meta.env.VITE_HOME || '/home';
 const LAND = import.meta.env.VITE_IMG_LAND || '/src/assets/Land.jpg';
 
 const Landing = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     return (
         <div className={container}>
