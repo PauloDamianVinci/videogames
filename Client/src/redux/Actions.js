@@ -8,6 +8,8 @@ export const FILTER_BY_GENRE = 'FILTER_BY_GENRE'
 export const ORDER_BY_RATING = 'ORDER_BY_RATING'
 export const ORDER_BY_AZ = 'ORDER_BY_AZ'
 export const RESET = 'RESET'
+export const DATA_LOADED = 'DATA_LOADED'
+export const SET_CURR_PAGE = 'SET_CURR_PAGE'
 
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME'
 export const POST_GAME = 'POST_GAME'
@@ -112,11 +114,27 @@ export function getVideogameById(id) {
     };
 }
 
+export function setDataLoaded(payload) {
+    return {
+        type: DATA_LOADED,
+        payload
+    }
+}
+
 export function clearDetails() {
     return {
         type: CLEAR_DETAIL,
     }
 }
+
+export function setCurrPage(payload) {
+    return {
+        type: SET_CURR_PAGE,
+        payload
+    }
+}
+
+
 
 // export function postVidegame(payload) {
 //     return async function (dispatch) {

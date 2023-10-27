@@ -15,28 +15,36 @@ const FilterOrder = (props) => {
     const [selectedGenre, setSelectedGenre] = useState('All');
     let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
 
+
+
+
     //Función de filtrado por origen de los datos:
     function handleOriginData(e) {
         setSelectedOrigin(e.target.value);
         dispatch(filterOriginData(e.target.value));
+
+        console.log("handleOriginData");
         setCurrentPage(1);
     }
     //Función de filtrado por género:
     function handleFilterByGenre(e) {
         setSelectedGenre(e.target.value);
         dispatch(filterVideogamesByGenre(e.target.value))
+        console.log("handleFilterByGenre");
         setCurrentPage(1);
     }
     //Función de ordenamiento por rating:
     function handleOrderRating(e) {
         setSelectedOptionRating(e.target.value);
         dispatch(orderByRating(e.target.value));
+        console.log("handleOrderRating");
         setCurrentPage(1);
     }
     //Función de ordenamiento por orden alfabético:
     function handleOrderAZ(e) {
         setSelectedOptionAZ(e.target.value);
         dispatch(orderByAZ(e.target.value));
+        console.log("handleOrderAZ");
         setCurrentPage(1);
     }
     // Función de reset de filtros y ordenamientos:
@@ -47,6 +55,7 @@ const FilterOrder = (props) => {
         setSelectedGenre('All');
         setSelectedOrigin('All');
         setCurrentPage(1);
+        console.log("handleReset");
     }
 
     return (

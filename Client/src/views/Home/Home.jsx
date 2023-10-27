@@ -6,7 +6,7 @@ import Pagination from "../../components/Pagination/Pagination";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { getVideogames, getGenres } from "../../redux/actions";
+import { getVideogames, getGenres, setDataLoaded, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
@@ -18,17 +18,32 @@ const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
     let allVideogames = useSelector((state) => state.videogames); // tengo en el store todos los video juegos
     let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
+    let dataLoaded = useSelector((state) => state.dataLoaded);
+    let curPageSaved = useSelector((state) => state.curPage);
 
     useEffect(() => {
         // Cargo los videojuegos y géneros desde la BD y API.
         // Se van a actualizar automáticamente cuando se hagan cambios:
         setIsLoading(true);
-        const tiempoEspera = 200; // espera temporaria para ver imagen de espera
-        const timerId = setTimeout(() => {
-            dispatch(getVideogames());
-            dispatch(getGenres());
-            setIsLoading(false);
-        }, tiempoEspera);
+        if (!dataLoaded) {
+            console.log("sin datos previos");
+
+            const tiempoEspera = 200; // espera temporaria para ver imagen de espera
+            const timerId = setTimeout(() => {
+                dispatch(getVideogames());
+                dispatch(getGenres());
+                // Indico que ya tengo datos cargados, para que no refresque cada vez que vuelva:
+                dispatch(setDataLoaded(true));
+
+            }, tiempoEspera);
+        } else {
+            setCurrentPage(curPageSaved);
+            console.log("CON datos previos - pag", curPageSaved);
+        }
+
+        //console.log("useEffect currentPage: ", currentPage);
+        setIsLoading(false);
+
     }, [dispatch]);
 
     // Lógica para el componente de paginado:
@@ -43,7 +58,10 @@ const Home = () => {
         currentGame = [];
     }
     const paginado = (pageNumber) => {
+        console.log("paginado-> pageNumber: ", pageNumber);
         setCurrentPage(pageNumber);
+        // memorizo la página actual para cuando salga de la vista:
+        dispatch(setCurrPage(pageNumber));
     };
     // Cargo los componentes navegador, filtros y ordenamiento, cards y paginación:
     return (

@@ -11,6 +11,8 @@ import {
     CLEAR_DETAIL,
     SEARCH_BY_NAME,
     POST_GAME,
+    DATA_LOADED,
+    SET_CURR_PAGE,
 } from "./actions";
 
 // allVideogames: están todos los obtenidos desde el back. Sólo se actualiza cuando cambian desde la BD
@@ -30,10 +32,22 @@ const initialState = {
         rating: "",
         azza: "",
     },
+    dataLoaded: false,
+    curPage: 1,
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case SET_CURR_PAGE:
+            return {
+                ...state,
+                curPage: payload,
+            };
+        case DATA_LOADED:
+            return {
+                ...state,
+                dataLoaded: payload,
+            };
         case GET_VIDEOGAMES:
             return {
                 ...state,
@@ -145,10 +159,12 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     rating: "",
                     azza: "",
                 },
+                dataLoaded: false,
+                curPage: 1,
             };
         case GET_VIDEOGAME_BY_ID:
 
-            console.log(payload);
+            //console.log(payload);
 
             return {
                 ...state,

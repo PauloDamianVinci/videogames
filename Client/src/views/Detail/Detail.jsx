@@ -1,5 +1,5 @@
 // hooks, routers, reducers:
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getVideogameById, clearDetails } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,6 +15,7 @@ const { container, imgBack, img, features, featuresCard, ButtMore } = style;
 import formatDate from "../../functions/formatDate";
 
 const Detail = () => {
+    const navigate = useNavigate()
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
     const { id } = useParams();
@@ -43,6 +44,9 @@ const Detail = () => {
             dispatch(clearDetails()) // limpio la posible consulta previa
         }
     }, [dispatch]);
+
+    //useEffect(() => clearState(), [])
+
 
     if (detail.length > 0) {
         name = detail[0].name;
@@ -81,10 +85,7 @@ const Detail = () => {
                     <h2 className={features}>Rating: {rating}</h2>
                     <h3 className={features}>Genres: {genreList}</h3>
                     <h3 className={features}>Platforms: {platformList}</h3>
-
-                    <Link to={HOME}>
-                        <button className={features}>Back</button>
-                    </Link>
+                    <button className={features} onClick={() => navigate(-1)}>Back</button>
                 </div>
             ) : null}
         </div>
