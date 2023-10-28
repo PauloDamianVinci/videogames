@@ -24,6 +24,7 @@ const Card = (props) => {
         setIsLoading(false);
     }, []);
 
+
     return (
         <div className={container}>
             {isLoading ? (
@@ -51,3 +52,28 @@ const Card = (props) => {
 }
 
 export default Card;
+
+// return (
+//     <div className={container}>
+//         {isLoading ? (
+//             <div>
+//                 {/* <img className={imgCargando} src={IMG_ESPERA} alt="" /> */}
+//                 <p>Loading..</p>
+//             </div>
+//         ) : genreList ? (
+//             <div className={container}>
+//                 <div className={containerImg}>
+//                     <img className={img} src={image} alt="" />
+//                     <button className={ButtMore} onClick={() => navigate(linkDetail)} >Details</button>
+//                     <div className={containerFeatures}>
+//                         <h2 className={featuresCard}>ID: {id}</h2>
+//                         <h2 className={featuresCard}>Nombre: {name}</h2>
+//                         <h2 className={featuresCard}>Gén: {genreList}</h2>
+//                         <h2 className={featuresCard}>Rating: {rating}</h2>
+//                     </div>
+//                 </div>
+//             </div>
+//         ) : null
+//         }
+//     </div >
+// )

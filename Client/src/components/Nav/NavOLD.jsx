@@ -5,7 +5,7 @@ import { useState } from "react";
 import { setNombreBusqueda, setOrigenBusqueda, resetFilterOrder, setDataLoaded } from "../../redux/actions";
 // Estilos:
 import style from "./Nav.module.css";
-const { container, containerHidden, secondText, startButton, imgBack } = style;
+const { container, mainTitle, secondText, startButton, imgBack } = style;
 // Variables de entorno:
 const CREATE = import.meta.env.VITE_CREATE || '/create';
 const ABOUT = import.meta.env.VITE_ABOUT || '/about';
@@ -17,12 +17,9 @@ const Nav = (props) => {
     const { refresh, setRefresh } = props;
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [name, setName] = useState('');
-    const [hideClean, setHideClean] = useState(false);
-    const [hideSearch, setHideSearch] = useState(false);
-    const [origin, setOrigin] = useState('3')
+    const [name, setName] = useState('')
+    const [origin, setOrigin] = useState('All')
     const [selectedOrigin, setSelectedOrigin] = useState('All');
-    const [readOnly, setReadOnly] = useState(false);
 
     const handleSearch = () => {
         // Valido el texto a buscar:
@@ -31,12 +28,6 @@ const Nav = (props) => {
             return;
         };
         console.log("Preparo dispach...");
-        // Deshabilito la búsqueda hasta que se vuelva a seleccionar:
-        console.log("se oculta search");
-        setHideSearch(false);
-        console.log("se muestra clean");
-        setHideClean(true);
-        setReadOnly(true);
         // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(name));
@@ -54,35 +45,8 @@ const Nav = (props) => {
     }
 
     function handleInputChange(e) {
-        //e.preventDefault();
-        setName(e.target.value);
-        // El botón de limpiar filtros se oculta si no hay texto ingresado:
-        if (!e.target.value) {
-            console.log("se oculta search");
-            setHideSearch(false);
-        } else {
-            console.log("se muestra search");
-            //     setHideClean(true);
-            setHideSearch(true);
-        }
-    }
-
-    function handleViewSearch(e) {
-        // Limpio el criterio de búsqueda:
         e.preventDefault();
-        console.log("BORRO");
-        setName(''); // limpio el input
-        setHideClean(false); // oculto el propio botón
-        setReadOnly(false); // permito volver a tipear un nombre
-        // busco todos los reg de nuevo:
-        // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
-        // filtrado y origen de búsqueda:
-        dispatch(setNombreBusqueda(''));
-        dispatch(setOrigenBusqueda('3'));
-        dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        console.log("Cargo home...");
-        setRefresh(!refresh);
-        navigate(HOME);
+        setName(e.target.value)
     }
 
     function handleOriginData(e) {
@@ -122,16 +86,10 @@ const Nav = (props) => {
                 value={name}
                 onChange={handleInputChange}
                 id="name"
-                readOnly={readOnly}
             />
-            <div className={`${hideSearch ? container : containerHidden}`}>
-                <button className={container} onClick={handleSearch}>Search</button>
-            </div>
-            <div className={`${hideClean ? container : containerHidden}`}>
-                <button className={container} onClick={handleViewSearch}>Clear search</button>
-            </div >
+            <button className={container} onClick={() => { handleSearch(); }}>Search</button>
             <button className={container} onClick={() => navigate(ABOUT)} >About</button>
-            <button className={container} onClick={handleExit}>Exit</button>
+            <button className={container} onClick={() => { handleExit(); }}>Exit</button>
         </div >
     )
 }

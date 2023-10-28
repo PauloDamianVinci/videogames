@@ -3,6 +3,10 @@
     color: antiquewhite;
 }
 
+.containerHidden {
+    display: none;
+}
+
 .containerSec {
     background-color: rgba(240, 230, 230, 0.877);
     color: antiquewhite;

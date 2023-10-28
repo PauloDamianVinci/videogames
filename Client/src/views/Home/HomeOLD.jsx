@@ -11,7 +11,7 @@ import { getVideogames, getVideogamesbyName, getGenres, setDataLoaded, setCurrPa
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
 import style from "./Home.module.css";
-const { container, containerImgCargando, imgCargando, containerCards, containerSec, containerHidden } = style;
+const { container, containerImgCargando, imgCargando, containerCards, containerSec } = style;
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -30,19 +30,26 @@ const Home = () => {
 
         if (!dataLoaded) { // no hay hay datos. Los obtengo
             console.log("Sin datos previos");
-            // Acá se define si voy a traer todos los videojuegos o si se trata de una 
-            // búsqueda por nombre. En ambos casos, una vez obtenidos los datos, el tratamiento de 
-            // filtro y otros criterios es igual:
+            // Acá se define si voy a traer todos los videojuegos o si se trata de una búsqueda por nombre.
+            // En ambos casos, una vez obtenidos los datos, el tratamiento de filtro y otros criterios es igual:
             if (!nombreBusqueda) {
                 console.log("Obtengo todos los videojuegos");
-                dispatch(getVideogames()); // obtengo todos los videojuegos
+                dispatch(getVideogames());
             } else {
-                dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda })); // obtengo los videojuegos filtrados por nombre y origen
+                let org = '';
+                if (origenBusqueda === '1') {
+                    org = "BD";
+                } else if (origenBusqueda === '2') {
+                    org = "API";
+                } else {
+                    org = "ALL";
+                }
+                console.log("Busco por nombre ", nombreBusqueda, ", origen ", { org });
+                dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda }));
+                dispatch(getGenres());
+                // Indico que ya tengo datos cargados, para que no refresque cada vez que vuelva:
+                dispatch(setDataLoaded(true));
             }
-            dispatch(getGenres());
-            // Indico que ya tengo datos cargados, para que no los refresque cada vez que vuelva
-            // a cargar el componente:
-            dispatch(setDataLoaded(true));
         } else { // hay datos previamente obtenidos. No necesito refrescarlos
             console.log("CON datos previos");
         }
