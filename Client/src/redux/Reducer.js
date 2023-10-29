@@ -116,9 +116,9 @@ const rootReducer = (state = initialState, { type, payload }) => {
             const filteredByOrigin = state.allVideogames.filter((elem) => {
                 const genreMatch =
                     // Respeto el tipo de filtro de género existente:
-                    state.filters.genre === "All" ||
+                    (state.filters.genre === "All") ||
                     elem.Genres?.some((genre) => genre.name === state.filters.genre) ||
-                    (elem.genre && elem.genre.includes(state.filters.genre));
+                    elem.Genres?.some((genre) => genre === state.filters.genre);
                 // True -> DB, False -> API
                 const createMatch =
                     payload === "All" ||
@@ -137,18 +137,22 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 },
             };
         case FILTER_BY_GENRE:
-            let filteredByGenre = state.allVideogames;
-            if (payload !== "All") {
-                // Sólo paso si seleccionó un género, en vez de pedir por todos. 
-                filteredByGenre = state.allVideogames.filter((elem) => {
-                    // some() verifica si al menos uno de los elementos en el arreglo cumple con la
-                    // condición de que el nombre del género sea igual a payload
-                    const hasGenre =
-                        elem.Genres?.some((genre) => genre.name === payload) ||
-                        (elem.genre && elem.genre.includes(payload));
-                    return hasGenre;
-                });
-            }
+            // Sólo paso si seleccionó un género, en vez de pedir por todos. 
+            const filteredByGenre = state.allVideogames.filter((elem) => {
+                // some() verifica si al menos uno de los elementos en el arreglo cumple con la
+                // condición de que el nombre del género sea igual a payload
+                const genreMatch =
+                    (payload === "All") ||
+                    elem.Genres?.some((genre) => genre.name === payload) ||
+                    elem.Genres?.some((genre) => genre === payload);
+                // Respeto el tipo de filtro de origen existente:
+                // True -> DB, False -> API
+                const createMatch =
+                    state.filters.create === "All" ||
+                    (state.filters.create === "True" && elem.OriginDB) ||
+                    (state.filters.create === "False" && !elem.OriginDB);
+                return genreMatch && createMatch; // va al filtro si cumple ambas condiciones
+            });
             return {
                 ...state,
                 videogames: filteredByGenre,
