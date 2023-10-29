@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded, setCurrOrigin } from "../../redux/actions";
+import { setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Estilos:
 import style from "./Nav.module.css";
 const { container, containerHidden, secondText, startButton, imgBack } = style;
@@ -59,7 +59,9 @@ const Nav = (props) => {
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(name));
 
-        console.log("GUARDO ORIGEN BUSQUEDA ", origin)
+        console.log("PAGE 1 de prepor handleSearch NAV");
+        dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
+        //console.log("GUARDO ORIGEN BUSQUEDA ", origin)
         dispatch(setOrigenBusqueda(origin));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
         setRefresh(!refresh);
@@ -84,7 +86,7 @@ const Nav = (props) => {
         }
     }
 
-    function handleViewSearch(e) {
+    function handleClearSearch(e) {
         // Limpio el criterio de búsqueda:
         e.preventDefault();
         setName(''); // limpio el input
@@ -98,7 +100,9 @@ const Nav = (props) => {
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(''));
 
-        console.log("GUARDO ORIGEN BUSQUEDA 3 de prepo")
+        console.log("PAGE 1 de prepor handleView NAV");
+        dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
+        //console.log("GUARDO ORIGEN BUSQUEDA 3 de prepo")
         dispatch(setCurrOrigin('All')); // le aviso a Filter que empiece por todos los orígenes
         dispatch(setOrigenBusqueda('3'));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
@@ -149,7 +153,7 @@ const Nav = (props) => {
                 <button className={container} onClick={handleSearch}>Search</button>
             </div>
             <div className={`${hideClean ? container : containerHidden}`}>
-                <button className={container} onClick={handleViewSearch}>Clear search</button>
+                <button className={container} onClick={handleClearSearch}>Clear search</button>
             </div >
             <button className={container} onClick={() => navigate(ABOUT)} >About</button>
             <button className={container} onClick={handleExit}>Exit</button>

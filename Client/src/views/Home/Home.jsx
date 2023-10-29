@@ -34,9 +34,11 @@ const Home = () => {
             // búsqueda por nombre. En ambos casos, una vez obtenidos los datos, el tratamiento de 
             // filtro y otros criterios es igual:
             if (!nombreBusqueda) {
-                console.log("Obtengo todos los videojuegos");
+                //console.log("Obtengo todos los videojuegos");
                 dispatch(getVideogames()); // obtengo todos los videojuegos
             } else {
+                //dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
+                setCurrentPage(1);
                 dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda })); // obtengo los videojuegos filtrados por nombre y origen
             }
             dispatch(getGenres());
@@ -60,18 +62,16 @@ const Home = () => {
     } else {
         currentGame = [];
     }
+
+    console.log("currentPage Home ", currentPage);
     const paginado = (pageNumber) => {
+        // Manejado desde el componente Pagination:
         setCurrentPage(pageNumber);
         // Memorizo la página actual para cuando salga de la vista y regrese:
+        console.log("PAG Home ", pageNumber)
         dispatch(setCurrPage(pageNumber));
     };
-    // Cargo los componentes navegador, filtros y ordenamiento, cards y paginación:
 
-    // {currentGame?.map((el) => {
-    //     return (
-    //         <Card id={el.id} key={el.id} name={el.name} image={el.image} genresV={el.Genres} rating={el.rating} />
-    //     );
-    // })}
     return (
         <div className={container}>
             {isLoading ? (

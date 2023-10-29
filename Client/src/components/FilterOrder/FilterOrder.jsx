@@ -31,7 +31,12 @@ const FilterOrder = (props) => {
         if (dataLoaded) {
             //console.log("Cargo filter CON datos previos");
             // hay datos previamente obtenidos. Recupero los criterios guardados:
-            setCurrentPage(curPageSaved);
+
+            console.log("USEFECT INICIA EN PAG RECORDADA ", curPageSaved)
+            setCurrentPage(curPageSaved); // OJO ver que no sea mayor al de páginas disponibles
+            //setCurrentPage(1);
+
+
             setSelectedOptionRating(curOptionRating);
             setSelectedOptionAZ(curOptionAZ);
             setSelectedGenre(curGenre);
@@ -43,7 +48,7 @@ const FilterOrder = (props) => {
         if (!nombreBusqueda) {
             setSelectedOrigin(curOrigin); // establezco el último criterio de origen
             setISelectDisabled(false); // combo de source habilitado
-            console.log("PASA ", curOrigin);
+            //console.log("PASA ", curOrigin);
         } else {  // matcheo el criterio de origen con el de la búsqueda
             switch (origenBusqueda) {
                 case '1':
@@ -57,7 +62,7 @@ const FilterOrder = (props) => {
                     break;
                 default:
             }
-            console.log("Filter origen: ", origenBusqueda);
+            //console.log("Filter origen: ", origenBusqueda);
             //console.log("Disabled");
             //console.log("PASA2");
             setISelectDisabled(true); // combo de source deshabilitado
@@ -106,6 +111,8 @@ const FilterOrder = (props) => {
         dispatch(setCurrGenre('All'));
         dispatch(setCurrRating(''));
         dispatch(setCurrAZ(''));
+
+        console.log("PAGE 1 de prepor handleReset FILTER");
         dispatch(setCurrPage('1'));
 
         dispatch(resetFilterOrder());
