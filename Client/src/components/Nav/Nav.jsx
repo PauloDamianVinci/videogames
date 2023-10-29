@@ -1,7 +1,8 @@
 // hooks, routers, reducers:
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { setNombreBusqueda, setOrigenBusqueda, resetFilterOrder, setDataLoaded } from "../../redux/actions";
 // Estilos:
 import style from "./Nav.module.css";
@@ -23,6 +24,43 @@ const Nav = (props) => {
     const [origin, setOrigin] = useState('3')
     const [selectedOrigin, setSelectedOrigin] = useState('All');
     const [readOnly, setReadOnly] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isDisabled, setIsDisabled] = useState(false);
+
+
+
+    let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
+    let origenBusqueda = useSelector((state) => state.origenBusqueda);
+
+    useEffect(() => {
+        console.log("cargo NAV");
+        setIsLoading(true);
+        if (nombreBusqueda) {
+            console.log("con nombres previo");
+            // hay datos previamente obtenidos. Recupero los criterios guardados:
+
+            setHideSearch(false);
+            setHideClean(true);
+            setReadOnly(true);
+            setName(nombreBusqueda);
+            setSelectedOrigin(origenBusqueda);
+            setIsDisabled(true);
+
+            // dispatch(setNombreBusqueda(name));
+            // dispatch(setOrigenBusqueda(origin));
+
+
+            // setCurrentPage(curPageSaved);
+            // setSelectedOptionRating(curOptionRating);
+            // setSelectedOptionAZ(curOptionAZ);
+            // setSelectedGenre(curGenre);
+        } else {
+            // no hay datos previos
+            console.log("SIN nombres previo");
+        }
+        setIsLoading(false);
+    }, []);
+
 
     const handleSearch = () => {
         // Valido el texto a buscar:
@@ -37,6 +75,7 @@ const Nav = (props) => {
         console.log("se muestra clean");
         setHideClean(true);
         setReadOnly(true);
+        setIsDisabled(true);
         // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(name));
@@ -44,6 +83,7 @@ const Nav = (props) => {
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
         console.log("Cargo home...");
         setRefresh(!refresh);
+
         navigate(HOME);
         return;
     }
@@ -54,7 +94,7 @@ const Nav = (props) => {
     }
 
     function handleInputChange(e) {
-        //e.preventDefault();
+        e.preventDefault();
         setName(e.target.value);
         // El botón de limpiar filtros se oculta si no hay texto ingresado:
         if (!e.target.value) {
@@ -74,6 +114,7 @@ const Nav = (props) => {
         setName(''); // limpio el input
         setHideClean(false); // oculto el propio botón
         setReadOnly(false); // permito volver a tipear un nombre
+        setIsDisabled(false); // habilito el combo de origen
         // busco todos los reg de nuevo:
         // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
         // filtrado y origen de búsqueda:
@@ -82,7 +123,6 @@ const Nav = (props) => {
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
         console.log("Cargo home...");
         setRefresh(!refresh);
-        navigate(HOME);
     }
 
     function handleOriginData(e) {
@@ -110,7 +150,7 @@ const Nav = (props) => {
             <button className={container} onClick={() => navigate(CREATE)} >Create</button>
             <div className={container}>
                 <h2 className={container}>Origin</h2>
-                <select onChange={handleOriginData} value={selectedOrigin}>
+                <select onChange={handleOriginData} disabled={isDisabled} value={selectedOrigin}>
                     <option value="All">All</option>
                     <option value="False">Api</option>
                     <option value="True">Database</option>

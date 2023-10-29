@@ -1,7 +1,7 @@
 // Componentes:
 import Nav from "../../components/Nav/Nav";
 import FilterOrder from "../../components/FilterOrder/FilterOrder";
-import Card from "../../components/Card/Card";
+import Cards from "../../components/Cards/Cards";
 import Pagination from "../../components/Pagination/Pagination";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
@@ -66,6 +66,12 @@ const Home = () => {
         dispatch(setCurrPage(pageNumber));
     };
     // Cargo los componentes navegador, filtros y ordenamiento, cards y paginación:
+
+    // {currentGame?.map((el) => {
+    //     return (
+    //         <Card id={el.id} key={el.id} name={el.name} image={el.image} genresV={el.Genres} rating={el.rating} />
+    //     );
+    // })}
     return (
         <div className={container}>
             {isLoading ? (
@@ -75,23 +81,18 @@ const Home = () => {
             ) : genres ? (
                 <div className={containerSec}>
                     <Nav setRefresh={setRefresh} refresh={refresh} />
-                    <FilterOrder setCurrentPage={setCurrentPage} dispatch={dispatch} dataLoaded={dataLoaded} />
-                    <div className={containerCards}>
-                        {currentGame?.map((el) => {
-                            return (
-                                <Card id={el.id} key={el.id} name={el.name} image={el.image} genresV={el.Genres} rating={el.rating} />
-                            );
-                        })}
-                    </div>
                     <Pagination
                         videogamePerPage={videogamesPerPage}
                         allVideogames={allVideogames.length}
                         paginado={paginado}
                         currentPage={currentPage}
                     />
+                    <FilterOrder setCurrentPage={setCurrentPage} dispatch={dispatch} dataLoaded={dataLoaded} />
+                    <Cards currentGame={currentGame} />
                 </div>
-            ) : null}
-        </div>
+            ) : null
+            }
+        </div >
     );
 }
 

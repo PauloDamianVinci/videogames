@@ -35,31 +35,30 @@ const Detail = () => {
     useEffect(() => {
         setIsLoading(true);
         dispatch(getVideogameById(id));
+
+
         setIsLoading(false);
         return () => {
             dispatch(clearDetails()) // limpio la posible consulta previa
         }
-    }, [dispatch]);
-    // considerar acá o en otras partes:
-    //useEffect(() => clearState(), [])
+    }, []);
 
     if (detail.length > 0) {
-        name = detail[0].name;
-        description = detail[0].description;
-        image = detail[0].image;
-        rating = detail[0].rating;
+        if (detail[0].name) name = detail[0].name;
+        if (detail[0].description) description = detail[0].description;
+        if (detail[0].image) image = detail[0].image;
+        if (detail[0].rating) rating = detail[0].rating;
         Genres = detail[0].Genres;
         Platforms = detail[0].Platforms;
         detail[0].OriginDB ? OriginDB = "Database" : OriginDB = "API";
+        released_date = formatDate(detail[0].released_date);
         // Las listas y fecha se llenaron diferente según el origen. Las trato por separado:
         if (isNaN(id)) { // desde BD
             genreList = Genres.map(genre => genre.name).join(' - ');
             platformList = Platforms.map(platform => platform.name).join(', ');
-            released_date = formatDate(detail[0].released_date, 1);
         } else { //desde API
             genreList = Genres.map(genre => genre).join(" - ");
             platformList = Platforms.map(plat => plat).join(" - ");
-            released_date = formatDate(detail[0].released_date, 2);
         }
     }
 
