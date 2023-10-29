@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded } from "../../redux/actions";
+import { setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded, setCurrOrigin } from "../../redux/actions";
 // Estilos:
 import style from "./Nav.module.css";
 const { container, containerHidden, secondText, startButton, imgBack } = style;
@@ -27,82 +27,59 @@ const Nav = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [isDisabled, setIsDisabled] = useState(false);
 
-
-
     let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
     let origenBusqueda = useSelector((state) => state.origenBusqueda);
 
     useEffect(() => {
-        //console.log("cargo NAV");
         setIsLoading(true);
         if (nombreBusqueda) {
-            //console.log("con nombres previo");
             // hay datos previamente obtenidos. Recupero los criterios guardados:
-
-            setHideSearch(false);
-            setHideClean(true);
-            setReadOnly(true);
-            setName(nombreBusqueda);
-            setSelectedOrigin(origenBusqueda);
-            setIsDisabled(true);
-
-            // dispatch(setNombreBusqueda(name));
-            // dispatch(setOrigenBusqueda(origin));
-
-
-            // setCurrentPage(curPageSaved);
-            // setSelectedOptionRating(curOptionRating);
-            // setSelectedOptionAZ(curOptionAZ);
-            // setSelectedGenre(curGenre);
-        } else {
-            // no hay datos previos
-            //console.log("SIN nombres previo");
+            setHideSearch(false); // oculto search
+            setHideClean(true); // muestro limpiar búsqueda
+            setReadOnly(true); // no permito tipear en el input
+            setName(nombreBusqueda); // guardo el nombre a buscar
+            setIsDisabled(true); // deshabilito el combo de selección de origen
+            setSelectedOrigin(origenBusqueda); // guardo el origen de la búsqueda
         }
         setIsLoading(false);
     }, []);
 
-
     const handleSearch = () => {
-        // Valido el texto a buscar:
+        // Valido que haya un nombre para buscar:
         if (!name) {
             window.alert("Name missing");
             return;
         };
-        //console.log("Preparo dispach...");
-        // Deshabilito la búsqueda hasta que se vuelva a seleccionar:
-        //console.log("se oculta search");
-        setHideSearch(false);
-        //console.log("se muestra clean");
-        setHideClean(true);
-        setReadOnly(true);
-        setIsDisabled(true);
+        // Deshabilito la búsqueda hasta que se limpie manualmente:
+        setHideSearch(false); // oculto search
+        setHideClean(true); // muestro limpiar búsqueda
+        setReadOnly(true); // no permito tipear en el input
+        setIsDisabled(true); // deshabilito el combo de selección de origen
         // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(name));
+
+        console.log("GUARDO ORIGEN BUSQUEDA ", origin)
         dispatch(setOrigenBusqueda(origin));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        //console.log("Cargo home...");
         setRefresh(!refresh);
-
         navigate(HOME);
         return;
     }
 
     const handleExit = () => {
+        // Salgo al landing. Borro todo antes:
         dispatch(resetAll());
         navigate(ROOT);
     }
 
     function handleInputChange(e) {
+        // El botón de limpiar filtros se oculta si no hay texto ingresado:
         e.preventDefault();
         setName(e.target.value);
-        // El botón de limpiar filtros se oculta si no hay texto ingresado:
-        if (!e.target.value) {
-            //console.log("se oculta search");
+        if (!e.target.value) { // se oculta search
             setHideSearch(false);
-        } else {
-            //console.log("se muestra search");
-            //     setHideClean(true);
+        } else { // se muestra search
             setHideSearch(true);
         }
     }
@@ -110,19 +87,23 @@ const Nav = (props) => {
     function handleViewSearch(e) {
         // Limpio el criterio de búsqueda:
         e.preventDefault();
-        //console.log("BORRO");
         setName(''); // limpio el input
         setHideClean(false); // oculto el propio botón
         setReadOnly(false); // permito volver a tipear un nombre
         setIsDisabled(false); // habilito el combo de origen
+        setSelectedOrigin('3');
+        setOrigin('3');
         // busco todos los reg de nuevo:
         // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(''));
+
+        console.log("GUARDO ORIGEN BUSQUEDA 3 de prepo")
+        dispatch(setCurrOrigin('All')); // le aviso a Filter que empiece por todos los orígenes
         dispatch(setOrigenBusqueda('3'));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        //console.log("Cargo home...");
         setRefresh(!refresh);
+        navigate(HOME);
     }
 
     function handleOriginData(e) {

@@ -34,7 +34,7 @@ const Home = () => {
             // búsqueda por nombre. En ambos casos, una vez obtenidos los datos, el tratamiento de 
             // filtro y otros criterios es igual:
             if (!nombreBusqueda) {
-                //console.log("Obtengo todos los videojuegos");
+                console.log("Obtengo todos los videojuegos");
                 dispatch(getVideogames()); // obtengo todos los videojuegos
             } else {
                 dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda })); // obtengo los videojuegos filtrados por nombre y origen

@@ -210,10 +210,14 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     rating: "",
                     azza: "",
                 },
-                dataLoaded: false,
-                curPage: 1,
-                //nombreBusqueda: '',
-                origenBusqueda: '3',
+                dataLoaded: false, // flag para saber si tengo previamente cargados los videojuegos y géneros
+                curPage: '1', // recuerdo el número de página para cuando regrese a la página
+                curOptionRating: '', // recuerdo el criterio de ordenamiento para cuando regrese a la página
+                curOptionAZ: '', // recuerdo el criterio de ordenamiento para cuando regrese a la página
+                curGenre: 'All', // recuerdo el filtro de género para cuando regrese a la página
+                curOrigin: 'All', // recuerdo el origen de datos para cuando regrese a la página
+                //nombreBusqueda: '', // guardo el nombre de la búsqueda. Si está vacío, traigo todos los videojuegos
+                origenBusqueda: '3', // guardo el origen de la búsqueda por nombre. 1: BD, 2: API, 3: ambas
             };
         case RESET_ALL:
             return {
@@ -226,10 +230,14 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     rating: "",
                     azza: "",
                 },
-                dataLoaded: false,
-                curPage: 1,
-                nombreBusqueda: '',
-                origenBusqueda: '3',
+                dataLoaded: false, // flag para saber si tengo previamente cargados los videojuegos y géneros
+                curPage: '1', // recuerdo el número de página para cuando regrese a la página
+                curOptionRating: '', // recuerdo el criterio de ordenamiento para cuando regrese a la página
+                curOptionAZ: '', // recuerdo el criterio de ordenamiento para cuando regrese a la página
+                curGenre: 'All', // recuerdo el filtro de género para cuando regrese a la página
+                curOrigin: 'All', // recuerdo el origen de datos para cuando regrese a la página
+                nombreBusqueda: '', // guardo el nombre de la búsqueda. Si está vacío, traigo todos los videojuegos
+                origenBusqueda: '3', // guardo el origen de la búsqueda por nombre. 1: BD, 2: API, 3: ambas
             };
 
         case GET_VIDEOGAME_BY_ID:

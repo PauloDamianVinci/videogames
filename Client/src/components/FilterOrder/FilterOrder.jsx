@@ -43,7 +43,7 @@ const FilterOrder = (props) => {
         if (!nombreBusqueda) {
             setSelectedOrigin(curOrigin); // establezco el último criterio de origen
             setISelectDisabled(false); // combo de source habilitado
-            console.log("PASA");
+            console.log("PASA ", curOrigin);
         } else {  // matcheo el criterio de origen con el de la búsqueda
             switch (origenBusqueda) {
                 case '1':
@@ -57,9 +57,9 @@ const FilterOrder = (props) => {
                     break;
                 default:
             }
-            //console.log("Filter origen: ", origenBusqueda);
+            console.log("Filter origen: ", origenBusqueda);
             //console.log("Disabled");
-            console.log("PASA2");
+            //console.log("PASA2");
             setISelectDisabled(true); // combo de source deshabilitado
         }
         setIsLoading(false);
