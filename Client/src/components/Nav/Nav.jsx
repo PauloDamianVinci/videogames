@@ -26,7 +26,6 @@ const Nav = (props) => {
     const [readOnly, setReadOnly] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [isDisabled, setIsDisabled] = useState(false);
-
     let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
     let origenBusqueda = useSelector((state) => state.origenBusqueda);
 
@@ -58,10 +57,7 @@ const Nav = (props) => {
         // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(name));
-
-        console.log("PAGE 1 de prepor handleSearch NAV");
         dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
-        //console.log("GUARDO ORIGEN BUSQUEDA ", origin)
         dispatch(setOrigenBusqueda(origin));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
         setRefresh(!refresh);
@@ -99,8 +95,6 @@ const Nav = (props) => {
         // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(''));
-
-        console.log("PAGE 1 de prepor handleView NAV");
         dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
         //console.log("GUARDO ORIGEN BUSQUEDA 3 de prepo")
         dispatch(setCurrOrigin('All')); // le aviso a Filter que empiece por todos los orígenes
@@ -114,15 +108,12 @@ const Nav = (props) => {
         switch (e.target.value) {
             case 'All':
                 setOrigin('3'); // ambos
-                //console.log("e.target.value->all");
                 break;
             case 'False':
                 setOrigin('2'); // api
-                //console.log("e.target.value->API");
                 break;
             case 'True':
                 setOrigin('1'); // db
-                //console.log("e.target.value->DB");
                 break;
             default:
         }
