@@ -24,15 +24,15 @@ const Card = (props) => {
         // Las listas se llenaron diferente según el origen. Las trato por separado:
         if (image) {
             setImgShow(image);
-            console.log(imgShow);
+            //console.log(imgShow);
         };
         if (name) {
             setNameShow(name);
-            console.log(nameShow);
+            //console.log(nameShow);
         };
         if (rating) {
             setRatingShow(rating);
-            console.log(ratingShow);
+            //console.log(ratingShow);
         };
         if (isNaN(id)) { // desde BD
             setGenreList(genresV.map(genre => genre.name).join(' - '));

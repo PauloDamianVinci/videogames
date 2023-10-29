@@ -8,6 +8,7 @@ export const FILTER_BY_GENRE = 'FILTER_BY_GENRE'
 export const ORDER_BY_RATING = 'ORDER_BY_RATING'
 export const ORDER_BY_AZ = 'ORDER_BY_AZ'
 export const RESET = 'RESET'
+export const RESET_ALL = 'RESET_ALL'
 export const DATA_LOADED = 'DATA_LOADED'
 export const SET_CURR_PAGE = 'SET_CURR_PAGE'
 export const SET_CURR_RATING = 'SET_CURR_RATING'
@@ -50,7 +51,7 @@ export const getVideogames = () => {
 export const getVideogamesbyName = (payload) => {
     const endpoint = VG_VIDEOGAMES + "/?source=" + payload.origen + "&search=" + payload.nombre;
 
-    console.log("endpoint: ", endpoint);
+    //console.log("endpoint: ", endpoint);
 
     return async (dispatch) => {
         try {
@@ -151,6 +152,10 @@ export function clearDetails() {
 
 export function resetFilterOrder() {
     return { type: RESET }
+}
+
+export function resetAll() {
+    return { type: RESET_ALL }
 }
 
 export function setCurrPage(payload) {

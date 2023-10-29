@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { setNombreBusqueda, setOrigenBusqueda, resetFilterOrder, setDataLoaded } from "../../redux/actions";
+import { setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded } from "../../redux/actions";
 // Estilos:
 import style from "./Nav.module.css";
 const { container, containerHidden, secondText, startButton, imgBack } = style;
@@ -33,10 +33,10 @@ const Nav = (props) => {
     let origenBusqueda = useSelector((state) => state.origenBusqueda);
 
     useEffect(() => {
-        console.log("cargo NAV");
+        //console.log("cargo NAV");
         setIsLoading(true);
         if (nombreBusqueda) {
-            console.log("con nombres previo");
+            //console.log("con nombres previo");
             // hay datos previamente obtenidos. Recupero los criterios guardados:
 
             setHideSearch(false);
@@ -56,7 +56,7 @@ const Nav = (props) => {
             // setSelectedGenre(curGenre);
         } else {
             // no hay datos previos
-            console.log("SIN nombres previo");
+            //console.log("SIN nombres previo");
         }
         setIsLoading(false);
     }, []);
@@ -68,11 +68,11 @@ const Nav = (props) => {
             window.alert("Name missing");
             return;
         };
-        console.log("Preparo dispach...");
+        //console.log("Preparo dispach...");
         // Deshabilito la búsqueda hasta que se vuelva a seleccionar:
-        console.log("se oculta search");
+        //console.log("se oculta search");
         setHideSearch(false);
-        console.log("se muestra clean");
+        //console.log("se muestra clean");
         setHideClean(true);
         setReadOnly(true);
         setIsDisabled(true);
@@ -81,7 +81,7 @@ const Nav = (props) => {
         dispatch(setNombreBusqueda(name));
         dispatch(setOrigenBusqueda(origin));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        console.log("Cargo home...");
+        //console.log("Cargo home...");
         setRefresh(!refresh);
 
         navigate(HOME);
@@ -89,7 +89,7 @@ const Nav = (props) => {
     }
 
     const handleExit = () => {
-        dispatch(resetFilterOrder());
+        dispatch(resetAll());
         navigate(ROOT);
     }
 
@@ -98,10 +98,10 @@ const Nav = (props) => {
         setName(e.target.value);
         // El botón de limpiar filtros se oculta si no hay texto ingresado:
         if (!e.target.value) {
-            console.log("se oculta search");
+            //console.log("se oculta search");
             setHideSearch(false);
         } else {
-            console.log("se muestra search");
+            //console.log("se muestra search");
             //     setHideClean(true);
             setHideSearch(true);
         }
@@ -110,7 +110,7 @@ const Nav = (props) => {
     function handleViewSearch(e) {
         // Limpio el criterio de búsqueda:
         e.preventDefault();
-        console.log("BORRO");
+        //console.log("BORRO");
         setName(''); // limpio el input
         setHideClean(false); // oculto el propio botón
         setReadOnly(false); // permito volver a tipear un nombre
@@ -121,7 +121,7 @@ const Nav = (props) => {
         dispatch(setNombreBusqueda(''));
         dispatch(setOrigenBusqueda('3'));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        console.log("Cargo home...");
+        //console.log("Cargo home...");
         setRefresh(!refresh);
     }
 
@@ -129,15 +129,15 @@ const Nav = (props) => {
         switch (e.target.value) {
             case 'All':
                 setOrigin('3'); // ambos
-                console.log("e.target.value->all");
+                //console.log("e.target.value->all");
                 break;
             case 'False':
                 setOrigin('2'); // api
-                console.log("e.target.value->API");
+                //console.log("e.target.value->API");
                 break;
             case 'True':
                 setOrigin('1'); // db
-                console.log("e.target.value->DB");
+                //console.log("e.target.value->DB");
                 break;
             default:
         }

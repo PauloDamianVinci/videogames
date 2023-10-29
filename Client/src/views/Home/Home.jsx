@@ -26,15 +26,15 @@ const Home = () => {
     useEffect(() => {
         // Cargo los videojuegos y géneros desde la BD y API.
         setIsLoading(true);
-        console.log("Cargando home...");
+        //console.log("Cargando home...");
 
         if (!dataLoaded) { // no hay hay datos. Los obtengo
-            console.log("Sin datos previos");
+            //console.log("Sin datos previos");
             // Acá se define si voy a traer todos los videojuegos o si se trata de una 
             // búsqueda por nombre. En ambos casos, una vez obtenidos los datos, el tratamiento de 
             // filtro y otros criterios es igual:
             if (!nombreBusqueda) {
-                console.log("Obtengo todos los videojuegos");
+                //console.log("Obtengo todos los videojuegos");
                 dispatch(getVideogames()); // obtengo todos los videojuegos
             } else {
                 dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda })); // obtengo los videojuegos filtrados por nombre y origen
@@ -44,7 +44,7 @@ const Home = () => {
             // a cargar el componente:
             dispatch(setDataLoaded(true));
         } else { // hay datos previamente obtenidos. No necesito refrescarlos
-            console.log("CON datos previos");
+            //console.log("CON datos previos");
         }
         setIsLoading(false);
     }, [dispatch, refresh]);

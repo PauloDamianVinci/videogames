@@ -7,6 +7,7 @@ import {
     ORDER_BY_RATING,
     ORDER_BY_AZ,
     RESET,
+    RESET_ALL,
     GET_VIDEOGAME_BY_ID,
     CLEAR_DETAIL,
     DATA_LOADED,
@@ -18,7 +19,6 @@ import {
     VG_VIDEOGAMES_BY_NAME,
     SET_NAME_SEARCH,
     SET_SOURCE_SEARCH,
-    SEARCH_BY_NAME,
     POST_GAME,
 
 } from "./actions";
@@ -212,9 +212,26 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 },
                 dataLoaded: false,
                 curPage: 1,
+                //nombreBusqueda: '',
+                origenBusqueda: '3',
+            };
+        case RESET_ALL:
+            return {
+                ...state,
+                videogames: state.allVideogames,
+                filteredVideogames: state.allVideogames,
+                filters: {
+                    genre: "All",
+                    create: "All",
+                    rating: "",
+                    azza: "",
+                },
+                dataLoaded: false,
+                curPage: 1,
                 nombreBusqueda: '',
                 origenBusqueda: '3',
             };
+
         case GET_VIDEOGAME_BY_ID:
             return {
                 ...state,

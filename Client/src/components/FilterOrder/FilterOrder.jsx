@@ -29,7 +29,7 @@ const FilterOrder = (props) => {
 
     useEffect(() => {
         if (dataLoaded) {
-            console.log("Cargo filter CON datos previos");
+            //console.log("Cargo filter CON datos previos");
             // hay datos previamente obtenidos. Recupero los criterios guardados:
             setCurrentPage(curPageSaved);
             setSelectedOptionRating(curOptionRating);
@@ -37,12 +37,13 @@ const FilterOrder = (props) => {
             setSelectedGenre(curGenre);
         } else {
             // no hay datos previos
-            console.log("Cargo filter SIN datos previos");
+            //console.log("Cargo filter SIN datos previos");
         }
-        console.log("nombreBusqueda: ", nombreBusqueda);
+
         if (!nombreBusqueda) {
             setSelectedOrigin(curOrigin); // establezco el último criterio de origen
-            setISelectDisabled(false);
+            setISelectDisabled(false); // combo de source habilitado
+            console.log("PASA");
         } else {  // matcheo el criterio de origen con el de la búsqueda
             switch (origenBusqueda) {
                 case '1':
@@ -56,12 +57,13 @@ const FilterOrder = (props) => {
                     break;
                 default:
             }
-            console.log("Filter origen: ", origenBusqueda);
-            console.log("Disabled");
-            setISelectDisabled(true);
+            //console.log("Filter origen: ", origenBusqueda);
+            //console.log("Disabled");
+            console.log("PASA2");
+            setISelectDisabled(true); // combo de source deshabilitado
         }
         setIsLoading(false);
-    }, [dispatch, nombreBusqueda]);
+    }, [nombreBusqueda]);
 
     //Función de filtrado por origen de los datos:
     function handleOriginData(e) {
@@ -93,10 +95,10 @@ const FilterOrder = (props) => {
     }
     // Función de reset de filtros y ordenamientos:
     function handleReset() {
-        dispatch(resetFilterOrder());
         setSelectedOptionRating('');
         setSelectedOptionAZ('');
         setSelectedGenre('All');
+
         setSelectedOrigin('All');
         setCurrentPage(1);
         // borro los filtros y ordenamientos recordados:
@@ -105,6 +107,10 @@ const FilterOrder = (props) => {
         dispatch(setCurrRating(''));
         dispatch(setCurrAZ(''));
         dispatch(setCurrPage('1'));
+
+        dispatch(resetFilterOrder());
+
+
     }
 
     return (
@@ -120,8 +126,12 @@ const FilterOrder = (props) => {
                     <div className={containerFiltrosOrden}>
                         {/* Filtrado por origen de datos: */}
                         <div className={containerFiltrosOrigen}>
-                            <h2 className={filtroOrigen}>Origin</h2>
-                            <select onChange={handleOriginData} disabled={isSelectDisabled} value={selectedOrigin}>
+                            <h2 className={filtroOrigen} style={{ display: isSelectDisabled ? 'none' : 'block' }}>Origin</h2>
+                            <select onChange={handleOriginData} style={{ display: isSelectDisabled ? 'none' : 'block' }} value=
+                                {selectedOrigin}>
+
+
+
                                 <option value="All">All</option>
                                 <option value="False">Api</option>
                                 <option value="True">Database</option>
