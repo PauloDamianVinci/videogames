@@ -17,6 +17,7 @@ const Home = () => {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
     const [refresh, setRefresh] = useState(false);
+    const [regListos, setRegListos] = useState(false);
     let allVideogames = useSelector((state) => state.videogames); // tengo en el store todos los video juegos
     let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
     let dataLoaded = useSelector((state) => state.dataLoaded);
@@ -26,16 +27,16 @@ const Home = () => {
     useEffect(() => {
         // Cargo los videojuegos y géneros desde la BD y API.
         setIsLoading(true);
-        if (!dataLoaded) { // no hay hay datos. Los obtengo
-            //console.log("Sin datos previos");
+        setRegListos(false);
+        if (!dataLoaded) { // no hay datos. Los obtengo
             // Acá se define si voy a traer todos los videojuegos o si se trata de una 
             // búsqueda por nombre. En ambos casos, una vez obtenidos los datos, el tratamiento de 
             // filtro y otros criterios es igual:
             if (!nombreBusqueda) {
                 dispatch(getVideogames()); // obtengo todos los videojuegos
-            } else {
+            } else { // obtengo los videojuegos filtrados por nombre y origen
                 setCurrentPage(1);
-                dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda })); // obtengo los videojuegos filtrados por nombre y origen
+                dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda }));
             }
             dispatch(getGenres());
             // Indico que ya tengo datos cargados, para que no los refresque cada vez que vuelva
@@ -44,8 +45,19 @@ const Home = () => {
         } else { // hay datos previamente obtenidos. No necesito refrescarlos
             //console.log("CON datos previos");
         }
-        setIsLoading(false);
-    }, [dispatch, refresh]);
+
+        function ejecutarDespuesDelRetraso() {
+            setIsLoading(false);
+            setRegListos(true);
+        }
+
+
+        // Usar setTimeout para programar la ejecución de la función después de 3000 milisegundos
+        const timeoutId = setTimeout(ejecutarDespuesDelRetraso, 1000);
+
+
+
+    }, [refresh]);
 
     // Lógica para el componente de paginado:
     const [currentPage, setCurrentPage] = useState(1); // siempre comienza en página 1
@@ -59,12 +71,12 @@ const Home = () => {
         currentGame = [];
     }
 
-    console.log("currentPage Home ", currentPage);
+    //console.log("currentPage Home ", currentPage);
     const paginado = (pageNumber) => {
         // Manejado desde el componente Pagination:
         setCurrentPage(pageNumber);
         // Memorizo la página actual para cuando salga de la vista y regrese:
-        console.log("PAG Home ", pageNumber)
+        //console.log("PAG Home ", pageNumber)
         dispatch(setCurrPage(pageNumber));
     };
 
@@ -74,20 +86,24 @@ const Home = () => {
                 <div className={containerImgCargando}>
                     <img className={imgCargando} src={IMG_ESPERA} alt="" />
                 </div>
-            ) : genres ? (
-                <div className={containerSec}>
-                    <Nav setRefresh={setRefresh} refresh={refresh} />
-                    <Pagination
-                        videogamePerPage={videogamesPerPage}
-                        allVideogames={allVideogames.length}
-                        paginado={paginado}
-                        currentPage={currentPage}
-                    />
-                    <FilterOrder setCurrentPage={setCurrentPage} dispatch={dispatch} dataLoaded={dataLoaded} />
-                    <Cards currentGame={currentGame} />
-                </div>
             ) : null
             }
+            <div className={container} style={{ display: regListos ? 'block' : 'none' }}>
+                {regListos ? (
+                    <div className={containerSec}>
+                        <Nav setRefresh={setRefresh} refresh={refresh} />
+                        <Pagination
+                            videogamePerPage={videogamesPerPage}
+                            allVideogames={allVideogames.length}
+                            paginado={paginado}
+                            currentPage={currentPage}
+                        />
+                        <FilterOrder setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
+                        <Cards currentGame={currentGame} />
+                    </div>
+                ) : null
+                }
+            </div>
         </div >
     );
 }

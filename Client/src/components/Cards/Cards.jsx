@@ -23,4 +23,4 @@ const Cards = (props) => {
    );
 }
 
-export default Cards
+export default Cards;

@@ -61,25 +61,8 @@ const Nav = (props) => {
         dispatch(setOrigenBusqueda(origin));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
         setRefresh(!refresh);
-        navigate(HOME);
+        //navigate(HOME);
         return;
-    }
-
-    const handleExit = () => {
-        // Salgo al landing. Borro todo antes:
-        dispatch(resetAll());
-        navigate(ROOT);
-    }
-
-    function handleInputChange(e) {
-        // El botón de limpiar filtros se oculta si no hay texto ingresado:
-        e.preventDefault();
-        setName(e.target.value);
-        if (!e.target.value) { // se oculta search
-            setHideSearch(false);
-        } else { // se muestra search
-            setHideSearch(true);
-        }
     }
 
     function handleClearSearch(e) {
@@ -101,7 +84,18 @@ const Nav = (props) => {
         dispatch(setOrigenBusqueda('3'));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
         setRefresh(!refresh);
-        navigate(HOME);
+        //navigate(HOME);
+    }
+
+    function handleInputChange(e) {
+        // El botón de limpiar filtros se oculta si no hay texto ingresado:
+        e.preventDefault();
+        setName(e.target.value);
+        if (!e.target.value) { // se oculta search
+            setHideSearch(false);
+        } else { // se muestra search
+            setHideSearch(true);
+        }
     }
 
     function handleOriginData(e) {
@@ -118,6 +112,12 @@ const Nav = (props) => {
             default:
         }
         setSelectedOrigin(e.target.value);
+    }
+
+    const handleExit = () => {
+        // Salgo al landing. Borro todo antes:
+        dispatch(resetAll());
+        navigate(ROOT);
     }
 
     return (

@@ -1,6 +1,6 @@
 // hooks, routers, reducers:
-import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 //import { useDispatch, useSelector } from "react-redux";
 import { setCurrRating, setCurrAZ, setCurrGenre, setCurrOrigin } from "../../redux/actions";
 import { filterOriginData, filterVideogamesByGenre, orderByRating, orderByAZ, resetFilterOrder, setCurrPage } from "../../redux/actions";
@@ -9,7 +9,8 @@ import style from "./FilterOrder.module.css";
 const { container, containerHidden, containerFiltrosOrden, containerFiltrosOrigen, filtroOrigen, containerFiltrosGenero, filtroGenero, containerOrdenRating, containerOrdenAZ, containerReset, ordenRating, ordenAZ, reset } = style;
 
 const FilterOrder = (props) => {
-    const { setCurrentPage, dispatch, dataLoaded } = props;
+    const dispatch = useDispatch();
+    const { setCurrentPage, dataLoaded } = props;
     const [selectedOptionRating, setSelectedOptionRating] = useState('');
     const [selectedOptionAZ, setSelectedOptionAZ] = useState('');
     const [selectedOrigin, setSelectedOrigin] = useState('All');
@@ -28,29 +29,31 @@ const FilterOrder = (props) => {
     useEffect(() => {
         if (dataLoaded) {
             // hay datos previamente obtenidos. Recupero los criterios guardados:
-            console.log("USEFECT INICIA EN PAG RECORDADA ", curPageSaved)
-            setCurrentPage(curPageSaved); // OJO ver que no sea mayor al de páginas disponibles
+            setCurrentPage(curPageSaved); // siempre asegurarse que no sea mayor al de páginas total
             setSelectedOptionRating(curOptionRating);
             setSelectedOptionAZ(curOptionAZ);
             setSelectedGenre(curGenre);
+            setSelectedOrigin(curOrigin); // establezco el último criterio de origen
         }
         if (!nombreBusqueda) {
             setSelectedOrigin(curOrigin); // establezco el último criterio de origen
             setISelectDisabled(false); // combo de source habilitado
         } else {  // matcheo el criterio de origen con el de la búsqueda
-            switch (origenBusqueda) {
-                case '1':
-                    setSelectedOrigin('All');
+            switch (origenBusqueda) { // establezco el último criterio de origen según lo que busco
+                case '1': // db
+                    setSelectedOrigin(true);
+                    setISelectDisabled(true); // combo de source deshabilitado
                     break;
                 case '2': // api
                     setSelectedOrigin(false);
+                    setISelectDisabled(true); // combo de source deshabilitado
                     break;
-                case '3': // db
-                    setSelectedOrigin(true);
+                case '3': // all
+                    setISelectDisabled(false); // combo de source deshabilitado
+                    setSelectedOrigin(curOrigin); // establezco el último criterio de origen
                     break;
                 default:
             }
-            setISelectDisabled(true); // combo de source deshabilitado
         }
         setIsLoading(false);
     }, [nombreBusqueda]);
@@ -106,7 +109,6 @@ const FilterOrder = (props) => {
                     {/* <img className={imgCargando} src={IMG_ESPERA} alt="" /> */}
                 </div>
             ) : (
-
                 <div className={container}>
                     <div className={containerFiltrosOrden}>
                         {/* Filtrado por origen de datos: */}
