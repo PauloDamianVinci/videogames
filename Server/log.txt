@@ -12369,3 +12369,369 @@
 30/10/2023, 19:43:27 - getVideogames
 30/10/2023, 19:43:27 - all (DB)
 30/10/2023, 19:43:27 - all (API)
+30/10/2023, 19:44:07 - getVideogames
+30/10/2023, 19:44:07 - all (DB)
+30/10/2023, 19:44:07 - getGenres:
+30/10/2023, 19:44:07 - all (API)
+30/10/2023, 19:44:07 - getGenres:
+30/10/2023, 19:44:08 - getVideogames
+30/10/2023, 19:44:08 - all (DB)
+30/10/2023, 19:44:08 - all (API)
+30/10/2023, 19:45:27 - getVideogames
+30/10/2023, 19:45:27 - all (API)
+30/10/2023, 19:49:23 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:49:57 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:50:03 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:50:22 - getVideogames
+30/10/2023, 19:50:22 - all (API)
+30/10/2023, 19:50:24 - next=undefined
+30/10/2023, 19:50:45 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:50:47 - getVideogames
+30/10/2023, 19:50:47 - all (API)
+30/10/2023, 19:50:48 - next=[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+30/10/2023, 19:50:57 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:50:59 - getVideogames
+30/10/2023, 19:50:59 - all (API)
+30/10/2023, 19:51:00 - next=[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+30/10/2023, 19:51:43 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:51:45 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:51:49 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:51:50 - getVideogames
+30/10/2023, 19:51:50 - all (API)
+30/10/2023, 19:51:51 - next=https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 19:52:39 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:52:56 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:52:58 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:53:29 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:53:34 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:53:50 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:54:05 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:54:16 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:54:19 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:54:33 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:54:39 - getVideogames
+30/10/2023, 19:54:39 - all (API)
+30/10/2023, 19:54:39 - ERROR-> Cannot read properties of undefined (reading '0')
+30/10/2023, 19:55:09 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:55:20 - getVideogames
+30/10/2023, 19:55:20 - all (API)
+30/10/2023, 19:55:20 - ERROR-> Cannot read properties of undefined (reading '0')
+30/10/2023, 19:56:08 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:56:10 - getVideogames
+30/10/2023, 19:56:10 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 19:56:10 - all (API)
+30/10/2023, 19:56:12 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 19:56:12 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 19:56:13 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 19:56:13 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 19:56:15 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 19:56:15 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 19:56:16 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 19:56:16 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 19:56:17 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 19:56:50 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:56:56 - getVideogames
+30/10/2023, 19:56:56 - all (API)
+30/10/2023, 19:56:56 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 19:56:57 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 19:56:57 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 19:56:58 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 19:56:58 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 19:57:00 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 19:57:00 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 19:57:00 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 19:57:00 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 19:57:02 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 19:57:02 - ERROR-> Cannot read properties of undefined (reading 'map')
+30/10/2023, 19:58:41 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:59:05 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:59:07 - getVideogames
+30/10/2023, 19:59:07 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 19:59:07 - all (API)
+30/10/2023, 19:59:09 - ERROR-> objeto1 is not defined
+30/10/2023, 19:59:26 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 19:59:28 - getVideogames
+30/10/2023, 19:59:28 - all (API)
+30/10/2023, 19:59:28 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 19:59:29 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 19:59:29 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 19:59:31 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 19:59:31 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 19:59:31 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 19:59:31 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 19:59:33 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 19:59:33 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 19:59:34 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 20:01:27 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 20:01:29 - getVideogames
+30/10/2023, 20:01:29 - all (API)
+30/10/2023, 20:01:29 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:01:31 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:01:31 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:01:32 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:01:32 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:01:33 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:01:33 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:01:35 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:01:35 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:01:36 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 20:02:10 - getVideogames
+30/10/2023, 20:02:10 - all (DB)
+30/10/2023, 20:02:10 - getGenres:
+30/10/2023, 20:02:10 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:02:10 - all (API)
+30/10/2023, 20:02:11 - getGenres:
+30/10/2023, 20:02:11 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:02:11 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:02:12 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:02:12 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:02:14 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:02:14 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:02:15 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:02:15 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:02:17 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 20:02:17 - getVideogames
+30/10/2023, 20:02:17 - all (DB)
+30/10/2023, 20:02:17 - all (API)
+30/10/2023, 20:02:17 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:02:18 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:02:18 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:02:20 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:02:20 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:02:21 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:02:21 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:02:22 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:02:22 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:02:23 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 20:03:02 - getVideogames
+30/10/2023, 20:03:02 - by id=3387 (API)
+30/10/2023, 20:03:02 - by id=3387 (API)
+30/10/2023, 20:03:02 - getVideogames
+30/10/2023, 20:03:11 - getVideogames
+30/10/2023, 20:03:11 - by id=1447 (API)
+30/10/2023, 20:03:12 - by id=1447 (API)
+30/10/2023, 20:03:12 - getVideogames
+30/10/2023, 20:03:28 - getVideogames
+30/10/2023, 20:03:28 - by id=3017 (API)
+30/10/2023, 20:03:29 - by id=3017 (API)
+30/10/2023, 20:03:29 - getVideogames
+30/10/2023, 20:03:30 - getVideogames
+30/10/2023, 20:03:30 - all (DB)
+30/10/2023, 20:03:30 - getGenres:
+30/10/2023, 20:03:30 - all (API)
+30/10/2023, 20:03:30 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:03:31 - getGenres:
+30/10/2023, 20:03:32 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:03:32 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:03:33 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:03:33 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:03:34 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:03:34 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:03:35 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:03:35 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:03:36 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 20:03:36 - getVideogames
+30/10/2023, 20:03:36 - all (DB)
+30/10/2023, 20:03:36 - all (API)
+30/10/2023, 20:03:36 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:03:37 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:03:37 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:03:39 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:03:39 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:03:40 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:03:40 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:03:41 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:03:41 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:03:42 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 20:03:51 - by id=3017 (API)
+30/10/2023, 20:03:51 - getVideogames
+30/10/2023, 20:03:52 - getVideogames
+30/10/2023, 20:03:52 - by id=3017 (API)
+30/10/2023, 20:04:21 - by id=9882 (API)
+30/10/2023, 20:04:21 - getVideogames
+30/10/2023, 20:04:22 - getVideogames
+30/10/2023, 20:04:22 - by id=9882 (API)
+30/10/2023, 20:04:34 - by id=9882 (API)
+30/10/2023, 20:04:34 - getVideogames
+30/10/2023, 20:04:34 - getVideogames
+30/10/2023, 20:04:34 - by id=9882 (API)
+30/10/2023, 20:04:59 - getVideogames
+30/10/2023, 20:04:59 - by name=ddd (DB)
+30/10/2023, 20:04:59 - getGenres:
+30/10/2023, 20:04:59 - by name=ddd (API)
+30/10/2023, 20:05:25 - getVideogames
+30/10/2023, 20:05:25 - all (DB)
+30/10/2023, 20:05:25 - getGenres:
+30/10/2023, 20:05:25 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:05:25 - all (API)
+30/10/2023, 20:05:27 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:05:27 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:05:28 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:05:28 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:05:29 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:05:29 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:05:30 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:05:30 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:05:32 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 20:05:38 - getVideogames
+30/10/2023, 20:05:38 - by name=dddd (DB)
+30/10/2023, 20:05:38 - getGenres:
+30/10/2023, 20:05:38 - by name=dddd (API)
+30/10/2023, 20:06:10 - getVideogames
+30/10/2023, 20:06:10 - all (DB)
+30/10/2023, 20:06:10 - getGenres:
+30/10/2023, 20:06:10 - all (API)
+30/10/2023, 20:06:10 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:06:11 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:06:11 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:06:13 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:06:13 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:06:14 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:06:14 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:06:15 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:06:15 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:06:16 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 20:06:28 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 20:07:03 - getVideogames
+30/10/2023, 20:07:03 - all (DB)
+30/10/2023, 20:07:03 - getGenres:
+30/10/2023, 20:07:03 - all (API)
+30/10/2023, 20:07:03 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:07:04 - getGenres:
+30/10/2023, 20:07:05 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:07:05 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:07:06 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:07:06 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:07:07 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:07:07 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:07:09 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:07:09 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:07:10 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 20:07:10 - getVideogames
+30/10/2023, 20:07:10 - all (DB)
+30/10/2023, 20:07:10 - all (API)
+30/10/2023, 20:07:10 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:07:11 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:07:11 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:07:12 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:07:12 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:07:13 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:07:13 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:07:14 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:07:14 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:07:18 - next: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=6
+30/10/2023, 20:07:35 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 20:07:37 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 20:07:40 - getVideogames
+30/10/2023, 20:07:40 - all (DB)
+30/10/2023, 20:07:40 - getGenres:
+30/10/2023, 20:07:41 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:07:41 - all (API)
+30/10/2023, 20:07:42 - getGenres:
+30/10/2023, 20:07:42 - parte 2
+30/10/2023, 20:07:42 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:07:43 - parte 3
+30/10/2023, 20:07:43 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:07:44 - parte 4
+30/10/2023, 20:07:44 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:07:45 - parte 5
+30/10/2023, 20:07:45 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:07:46 - parte 6
+30/10/2023, 20:07:46 - getVideogames
+30/10/2023, 20:07:46 - all (DB)
+30/10/2023, 20:07:46 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:07:46 - all (API)
+30/10/2023, 20:07:49 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:07:49 - parte 2
+30/10/2023, 20:07:49 - parte 3
+30/10/2023, 20:07:49 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:07:52 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 20:07:54 - all (DB)
+30/10/2023, 20:07:54 - getVideogames
+30/10/2023, 20:07:54 - getGenres:
+30/10/2023, 20:07:54 - all (API)
+30/10/2023, 20:07:54 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:07:58 - getGenres:
+30/10/2023, 20:07:59 - parte 1
+30/10/2023, 20:07:59 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:08:00 - parte 2
+30/10/2023, 20:08:00 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:08:01 - parte 3
+30/10/2023, 20:08:01 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:08:03 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:08:03 - parte 4
+30/10/2023, 20:08:04 - parte 5
+30/10/2023, 20:08:04 - getVideogames
+30/10/2023, 20:08:04 - all (DB)
+30/10/2023, 20:08:04 - all (API)
+30/10/2023, 20:08:04 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047
+30/10/2023, 20:08:07 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=2
+30/10/2023, 20:08:07 - parte 1
+30/10/2023, 20:08:09 - parte 2
+30/10/2023, 20:08:09 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=3
+30/10/2023, 20:08:10 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=4
+30/10/2023, 20:08:10 - parte 3
+30/10/2023, 20:08:11 - endPointTMP: https://api.rawg.io/api/games?key=cb546394d1b84c418611a07508ddf047&page=5
+30/10/2023, 20:08:11 - parte 4
+30/10/2023, 20:08:13 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 20:08:14 - getVideogames
+30/10/2023, 20:08:14 - getGenres:
+30/10/2023, 20:08:14 - all (DB)
+30/10/2023, 20:08:14 - all (API)
+30/10/2023, 20:08:15 - parte 1
+30/10/2023, 20:08:15 - getGenres:
+30/10/2023, 20:08:16 - parte 2
+30/10/2023, 20:08:17 - parte 3
+30/10/2023, 20:08:18 - parte 4
+30/10/2023, 20:08:20 - parte 5
+30/10/2023, 20:08:20 - getVideogames
+30/10/2023, 20:08:20 - all (DB)
+30/10/2023, 20:08:20 - all (API)
+30/10/2023, 20:08:21 - parte 1
+30/10/2023, 20:08:22 - parte 2
+30/10/2023, 20:08:24 - parte 3
+30/10/2023, 20:08:25 - parte 4
+30/10/2023, 20:08:26 - parte 5
+30/10/2023, 20:08:46 - getVideogames
+30/10/2023, 20:08:46 - all (DB)
+30/10/2023, 20:08:46 - getGenres:
+30/10/2023, 20:08:46 - all (API)
+30/10/2023, 20:08:47 - getGenres:
+30/10/2023, 20:08:47 - parte 1
+30/10/2023, 20:08:49 - parte 2
+30/10/2023, 20:08:49 - parte 3
+30/10/2023, 20:08:50 - parte 4
+30/10/2023, 20:08:52 - parte 5
+30/10/2023, 20:08:52 - getVideogames
+30/10/2023, 20:08:52 - all (DB)
+30/10/2023, 20:08:52 - all (API)
+30/10/2023, 20:08:53 - parte 1
+30/10/2023, 20:08:54 - parte 2
+30/10/2023, 20:08:55 - parte 3
+30/10/2023, 20:08:56 - parte 4
+30/10/2023, 20:08:58 - parte 5
+30/10/2023, 20:09:35 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 20:09:59 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 20:10:06 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 20:10:16 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 20:10:18 - getVideogames
+30/10/2023, 20:10:18 - all (DB)
+30/10/2023, 20:10:18 - getGenres
+30/10/2023, 20:10:18 - all (API)
+30/10/2023, 20:10:19 - getGenres
+30/10/2023, 20:10:20 - - parte 1/5
+30/10/2023, 20:10:21 - - parte 2/5
+30/10/2023, 20:10:23 - - parte 3/5
+30/10/2023, 20:10:24 - - parte 4/5
+30/10/2023, 20:10:29 - - parte 5/5
+30/10/2023, 20:10:29 - getVideogames
+30/10/2023, 20:10:29 - all (DB)
+30/10/2023, 20:10:29 - all (API)
+30/10/2023, 20:10:30 - - parte 1/5
+30/10/2023, 20:10:32 - - parte 2/5
+30/10/2023, 20:10:33 - - parte 3/5
+30/10/2023, 20:10:34 - - parte 4/5
+30/10/2023, 20:10:35 - - parte 5/5
+30/10/2023, 20:10:38 - Server running into 3001 Port. DB Connection: NOT SECURE
+30/10/2023, 20:10:44 - getPlatforms
+30/10/2023, 20:10:45 - getPlatforms

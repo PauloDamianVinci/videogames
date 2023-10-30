@@ -133,10 +133,20 @@ const getFromAPI = async (idV, nameV) => {
             dataRes = response.data.results;
             res = makeObject(dataRes, 15); // búsqueda limitada a 15 resultados
         } else { // trae todos los videojuegos
+            // Como la API responde 20 juegos por vez, lo consulto 5 veces y le tiro a 
+            // la sgte e link next que me devuelve:
             showLog(`all (API)`);
-            response = await axios.get(`${videogamesApiUrl}/games?key=${apiKey}`)
-            dataRes = response.data.results;
-            res = makeObject(dataRes, 100); // búsqueda limitada a 100 resultados
+            let objTotal = [];
+            let endPointTMP = `${videogamesApiUrl}/games?key=${apiKey}`;
+            for (let i = 1; i <= 5; i++) {
+                response = await axios.get(endPointTMP);
+                dataRes = response.data.results;
+                objTotal = [...objTotal, ...dataRes];
+                next = response.data.next;
+                showLog(`- part ${i}/5`);
+                endPointTMP = next;
+            }
+            res = makeObject(objTotal, 100); // búsqueda limitada a 100 resultados
         };
         return res;
     } catch (err) {

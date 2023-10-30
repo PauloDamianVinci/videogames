@@ -8,7 +8,7 @@ const showLog = require("../functions/showLog");
 
 const getGenres = async (req, res) => {
     try {
-        showLog(`getGenres:`);
+        showLog(`getGenres`);
         response = await axios.get(`${videogamesApiUrl}/genres?key=${apiKey}`)
         const dataRes = response.data.results;
         const allGenres = dataRes.map(el => {
