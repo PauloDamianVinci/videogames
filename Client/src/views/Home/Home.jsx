@@ -6,7 +6,7 @@ import Pagination from "../../components/Pagination/Pagination";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { getVideogames, getVideogamesbyName, getGenres, setDataLoaded, setCurrPage } from "../../redux/actions";
+import { getVideogames, getVideogamesbyName, setDataLoaded, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
@@ -16,18 +16,15 @@ const { container, containerImgCargando, imgCargando, containerCards, containerS
 const Home = () => {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
-    //const [refresh, setRefresh] = useState(false);
     const [regListos, setRegListos] = useState(false);
     let allVideogames = useSelector((state) => state.videogames); // tengo en el store todos los video juegos
-    let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
     let dataLoaded = useSelector((state) => state.dataLoaded);
     let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
     let refreshHome = useSelector((state) => state.refreshHome);
-
     let origenBusqueda = useSelector((state) => state.origenBusqueda);
 
     useEffect(() => {
-        // Cargo los videojuegos y géneros desde la BD y API.
+        // Cargo los videojuegos desde la BD y API.
         setIsLoading(true);
         setRegListos(false);
         if (!dataLoaded) { // no hay datos. Los obtengo
@@ -40,23 +37,21 @@ const Home = () => {
                 setCurrentPage(1);
                 dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda }));
             }
-            dispatch(getGenres());
             // Indico que ya tengo datos cargados, para que no los refresque cada vez que vuelva
             // a cargar el componente:
             dispatch(setDataLoaded(true));
-        } else { // hay datos previamente obtenidos. No necesito refrescarlos
-            //console.log("CON datos previos");
         }
 
-        function ejecutarDespuesDelRetraso() {
-            setIsLoading(false);
-            setRegListos(true);
-        }
+        // function ejecutarDespuesDelRetraso() {
+        //     // Prueba temporal para ver relojito
+        //     setIsLoading(false);
+        //     setRegListos(true);
+        // }
 
+        // const timeoutId = setTimeout(ejecutarDespuesDelRetraso, 1000);
 
-        const timeoutId = setTimeout(ejecutarDespuesDelRetraso, 1000);
-
-
+        setIsLoading(false);
+        setRegListos(true);
 
     }, [refreshHome]);
 
@@ -71,13 +66,10 @@ const Home = () => {
     } else {
         currentGame = [];
     }
-
-    //console.log("currentPage Home ", currentPage);
     const paginado = (pageNumber) => {
         // Manejado desde el componente Pagination:
         setCurrentPage(pageNumber);
         // Memorizo la página actual para cuando salga de la vista y regrese:
-        //console.log("PAG Home ", pageNumber)
         dispatch(setCurrPage(pageNumber));
     };
 
@@ -92,7 +84,6 @@ const Home = () => {
             <div className={container} style={{ display: regListos ? 'block' : 'none' }}>
                 {regListos ? (
                     <div className={containerSec}>
-                        {/* <Nav setRefresh={setRefresh} refresh={refresh} /> */}
                         <Nav />
                         <Pagination
                             videogamePerPage={videogamesPerPage}

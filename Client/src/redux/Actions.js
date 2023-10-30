@@ -34,6 +34,10 @@ const VG_PLATFORMS = API_URL_BASE + VG_P;
 
 export const getVideogames = () => {
     const endpoint = VG_VIDEOGAMES + "/?source=3"; // "/?source=3" -> solicita de BD + API
+
+
+    console.log("getVideogames !!");
+
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint);

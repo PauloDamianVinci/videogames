@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { getPlatforms } from "../../redux/actions";
 import { useNavigate } from "react-router-dom";
-import { setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
+import { getGenres, setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Funciones:
 import validations from "./validations";
 // Variables de entorno:
@@ -19,8 +19,9 @@ const Create = () => {
     let platforms = useSelector((state) => state.platforms);
 
     useEffect(() => {
-        // Cargo las plataformas. Ya tengo los géneros desde antes.
+        // Cargo las plataformas y géneros. Ya tengo los géneros desde antes.
         dispatch(getPlatforms());
+        dispatch(getGenres());
     }, []);
 
     const [gameData, setGameData] = useState({
@@ -67,6 +68,9 @@ const Create = () => {
         dispatch(setCurrOrigin('All')); // le aviso a Filter que empiece por todos los orígenes
         dispatch(setOrigenBusqueda('3'));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
+
+
+        console.log("setRefreshHome 1");
         dispatch(setRefreshHome()); // obligo a home a refrescar datos
         navigate(HOME);
         return;
