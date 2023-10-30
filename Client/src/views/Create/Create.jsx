@@ -3,12 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { getPlatforms } from "../../redux/actions";
 import { useNavigate } from "react-router-dom";
-import { setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
+import { setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Funciones:
-import validator from "./validations";
+import validations from "./validations";
 // Variables de entorno:
 const HOME = import.meta.env.VITE_HOME || '/home';
-
 // Estilos: 
 import style from "./Create.module.css";
 const { container, mainTitle, secondText, startButton, imgBack } = style;
@@ -16,21 +15,18 @@ const { container, mainTitle, secondText, startButton, imgBack } = style;
 const Create = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [isLoading, setIsLoading] = useState(true);
     let genres = useSelector((state) => state.genres);
     let platforms = useSelector((state) => state.platforms);
 
     useEffect(() => {
         // Cargo las plataformas. Ya tengo los géneros desde antes.
-        setIsLoading(true);
         dispatch(getPlatforms());
-        setIsLoading(false);
     }, []);
 
     const [gameData, setGameData] = useState({
         name: "juego 0001",
         description: "desc juego 01",
-        image: "nada.img",
+        image: "https://res.cloudinary.com/dvptbowso/image/upload/v1698321837/PI_Videogames/sn7z4wl8vrz8wgh27cgj.jpg",
         released_date: "2020-01-01",
         rating: "2",
         genre: [],
@@ -47,54 +43,60 @@ const Create = () => {
         platform: [],
     });
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formErrors = validations(gameData);
+        setErrors(formErrors);
+        if (Object.keys(formErrors).length !== 0) { return; }
+        dispatch(postVidegame(gameData));
 
-
+        setGameData({
+            name: "",
+            description: "",
+            image: "",
+            released_date: "",
+            rating: "",
+            genre: [],
+            platform: [],
+        });
+        // busco todos los reg de nuevo:
+        // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
+        // filtrado y origen de búsqueda:
+        dispatch(setNombreBusqueda(''));
+        dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
+        dispatch(setCurrOrigin('All')); // le aviso a Filter que empiece por todos los orígenes
+        dispatch(setOrigenBusqueda('3'));
+        dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
+        dispatch(setRefreshHome()); // obligo a home a refrescar datos
+        navigate(HOME);
+        return;
+    }
 
     function handleSelectGenre(e) {
-        const selectedGenre = e.target.value;
         // Verifico repetición:
-        if (gameData.genre.includes(selectedGenre)) {
-            console.log("repe");
-            return;
-        }
-        console.log("NO repe");
+        const selectedGenre = e.target.value;
+        if (gameData.genre.includes(selectedGenre)) { return; }
         setGameData((prevInput) => ({
             ...prevInput,
             genre: [...prevInput.genre, selectedGenre],
         }));
-
-        setErrors(validator({
+        setErrors(validations({
             ...gameData,
             genre: [...gameData.genre, selectedGenre],
         }));
     }
 
     function handleSelectPlatform(e) {
+        // Verifico repetición:
         const selectedPlatform = e.target.value
-
-        // Verifico si la plataforma ya está presente en el array
-        if (gameData.platform.includes(selectedPlatform)) {
-            return; // No se realiza ninguna acción si ya está presente
-        }
+        if (gameData.platform.includes(selectedPlatform)) { return; }
         setGameData((prevInput) => ({
             ...prevInput,
             platform: [...prevInput.platform, selectedPlatform],
         }));
-
-        setErrors(validator({
+        setErrors(validations({
             ...gameData,
             platform: [...gameData.platform, selectedPlatform],
-        }));
-    }
-    function handleRemovePlatform(platform) {
-        setGameData((prevInput) => ({
-            ...prevInput,
-            platform: prevInput.platform.filter((p) => p !== platform),
-        }));
-
-        setErrors((prevErrors) => ({
-            ...prevErrors,
-            platform: "",
         }));
     }
 
@@ -103,63 +105,32 @@ const Create = () => {
             ...prevInput,
             genre: prevInput.genre.filter((g) => g !== genre),
         }));
-
         setErrors((prevErrors) => ({
             ...prevErrors,
             genre: "",
         }));
     }
 
+    function handleRemovePlatform(platform) {
+        setGameData((prevInput) => ({
+            ...prevInput,
+            platform: prevInput.platform.filter((p) => p !== platform),
+        }));
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            platform: "",
+        }));
+    }
 
     function handleChange(e) {
+        const property = e.target.name;
+        const value = e.target.value;
         setGameData({
             ...gameData,
-            [e.target.name]: e.target.value
-        })
-
-        setErrors(validator({
-            ...gameData,
-            [e.target.name]: e.target.value
-        }))
+            [property]: value
+        });
+        setErrors(validations({ ...gameData, [property]: value }))
     }
-
-    function handleSubmit(e) {
-        e.preventDefault();
-
-        const formErrors = validator(gameData);
-        setErrors(formErrors);
-
-        // Verificar si existen errores
-        if (Object.keys(formErrors).length === 0) {
-
-            dispatch(postVidegame(gameData));
-
-            //alert('Game created');
-            setGameData({
-                name: "",
-                description: "",
-                image: "",
-                released_date: "",
-                rating: "",
-                genre: [],
-                platform: [],
-            });
-            // busco todos los reg de nuevo:
-            // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
-            // filtrado y origen de búsqueda:
-            dispatch(setNombreBusqueda(''));
-            dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
-            //console.log("GUARDO ORIGEN BUSQUEDA 3 de prepo")
-            dispatch(setCurrOrigin('All')); // le aviso a Filter que empiece por todos los orígenes
-            dispatch(setOrigenBusqueda('3'));
-            dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-            dispatch(setRefreshHome()); // obligo a home a refrescar datos
-            navigate(HOME);
-        }
-    }
-
-
-
 
     return (
         <form className={container} onSubmit={handleSubmit}>
@@ -173,20 +144,21 @@ const Create = () => {
                     onChange={handleChange}
                     id="name"
                 />
-                <p className={container}>{errors.name}</p>
+                <span className={container}>{errors.name}</span>
             </div>
 
             <div className={container}>
                 <label htmlFor="description">description:</label>
-                <input
+                <textarea
                     name="description"
-                    type="text"
                     placeholder="Description"
                     value={gameData.description}
                     onChange={handleChange}
                     id="description"
+                    maxLength="150"
+                    rows="4"
                 />
-                <p className={container}>{errors.description}</p>
+                <span className={container}>{errors.description}</span>
             </div>
             <div className={container}>
                 <label htmlFor="image">image:</label>
@@ -198,31 +170,31 @@ const Create = () => {
                     onChange={handleChange}
                     id="image"
                 />
-                <p className={container}>{errors.image}</p>
+                <span className={container}>{errors.image}</span>
             </div>
             <div className={container}>
-                <label htmlFor="released">released:</label>
+                <label htmlFor="released_date">released:</label>
                 <input
-                    name="released"
+                    name="released_date"
                     type="text"
                     placeholder='Released (yyyy-mm-dd)'
                     value={gameData.released_date}
                     onChange={handleChange}
-                    id="released"
+                    id="released_date"
                 />
-                <p className={container}>{errors.released_date}</p>
+                <span className={container}>{errors.released_date}</span>
             </div>
             <div className={container}>
                 <label htmlFor="rating">rating:</label>
                 <input
                     name="rating"
-                    type="number"
+                    type="text"
                     placeholder='Rating (1-10)'
                     value={gameData.rating}
                     onChange={handleChange}
                     id="rating"
                 />
-                <p className={container}>{errors.rating}</p>
+                <span className={container}>{errors.rating}</span>
             </div>
 
             <div className={container}>
@@ -256,7 +228,7 @@ const Create = () => {
                     ))}
                 </div>
 
-                <p className={container}>{errors.genre}</p>
+                <span className={container}>{errors.genre}</span>
             </div>
             <div className={container}>
                 {/* Selección de plataformas: */}
@@ -289,9 +261,12 @@ const Create = () => {
                     ))}
                 </div>
 
-                <p className={container}>{errors.platform}</p>
+                <span className={container}>{errors.platform}</span>
             </div>
 
+            <div className={container}>
+                <button className={startButton} onClick={() => navigate(-1)} >Don't wanna play</button>
+            </div>
 
 
             <p className={container} href="/">

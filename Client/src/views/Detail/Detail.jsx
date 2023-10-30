@@ -12,7 +12,7 @@ import style from "./Detail.module.css";
 const { container, imgBack, img, features, featuresCard, ButtMore } = style;
 // Funciones:
 import formatDate from "../../functions/formatDate";
-import testLinkImage from "../../functions/testLinkImage";
+//import testLinkImage from "../../functions/testLinkImage";
 
 const Detail = () => {
     const navigate = useNavigate()
@@ -69,6 +69,8 @@ const Detail = () => {
             platformList = Platforms.map(plat => plat).join(" - ");
         }
     }
+
+    // PASAR A INGLES
 
     return (
         <div className={container}>

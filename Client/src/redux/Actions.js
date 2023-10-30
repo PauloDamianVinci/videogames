@@ -19,9 +19,6 @@ export const VG_VIDEOGAMES_BY_NAME = 'VG_VIDEOGAMES_BY_NAME'
 export const SET_NAME_SEARCH = 'SET_NAME_SEARCH'
 export const SET_SOURCE_SEARCH = 'SET_SOURCE_SEARCH'
 export const SET_REFRESH_HOME = 'SET_REFRESH_HOME'
-
-
-
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME'
 export const POST_GAME = 'POST_GAME'
 export const GET_VIDEOGAME_BY_ID = 'GET_VIDEOGAME_BY_ID'
@@ -52,6 +49,8 @@ export const getVideogames = () => {
 
 export const getVideogamesbyName = (payload) => {
     const endpoint = VG_VIDEOGAMES + "/?source=" + payload.origen + "&search=" + payload.nombre;
+    console.log(endpoint);
+
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint);
@@ -67,25 +66,18 @@ export const getVideogamesbyName = (payload) => {
 
 export const postVidegame = (payload) => {
     const endpoint = VG_VIDEOGAMES;
-
-    console.log("create videogame ", endpoint);
-    console.log("create videogame payload ", payload);
     return async (dispatch) => {
         try {
             const { data } = await axios.post(endpoint, payload);
-
-            console.log("create videogame data ", data);
-
             return dispatch({
                 type: POST_GAME,
-                payload: data,
             });
+
         } catch (error) {
             console.error("Error posting videogame:", error.message);
         }
     };
 }
-
 
 export const getGenres = () => {
     const endpoint = VG_GENRES;
@@ -157,6 +149,10 @@ export function getVideogameById(id) {
         }
     };
 }
+
+
+
+
 
 export function setDataLoaded(payload) {
     return {

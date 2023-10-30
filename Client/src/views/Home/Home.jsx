@@ -54,7 +54,6 @@ const Home = () => {
         }
 
 
-        // Usar setTimeout para programar la ejecución de la función después de 3000 milisegundos
         const timeoutId = setTimeout(ejecutarDespuesDelRetraso, 1000);
 
 

@@ -9,12 +9,11 @@ const postVideoGame = async (req, res) => {
     showLog(`postVideoGame`);
     try {
         if (!name || !description || !image || !released_date || !rating || !platform || !genre) { throw Error("Data missing"); }
-        // Verifico que no exista repetición de nombre en base de datos (no se verifica repetición en la API):
-        let esRepe = false;
-        esRepe = await Videogame.findOne({
-            where: { name: name, },
-        });
-        if (esRepe) { throw Error("It already exists"); }
+        // let esRepe = false;
+        // esRepe = await Videogame.findOne({
+        //     where: { name: name, },
+        // });
+        // if (esRepe) { throw Error("It already exists"); }
         const [VideogameCreated, created] = await Videogame.findOrCreate({
             where: { name, description, image, released_date, rating, OriginDB: true },
         });
