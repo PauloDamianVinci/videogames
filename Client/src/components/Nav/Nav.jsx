@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
+import { setRefreshHome, setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Estilos:
 import style from "./Nav.module.css";
 const { container, containerHidden, secondText, startButton, imgBack } = style;
@@ -15,7 +15,7 @@ const HOME = import.meta.env.VITE_HOME || '/home';
 const IMG_LOGO_NAV = import.meta.env.VITE_IMG_LOGO_NAV || '/src/assets/ImgNav.jpeg';
 
 const Nav = (props) => {
-    const { refresh, setRefresh } = props;
+    //const { refresh, setRefresh } = props;
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [name, setName] = useState('');
@@ -60,7 +60,10 @@ const Nav = (props) => {
         dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
         dispatch(setOrigenBusqueda(origin));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        setRefresh(!refresh);
+        dispatch(setRefreshHome()); // obligo a home a refrescar datos
+
+
+        //setRefresh(!refresh);
         //navigate(HOME);
         return;
     }
@@ -83,7 +86,8 @@ const Nav = (props) => {
         dispatch(setCurrOrigin('All')); // le aviso a Filter que empiece por todos los orígenes
         dispatch(setOrigenBusqueda('3'));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        setRefresh(!refresh);
+        dispatch(setRefreshHome()); // obligo a home a refrescar datos
+        //setRefresh(!refresh);
         //navigate(HOME);
     }
 

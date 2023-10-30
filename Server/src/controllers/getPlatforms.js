@@ -8,7 +8,7 @@ const showLog = require("../functions/showLog");
 
 const getPlatforms = async (req, res) => {
     try {
-        showLog(`getPlatforms:`);
+        showLog(`getPlatforms`);
         response = await axios.get(`${videogamesApiUrl}/platforms?key=${apiKey}`)
         const dataRes = response.data.results;
         const allPlatforms = dataRes.map(el => {

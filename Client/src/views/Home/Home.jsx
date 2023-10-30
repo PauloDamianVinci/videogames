@@ -16,12 +16,14 @@ const { container, containerImgCargando, imgCargando, containerCards, containerS
 const Home = () => {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
-    const [refresh, setRefresh] = useState(false);
+    //const [refresh, setRefresh] = useState(false);
     const [regListos, setRegListos] = useState(false);
     let allVideogames = useSelector((state) => state.videogames); // tengo en el store todos los video juegos
     let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
     let dataLoaded = useSelector((state) => state.dataLoaded);
     let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
+    let refreshHome = useSelector((state) => state.refreshHome);
+
     let origenBusqueda = useSelector((state) => state.origenBusqueda);
 
     useEffect(() => {
@@ -57,7 +59,7 @@ const Home = () => {
 
 
 
-    }, [refresh]);
+    }, [refreshHome]);
 
     // Lógica para el componente de paginado:
     const [currentPage, setCurrentPage] = useState(1); // siempre comienza en página 1
@@ -91,7 +93,8 @@ const Home = () => {
             <div className={container} style={{ display: regListos ? 'block' : 'none' }}>
                 {regListos ? (
                     <div className={containerSec}>
-                        <Nav setRefresh={setRefresh} refresh={refresh} />
+                        {/* <Nav setRefresh={setRefresh} refresh={refresh} /> */}
+                        <Nav />
                         <Pagination
                             videogamePerPage={videogamesPerPage}
                             allVideogames={allVideogames.length}

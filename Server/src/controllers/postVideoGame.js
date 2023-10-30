@@ -6,6 +6,7 @@ const showLog = require("../functions/showLog");
 
 const postVideoGame = async (req, res) => {
     const { name, description, image, released_date, rating, platform, genre } = req.body;
+    showLog(`postVideoGame`);
     try {
         if (!name || !description || !image || !released_date || !rating || !platform || !genre) { throw Error("Data missing"); }
         // Verifico que no exista repetición de nombre en base de datos (no se verifica repetición en la API):

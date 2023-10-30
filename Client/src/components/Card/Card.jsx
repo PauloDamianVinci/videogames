@@ -23,13 +23,20 @@ const Card = (props) => {
     useEffect(() => {
         // Las listas se llenaron diferente según el origen. Las trato por separado:
         if (image) {
-            setImgShow(image);
-            //console.log(imgShow);
+            // testeo el link de la imagen:
+            const imageTest = new Image();
+            imageTest.src = image;
+            imageTest.onload = () => {
+                setImgShow(imageTest.src);
+            };
+            imageTest.onerror = () => {
+                setImgShow(IMG_ERROR);
+            };
         };
         if (name) {
             setNameShow(name);
-            //console.log(nameShow);
         };
+
         if (rating) {
             setRatingShow(rating);
             //console.log(ratingShow);

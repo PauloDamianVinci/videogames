@@ -18,6 +18,8 @@ export const SET_CURR_ORIGIN = 'SET_CURR_ORIGIN'
 export const VG_VIDEOGAMES_BY_NAME = 'VG_VIDEOGAMES_BY_NAME'
 export const SET_NAME_SEARCH = 'SET_NAME_SEARCH'
 export const SET_SOURCE_SEARCH = 'SET_SOURCE_SEARCH'
+export const SET_REFRESH_HOME = 'SET_REFRESH_HOME'
+
 
 
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME'
@@ -50,9 +52,6 @@ export const getVideogames = () => {
 
 export const getVideogamesbyName = (payload) => {
     const endpoint = VG_VIDEOGAMES + "/?source=" + payload.origen + "&search=" + payload.nombre;
-
-    //console.log("endpoint: ", endpoint);
-
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint);
@@ -65,6 +64,28 @@ export const getVideogamesbyName = (payload) => {
         }
     };
 }
+
+export const postVidegame = (payload) => {
+    const endpoint = VG_VIDEOGAMES;
+
+    console.log("create videogame ", endpoint);
+    console.log("create videogame payload ", payload);
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.post(endpoint, payload);
+
+            console.log("create videogame data ", data);
+
+            return dispatch({
+                type: POST_GAME,
+                payload: data,
+            });
+        } catch (error) {
+            console.error("Error posting videogame:", error.message);
+        }
+    };
+}
+
 
 export const getGenres = () => {
     const endpoint = VG_GENRES;
@@ -204,23 +225,11 @@ export function setOrigenBusqueda(payload) {
     }
 }
 
-// export function postVidegame(payload) {
-//     return async function (dispatch) {
-//         let json = await axios.post('http://localhost:3001/videogames', payload) // cuando quiero postear loq ue viene  como payload lo hago asi
-//         return dispatch({
-//             type: POST_GAME,
-//             payload: json
-//         })
-//     }
-// }
+export function setRefreshHome(payload) {
+    return {
+        type: SET_REFRESH_HOME,
+        payload
+    }
+}
 
-// export function getVideogameById(id) {
-//     return async function (dispatch) {
-//         let json = await axios.get(`http://localhost:3001/videogames/${id}`)
-//         return dispatch({
-//             type: GET_VIDEOGAME_BY_ID,
-//             payload: json.data
-//         })
-//     }
-// }
 

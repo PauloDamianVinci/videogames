@@ -17,7 +17,7 @@ const getVideogames = async (req, res) => {
         const { id } = req.params;
         const { source, search } = req.query;
         let resp;
-        showLog(`getVideogames:`);
+        showLog(`getVideogames`);
         switch (source) {
             case '1': // origen DB
                 resp = await getFromDB(id, search);

@@ -5,7 +5,6 @@ import { getVideogameById, clearDetails } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 // Variables de entorno:
 const ERROR = import.meta.env.VITE_ERROR || '/error';
-const HOME = import.meta.env.VITE_HOME || '/home';
 const IMG_ERROR = import.meta.env.VITE_IMG_ERR_DETAIL || '/src/assets/NoPhoto.png';
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
@@ -13,15 +12,16 @@ import style from "./Detail.module.css";
 const { container, imgBack, img, features, featuresCard, ButtMore } = style;
 // Funciones:
 import formatDate from "../../functions/formatDate";
+import testLinkImage from "../../functions/testLinkImage";
 
 const Detail = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
+    const [imgShow, setImgShow] = useState(IMG_ERROR);
     const { id } = useParams();
     let name = "";
     let description = "Not found";
-    let image = IMG_ERROR;
     let released_date = "Not found";
     let rating = "Not found";
     let Genres = {};
@@ -35,8 +35,6 @@ const Detail = () => {
     useEffect(() => {
         setIsLoading(true);
         dispatch(getVideogameById(id));
-
-
         setIsLoading(false);
         return () => {
             dispatch(clearDetails()) // limpio la posible consulta previa
@@ -46,7 +44,17 @@ const Detail = () => {
     if (detail.length > 0) {
         if (detail[0].name) name = detail[0].name;
         if (detail[0].description) description = detail[0].description;
-        if (detail[0].image) image = detail[0].image;
+        if (detail[0].image) {
+            // testeo el link de la imagen:
+            const imageTest = new Image();
+            imageTest.src = detail[0].image;
+            imageTest.onload = () => {
+                setImgShow(imageTest.src);
+            };
+            imageTest.onerror = () => {
+                setImgShow(IMG_ERROR);
+            };
+        }
         if (detail[0].rating) rating = detail[0].rating;
         Genres = detail[0].Genres;
         Platforms = detail[0].Platforms;
@@ -70,7 +78,7 @@ const Detail = () => {
                 </div>
             ) : name ? (
                 <div className={container}>
-                    <img className={imgBack} src={image} alt="" />
+                    <img className={imgBack} src={imgShow} alt="" />
                     <h2 className={features}>{name}</h2>
                     <h2 className={features}>ID {id}</h2>
                     <h2 className={features}>Source: {OriginDB}</h2>

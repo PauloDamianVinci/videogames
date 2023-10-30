@@ -20,6 +20,7 @@ import {
     SET_NAME_SEARCH,
     SET_SOURCE_SEARCH,
     POST_GAME,
+    SET_REFRESH_HOME,
 
 } from "./actions";
 
@@ -44,10 +45,18 @@ const initialState = {
     curOrigin: 'All', // recuerdo el origen de datos para cuando regrese a la página
     nombreBusqueda: '', // guardo el nombre de la búsqueda. Si está vacío, traigo todos los videojuegos
     origenBusqueda: '3', // guardo el origen de la búsqueda por nombre. 1: BD, 2: API, 3: ambas
+    refreshHome: false, // para hacer que el home recargue en diferentes criterios
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case SET_REFRESH_HOME:
+            return {
+                ...state,
+                refreshHome: !state.refreshHome,
+            };
+        case POST_GAME:
+            return { ...state };
         case SET_NAME_SEARCH:
             return {
                 ...state,
@@ -218,6 +227,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 curOrigin: 'All', // recuerdo el origen de datos para cuando regrese a la página
                 //nombreBusqueda: '', // guardo el nombre de la búsqueda. Si está vacío, traigo todos los videojuegos
                 origenBusqueda: '3', // guardo el origen de la búsqueda por nombre. 1: BD, 2: API, 3: ambas
+                //refreshHome: false // para hacer que el home recargue en diferentes criterios
             };
         case RESET_ALL:
             return {
@@ -238,6 +248,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 curOrigin: 'All', // recuerdo el origen de datos para cuando regrese a la página
                 nombreBusqueda: '', // guardo el nombre de la búsqueda. Si está vacío, traigo todos los videojuegos
                 origenBusqueda: '3', // guardo el origen de la búsqueda por nombre. 1: BD, 2: API, 3: ambas
+                //refreshHome: false // para hacer que el home recargue en diferentes criterios
             };
 
         case GET_VIDEOGAME_BY_ID:

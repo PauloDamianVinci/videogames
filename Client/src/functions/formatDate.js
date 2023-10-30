@@ -8,7 +8,7 @@ const formatDate = (data) => {
     const mes = fecha.substring(5, 7);
     const anio = fecha.substring(0, 4);
     //fechaFormateada = `${dia}/${mes}/${anio}`;
-    fechaFormateada = `${anio}/${mes}/${dia}`;
+    fechaFormateada = `${anio}-${mes}-${dia}`;
     return fechaFormateada;
 }
 
