@@ -28,17 +28,23 @@ const FilterOrder = (props) => {
 
     useEffect(() => {
         if (dataLoaded) {
+
+            //console.log("Filter, SI hay datos previos recordados")
             // hay datos previamente obtenidos. Recupero los criterios guardados:
             setCurrentPage(curPageSaved); // siempre asegurarse que no sea mayor al de páginas total
             setSelectedOptionRating(curOptionRating);
             setSelectedOptionAZ(curOptionAZ);
             setSelectedGenre(curGenre);
             setSelectedOrigin(curOrigin); // establezco el último criterio de origen
+        } else {
+            //console.log("Filter, NO hay datos previos recordados")
         }
         if (!nombreBusqueda) {
+            //console.log("Filter, NO hay nombre recordados")
             setSelectedOrigin(curOrigin); // establezco el último criterio de origen
             setISelectDisabled(false); // combo de source habilitado
         } else {  // matcheo el criterio de origen con el de la búsqueda
+            //console.log("Filter, SI hay nombre recordados")
             switch (origenBusqueda) { // establezco el último criterio de origen según lo que busco
                 case '1': // db
                     setSelectedOrigin(true);

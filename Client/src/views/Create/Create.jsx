@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { getPlatforms } from "../../redux/actions";
 import { useNavigate } from "react-router-dom";
-import { getGenres, setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
+import { setCurrRating, setCurrAZ, setCurrGenre, setFirstBusqueda, getGenres, setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Funciones:
 import validations from "./validations";
 // Variables de entorno:
@@ -65,12 +65,15 @@ const Create = () => {
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(''));
         dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
-        dispatch(setCurrOrigin('All')); // le aviso a Filter que empiece por todos los orígenes
-        dispatch(setOrigenBusqueda('3'));
+        dispatch(setCurrOrigin('True')); // le aviso a Filter que empiece por origen BD
+
+        dispatch(setCurrAZ('')); // dejo de recordar los criterios de ordenamiento y filtro
+        dispatch(setCurrGenre('All')); // dejo de recordar los criterios de ordenamiento y filtro
+        dispatch(setCurrRating('')); // dejo de recordar los criterios de ordenamiento y filtro
+
+
+        dispatch(setOrigenBusqueda('1')); // fuerzo a refrescar la BD solamente
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-
-
-        //console.log("setRefreshHome 1");
         dispatch(setRefreshHome()); // obligo a home a refrescar datos
         navigate(HOME);
         return;

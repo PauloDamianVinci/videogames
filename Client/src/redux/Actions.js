@@ -24,6 +24,7 @@ export const POST_GAME = 'POST_GAME'
 export const GET_VIDEOGAME_BY_ID = 'GET_VIDEOGAME_BY_ID'
 export const CLEAR_DETAIL = 'CLEAR_DETAIL'
 export const SET_LISTO_MOSTRAR = 'SET_LISTO_MOSTRAR'
+export const SET_FIRST_BUSQUEDA = 'SET_FIRST_BUSQUEDA';
 // Variables de entorno:
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
 const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
@@ -33,11 +34,9 @@ const VG_VIDEOGAMES = API_URL_BASE + VG_V;
 const VG_GENRES = API_URL_BASE + VG_G;
 const VG_PLATFORMS = API_URL_BASE + VG_P;
 
-export const getVideogames = () => {
-    const endpoint = VG_VIDEOGAMES + "/?source=3"; // "/?source=3" -> solicita de BD + API
-
-
-    //console.log("getVideogames !!");
+export const getVideogames = (payload) => {
+    const endpoint = VG_VIDEOGAMES + "/?source=" + payload;
+    console.log("getVideogames !! ", endpoint);
 
     return async (dispatch) => {
         try {
@@ -73,6 +72,13 @@ export function setListoMostrar() {
         type: SET_LISTO_MOSTRAR,
     }
 }
+
+export function setFirstBusqueda() {
+    return {
+        type: SET_FIRST_BUSQUEDA,
+    }
+}
+
 
 
 export const postVidegame = (payload) => {

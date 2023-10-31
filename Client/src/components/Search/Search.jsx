@@ -14,7 +14,8 @@ const ROOT = import.meta.env.VITE_ROOT || '/';
 const HOME = import.meta.env.VITE_HOME || '/home';
 const IMG_LOGO_NAV = import.meta.env.VITE_IMG_LOGO_NAV || '/src/assets/ImgNav.jpeg';
 
-const Search = () => {
+const Search = (props) => {
+    const { ocultarCreate, setOcultarCreate } = props;
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [hideClean, setHideClean] = useState(false);
@@ -47,18 +48,20 @@ const Search = () => {
             window.alert("Name missing");
             return;
         };
+
         // Deshabilito la búsqueda hasta que se limpie manualmente:
         setHideSearch(false); // oculto search
         setHideClean(true); // muestro limpiar búsqueda
         setReadOnly(true); // no permito tipear en el input
         setIsDisabled(true); // deshabilito el combo de selección de origen
+        // Deshabilito el alta de videojuego hasta que se limpie manualmente:
+
         // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(name));
         dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
         dispatch(setOrigenBusqueda(origin));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        //console.log("setRefreshHome1");
         dispatch(setRefreshHome()); // obligo a home a refrescar datos
         return;
     }
@@ -72,17 +75,16 @@ const Search = () => {
         setIsDisabled(false); // habilito el combo de origen
         setSelectedOrigin('3');
         setOrigin('3');
+
+
         // busco todos los reg de nuevo:
         // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(''));
         dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
-        //console.log("GUARDO ORIGEN BUSQUEDA 3 de prepo")
         dispatch(setCurrOrigin('All')); // le aviso a Filter que empiece por todos los orígenes
         dispatch(setOrigenBusqueda('3'));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-
-        //console.log("setRefreshHome");
         dispatch(setRefreshHome()); // obligo a home a refrescar datos
     }
 

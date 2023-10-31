@@ -22,6 +22,7 @@ import {
     POST_GAME,
     SET_REFRESH_HOME,
     SET_LISTO_MOSTRAR,
+    SET_FIRST_BUSQUEDA,
 } from "./actions";
 
 const initialState = {
@@ -95,6 +96,11 @@ const rootReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 listoMostrar: false,
+            };
+        case SET_FIRST_BUSQUEDA:
+            return {
+                ...state,
+                firstLoad: 0,
             };
 
         case SET_CURR_PAGE:
