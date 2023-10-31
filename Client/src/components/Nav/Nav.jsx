@@ -8,7 +8,7 @@ import { resetAll } from "../../redux/actions";
 import Search from "../../components/Search/Search";
 // Estilos:
 import style from "./Nav.module.css";
-const { container, containerHidden, secondText, startButton, imgBack } = style;
+const { container, containerSec, containerImg, img, contButton, button, mainTitle } = style;
 // Variables de entorno:
 const CREATE = import.meta.env.VITE_CREATE || '/create';
 const ABOUT = import.meta.env.VITE_ABOUT || '/about';
@@ -39,11 +39,22 @@ const Nav = () => {
 
     return (
         <div className={container}>
-            <img className={container} src={IMG_LOGO_NAV} alt="" />
-            <button className={container} onClick={() => handleShowCreate()} >Create</button>
+            <div className={containerImg}>
+                <h1 className={mainTitle}>PI Video Games</h1>
+                <img className={img} src={IMG_LOGO_NAV} alt="" />
+            </div>
+            <div className={containerSec}>
+                <p className={contButton}>
+                    <button className={button} onClick={() => handleShowCreate()} >Create</button>
+                </p>
+                <p className={contButton}>
+                    <button className={button} onClick={() => navigate(ABOUT)} >About</button>
+                </p>
+                <p className={contButton}>
+                    <button className={button} onClick={handleExit}>Exit</button>
+                </p>
+            </div>
             <Search />
-            <button className={container} onClick={() => navigate(ABOUT)} >About</button>
-            <button className={container} onClick={handleExit}>Exit</button>
         </div >
     )
 }

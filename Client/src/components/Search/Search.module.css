@@ -1,51 +1,91 @@
-.container {
-    background-color: rgba(172, 48, 48, 0.774);
-    color: antiquewhite;
-
-    max-width: 40%;
-    height: auto;
-    font-size: 16px;
-}
-
 .containerHidden {
     display: none;
 }
 
+.container {
+    background-color: rgba(23, 136, 93, 0.658);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    flex-wrap: wrap;
+    max-width: 300px;
+    min-width: 200px;
+
+
+}
+
+.containerSec {
+    /* background-color: rgb(16, 82, 204); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+
+}
+
 .mainTitle {
-    background-color: rgba(106, 48, 172, 0.774);
-    color: antiquewhite;
-
-    max-width: 40%;
-    height: auto;
-    font-size: 16px;
-
+    /* position: absolute; */
+    top: 30%;
+    left: 50%;
+    color: rgb(255, 255, 254);
+    font-family: "Helvetica", Helvetica, sans-serif;
+    font-size: 1em;
 }
 
-.secondText {
-    background-color: rgba(13, 45, 148, 0.897);
-    color: antiquewhite;
-
-    max-width: 40%;
-    height: auto;
-    font-size: 16px;
-
+.input {
+    margin: 5px;
+    max-width: 100px;
 }
 
-.startButton {
-    background-color: rgba(16, 180, 131, 0.774);
-    color: antiquewhite;
-
-    max-width: 40%;
-    height: auto;
-    font-size: 16px;
-
+.contButton {
+    background-image: linear-gradient(to right, #006175 0%, #1fcab3 100%);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #1fcab3;
+    display: block;
+    height: 60px;
+    font-size: 1.5em;
+    padding: 4px;
+    text-decoration: none;
+    width: 6em;
+    margin: 1%;
 }
 
-.imgBack {
-    background-color: rgba(212, 149, 30, 0.774);
+.contButton:hover {
+    color: #fff;
+}
 
-    max-width: 40%;
-    height: auto;
-    font-size: 16px;
+.contButton .button {
+    align-items: center;
+    background: #0e0e10;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+    color: #1fcab3;
+    font-size: 1em;
+}
 
+.contButton:hover .button {
+    background: transparent;
+    color: #fff;
+}
+
+@media (max-width: 430px) {
+    .mainTitle {
+        /* font-size: 2em; */
+
+    }
+
+    .containerSec {
+        flex-direction: column;
+    }
+
+    .contButton {
+        width: 115%;
+        margin: 0%;
+    }
 }

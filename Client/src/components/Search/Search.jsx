@@ -6,7 +6,8 @@ import { useSelector } from "react-redux";
 import { setRefreshHome, setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Estilos:
 import style from "./Search.module.css";
-const { container, containerHidden, secondText, startButton, imgBack } = style;
+//const { container, containerHidden, secondText, startButton, imgBack } = style;
+const { input, container, containerSec, containerHidden, contButton, button, mainTitle } = style;
 // Variables de entorno:
 const CREATE = import.meta.env.VITE_CREATE || '/create';
 const ABOUT = import.meta.env.VITE_ABOUT || '/about';
@@ -118,27 +119,28 @@ const Search = (props) => {
 
     return (
         <div className={container}>
-            <div className={container}>
-                <h2 className={container}>Origin</h2>
-                <select onChange={handleOriginData} disabled={isDisabled} value={selectedOrigin}>
+            <div className={containerSec}>
+                <input
+                    className={input}
+                    type="text"
+                    placeholder="Search by name..."
+                    value={name}
+                    onChange={handleInputChange}
+                    id="name"
+                    readOnly={readOnly}
+                />
+                <h2 className={mainTitle}>Origin:</h2>
+                <select className={input} onChange={handleOriginData} disabled={isDisabled} value={selectedOrigin}>
                     <option value="All">All</option>
                     <option value="False">Api</option>
                     <option value="True">Database</option>
                 </select>
             </div>
-            <input
-                type="text"
-                placeholder="Search by name..."
-                value={name}
-                onChange={handleInputChange}
-                id="name"
-                readOnly={readOnly}
-            />
-            <div className={`${hideSearch ? container : containerHidden}`}>
-                <button className={container} onClick={handleSearch}>Search</button>
+            <div className={`${hideSearch ? contButton : containerHidden}`}>
+                <button className={button} onClick={handleSearch}>Search</button>
             </div>
-            <div className={`${hideClean ? container : containerHidden}`}>
-                <button className={container} onClick={handleClearSearch}>Clear search</button>
+            <div className={`${hideClean ? contButton : containerHidden}`}>
+                <button className={button} onClick={handleClearSearch}>Clear search</button>
             </div >
         </div >
     )
