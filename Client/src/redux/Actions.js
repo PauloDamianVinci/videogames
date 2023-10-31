@@ -36,7 +36,7 @@ export const getVideogames = () => {
     const endpoint = VG_VIDEOGAMES + "/?source=3"; // "/?source=3" -> solicita de BD + API
 
 
-    console.log("getVideogames !!");
+    //console.log("getVideogames !!");
 
     return async (dispatch) => {
         try {
@@ -53,7 +53,7 @@ export const getVideogames = () => {
 
 export const getVideogamesbyName = (payload) => {
     const endpoint = VG_VIDEOGAMES + "/?source=" + payload.origen + "&search=" + payload.nombre;
-    console.log(endpoint);
+    //console.log(endpoint);
 
     return async (dispatch) => {
         try {

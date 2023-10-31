@@ -58,7 +58,7 @@ const Search = () => {
         dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
         dispatch(setOrigenBusqueda(origin));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        console.log("setRefreshHome1");
+        //console.log("setRefreshHome1");
         dispatch(setRefreshHome()); // obligo a home a refrescar datos
         return;
     }
@@ -82,7 +82,7 @@ const Search = () => {
         dispatch(setOrigenBusqueda('3'));
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
 
-        console.log("setRefreshHome");
+        //console.log("setRefreshHome");
         dispatch(setRefreshHome()); // obligo a home a refrescar datos
     }
 

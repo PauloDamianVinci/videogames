@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 // Estilos:
 import style from "./Landing.module.css";
-const { container, mainTitle, secondText, startButton, imgBack } = style;
+const { container, mainTitle, secondText, img, contButton, button } = style;
 // Variables de entorno:
 const HOME = import.meta.env.VITE_HOME || '/home';
 const LAND = import.meta.env.VITE_IMG_LAND || '/src/assets/Land.jpg';
@@ -12,10 +12,12 @@ const Landing = () => {
 
     return (
         <div className={container}>
-            <h1 className={mainTitle}>PI Video Games - Henry</h1>
+            <img className={img} src={LAND} alt="" />
+            <h1 className={mainTitle}>PI Video Games</h1>
             <h2 className={secondText}>Wanna play?</h2>
-            <button className={startButton} onClick={() => navigate(HOME)} >Start</button>
-            <img className={imgBack} src={LAND} alt="" />
+            <p className={contButton} href="/">
+                <button className={button} onClick={() => navigate(HOME)} >Start</button>
+            </p>
         </div >
     )
 };

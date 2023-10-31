@@ -54,7 +54,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 ...state,
             };
         case SET_REFRESH_HOME:
-            console.log("redux setRefreshHome");
             return {
                 ...state,
                 refreshHome: !state.refreshHome,

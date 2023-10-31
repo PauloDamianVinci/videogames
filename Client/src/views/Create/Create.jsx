@@ -70,7 +70,7 @@ const Create = () => {
         dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
 
 
-        console.log("setRefreshHome 1");
+        //console.log("setRefreshHome 1");
         dispatch(setRefreshHome()); // obligo a home a refrescar datos
         navigate(HOME);
         return;
@@ -218,7 +218,7 @@ const Create = () => {
                 </select>
 
                 <div className={container}>
-                    Selected Genre/s::{" "}
+                    Selected Genre/s: {" "}
                     {gameData.genre.map((genre) => (
                         <span key={genre}>
                             {` ${genre}`}
@@ -226,7 +226,7 @@ const Create = () => {
                                 className={container}
                                 onClick={() => handleRemoveGenre(genre)}
                             >
-                                X
+                                x
                             </button>
                         </span>
                     ))}
@@ -251,7 +251,7 @@ const Create = () => {
                 </select>
 
                 <div className={container}>
-                    Selected Platform/s::{" "}
+                    Selected Platform/s: {" "}
                     {gameData.platform.map((platform) => (
                         <span key={platform}>
                             {` ${platform}`}
@@ -259,7 +259,7 @@ const Create = () => {
                                 className={container}
                                 onClick={() => handleRemovePlatform(platform)}
                             >
-                                X
+                                x
                             </button>
                         </span>
                     ))}
