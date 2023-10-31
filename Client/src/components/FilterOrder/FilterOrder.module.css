@@ -1,110 +1,102 @@
-.container {
-    background-color: rgba(172, 48, 48, 0.774);
-    color: antiquewhite;
-}
-
 .containerHidden {
     display: none;
 }
 
-.containerSec {
-    background-color: rgba(240, 230, 230, 0.877);
-    color: antiquewhite;
+.container {
+    background-color: rgba(109, 110, 103, 0.849);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    flex-wrap: wrap;
+    min-width: 200px;
 }
 
-.containerFiltrosOrden {
-    background-color: rgb(228, 207, 20);
-    color: antiquewhite;
-}
-
-.containerFiltrosOrigen {
-    background-color: rgb(53, 52, 43);
-    color: antiquewhite;
-}
-
-.filtroOrigen {
-    background-color: rgb(230, 228, 210);
-    color: rgb(121, 79, 24);
-}
-
-.containerFiltrosGenero {
-    background-color: rgb(53, 52, 43);
-    color: antiquewhite;
-}
-
-.filtroGenero {
-    background-color: rgb(53, 52, 43);
-    color: antiquewhite;
-}
-
-.ordenRating {
-    background-color: rgb(32, 117, 214);
-    color: antiquewhite;
-}
-
-.ordenAZ {
-    background-color: rgb(32, 117, 214);
-    color: antiquewhite;
-}
-
-.containerReset {
-    background-color: rgb(168, 15, 110);
-    color: antiquewhite;
-}
-
-.reset {
-    background-color: rgb(168, 15, 110);
-    color: antiquewhite;
-}
-
-
-.containerCards {
-    background-color: rgb(20, 241, 12);
-    color: antiquewhite;
-}
-
-.mainTitle {
-    background-color: rgba(106, 48, 172, 0.774);
-    color: antiquewhite;
-}
-
-.secondText {
-    background-color: rgba(13, 45, 148, 0.897);
-    color: antiquewhite;
-}
-
-.ThirdText {
-    background-color: rgb(42, 247, 15);
-    color: antiquewhite;
-    margin: 50%;
-}
-
-.startButton {
-    background-color: rgba(16, 180, 131, 0.774);
-    color: antiquewhite;
-}
-
-.imgBack {
-    background-color: rgba(212, 149, 30, 0.774);
-}
-
-.img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 50%;
-    padding: 10px;
-}
-
-.containerImgCargando {
-    background-color: rgb(223, 52, 180);
+.containerFiltrosOrigenGenero {
+    /* background-color: rgb(43, 68, 105); */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
 }
 
-.imgCargando {
+.texto {
+    /* background-color: rgb(204, 16, 16); */
+    top: 30%;
+    left: 50%;
+    color: rgb(255, 255, 254);
+    font-family: "Helvetica", Helvetica, sans-serif;
+    font-size: 1em;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.containerOrdenRatingAlfa {
+    /* background-color: rgb(20, 143, 46); */
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    text-justify: auto;
+    padding-top: 5px;
+    padding-right: 5px;
+
+}
+
+.contButton {
+    background-image: linear-gradient(to right, #006175 0%, #1fcab3 100%);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #1fcab3;
+    display: block;
+    height: 60px;
+    font-size: 1.5em;
+    padding: 4px;
+    text-decoration: none;
+    width: 6em;
+    margin: 0%;
+}
+
+.contButton:hover {
+    color: #fff;
+}
+
+.contButton .button {
+    align-items: center;
+    background: #0e0e10;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+    color: #1fcab3;
+    font-size: 1em;
+}
+
+.contButton:hover .button {
+    background: transparent;
+    color: #fff;
+}
+
+@media (max-width: 450px) {
+    .container {
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mainTitle {
+        font-size: 1.5em;
+    }
+
+    .containerSec {
+        flex-direction: column;
+    }
+
+    .contButton {
+        width: 80%;
+        margin-top: 2%;
+    }
 }

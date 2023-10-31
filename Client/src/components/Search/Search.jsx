@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import { setRefreshHome, setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Estilos:
 import style from "./Search.module.css";
-//const { container, containerHidden, secondText, startButton, imgBack } = style;
 const { input, container, containerSec, containerHidden, contButton, button, mainTitle } = style;
 // Variables de entorno:
 const CREATE = import.meta.env.VITE_CREATE || '/create';
@@ -55,8 +54,6 @@ const Search = (props) => {
         setHideClean(true); // muestro limpiar búsqueda
         setReadOnly(true); // no permito tipear en el input
         setIsDisabled(true); // deshabilito el combo de selección de origen
-        // Deshabilito el alta de videojuego hasta que se limpie manualmente:
-
         // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
         // filtrado y origen de búsqueda:
         dispatch(setNombreBusqueda(name));

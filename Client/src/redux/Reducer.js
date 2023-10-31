@@ -248,8 +248,8 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 curGenre: 'All', // recuerdo el filtro de género para cuando regrese a la página
                 curOrigin: 'All', // recuerdo el origen de datos para cuando regrese a la página
                 origenBusqueda: '3', // guardo el origen de la búsqueda por nombre. 1: BD, 2: API, 3: ambas
-                listoMostrar: false,
-                firstLoad: 0,
+                //listoMostrar: false,
+                //firstLoad: 0,
             };
         case RESET_ALL:
             return {

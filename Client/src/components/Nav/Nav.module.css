@@ -1,5 +1,5 @@
 .container {
-    background-color: rgba(177, 16, 16, 0.404);
+    background-color: rgba(177, 16, 16, 0.692);
     display: flex;
     justify-content: baseline;
     align-items: flex-start;
@@ -79,9 +79,11 @@
     color: #fff;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 450px) {
     .container {
         justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
     }
 
     .mainTitle {
@@ -93,7 +95,7 @@
     }
 
     .contButton {
-        width: 115%;
-        margin: 1%;
+        width: 100%;
+        margin-top: 1%;
     }
 }

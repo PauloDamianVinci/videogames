@@ -6,8 +6,7 @@ import { setCurrRating, setCurrAZ, setCurrGenre, setCurrOrigin } from "../../red
 import { filterOriginData, filterVideogamesByGenre, orderByRating, orderByAZ, resetFilterOrder, setCurrPage } from "../../redux/actions";
 // Estilos:
 import style from "./FilterOrder.module.css";
-const { container, containerHidden, containerFiltrosOrden, containerFiltrosOrigen, filtroOrigen, containerFiltrosGenero, filtroGenero, containerOrdenRating, containerOrdenAZ, containerReset, ordenRating, ordenAZ, reset } = style;
-
+const { container, containerFiltrosOrigenGenero, texto, containerOrdenRatingAlfa, contButton, button } = style;
 const FilterOrder = (props) => {
     const dispatch = useDispatch();
     const { setCurrentPage, dataLoaded } = props;
@@ -28,7 +27,6 @@ const FilterOrder = (props) => {
 
     useEffect(() => {
         if (dataLoaded) {
-
             //console.log("Filter, SI hay datos previos recordados")
             // hay datos previamente obtenidos. Recupero los criterios guardados:
             setCurrentPage(curPageSaved); // siempre asegurarse que no sea mayor al de páginas total
@@ -112,86 +110,84 @@ const FilterOrder = (props) => {
         <div>
             {isLoading ? (
                 <div className={container}>
-                    {/* <img className={imgCargando} src={IMG_ESPERA} alt="" /> */}
+                    <h2>...</h2>
                 </div>
             ) : (
                 <div className={container}>
-                    <div className={containerFiltrosOrden}>
-                        {/* Filtrado por origen de datos: */}
-                        <div className={containerFiltrosOrigen}>
-                            <h2 className={filtroOrigen} style={{ display: isSelectDisabled ? 'none' : 'block' }}>Origin</h2>
-                            <select onChange={handleOriginData} style={{ display: isSelectDisabled ? 'none' : 'block' }} value=
-                                {selectedOrigin}>
-                                <option value="All">All</option>
-                                <option value="False">Api</option>
-                                <option value="True">Database</option>
-                            </select>
-                        </div>
-                        {/* Filtrado por género: */}
-                        <div className={containerFiltrosGenero}>
-                            <h2 className={filtroGenero}>Genre</h2>
-                            <select onChange={handleFilterByGenre} value={selectedGenre}>
-                                <option value="All">All</option>
-                                {genres.map((genre) => {
-                                    return (
-                                        <option key={genre.id} value={genre.name}>
-                                            {genre.name}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                        </div>
-                        {/* Ordenamiento por rating: */}
-                        <div className={containerOrdenRating}>
-                            <h2 className={ordenRating}>Rating</h2>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="Ascending"
-                                    value="Ascending"
-                                    checked={selectedOptionRating === 'Ascending'}
-                                    onChange={handleOrderRating}
-                                />
-                                Ascending
-                            </label>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="Descending"
-                                    value="Descending"
-                                    checked={selectedOptionRating === 'Descending'}
-                                    onChange={handleOrderRating}
-                                />
-                                Descending
-                            </label>
-                        </div>
-                        {/* Ordenamiento alafabético: */}
-                        <div className={containerOrdenAZ}>
-                            <h2 className={ordenAZ}>Ordenamiento</h2>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="AZ"
-                                    value="AZ"
-                                    checked={selectedOptionAZ === 'AZ'}
-                                    onChange={handleOrderAZ}
-                                />
-                                A-Z
-                            </label>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="ZA"
-                                    value="ZA"
-                                    checked={selectedOptionAZ === 'ZA'}
-                                    onChange={handleOrderAZ}
-                                />
-                                Z-A
-                            </label>
-                        </div>
-                        <div className={containerReset}>
-                            <button className={reset} onClick={handleReset}>Reset</button>
-                        </div>
+                    {/* Filtrado por origen de datos: */}
+                    <div className={containerFiltrosOrigenGenero}>
+                        <h2 className={texto} style={{ display: isSelectDisabled ? 'none' : 'block' }}>Origin:</h2>
+                        <select onChange={handleOriginData} style={{ display: isSelectDisabled ? 'none' : 'block' }} value=
+                            {selectedOrigin}>
+                            <option value="All">All</option>
+                            <option value="False">Api</option>
+                            <option value="True">Database</option>
+                        </select>
+                    </div>
+                    {/* Filtrado por género: */}
+                    <div className={containerFiltrosOrigenGenero}>
+                        <h2 className={texto}>Genre:</h2>
+                        <select onChange={handleFilterByGenre} value={selectedGenre}>
+                            <option value="All">All</option>
+                            {genres.map((genre) => {
+                                return (
+                                    <option key={genre.id} value={genre.name}>
+                                        {genre.name}
+                                    </option>
+                                );
+                            })}
+                        </select>
+                    </div>
+                    {/* Ordenamiento alafabético: */}
+                    <div className={containerOrdenRatingAlfa}>
+                        <h2 className={texto}>Order:</h2>
+                        <label>
+                            <input
+                                type="radio"
+                                name="AZ"
+                                value="AZ"
+                                checked={selectedOptionAZ === 'AZ'}
+                                onChange={handleOrderAZ}
+                            />
+                            A-Z
+                        </label>
+                        <label>
+                            <input
+                                type="radio"
+                                name="ZA"
+                                value="ZA"
+                                checked={selectedOptionAZ === 'ZA'}
+                                onChange={handleOrderAZ}
+                            />
+                            Z-A
+                        </label>
+                    </div>
+                    {/* Ordenamiento por rating: */}
+                    <div className={containerOrdenRatingAlfa}>
+                        <h2 className={texto}>Rating:</h2>
+                        <label>
+                            <input
+                                type="radio"
+                                name="Ascending"
+                                value="Ascending"
+                                checked={selectedOptionRating === 'Ascending'}
+                                onChange={handleOrderRating}
+                            />
+                            Ascending
+                        </label>
+                        <label>
+                            <input
+                                type="radio"
+                                name="Descending"
+                                value="Descending"
+                                checked={selectedOptionRating === 'Descending'}
+                                onChange={handleOrderRating}
+                            />
+                            Descending
+                        </label>
+                    </div>
+                    <div className={contButton}>
+                        <button className={button} onClick={handleReset}>Reset</button>
                     </div>
                 </div>
             )}
