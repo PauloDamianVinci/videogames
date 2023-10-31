@@ -11,7 +11,7 @@ import { getGenres, setListoMostrar, getVideogames, getVideogamesbyName, setData
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
 import style from "./Home.module.css";
-const { container, containerImgCargando, imgCargando, containerCards, containerSec, containerHidden } = style;
+const { container, containerSec, text, img } = style;
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -33,12 +33,14 @@ const Home = () => {
             // búsqueda por nombre. En ambos casos, una vez obtenidos los datos, el tratamiento de 
             // filtro y otros criterios es igual:
             if (!nombreBusqueda) {
+                dispatch(getGenres());
                 dispatch(getVideogames(origenBusqueda)); // obtengo todos los videojuegos
             } else { // obtengo los videojuegos filtrados por nombre y origen
-                setCurrentPage(1);
+                //setCurrentPage(1);
                 dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda }));
             }
-            dispatch(getGenres());
+            setCurrentPage(1);
+
         }
     }, [refreshHome]); // -> otros componentes actualizan refreshHome para forzar a refrescar
 
@@ -63,26 +65,24 @@ const Home = () => {
     if (listoMostrar && firstLoad > 1) { // firstLoad es para evitar doble renderizado en la carga inicial
         return (
             <div className={container}>
-                <div className={containerSec}>
-                    <Nav />
-                    <Pagination
-                        videogamePerPage={videogamesPerPage}
-                        allVideogames={allVideogames.length}
-                        paginado={paginado}
-                        currentPage={currentPage}
-                    />
-                    <FilterOrder setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
-                    <Cards currentGame={currentGame} />
-                </div>
+                <Nav />
+                <FilterOrder setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
+                <Cards currentGame={currentGame} />
+                <Pagination
+                    videogamePerPage={videogamesPerPage}
+                    allVideogames={allVideogames.length}
+                    paginado={paginado}
+                    currentPage={currentPage}
+                />
             </div >
         );
     } else {
         return (
             <div className={container}>
-                <div >
-                    <img className={container} src={IMG_ESPERA} alt="" />
-                </div>
-            </div >
+                <div className={containerSec}>
+                    <img className={img} src={IMG_ESPERA} alt="" />
+                </div >
+            </div>
         );
     }
 }

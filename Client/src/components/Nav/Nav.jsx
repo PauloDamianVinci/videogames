@@ -29,9 +29,6 @@ const Nav = () => {
 
     function handleShowCreate() {
         // Permito ir al alta de video juego solamente si no estoy dentro de una búsqueda por nombre:
-
-
-        console.log("NOMBRE ", nombreBusqueda)
         if (nombreBusqueda) {
             window.alert("Not allowed: please clear search, then try again");
             return;
@@ -40,8 +37,6 @@ const Nav = () => {
         }
     }
 
-
-    //console.log("ocultarCreate-> ", ocultarCreate);
     return (
         <div className={container}>
             <img className={container} src={IMG_LOGO_NAV} alt="" />

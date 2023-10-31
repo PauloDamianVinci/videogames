@@ -1,110 +1,17 @@
 .container {
-    background-color: rgba(172, 48, 48, 0.774);
-    color: antiquewhite;
-}
-
-.containerHidden {
-    display: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
 }
 
 .containerSec {
-    background-color: rgba(240, 230, 230, 0.877);
-    color: antiquewhite;
-}
-
-.containerFiltrosOrden {
-    background-color: rgb(228, 207, 20);
-    color: antiquewhite;
-}
-
-.containerFiltrosOrigen {
-    background-color: rgb(53, 52, 43);
-    color: antiquewhite;
-}
-
-.filtroOrigen {
-    background-color: rgb(230, 228, 210);
-    color: antiquewhite;
-}
-
-.containerFiltrosGenero {
-    background-color: rgb(53, 52, 43);
-    color: antiquewhite;
-}
-
-.filtroGenero {
-    background-color: rgb(53, 52, 43);
-    color: antiquewhite;
-}
-
-.ordenRating {
-    background-color: rgb(32, 117, 214);
-    color: antiquewhite;
-}
-
-.ordenAZ {
-    background-color: rgb(32, 117, 214);
-    color: antiquewhite;
-}
-
-.containerReset {
-    background-color: rgb(168, 15, 110);
-    color: antiquewhite;
-}
-
-.reset {
-    background-color: rgb(168, 15, 110);
-    color: antiquewhite;
-}
-
-
-.containerCards {
-    background-color: rgb(20, 241, 12);
-    color: antiquewhite;
-}
-
-.mainTitle {
-    background-color: rgba(106, 48, 172, 0.774);
-    color: antiquewhite;
-}
-
-.secondText {
-    background-color: rgba(13, 45, 148, 0.897);
-    color: antiquewhite;
-}
-
-.ThirdText {
-    background-color: rgb(42, 247, 15);
-    color: antiquewhite;
-    margin: 50%;
-}
-
-.startButton {
-    background-color: rgba(16, 180, 131, 0.774);
-    color: antiquewhite;
-}
-
-.imgBack {
-    background-color: rgba(212, 149, 30, 0.774);
+    margin-top: 10%;
 }
 
 .img {
-    max-width: 80%;
+    /* height: 100vh; */
+    width: 40%;
     height: auto;
-    border-radius: 50%;
-    padding: 10px;
-}
-
-.containerImgCargando {
-    background-color: rgb(223, 52, 180);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-}
-
-.imgCargando {
-    align-items: center;
-    text-align: center;
-    text-justify: auto;
 }

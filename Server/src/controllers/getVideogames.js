@@ -6,7 +6,7 @@ const videogamesApiUrl = process.env.videogamesApiUrl || 'https://api.rawg.io/ap
 const apiKey = process.env.API_KEY || 'cb546394d1b84c418611a07508ddf047';
 const showLog = require("../functions/showLog");
 const { Op } = require('sequelize');
-const makeObject = require("../functions/makeObject");
+const { makeObject } = require("../functions/makeObject");
 
 const getVideogames = async (req, res) => {
     // Criterios de operación:
@@ -128,10 +128,18 @@ const getFromAPI = async (idV, nameV) => {
             dataRes = response.data;
             res = makeObject(dataRes, 1);
         } else if (nameV) { // por nombre
-            showLog(`by name=${nameV} (API)`);
+            dataRes
+
+            showLog(`${videogamesApiUrl}/games?key=${apiKey}&search=${nameV}`);
+
+
             response = await axios.get(`${videogamesApiUrl}/games?key=${apiKey}&search=${nameV}`)
             dataRes = response.data.results;
+            //showLog(dataRes);
+
+            showLog(`1`);
             res = makeObject(dataRes, 15); // búsqueda limitada a 15 resultados
+            showLog(`2`);
         } else { // trae todos los videojuegos
             // Como la API responde 20 juegos por vez, lo consulto 5 veces y le tiro a 
             // la sgte e link next que me devuelve:

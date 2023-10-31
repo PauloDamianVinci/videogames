@@ -1,6 +1,16 @@
+const showLog = require("../functions/showLog");
+
 // Cargo y devuelvo los datos recibidos en el objeto. Se usa para los videojuegos, ya que
 // pueden solicitarse de diferentes maneras.
 //const showLog = require("./showLog");
+const reemplazoChars = (data) => {
+    let salida = '';
+    //A's
+    salida = data.replace(/'/g, '-');
+
+    return salida;
+};
+
 
 const makeObject = (data, iteraciones) => {
     if (iteraciones > 1) {
@@ -12,13 +22,14 @@ const makeObject = (data, iteraciones) => {
             if (!data[i]) { break; } // se acabaron los resultados antes del límite
             aux = {
                 id: data[i].id,
+                // name: reemplazoChars(data[i].name),
                 name: data[i].name,
                 image: data[i].background_image,
                 description: '', // este dato no viene pero lo mantengo por compatibilidad
                 released_date: data[i].released,
                 rating: data[i].rating,
-                Platforms: data[i].platforms.map(el => el.platform.name),
-                Genres: data[i].genres.map(el => el.name),
+                Platforms: data[i].platforms && data[i].platforms.map(el => el.platform.name),
+                Genres: data[i].genres && data[i].genres.map(el => el.name),
                 OriginDB: false,
             }
             salida.push(aux);
@@ -36,14 +47,15 @@ const makeObject = (data, iteraciones) => {
             description: data.description_raw, // este dato no viene pero lo mantengo por compatibilidad
             released_date: data.released,
             rating: data.rating,
-            Platforms: data.platforms.map(el => el.platform.name),
-            Genres: data.genres.map(el => el.name),
-            //Platforms: data.platforms.map(el => el.platform.name),
-            //Genres: data.genres.map(el => el.name),
+            Platforms: data.platforms && data.platforms.map(el => el.platform.name),
+            Genres: data.genres && data.genres.map(el => el.name),
             OriginDB: false,
         }
         salida.push(aux);
         return salida;
     }
 };
-module.exports = makeObject;
+module.exports = {
+    makeObject,
+    reemplazoChars,
+}

@@ -11,7 +11,10 @@ const getGenres = async (req, res) => {
         showLog(`getGenres`);
         response = await axios.get(`${videogamesApiUrl}/genres?key=${apiKey}`)
         const dataRes = response.data.results;
+
+        //showLog(dataRes);
         const allGenres = dataRes.map(el => {
+            //showLog(el.id), ", ", el.id;
             return {
                 id: el.id,
                 name: el.name,
@@ -19,6 +22,7 @@ const getGenres = async (req, res) => {
         });
         // Obtenidos los datos de la API, los guardo en BD, sin pisar:
         for (let dato of allGenres) {
+            //showLog(dato.id), ", ", dato.name;
             await Genre.findOrCreate({
                 where: { id: dato.id, name: dato.name },
             })
