@@ -6,7 +6,7 @@ import Pagination from "../../components/Pagination/Pagination";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { getVideogames, getVideogamesbyName, setDataLoaded, setCurrPage } from "../../redux/actions";
+import { setListoMostrar, getVideogames, getVideogamesbyName, setDataLoaded, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
@@ -16,18 +16,19 @@ const { container, containerImgCargando, imgCargando, containerCards, containerS
 const Home = () => {
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true);
-    const [regListos, setRegListos] = useState(false);
     let allVideogames = useSelector((state) => state.videogames); // tengo en el store todos los video juegos
     let dataLoaded = useSelector((state) => state.dataLoaded);
     let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
     let refreshHome = useSelector((state) => state.refreshHome);
     let origenBusqueda = useSelector((state) => state.origenBusqueda);
+    let listoMostrar = useSelector((state) => state.listoMostrar);
+    let firstLoad = useSelector((state) => state.firstLoad);
 
     useEffect(() => {
         // Cargo los videojuegos desde la BD y API.
-        setIsLoading(true);
-        setRegListos(false);
+
         if (!dataLoaded) { // no hay datos. Los obtengo
+            dispatch(setListoMostrar()); // para que no muestre aún los reg
             // Acá se define si voy a traer todos los videojuegos o si se trata de una 
             // búsqueda por nombre. En ambos casos, una vez obtenidos los datos, el tratamiento de 
             // filtro y otros criterios es igual:
@@ -39,7 +40,7 @@ const Home = () => {
             }
             // Indico que ya tengo datos cargados, para que no los refresque cada vez que vuelva
             // a cargar el componente:
-            dispatch(setDataLoaded(true));
+            //dispatch(setDataLoaded(true)); // evaluar si se mantiene
         }
 
         // function ejecutarDespuesDelRetraso() {
@@ -48,10 +49,7 @@ const Home = () => {
         //     setRegListos(true);
         // }
 
-        // const timeoutId = setTimeout(ejecutarDespuesDelRetraso, 1000);
-
-        setIsLoading(false);
-        setRegListos(true);
+        // const timeoutId = se
 
     }, [refreshHome]);
 
@@ -73,32 +71,66 @@ const Home = () => {
         dispatch(setCurrPage(pageNumber));
     };
 
-    return (
-        <div className={container}>
-            {isLoading ? (
-                <div className={containerImgCargando}>
-                    <img className={imgCargando} src={IMG_ESPERA} alt="" />
+
+    console.log("listoMostrar: ", listoMostrar, ", firstLoad: ", firstLoad);
+    if (listoMostrar && firstLoad > 1) {
+        //console.log("listoMostrar");
+        return (
+            <div className={container}>
+                <div className={containerSec}>
+                    <Nav />
+                    <Pagination
+                        videogamePerPage={videogamesPerPage}
+                        allVideogames={allVideogames.length}
+                        paginado={paginado}
+                        currentPage={currentPage}
+                    />
+                    <FilterOrder setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
+                    <Cards currentGame={currentGame} />
                 </div>
-            ) : null
-            }
-            <div className={container} style={{ display: regListos ? 'block' : 'none' }}>
-                {regListos ? (
-                    <div className={containerSec}>
-                        <Nav />
-                        <Pagination
-                            videogamePerPage={videogamesPerPage}
-                            allVideogames={allVideogames.length}
-                            paginado={paginado}
-                            currentPage={currentPage}
-                        />
-                        <FilterOrder setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
-                        <Cards currentGame={currentGame} />
-                    </div>
-                ) : null
-                }
-            </div>
-        </div >
-    );
+            </div >
+        );
+    } else {
+        //console.log("NO listoMostrar firstLoad ", firstLoad);
+        return (
+            <div className={container}>
+                <div >
+                    <img className={container} src={IMG_ESPERA} alt="" />
+                </div>
+            </div >
+        );
+    }
+
+
+    // return (
+    //     <div className={container}>
+    //         {/* {isLoading ? (
+    //             <div className={containerImgCargando}>
+    //                 <img className={imgCargando} src={IMG_ESPERA} alt="" />
+    //             </div>
+    //         ) : null
+    //         } */}
+    //         <div >
+    //             <img className={`${regListos ? container : containerHidden}`} src={IMG_ESPERA} alt="" />
+    //         </div>
+    //         <div className={`${regListos ? containerHidden : container}`}>
+    //             {regListos ? (
+    //                 <div className={containerSec}>
+    //                     <Nav />
+    //                     <Pagination
+    //                         videogamePerPage={videogamesPerPage}
+    //                         allVideogames={allVideogames.length}
+    //                         paginado={paginado}
+    //                         currentPage={currentPage}
+    //                     />
+    //                     <FilterOrder setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
+    //                     <Cards currentGame={currentGame} />
+    //                 </div>
+    //             ) : null
+    //             }
+    //         </div>
+    //     </div >
+    // );
 }
 
 export default Home;

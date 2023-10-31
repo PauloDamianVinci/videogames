@@ -20,30 +20,29 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    color: antiquewhite;
+    color: rgb(255, 255, 254);
     font-family: "Helvetica", Helvetica, sans-serif;
     font-size: 7em;
 }
 
 .secondText {
-    color: rgb(243, 239, 15);
+    color: rgb(253, 249, 5);
     font-family: "Courier New", Helvetica, sans-serif;
     font-size: 8em;
     margin: 0%;
 }
 
 .contButton {
-    background-image: linear-gradient(to right, #006175 0%, #0ea591 100%);
+    background-image: linear-gradient(to right, #006175 0%, #1fcab3 100%);
     border-radius: 10px;
     box-sizing: border-box;
-    color: #0ea591;
+    color: #1fcab3;
     display: block;
     height: 60px;
-    font-size: 1.4em;
+    font-size: 2.4em;
     padding: 4px;
     text-decoration: none;
     width: 60%;
-    /* z-index: 1; */
     margin-left: 50%;
     margin-top: 8%;
     top: 30%;
@@ -64,7 +63,7 @@
     height: 100%;
     transition: background 0.5s ease;
     width: 100%;
-    color: #0ea591;
+    color: #1fcab3;
     font-size: 1em;
 }
 

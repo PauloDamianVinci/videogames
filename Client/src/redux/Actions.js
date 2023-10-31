@@ -23,6 +23,7 @@ export const SEARCH_BY_NAME = 'SEARCH_BY_NAME'
 export const POST_GAME = 'POST_GAME'
 export const GET_VIDEOGAME_BY_ID = 'GET_VIDEOGAME_BY_ID'
 export const CLEAR_DETAIL = 'CLEAR_DETAIL'
+export const SET_LISTO_MOSTRAR = 'SET_LISTO_MOSTRAR'
 // Variables de entorno:
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
 const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
@@ -67,6 +68,12 @@ export const getVideogamesbyName = (payload) => {
         }
     };
 }
+export function setListoMostrar() {
+    return {
+        type: SET_LISTO_MOSTRAR,
+    }
+}
+
 
 export const postVidegame = (payload) => {
     const endpoint = VG_VIDEOGAMES;
