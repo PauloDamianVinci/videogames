@@ -29,13 +29,17 @@ const FilterOrder = (props) => {
         if (dataLoaded) {
             //console.log("Filter, SI hay datos previos recordados")
             // hay datos previamente obtenidos. Recupero los criterios guardados:
+
+            console.log("setCurrentPage e ", curPageSaved);
             setCurrentPage(curPageSaved); // siempre asegurarse que no sea mayor al de páginas total
             setSelectedOptionRating(curOptionRating);
             setSelectedOptionAZ(curOptionAZ);
             setSelectedGenre(curGenre);
             setSelectedOrigin(curOrigin); // establezco el último criterio de origen
         } else {
-            //console.log("Filter, NO hay datos previos recordados")
+            //setCurrentPage
+            console.log("setCurrentPage ee ", 1);
+            setCurrentPage(1);
         }
         if (!nombreBusqueda) {
             //console.log("Filter, NO hay nombre recordados")

@@ -54,6 +54,10 @@ const Home = () => {
     } else {
         currentGame = [];
     }
+    // console.log("PAGINADO: allVideogames.length: ", allVideogames.length);
+    console.log("PAGINADO: currentGame: ", currentGame);
+    // console.log("PAGINADO: indexFirstGame: ", indexFirstGame);
+    // console.log("PAGINADO: indexLastGame: ", indexLastGame);
     const paginado = (pageNumber) => { // Manejado desde el componente Pagination
         setCurrentPage(pageNumber);
         // Memorizo la página actual para cuando salga de la vista y regrese:

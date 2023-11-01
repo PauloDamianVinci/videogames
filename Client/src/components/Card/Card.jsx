@@ -53,7 +53,7 @@ const Card = (props) => {
                 <div className={container}>
                     <h2>...</h2>
                 </div>
-            ) : genreList ? (
+            ) : name ? (
                 <div className={container}>
                     <div className={containerImg}>
                         <img className={img} src={imgShow} alt="" />

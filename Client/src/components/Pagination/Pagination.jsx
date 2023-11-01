@@ -1,58 +1,97 @@
+// hooks, routers, reducers:
+import { useState, useEffect } from "react";
 // Estilos:
 import style from "./Pagination.module.css";
-const { paginados, activePage, container, contButton, button } = style;
+const { container, contButton, button, buttonChosen, containerSec } = style;
 
 const Pagination = (props) => {
     const { videogamePerPage, allVideogames, paginado, currentPage } = props;
-    const pgNum = []
 
-    for (let i = 0; i < Math.ceil(allVideogames / videogamePerPage); i++) {
+    const pgNum = []
+    const totPages = Math.ceil(allVideogames / videogamePerPage);
+    for (let i = 0; i < totPages; i++) {
         pgNum.push(i + 1)
     }
 
+    //     <div className={containerSec}>
+    //     <div className={currentPage > 1 ? contButton : contButtonDisabled} href="/">
+    //         <button className={currentPage > 1 ? button : buttonDisabled} onClick={() => paginado(currentPage - 1)} >Prev.</button>
+    //     </div>
+    //     <div className={currentPage < totPages ? contButton : contButtonDisabled} href="/">
+    //         <button className={currentPage < totPages ? button : buttonDisabled} onClick={() => paginado(currentPage + 1)} >Next</button>
+    //     </div>
+    // </div>
+
+    // useEffect(() => {
+    //     console.log("HANDLE");
+    //     HandlePage(1);
+    // }, []);
+
+
+    const HandlePage = (number) => {
+        //console.log("HandlePage ", number);
+        paginado(number);
+    }
+
+    const HandlePrev = () => {
+        if (currentPage > 1) {
+            paginado(currentPage - 1);
+        }
+    }
+
+    const HandleNext = () => {
+        if (currentPage < totPages) {
+            paginado(currentPage + 1);
+        }
+    }
     return (
-        <div>
-            <ul className={container}>
+        <div className={container}>
+            <ul className={containerSec}>
+                <div className={contButton} href="/">
+                    <button className={button} onClick={() => HandlePrev()} >Prev.</button>
+                </div>
+                <div className={contButton} href="/">
+                    <button className={button} onClick={() => HandleNext()} >Next</button>
+                </div>
+
                 {pgNum.map((number) => {
                     return (
                         <li key={number}>
                             <div className={contButton}>
                                 <button
-                                    onClick={() => paginado(number)}
-                                    className={number === currentPage ? button : ""}
+                                    onClick={() => HandlePage(number)}
+                                    className={number === currentPage ? buttonChosen : button}
                                 >
                                     {number}
                                 </button>
                             </div>
-
                         </li>
                     );
                 })}
             </ul>
-        </div>
+        </div >
     );
-
-
 }
 
 export default Pagination;
 // return (
 //     <div>
-//         <nav className={paginados}>
-//             <ul>
-//                 {pgNum.map((number) => {
-//                     return (
-//                         <li key={number}>
-//                             <a href={`#${number}`}
-//                                 className={number === currentPage ? activePage : ""}
-//                                 onMouseDown={() => paginado(number)}>
+//         <ul className={container}>
+//             {pgNum.map((number) => {
+//                 return (
+//                     <li key={number}>
+//                         <div className={contButton}>
+//                             <button
+//                                 onClick={() => paginado(number)}
+//                                 className={number === currentPage ? buttonChosen : button}
+//                             >
 //                                 {number}
-//                             </a>
-//                         </li>
-//                     );
-//                 })}
-//             </ul>
-//         </nav>
+//                             </button>
+//                         </div>
 
+//                     </li>
+//                 );
+//             })}
+//         </ul>
 //     </div>
 // );

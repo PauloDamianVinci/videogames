@@ -2,15 +2,6 @@ const showLog = require("../functions/showLog");
 
 // Cargo y devuelvo los datos recibidos en el objeto. Se usa para los videojuegos, ya que
 // pueden solicitarse de diferentes maneras.
-//const showLog = require("./showLog");
-const reemplazoChars = (data) => {
-    let salida = '';
-    //A's
-    salida = data.replace(/'/g, '-');
-
-    return salida;
-};
-
 
 const makeObject = (data, iteraciones) => {
     if (iteraciones > 1) {
@@ -22,7 +13,6 @@ const makeObject = (data, iteraciones) => {
             if (!data[i]) { break; } // se acabaron los resultados antes del límite
             aux = {
                 id: data[i].id,
-                // name: reemplazoChars(data[i].name),
                 name: data[i].name,
                 image: data[i].background_image,
                 description: '', // este dato no viene pero lo mantengo por compatibilidad
@@ -55,7 +45,4 @@ const makeObject = (data, iteraciones) => {
         return salida;
     }
 };
-module.exports = {
-    makeObject,
-    reemplazoChars,
-}
+module.exports = makeObject;

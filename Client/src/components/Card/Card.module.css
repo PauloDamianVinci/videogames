@@ -4,7 +4,7 @@
     transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     overflow: hidden;
     width: 200px;
-    height: 383px;
+    height: 320px;
     border: 2px solid #1fcab3;
 }
 
@@ -15,7 +15,7 @@
     justify-content: flex-end;
     color: antiquewhite;
     width: 200px;
-    height: 200px;
+    height: 170px;
 }
 
 .containerImg {
@@ -28,7 +28,7 @@
 
 .img {
     width: 100%;
-    height: 170px;
+    height: 140px;
 }
 
 .featuresCardName {
@@ -41,7 +41,7 @@
 }
 
 .featuresCardGenre {
-    /* background-color: rgb(172, 164, 169); */
+    /* background-color: rgb(226, 135, 191); */
     color: rgb(255, 255, 254);
     font-family: "Helvetica", Helvetica, sans-serif;
     font-size: 1em;
