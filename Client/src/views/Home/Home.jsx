@@ -1,4 +1,5 @@
 // Componentes:
+import Error from "../../views/Error/Error";
 import Nav from "../../components/Nav/Nav";
 import FilterOrder from "../../components/FilterOrder/FilterOrder";
 import Cards from "../../components/Cards/Cards";
@@ -15,8 +16,7 @@ const { container, containerSec, text, img } = style;
 
 const Home = () => {
     const dispatch = useDispatch();
-    //const [isLoading, setIsLoading] = useState(true);
-    let allVideogames = useSelector((state) => state.videogames); // tengo en el store todos los video juegos
+    let allVideogames = useSelector((state) => state.videogames);
     let dataLoaded = useSelector((state) => state.dataLoaded);
     let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
     let refreshHome = useSelector((state) => state.refreshHome);
@@ -24,6 +24,7 @@ const Home = () => {
     let listoMostrar = useSelector((state) => state.listoMostrar);
     let firstLoad = useSelector((state) => state.firstLoad);
     let genres = useSelector((state) => state.genres);
+    let errors = useSelector((state) => state.errors);
 
     useEffect(() => {
         // Cargo los videojuegos desde la BD y API.
@@ -34,13 +35,11 @@ const Home = () => {
             // filtro y otros criterios es igual:
             if (!nombreBusqueda) {
                 dispatch(getGenres());
-                dispatch(getVideogames(origenBusqueda)); // obtengo todos los videojuegos
-            } else { // obtengo los videojuegos filtrados por nombre y origen
-                //setCurrentPage(1);
-                dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda }));
+                dispatch(getVideogames(origenBusqueda))
+            } else {
+                dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda }))
             }
             setCurrentPage(1);
-
         }
     }, [refreshHome]); // -> otros componentes actualizan refreshHome para forzar a refrescar
 
@@ -75,6 +74,14 @@ const Home = () => {
                     currentPage={currentPage}
                 />
             </div >
+        );
+    } else if (errors) {
+        return (
+            <div className={container}>
+                <div className={containerSec}>
+                    <Error message={errors} />
+                </div >
+            </div>
         );
     } else {
         return (

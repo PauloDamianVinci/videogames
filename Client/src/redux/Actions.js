@@ -25,6 +25,7 @@ export const GET_VIDEOGAME_BY_ID = 'GET_VIDEOGAME_BY_ID'
 export const CLEAR_DETAIL = 'CLEAR_DETAIL'
 export const SET_LISTO_MOSTRAR = 'SET_LISTO_MOSTRAR'
 export const SET_FIRST_BUSQUEDA = 'SET_FIRST_BUSQUEDA';
+export const SET_ERROR_MSG = 'SET_ERROR_MSG';
 // Variables de entorno:
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
 const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
@@ -36,8 +37,6 @@ const VG_PLATFORMS = API_URL_BASE + VG_P;
 
 export const getVideogames = (payload) => {
     const endpoint = VG_VIDEOGAMES + "/?source=" + payload;
-    //console.log("getVideogames !! ", endpoint);
-
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint);
@@ -47,14 +46,16 @@ export const getVideogames = (payload) => {
             });
         } catch (error) {
             console.error("Error fetching videogames:", error.message);
+            return dispatch({
+                type: SET_ERROR_MSG,
+                payload: "Error fetching videogames:" + error.message,
+            });
         }
     };
 }
 
 export const getVideogamesbyName = (payload) => {
     const endpoint = VG_VIDEOGAMES + "/?source=" + payload.origen + "&search=" + payload.nombre;
-    //console.log(endpoint);
-
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint);
@@ -64,6 +65,10 @@ export const getVideogamesbyName = (payload) => {
             });
         } catch (error) {
             console.error("Error fetching videogames by name:", error.message);
+            return dispatch({
+                type: SET_ERROR_MSG,
+                payload: "Error fetching videogames by name:" + error.message,
+            });
         }
     };
 }
@@ -92,6 +97,10 @@ export const postVidegame = (payload) => {
 
         } catch (error) {
             console.error("Error posting videogame:", error.message);
+            return dispatch({
+                type: SET_ERROR_MSG,
+                payload: "Error posting videogame:" + error.message,
+            });
         }
     };
 }
@@ -107,6 +116,10 @@ export const getGenres = () => {
             });
         } catch (error) {
             console.error("Error fetching genres:", error.message);
+            return dispatch({
+                type: SET_ERROR_MSG,
+                payload: "Error fetching genres:" + error.message,
+            });
         }
     };
 }
@@ -122,6 +135,10 @@ export const getPlatforms = () => {
             });
         } catch (error) {
             console.error("Error fetching platforms:", error.message);
+            return dispatch({
+                type: SET_ERROR_MSG,
+                payload: "Error fetching platforms:" + error.message,
+            });
         }
     };
 }
@@ -163,6 +180,10 @@ export function getVideogameById(id) {
             });
         } catch (error) {
             console.error("Error fetching details:", error.message);
+            return dispatch({
+                type: SET_ERROR_MSG,
+                payload: "Error fetching details:" + error.message,
+            });
         }
     };
 }

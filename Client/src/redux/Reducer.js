@@ -23,6 +23,7 @@ import {
     SET_REFRESH_HOME,
     SET_LISTO_MOSTRAR,
     SET_FIRST_BUSQUEDA,
+    SET_ERROR_MSG,
 } from "./actions";
 
 const initialState = {
@@ -49,6 +50,7 @@ const initialState = {
     refreshHome: false, // para hacer que el home recargue en diferentes criterios
     listoMostrar: false, // flag para que home refresque registros mostrando reloj
     firstLoad: 0, // contador de ocurrencias, evita el doble renderizado al comienzo
+    errors: '', // guardo los mensajes de error para mostrar en la pag.
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -56,6 +58,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
         case POST_GAME:
             return {
                 ...state,
+                errors: '',
             };
         case SET_REFRESH_HOME:
             return {
@@ -73,6 +76,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 origenBusqueda: payload,
             };
         case GET_VIDEOGAMES:
+            console.log("pasa");
             return {
                 ...state,
                 allVideogames: payload,
@@ -81,7 +85,16 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 listoMostrar: true,
                 dataLoaded: true,
                 firstLoad: state.firstLoad + 1,
+                errors: '',
             };
+        case SET_ERROR_MSG:
+
+            console.log("pasaaa ", payload);
+            return {
+                ...state,
+                errors: payload,
+            };
+
         case VG_VIDEOGAMES_BY_NAME:
             return {
                 ...state,
@@ -91,6 +104,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 listoMostrar: true,
                 dataLoaded: true,
                 firstLoad: state.firstLoad + 1,
+                errors: '',
             };
         case SET_LISTO_MOSTRAR:
             return {
@@ -137,11 +151,13 @@ const rootReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 genres: payload,
+                errors: '',
             };
         case GET_PLATFORMS:
             return {
                 ...state,
                 platforms: payload,
+                errors: '',
             };
         case FILTER_ORIGIN_CREATE:
             const filteredByOrigin = state.allVideogames.filter((elem) => {
@@ -250,6 +266,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 origenBusqueda: '3', // guardo el origen de la búsqueda por nombre. 1: BD, 2: API, 3: ambas
                 //listoMostrar: false,
                 //firstLoad: 0,
+                errors: '',
             };
         case RESET_ALL:
             return {
@@ -271,11 +288,13 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 nombreBusqueda: '', // guardo el nombre de la búsqueda. Si está vacío, traigo todos los videojuegos
                 origenBusqueda: '3', // guardo el origen de la búsqueda por nombre. 1: BD, 2: API, 3: ambas
                 firstLoad: 0,
+                errors: '',
             };
         case GET_VIDEOGAME_BY_ID:
             return {
                 ...state,
                 detail: payload,
+                errors: '',
             };
         case CLEAR_DETAIL:
             return {
