@@ -58,6 +58,25 @@ export const getGenres = () => {
     };
 }
 
+export const getPlatforms = () => {
+    const endpoint = VG_PLATFORMS;
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.get(endpoint);
+            return dispatch({
+                type: GET_PLATFORMS,
+                payload: data,
+            });
+        } catch (error) {
+            console.error("Error fetching platforms:", error.message);
+            return dispatch({
+                type: SET_ERROR_MSG,
+                payload: "Error fetching platforms:" + error.message,
+            });
+        }
+    };
+}
+
 export const getVideogames = (payload) => {
     const endpoint = VG_VIDEOGAMES + "/?source=" + payload;
     return async (dispatch) => {
@@ -124,6 +143,25 @@ export function resetFilterAndOrder() {
     return { type: RESET_FILTER_ORDER }
 }
 
+export const postVidegame = (payload) => {
+    const endpoint = VG_VIDEOGAMES;
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.post(endpoint, payload);
+            return dispatch({
+                type: POST_GAME, payload,
+            });
+
+        } catch (error) {
+            console.error("Error posting videogame:", error.message);
+            return dispatch({
+                type: SET_ERROR_MSG,
+                payload: "Error posting videogame:" + error.message,
+            });
+        }
+    };
+}
+
 
 
 
@@ -155,52 +193,15 @@ export function resetFilterAndOrder() {
 //     };
 // }
 
-export function setFirstBusqueda() {
-    return {
-        type: SET_FIRST_BUSQUEDA,
-    }
-}
+// export function setFirstBusqueda() {
+//     return {
+//         type: SET_FIRST_BUSQUEDA,
+//     }
+// }
 
 
 
-export const postVidegame = (payload) => {
-    const endpoint = VG_VIDEOGAMES;
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.post(endpoint, payload);
-            return dispatch({
-                type: POST_GAME,
-            });
 
-        } catch (error) {
-            console.error("Error posting videogame:", error.message);
-            return dispatch({
-                type: SET_ERROR_MSG,
-                payload: "Error posting videogame:" + error.message,
-            });
-        }
-    };
-}
-
-
-export const getPlatforms = () => {
-    const endpoint = VG_PLATFORMS;
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(endpoint);
-            return dispatch({
-                type: GET_PLATFORMS,
-                payload: data,
-            });
-        } catch (error) {
-            console.error("Error fetching platforms:", error.message);
-            return dispatch({
-                type: SET_ERROR_MSG,
-                payload: "Error fetching platforms:" + error.message,
-            });
-        }
-    };
-}
 
 
 

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 //import { useDispatch, useSelector } from "react-redux";
 import { resetFilterAndOrder, filterOriginData, filterVideogamesByGenre, orderByRating, orderByAZ, setCurrPage } from "../../redux/actions";
+// Funciones:
+import orderArray from "../../functions/orderArray";
 // Estilos:
 import style from "./FilterOrder.module.css";
 const { container, containerFiltrosOrigenGenero, texto, containerOrdenRatingAlfa, contButton, button } = style;
@@ -15,11 +17,13 @@ const FilterOrder = (props) => {
     const [selectedGenre, setSelectedGenre] = useState('All');
     const [isLoading, setIsLoading] = useState(true);
     const [isSelectDisabled, setISelectDisabled] = useState(false);
-    //const [aux, setAux] = useState(false);
+
+    // Funciones:
+    //import orderArray from "../../functions/orderArray";
+
     let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
-    // let curPageSaved = useSelector((state) => state.curPage);
-    // let curOptionRating = useSelector((state) => state.curOptionRating);
-    // let curOptionAZ = useSelector((state) => state.curOptionAZ);
+    let genresOrdered = orderArray(genres);
+
 
     // Obtengo los estados de los filtros actuales:
     let curGenre = useSelector((state) => state.filters.genre);

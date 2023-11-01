@@ -7,7 +7,7 @@ import Pagination from "../../components/Pagination/Pagination";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { getGenres, setListoMostrar, getVideogames, setDataLoaded, setCurrPage } from "../../redux/actions";
+import { getGenres, getPlatforms, setListoMostrar, getVideogames, setDataLoaded, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
@@ -25,18 +25,14 @@ const Home = () => {
     let allVideogames = useSelector((state) => state.videogames);
     // Acá llegan los posibles mensajes de error de actions:
     let errors = useSelector((state) => state.errors);
-    // let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
-    // let refreshHome = useSelector((state) => state.refreshHome);
-    // let origenBusqueda = useSelector((state) => state.origenBusqueda);
-    // let genres = useSelector((state) => state.genres);
     const [aux, setAux] = useState(false); // para forzar la actualización del DOM en los componentes
 
     useEffect(() => {
         if (!dataLoaded) { // no hay datos previos. Los obtengo
             dispatch(setListoMostrar()); // para que muestre el reloj de espera
             dispatch(getGenres()); // Obtengo todos los géneros
-            dispatch(getVideogames('3')) // Obtengo todos los videojuegos API y BD
-            //     dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda }))
+            dispatch(getPlatforms()); // Obtengo todas las plataformas
+            dispatch(getVideogames('3')) // Obtengo todos los videojuegos BD + API
             setCurrentPage(1);
         }
     }, []);

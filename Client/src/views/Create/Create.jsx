@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { getPlatforms } from "../../redux/actions";
 import { useNavigate } from "react-router-dom";
-import { setCurrRating, setCurrAZ, setCurrGenre, setFirstBusqueda, getGenres, setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
+import { resetFilterAndOrder, setCurrRating, setCurrAZ, setCurrGenre, getGenres, setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Funciones:
 import validations from "./validations";
+import orderArray from "../../functions/orderArray";
 // Variables de entorno:
 const HOME = import.meta.env.VITE_HOME || '/home';
+const IMG_HELP = import.meta.env.VITE_IMG_ABOUT || '/src/assets/Face.jpg';
 // Estilos: 
 import style from "./Create.module.css";
 const { container, mainTitle, secondText, startButton, imgBack } = style;
@@ -15,15 +17,14 @@ const { container, mainTitle, secondText, startButton, imgBack } = style;
 const Create = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    //Obtengo géneros y plataformas, los ordeno alfabéticamente:
     let genres = useSelector((state) => state.genres);
+    let genresOrdered = orderArray(genres);
     let platforms = useSelector((state) => state.platforms);
-
-    useEffect(() => {
-        // Cargo las plataformas y géneros. Ya tengo los géneros desde antes.
-        dispatch(getPlatforms());
-        dispatch(getGenres());
-    }, []);
-
+    let platformsOrdered = orderArray(platforms);
+    // Obtengo los posibles errores:
+    let errorCreate = useSelector((state) => state.errors);
+    // Estado de manejo de los datos de carga:
     const [gameData, setGameData] = useState({
         name: "juego 0001",
         description: "desc juego 01",
@@ -33,7 +34,7 @@ const Create = () => {
         genre: [],
         platform: [],
     });
-
+    // Estado de manejo de errores:
     const [errors, setErrors] = useState({
         name: "",
         description: "",
@@ -50,17 +51,12 @@ const Create = () => {
         setErrors(formErrors);
         if (Object.keys(formErrors).length !== 0) { return; }
         dispatch(postVidegame(gameData));
-
-
-        // mostrar mensaje de OK
-        // mostrar mensaje de rrror
-
-        // anexar el nuevo registro y no hacer búsqueda completa
-        // limpiar cuadro de búsqueda
-
-
-
-
+        if (errorCreate) {
+            window.alert("Error: ", errorCreate);
+        } else {
+            window.alert("Game created!");
+        }
+        // PROBAR QUE HOME MUESTRE EL ERROR SIEMPRE
         setGameData({
             name: "",
             description: "",
@@ -70,23 +66,25 @@ const Create = () => {
             genre: [],
             platform: [],
         });
-        // busco todos los reg de nuevo:
-        // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
-        // filtrado y origen de búsqueda:
-        dispatch(setNombreBusqueda(''));
-        dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
-        dispatch(setCurrOrigin('True')); // le aviso a Filter que empiece por origen BD
+    }
 
-        dispatch(setCurrAZ('')); // dejo de recordar los criterios de ordenamiento y filtro
-        dispatch(setCurrGenre('All')); // dejo de recordar los criterios de ordenamiento y filtro
-        dispatch(setCurrRating('')); // dejo de recordar los criterios de ordenamiento y filtro
+    function handleBack() {
+        // Regreso a la pantalla principal, pero limpio filtros porque agregué nuevos datos
+        // y merecen ser ordenados desde cero:
+        dispatch(resetFilterAndOrder());
+        //setCurrentPage(1);
+        //setAux(!aux); // es para forzar el refresco del DOM
+        navigate(-1);
+    }
 
 
-        dispatch(setOrigenBusqueda('1')); // fuerzo a refrescar la BD solamente
-        dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        dispatch(setRefreshHome()); // obligo a home a refrescar datos
-        navigate(HOME);
-        return;
+    function handlePasteLink() {
+        // pego un link a una imagen de ejemplo
+        console.log("PEGO ", IMG_HELP)
+        setGameData(prevGameData => ({
+            ...prevGameData,
+            image: IMG_HELP,
+        }));
     }
 
     function handleSelectGenre(e) {
@@ -282,7 +280,12 @@ const Create = () => {
             </div>
 
             <div className={container}>
-                <button className={startButton} onClick={() => navigate(-1)} >Don't wanna play</button>
+                <button className={startButton} onClick={() => handlePasteLink()} >Sample paste</button>
+            </div>
+
+
+            <div className={container}>
+                <button className={startButton} onClick={() => handleBack()} >Don't wanna play anymore</button>
             </div>
 
 

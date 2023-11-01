@@ -13,21 +13,6 @@ const Pagination = (props) => {
         pgNum.push(i + 1)
     }
 
-    //     <div className={containerSec}>
-    //     <div className={currentPage > 1 ? contButton : contButtonDisabled} href="/">
-    //         <button className={currentPage > 1 ? button : buttonDisabled} onClick={() => paginado(currentPage - 1)} >Prev.</button>
-    //     </div>
-    //     <div className={currentPage < totPages ? contButton : contButtonDisabled} href="/">
-    //         <button className={currentPage < totPages ? button : buttonDisabled} onClick={() => paginado(currentPage + 1)} >Next</button>
-    //     </div>
-    // </div>
-
-    // useEffect(() => {
-    //     console.log("HANDLE");
-    //     HandlePage(1);
-    // }, []);
-
-
     const HandlePage = (number) => {
         //console.log("HandlePage ", number);
         paginado(number);

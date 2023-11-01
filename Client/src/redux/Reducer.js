@@ -92,22 +92,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 ...state,
                 listoMostrar: false,
             };
-
-
-        // case RESET_FILTER_ORDER:
-        //     return {
-        //         ...state,
-        //         videogames: state.allVideogames,
-        //         filteredVideogames: state.allVideogames,
-        //         filters: {
-        //             ...state.filters,
-        //             genre: "All",
-        //             create: "All",
-        //             rating: "",
-        //             azza: "",
-        //             name: "",
-        //         },
-        //     };
         case FILTER_BY_NAME:
             //console.log("NAME: ", payload)
             console.log("FILTER_BY_NAME: ")
@@ -150,17 +134,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     name: payload,
                 },
             };
-        //     return {
-        //         ...state,
-        //         videogames: state.allVideogames,
-        //         filteredVideogames: state.allVideogames,
-        //         filters: {
-        //             ...state.filters,
-        //             genre: "All",
-        //             create: "All",
-        //             rating: "",
-        //             azza: "",
-        //             name: "",
         case CLEAR_FILTER_BY_NAME:
             console.log("Borro filtro NAME")
             // Borro el filtro de búsqueda por nombre:
@@ -302,13 +275,17 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     name: "",
                 },
             };
-
-
-
-
-
-
-
+        case POST_GAME:
+            return {
+                ...state,
+                allVideogames: payload,
+                videogames: payload,
+                filteredVideogames: payload,
+                listoMostrar: false,
+                dataLoaded: false,
+                firstLoad: state.firstLoad + 1,
+                errors: '',
+            };
 
 
 
@@ -317,11 +294,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
         ///////////////////////////////////////////
 
-        case POST_GAME:
-            return {
-                ...state,
-                errors: '',
-            };
         case SET_REFRESH_HOME:
             return {
                 ...state,
