@@ -26,6 +26,11 @@ export const CLEAR_DETAIL = 'CLEAR_DETAIL'
 export const SET_LISTO_MOSTRAR = 'SET_LISTO_MOSTRAR'
 export const SET_FIRST_BUSQUEDA = 'SET_FIRST_BUSQUEDA';
 export const SET_ERROR_MSG = 'SET_ERROR_MSG';
+export const FILTER_BY_NAME = 'FILTER_BY_NAME';
+export const CLEAR_FILTER_BY_NAME = 'CLEAR_FILTER_BY_NAME';
+export const RESET_FILTER_ORDER = 'RESET_FILTER_ORDER';
+
+
 // Variables de entorno:
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
 const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
@@ -34,6 +39,24 @@ const VG_P = import.meta.env.VITE_VG_PLATFORMS || '/platforms';
 const VG_VIDEOGAMES = API_URL_BASE + VG_V;
 const VG_GENRES = API_URL_BASE + VG_G;
 const VG_PLATFORMS = API_URL_BASE + VG_P;
+
+export const getGenres = () => {
+    const endpoint = VG_GENRES;
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.get(endpoint);
+            return dispatch({
+                type: GET_GENRES,
+                payload: data,
+            });
+        } catch (error) {
+            return dispatch({
+                type: SET_ERROR_MSG,
+                payload: "Error fetching genres:" + error.message,
+            });
+        }
+    };
+}
 
 export const getVideogames = (payload) => {
     const endpoint = VG_VIDEOGAMES + "/?source=" + payload;
@@ -45,7 +68,6 @@ export const getVideogames = (payload) => {
                 payload: data,
             });
         } catch (error) {
-            console.error("Error fetching videogames:", error.message);
             return dispatch({
                 type: SET_ERROR_MSG,
                 payload: "Error fetching videogames:" + error.message,
@@ -54,29 +76,84 @@ export const getVideogames = (payload) => {
     };
 }
 
-export const getVideogamesbyName = (payload) => {
-    const endpoint = VG_VIDEOGAMES + "/?source=" + payload.origen + "&search=" + payload.nombre;
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(endpoint);
-            return dispatch({
-                type: VG_VIDEOGAMES_BY_NAME,
-                payload: data,
-            });
-        } catch (error) {
-            console.error("Error fetching videogames by name:", error.message);
-            return dispatch({
-                type: SET_ERROR_MSG,
-                payload: "Error fetching videogames by name:" + error.message,
-            });
-        }
-    };
-}
 export function setListoMostrar() {
+    // Se ejecuta antes de hacer la primera búsqueda de videojuegos. Es para saber cuándo renderizar.
     return {
         type: SET_LISTO_MOSTRAR,
     }
 }
+
+export function filterVideogamesByName(payload) {
+    return {
+        type: FILTER_BY_NAME, payload,
+    }
+}
+
+export function clearFilterByName() {
+    // Limpio el filtro por nombre
+    return {
+        type: CLEAR_FILTER_BY_NAME,
+    }
+}
+
+export function filterOriginData(payload) {
+    return {
+        type: FILTER_ORIGIN_CREATE, payload,
+    }
+}
+
+export function filterVideogamesByGenre(payload) {
+    return {
+        type: FILTER_BY_GENRE, payload,
+    }
+}
+
+export function orderByRating(payload) {
+    return {
+        type: ORDER_BY_RATING, payload,
+    }
+}
+
+export function orderByAZ(payload) {
+    return {
+        type: ORDER_BY_AZ, payload,
+    }
+}
+
+export function resetFilterAndOrder() {
+    return { type: RESET_FILTER_ORDER }
+}
+
+
+
+
+
+
+
+
+
+
+
+// ///////////////////////
+
+// export const getVideogamesbyName = (payload) => {
+//     const endpoint = VG_VIDEOGAMES + "/?source=" + payload.origen + "&search=" + payload.nombre;
+//     return async (dispatch) => {
+//         try {
+//             const { data } = await axios.get(endpoint);
+//             return dispatch({
+//                 type: VG_VIDEOGAMES_BY_NAME,
+//                 payload: data,
+//             });
+//         } catch (error) {
+//             console.error("Error fetching videogames by name:", error.message);
+//             return dispatch({
+//                 type: SET_ERROR_MSG,
+//                 payload: "Error fetching videogames by name:" + error.message,
+//             });
+//         }
+//     };
+// }
 
 export function setFirstBusqueda() {
     return {
@@ -105,24 +182,6 @@ export const postVidegame = (payload) => {
     };
 }
 
-export const getGenres = () => {
-    const endpoint = VG_GENRES;
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(endpoint);
-            return dispatch({
-                type: GET_GENRES,
-                payload: data,
-            });
-        } catch (error) {
-            console.error("Error fetching genres:", error.message);
-            return dispatch({
-                type: SET_ERROR_MSG,
-                payload: "Error fetching genres:" + error.message,
-            });
-        }
-    };
-}
 
 export const getPlatforms = () => {
     const endpoint = VG_PLATFORMS;
@@ -143,31 +202,7 @@ export const getPlatforms = () => {
     };
 }
 
-export function filterOriginData(payload) {
-    return {
-        type: FILTER_ORIGIN_CREATE, payload
-    }
-}
 
-export function filterVideogamesByGenre(payload) {
-    return {
-        type: FILTER_BY_GENRE, payload
-    }
-}
-
-export function orderByRating(payload) {
-    return {
-        type: ORDER_BY_RATING,
-        payload
-    }
-}
-
-export function orderByAZ(payload) {
-    return {
-        type: ORDER_BY_AZ,
-        payload
-    }
-}
 
 export function getVideogameById(id) {
     const endpoint = VG_VIDEOGAMES + "/" + id;
@@ -205,9 +240,6 @@ export function clearDetails() {
     }
 }
 
-export function resetFilterOrder() {
-    return { type: RESET }
-}
 
 export function resetAll() {
     return { type: RESET_ALL }

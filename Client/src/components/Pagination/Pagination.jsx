@@ -58,10 +58,7 @@ const Pagination = (props) => {
                     return (
                         <li key={number}>
                             <div className={contButton}>
-                                <button
-                                    onClick={() => HandlePage(number)}
-                                    className={number === currentPage ? buttonChosen : button}
-                                >
+                                <button onClick={() => HandlePage(number)} className={number === currentPage ? buttonChosen : button}>
                                     {number}
                                 </button>
                             </div>
@@ -74,24 +71,3 @@ const Pagination = (props) => {
 }
 
 export default Pagination;
-// return (
-//     <div>
-//         <ul className={container}>
-//             {pgNum.map((number) => {
-//                 return (
-//                     <li key={number}>
-//                         <div className={contButton}>
-//                             <button
-//                                 onClick={() => paginado(number)}
-//                                 className={number === currentPage ? buttonChosen : button}
-//                             >
-//                                 {number}
-//                             </button>
-//                         </div>
-
-//                     </li>
-//                 );
-//             })}
-//         </ul>
-//     </div>
-// );

@@ -7,7 +7,7 @@ import Pagination from "../../components/Pagination/Pagination";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { getGenres, setListoMostrar, getVideogames, getVideogamesbyName, setDataLoaded, setCurrPage } from "../../redux/actions";
+import { getGenres, setListoMostrar, getVideogames, setDataLoaded, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
@@ -16,32 +16,30 @@ const { container, containerSec, text, img } = style;
 
 const Home = () => {
     const dispatch = useDispatch();
-    let allVideogames = useSelector((state) => state.videogames);
+
+    // Estos valores se usan para cargar todos los videojuegos desde API y BD la primera vez:
     let dataLoaded = useSelector((state) => state.dataLoaded);
-    let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
-    let refreshHome = useSelector((state) => state.refreshHome);
-    let origenBusqueda = useSelector((state) => state.origenBusqueda);
-    let listoMostrar = useSelector((state) => state.listoMostrar);
     let firstLoad = useSelector((state) => state.firstLoad);
-    let genres = useSelector((state) => state.genres);
+    let listoMostrar = useSelector((state) => state.listoMostrar);
+    // Estos valores los usa el componente de paginación:
+    let allVideogames = useSelector((state) => state.videogames);
+    // Acá llegan los posibles mensajes de error de actions:
     let errors = useSelector((state) => state.errors);
+    // let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
+    // let refreshHome = useSelector((state) => state.refreshHome);
+    // let origenBusqueda = useSelector((state) => state.origenBusqueda);
+    // let genres = useSelector((state) => state.genres);
+    const [aux, setAux] = useState(false); // para forzar la actualización del DOM en los componentes
 
     useEffect(() => {
-        // Cargo los videojuegos desde la BD y API.
         if (!dataLoaded) { // no hay datos previos. Los obtengo
             dispatch(setListoMostrar()); // para que muestre el reloj de espera
-            // Acá se define si voy a traer todos los videojuegos o si se trata de una 
-            // búsqueda por nombre. En ambos casos, una vez obtenidos los datos, el tratamiento de 
-            // filtro y otros criterios es igual:
-            if (!nombreBusqueda) {
-                dispatch(getGenres());
-                dispatch(getVideogames(origenBusqueda))
-            } else {
-                dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda }))
-            }
+            dispatch(getGenres()); // Obtengo todos los géneros
+            dispatch(getVideogames('3')) // Obtengo todos los videojuegos API y BD
+            //     dispatch(getVideogamesbyName({ origen: origenBusqueda, nombre: nombreBusqueda }))
             setCurrentPage(1);
         }
-    }, [refreshHome]); // -> otros componentes actualizan refreshHome para forzar a refrescar
+    }, []);
 
     // Lógica para el componente de paginado:
     const [currentPage, setCurrentPage] = useState(1); // siempre comienza en página 1
@@ -54,23 +52,17 @@ const Home = () => {
     } else {
         currentGame = [];
     }
-    // console.log("PAGINADO: allVideogames.length: ", allVideogames.length);
-    console.log("PAGINADO: currentGame: ", currentGame);
-    // console.log("PAGINADO: indexFirstGame: ", indexFirstGame);
-    // console.log("PAGINADO: indexLastGame: ", indexLastGame);
-    const paginado = (pageNumber) => { // Manejado desde el componente Pagination
+    const paginado = (pageNumber) => { // manejado desde el componente Pagination
         setCurrentPage(pageNumber);
-        // Memorizo la página actual para cuando salga de la vista y regrese:
-        dispatch(setCurrPage(pageNumber));
+        dispatch(setCurrPage(pageNumber)); // memorizo la página actual para cuando salga de la vista y regrese:
     };
 
-    //console.log("listoMostrar: ", listoMostrar, ", firstLoad: ", firstLoad);
     if (listoMostrar && firstLoad > 1) { // firstLoad es para evitar doble renderizado en la carga inicial
         return (
             <div className={container}>
-                <Nav />
-                <FilterOrder setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
-                <Cards currentGame={currentGame} />
+                <Nav aux={aux} setAux={setAux} />
+                <FilterOrder aux={aux} setAux={setAux} setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
+                <Cards aux={aux} setAux={setAux} currentGame={currentGame} />
                 <Pagination
                     videogamePerPage={videogamesPerPage}
                     allVideogames={allVideogames.length}

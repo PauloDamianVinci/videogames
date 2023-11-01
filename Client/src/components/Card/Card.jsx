@@ -11,7 +11,7 @@ const { container, containerImg, img, contButton, button, containerFeatures, fea
 
 const Card = (props) => {
     const navigate = useNavigate()
-    const { id, name, image, genresV, rating } = props;
+    const { id, name, image, genresV, rating, aux, setAux } = props;
     const [isLoading, setIsLoading] = useState(true);
     const linkDetail = `${DETAIL_BASE}/${id}`;
     const [genreList, setGenreList] = useState('');

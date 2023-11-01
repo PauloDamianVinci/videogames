@@ -51,6 +51,16 @@ const Create = () => {
         if (Object.keys(formErrors).length !== 0) { return; }
         dispatch(postVidegame(gameData));
 
+
+        // mostrar mensaje de OK
+        // mostrar mensaje de rrror
+
+        // anexar el nuevo registro y no hacer búsqueda completa
+        // limpiar cuadro de búsqueda
+
+
+
+
         setGameData({
             name: "",
             description: "",

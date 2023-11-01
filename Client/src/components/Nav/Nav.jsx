@@ -15,26 +15,27 @@ const ABOUT = import.meta.env.VITE_ABOUT || '/about';
 const ROOT = import.meta.env.VITE_ROOT || '/';
 const IMG_LOGO_NAV = import.meta.env.VITE_IMG_LOGO_NAV || '/src/assets/ImgNav.jpeg';
 
-const Nav = () => {
+const Nav = (props) => {
+    const { aux, setAux } = props;
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
+    //let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
 
     const handleExit = () => {
-        // Salgo al landing. Borro todo antes:
+        // Salgo al landing. Restablezco el store antes:
         dispatch(resetAll());
         navigate(ROOT);
     }
 
     function handleShowCreate() {
         // Permito ir al alta de video juego solamente si no estoy dentro de una búsqueda por nombre:
-        if (nombreBusqueda) {
-            window.alert("Not allowed: please clear search, then try again");
-            return;
-        } else {
-            navigate(CREATE);
-        }
+        // if (nombreBusqueda) {
+        //     window.alert("Not allowed: please clear search, then try again");
+        //     return;
+        // } else {
+        navigate(CREATE);
+        // }
     }
 
     return (
@@ -54,7 +55,7 @@ const Nav = () => {
                     <button className={button} onClick={handleExit}>Exit</button>
                 </p>
             </div>
-            <Search />
+            <Search aux={aux} setAux={setAux} />
         </div >
     )
 }

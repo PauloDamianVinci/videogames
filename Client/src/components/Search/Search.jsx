@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { setRefreshHome, setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
+import { clearFilterByName, filterVideogamesByName, setNombreBusqueda, setOrigenBusqueda, resetAll, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Estilos:
 import style from "./Search.module.css";
 const { input, container, containerSec, containerHidden, contButton, button, mainTitle } = style;
@@ -15,130 +15,92 @@ const HOME = import.meta.env.VITE_HOME || '/home';
 const IMG_LOGO_NAV = import.meta.env.VITE_IMG_LOGO_NAV || '/src/assets/ImgNav.jpeg';
 
 const Search = (props) => {
-    const { ocultarCreate, setOcultarCreate } = props;
+    const { aux, setAux } = props;
     const dispatch = useDispatch();
     const [name, setName] = useState('');
-    const [hideClean, setHideClean] = useState(false);
-    const [hideSearch, setHideSearch] = useState(false);
-    const [origin, setOrigin] = useState('3')
-    const [selectedOrigin, setSelectedOrigin] = useState('All');
-    const [readOnly, setReadOnly] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
-    const [isDisabled, setIsDisabled] = useState(false);
-    let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
-    let origenBusqueda = useSelector((state) => state.origenBusqueda);
+    // const [hideClean, setHideClean] = useState(false);
+    // const [hideSearch, setHideSearch] = useState(false);
+    //const [aux, setAux] = useState(false);
+    // const [origin, setOrigin] = useState('3')
+    // const [selectedOrigin, setSelectedOrigin] = useState('All');
+    //const [readOnly, setReadOnly] = useState(false);
+    // const [isLoading, setIsLoading] = useState(true);
+    // const [isDisabled, setIsDisabled] = useState(false);
+    // let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
+    // let origenBusqueda = useSelector((state) => state.origenBusqueda);
+    // Obtengo los estados de los settings actuales:
+    let curName = useSelector((state) => state.filters.name);
 
     useEffect(() => {
-        setIsLoading(true);
-        if (nombreBusqueda) {
-            // hay datos previamente obtenidos. Recupero los criterios guardados:
-            setHideSearch(false); // oculto search
-            setHideClean(true); // muestro limpiar búsqueda
-            setReadOnly(true); // no permito tipear en el input
-            setName(nombreBusqueda); // guardo el nombre a buscar
-            setIsDisabled(true); // deshabilito el combo de selección de origen
-            setSelectedOrigin(origenBusqueda); // guardo el origen de la búsqueda
-        }
-        setIsLoading(false);
-    }, []);
-
-    const handleSearch = () => {
-        // Valido que haya un nombre para buscar:
-        if (!name) {
-            window.alert("Name missing");
-            return;
-        };
-
-        // Deshabilito la búsqueda hasta que se limpie manualmente:
-        setHideSearch(false); // oculto search
-        setHideClean(true); // muestro limpiar búsqueda
-        setReadOnly(true); // no permito tipear en el input
-        setIsDisabled(true); // deshabilito el combo de selección de origen
-        // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
-        // filtrado y origen de búsqueda:
-        dispatch(setNombreBusqueda(name));
-        dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
-        dispatch(setOrigenBusqueda(origin));
-        dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        dispatch(setRefreshHome()); // obligo a home a refrescar datos
-        return;
-    }
-
-    function handleClearSearch(e) {
-        // Limpio el criterio de búsqueda:
-        e.preventDefault();
-        setName(''); // limpio el input
-        setHideClean(false); // oculto el propio botón
-        setReadOnly(false); // permito volver a tipear un nombre
-        setIsDisabled(false); // habilito el combo de origen
-        setSelectedOrigin('3');
-        setOrigin('3');
+        setName(curName);
+        console.log("SEARCH - USEEFECT ACTUALIZO ESTADOS")
+    }, [aux]);
 
 
-        // busco todos los reg de nuevo:
-        // Preparo el store para que cargue home nuevamente, pero esta vez con opción de
-        // filtrado y origen de búsqueda:
-        dispatch(setNombreBusqueda(''));
-        dispatch(setCurrPage('1')); // siempre inicia en página 1 la búsqueda
-        dispatch(setCurrOrigin('All')); // le aviso a Filter que empiece por todos los orígenes
-        dispatch(setOrigenBusqueda('3'));
-        dispatch(setDataLoaded(false)); // obligo a home a refrescar datos
-        dispatch(setRefreshHome()); // obligo a home a refrescar datos
-    }
+    // const handleSearch = () => {
+    //     // Valido que haya un nombre para buscar:
+    //     if (!name) {
+    //         window.alert("Name missing");
+    //         return;
+    //     };
+    //     dispatch(filterVideogamesByName(name));
+    //     setHideSearch(false); // oculto search
+    //     setHideClean(true); // muestro limpiar búsqueda
+    //     setAux(!aux); // es para forzar el refresco del DOM
+
+    //     // Esto hace reset de Filter:
+    //     // dispatch(resetFilterAndOrder());
+    //     // setCurrentPage(1);
+    //     // setAux(!aux); // es para forzar el refresco del DOM
+
+
+    // }
+
+    // function handleClearSearch(e) {
+    //     // Limpio el criterio de búsqueda:
+    //     e.preventDefault();
+    //     // mandar a limpiar el filtro de nombre al estado:
+    //     dispatch(clearFilterByName());
+    //     dispatch(filterVideogamesByName('')); // vuelvo a filtrar por nombre pero vacío, para refrescar
+    //     setAux(!aux); // es para forzar el refresco del DOM
+    //     setName(''); // limpio el input
+    //     setHideClean(false); // oculto el propio botón
+    //     setHideSearch(false); // muestro de nuevo el botón de búsqueda
+    // }
 
     function handleInputChange(e) {
         // El botón de limpiar filtros se oculta si no hay texto ingresado:
         e.preventDefault();
         setName(e.target.value);
-        if (!e.target.value) { // se oculta search
-            setHideSearch(false);
+        if (!e.target.value) { // se muestra todo
+            dispatch(clearFilterByName());
+
+
+
         } else { // se muestra search
-            setHideSearch(true);
+            dispatch(filterVideogamesByName(e.target.value));
         }
     }
-
-    function handleOriginData(e) {
-        switch (e.target.value) {
-            case 'All':
-                setOrigin('3'); // ambos
-                break;
-            case 'False':
-                setOrigin('2'); // api
-                break;
-            case 'True':
-                setOrigin('1'); // db
-                break;
-            default:
-        }
-        setSelectedOrigin(e.target.value);
-    }
-
 
     return (
         <div className={container}>
             <div className={containerSec}>
                 <input
                     className={input}
+                    name="name"
                     type="text"
                     placeholder="Search by name..."
                     value={name}
                     onChange={handleInputChange}
                     id="name"
-                    readOnly={readOnly}
                 />
-                <h2 className={mainTitle}>Origin:</h2>
-                <select className={input} onChange={handleOriginData} disabled={isDisabled} value={selectedOrigin}>
-                    <option value="All">All</option>
-                    <option value="False">Api</option>
-                    <option value="True">Database</option>
-                </select>
             </div>
-            <div className={`${hideSearch ? contButton : containerHidden}`}>
+            {/* <div className={`${hideSearch ? contButton : containerHidden}`}>
                 <button className={button} onClick={handleSearch}>Search</button>
             </div>
             <div className={`${hideClean ? contButton : containerHidden}`}>
                 <button className={button} onClick={handleClearSearch}>Clear search</button>
-            </div >
+            </div > */}
         </div >
     )
 
