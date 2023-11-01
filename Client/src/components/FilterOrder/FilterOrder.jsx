@@ -20,7 +20,6 @@ const FilterOrder = (props) => {
 
     // Funciones:
     //import orderArray from "../../functions/orderArray";
-
     let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
     let genresOrdered = orderArray(genres);
 
@@ -35,7 +34,7 @@ const FilterOrder = (props) => {
         setSelectedOrigin(curCreate);
         setSelectedOptionRating(curRating);
         setSelectedOptionAZ(curAzza);
-        console.log("FILTROS - USEEFECT ACTUALIZO ESTADOS")
+        //console.log("FILTROS - USEEFECT ACTUALIZO ESTADOS")
     }, [aux]);
 
     //Función de filtrado por origen de los datos:

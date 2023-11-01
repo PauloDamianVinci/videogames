@@ -1,14 +1,12 @@
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { getPlatforms } from "../../redux/actions";
 import { useNavigate } from "react-router-dom";
 import { resetFilterAndOrder, setCurrRating, setCurrAZ, setCurrGenre, getGenres, setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Funciones:
 import validations from "./validations";
 import orderArray from "../../functions/orderArray";
 // Variables de entorno:
-const HOME = import.meta.env.VITE_HOME || '/home';
 const IMG_HELP = import.meta.env.VITE_IMG_ABOUT || '/src/assets/Face.jpg';
 // Estilos: 
 import style from "./Create.module.css";
@@ -80,7 +78,7 @@ const Create = () => {
 
     function handlePasteLink() {
         // pego un link a una imagen de ejemplo
-        console.log("PEGO ", IMG_HELP)
+        //console.log("PEGO ", IMG_HELP)
         setGameData(prevGameData => ({
             ...prevGameData,
             image: IMG_HELP,

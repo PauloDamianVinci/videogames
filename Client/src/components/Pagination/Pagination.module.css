@@ -10,7 +10,6 @@
 }
 
 .containerSec {
-    /* background-color: rgba(211, 235, 80, 0.849); */
     align-items: flex-start;
     text-align: center;
     flex-wrap: wrap;
@@ -18,6 +17,14 @@
     list-style: none;
     display: flex;
     padding: 0;
+}
+
+.mainText {
+    color: rgb(253, 249, 5);
+    font-family: "Courier New", Helvetica, sans-serif;
+    font-size: 2em;
+    margin: 1%;
+
 }
 
 .contButton {

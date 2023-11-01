@@ -18,7 +18,7 @@ const Error = (props) => {
     } else {
         imgShow = IMG_404;
     }
-    console.log(imgShow);
+    //console.log(imgShow);
 
     return (
         <div className={container}>

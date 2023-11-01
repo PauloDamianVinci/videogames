@@ -94,10 +94,10 @@ const rootReducer = (state = initialState, { type, payload }) => {
             };
         case FILTER_BY_NAME:
             //console.log("NAME: ", payload)
-            console.log("FILTER_BY_NAME: ")
-            console.log("ORIGIN: ", state.filters.create)
-            console.log("GENRE: ", state.filters.genre)
-            console.log("NAME: ", payload, " NAME de antes: ", state.filters.name)
+            // console.log("FILTER_BY_NAME: ")
+            // console.log("ORIGIN: ", state.filters.create)
+            // console.log("GENRE: ", state.filters.genre)
+            // console.log("NAME: ", payload, " NAME de antes: ", state.filters.name)
             const filteredByName = state.allVideogames.filter((elem) => {
                 // Respeto el tipo de filtro de género existente:
                 const genreMatch =
@@ -121,8 +121,8 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
             // (state.filters.name === "") ||
             // (elem.name.toLowerCase() === payload.toLowerCase());
-            console.log("filteredByName: ", filteredByName)
-            console.log("todos: ", state.allVideogames)
+            // console.log("filteredByName: ", filteredByName)
+            // console.log("todos: ", state.allVideogames)
 
             return {
                 ...state,
@@ -135,7 +135,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 },
             };
         case CLEAR_FILTER_BY_NAME:
-            console.log("Borro filtro NAME")
+            //console.log("Borro filtro NAME")
             // Borro el filtro de búsqueda por nombre:
             return {
                 ...state,
@@ -148,10 +148,10 @@ const rootReducer = (state = initialState, { type, payload }) => {
             };
 
         case FILTER_ORIGIN_CREATE:
-            console.log("FILTER_ORIGIN_CREATE: ")
-            console.log("ORIGIN: ", payload, " ORIGIN de antes: ", state.filters.create)
-            console.log("GENRE: ", state.filters.genre)
-            console.log("NAME: ", state.filters.name)
+            // console.log("FILTER_ORIGIN_CREATE: ")
+            // console.log("ORIGIN: ", payload, " ORIGIN de antes: ", state.filters.create)
+            // console.log("GENRE: ", state.filters.genre)
+            // console.log("NAME: ", state.filters.name)
 
             const filteredByOrigin = state.allVideogames.filter((elem) => {
                 // Respeto el tipo de filtro de género existente:
@@ -187,10 +187,10 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 },
             };
         case FILTER_BY_GENRE:
-            console.log("FILTER_BY_GENRE: ")
-            console.log("ORIGIN: ", state.filters.create)
-            console.log("GENRE: ", payload, " GENRE de antes: ", state.filters.genre)
-            console.log("NAME: ", state.filters.name)
+            // console.log("FILTER_BY_GENRE: ")
+            // console.log("ORIGIN: ", state.filters.create)
+            // console.log("GENRE: ", payload, " GENRE de antes: ", state.filters.genre)
+            // console.log("NAME: ", state.filters.name)
 
 
             const filteredByGenre = state.allVideogames.filter((elem) => {

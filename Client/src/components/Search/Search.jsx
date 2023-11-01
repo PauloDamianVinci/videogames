@@ -22,7 +22,7 @@ const Search = (props) => {
 
     useEffect(() => {
         setName(curName);
-        console.log("SEARCH - USEEFECT ACTUALIZO ESTADOS")
+        //console.log("SEARCH - USEEFECT ACTUALIZO ESTADOS")
     }, [aux]);
 
     function handleInputChange(e) {
