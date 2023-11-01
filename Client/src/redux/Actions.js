@@ -36,7 +36,7 @@ const VG_PLATFORMS = API_URL_BASE + VG_P;
 
 export const getVideogames = (payload) => {
     const endpoint = VG_VIDEOGAMES + "/?source=" + payload;
-    console.log("getVideogames !! ", endpoint);
+    //console.log("getVideogames !! ", endpoint);
 
     return async (dispatch) => {
         try {
