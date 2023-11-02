@@ -48,14 +48,14 @@
     font-family: "Courier New", Helvetica, sans-serif;
     font-size: 1em;
     text-align: left;
-    max-width: 100px;
+    max-width: 120px;
 }
 
 .ratingText {
     font-family: "Courier New", Helvetica, sans-serif;
     font-size: 1em;
     text-align: left;
-    max-width: 40px;
+    max-width: 60px;
 }
 
 .linkText {

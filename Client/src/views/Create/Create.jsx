@@ -2,7 +2,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { resetFilterAndOrder, setCurrRating, setCurrAZ, setCurrGenre, getGenres, setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setDataLoaded, setCurrOrigin, setCurrPage } from "../../redux/actions";
+import { clearDetails, resetFilterAndOrder, setCurrRating, setCurrAZ, setCurrGenre, getGenres, setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Funciones:
 import validations from "./validations";
 import orderArray from "../../functions/orderArray";
@@ -25,7 +25,9 @@ const Create = () => {
     let platformsOrdered = orderArray(platforms);
     // Obtengo los posibles errores:
     let errorCreate = useSelector((state) => state.errors);
-    // Estado de manejo de los datos de carga:
+    const [huboAlta, setHuboAlta] = useState(false);
+
+    // LIMPIAR ESOS ESTADOS!!!!
     const [gameData, setGameData] = useState({
         name: "juego 0001",
         description: "desc juego 01",
@@ -47,24 +49,22 @@ const Create = () => {
     });
 
     const handleSubmit = async (e) => {
-        console.log("PASA");
         e.preventDefault();
         const formErrors = validations(gameData);
         setErrors(formErrors);
         if (Object.keys(formErrors).length !== 0) {
-            //window.alert("Review those details more carefully!");
             return;
         }
-
-        console.log("1");
         dispatch(postVidegame(gameData));
+
+
         console.log("2");
 
         if (errorCreate) {
             console.log("ERRRR");
             window.alert("Error: ", errorCreate);
         } else {
-            console.log("OK ERRRR");
+            setHuboAlta(true);
             window.alert("Game created!");
         }
         // PROBAR QUE HOME MUESTRE EL ERROR SIEMPRE
@@ -82,16 +82,16 @@ const Create = () => {
     function handleBack() {
         // Regreso a la pantalla principal, pero limpio filtros porque agregué nuevos datos
         // y merecen ser ordenados desde cero:
-        dispatch(resetFilterAndOrder());
-        //setCurrentPage(1);
-        //setAux(!aux); // es para forzar el refresco del DOM
+        if (huboAlta) {
+            dispatch(resetFilterAndOrder());
+        } else {
+            dispatch(clearDetails()); // limpio la posible consulta previa
+        }
         navigate(-1);
     }
 
-
     function handlePasteLink() {
         // pego un link a una imagen de ejemplo
-        //console.log("PEGO ", IMG_HELP)
         setGameData(prevGameData => ({
             ...prevGameData,
             image: IMG_HELP,
@@ -311,6 +311,7 @@ const Create = () => {
 
         </form >
     )
-}
+
+};
 
 export default Create;

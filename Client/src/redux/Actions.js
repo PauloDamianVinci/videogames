@@ -9,7 +9,7 @@ export const ORDER_BY_RATING = 'ORDER_BY_RATING'
 export const ORDER_BY_AZ = 'ORDER_BY_AZ'
 export const RESET = 'RESET'
 export const RESET_ALL = 'RESET_ALL'
-export const DATA_LOADED = 'DATA_LOADED'
+//export const DATA_LOADED = 'DATA_LOADED'
 export const SET_CURR_PAGE = 'SET_CURR_PAGE'
 export const SET_CURR_RATING = 'SET_CURR_RATING'
 export const SET_CURR_AZ = 'SET_CURR_AZ'
@@ -253,12 +253,12 @@ export function getVideogameById(id) {
 
 
 
-export function setDataLoaded(payload) {
-    return {
-        type: DATA_LOADED,
-        payload
-    }
-}
+// export function setDataLoaded(payload) {
+//     return {
+//         type: DATA_LOADED,
+//         payload
+//     }
+// }
 
 
 

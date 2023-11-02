@@ -7,7 +7,7 @@ import Pagination from "../../components/Pagination/Pagination";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { setDetail, getGenres, getPlatforms, setListoMostrar, getVideogames, setDataLoaded, setCurrPage } from "../../redux/actions";
+import { setDetail, getGenres, getPlatforms, setListoMostrar, getVideogames, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
@@ -41,13 +41,16 @@ const Home = () => {
 
     useEffect(() => {
         if (!dataLoaded) { // no hay datos previos. Los obtengo
+
+            console.log("HOME ");
             dispatch(setListoMostrar()); // para que muestre el reloj de espera
             dispatch(getGenres()); // Obtengo todos los géneros
             dispatch(getPlatforms()); // Obtengo todas las plataformas
             dispatch(getVideogames('3')) // Obtengo todos los videojuegos BD + API
             setCurrentPage(1);
         } else {
-            // Recupero la página en que estaba. Setear sólo si es de retorno desde detalles, pero caso contrario ver de forzarlo a 1:
+            // Recupero la página en que estaba. Setear sólo si es de retorno
+            // desde detalles, pero caso contrario ver de forzarlo a 1:
             if (prevDetail) {
                 setCurrentPage(curPage);
                 dispatch(setDetail(false));

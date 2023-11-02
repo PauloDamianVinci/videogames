@@ -10,7 +10,7 @@ import {
     RESET_ALL,
     GET_VIDEOGAME_BY_ID,
     CLEAR_DETAIL,
-    DATA_LOADED,
+    // DATA_LOADED,
     SET_CURR_PAGE,
     SET_CURR_RATING,
     SET_CURR_AZ,
@@ -281,6 +281,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 },
             };
         case POST_GAME:
+            console.log("POST GAME");
             return {
                 ...state,
                 allVideogames: payload,
@@ -372,11 +373,11 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 ...state,
                 curOrigin: payload,
             };
-        case DATA_LOADED:
-            return {
-                ...state,
-                dataLoaded: payload,
-            };
+        // case DATA_LOADED:
+        //     return {
+        //         ...state,
+        //         dataLoaded: payload,
+        //     };
 
         case RESET:
             return {
