@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 // Variables de entorno:
 const DETAIL_BASE = import.meta.env.VITE_DETAIL_BASE || '/detail';
 const IMG_ERROR = import.meta.env.VITE_IMG_ERR_DETAIL || '/src/assets/NoPhoto.png';
+const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 
 // Estilos:
 import style from "./Card.module.css";
@@ -15,7 +16,7 @@ const Card = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const linkDetail = `${DETAIL_BASE}/${id}`;
     const [genreList, setGenreList] = useState('');
-    const [imgShow, setImgShow] = useState(IMG_ERROR);
+    const [imgShow, setImgShow] = useState(IMG_ESPERA);
     const [nameShow, setNameShow] = useState('Not found');
     const [ratingShow, setRatingShow] = useState('Not found');
 
@@ -47,12 +48,14 @@ const Card = (props) => {
     }, []);
 
 
+
+    //console.log("CARD PAGE ", currentPage)
     return (
         <div className={container}>
             {isLoading ? (
                 <div className={container}>
-                    <h2>...</h2>
-                </div>
+                    {/* <div clg className={img} src={IMG_ESPERA} alt="" /> */}
+                </div >
             ) : name ? (
                 <div className={container}>
                     <div className={containerImg}>

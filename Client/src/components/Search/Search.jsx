@@ -26,13 +26,14 @@ const Search = (props) => {
     }, [aux]);
 
     function handleInputChange(e) {
-        // El botón de limpiar filtros se oculta si no hay texto ingresado:
         e.preventDefault();
         setName(e.target.value);
-        if (!e.target.value) { // se muestra todo
+        if (!e.target.value) { // 
             dispatch(clearFilterByName());
-        } else { // se muestra search
+        } else { // 
             dispatch(filterVideogamesByName(e.target.value));
+            setAux(!aux);
+            //setCurrPage(1); ??
         }
     }
 

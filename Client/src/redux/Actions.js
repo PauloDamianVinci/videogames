@@ -29,6 +29,8 @@ export const SET_ERROR_MSG = 'SET_ERROR_MSG';
 export const FILTER_BY_NAME = 'FILTER_BY_NAME';
 export const CLEAR_FILTER_BY_NAME = 'CLEAR_FILTER_BY_NAME';
 export const RESET_FILTER_ORDER = 'RESET_FILTER_ORDER';
+export const SAVE_CURR_PAGE = 'SAVE_CURR_PAGE';
+export const SET_CLEAR_DETAIL = 'SET_CLEAR_DETAIL';
 
 
 // Variables de entorno:
@@ -108,6 +110,13 @@ export function filterVideogamesByName(payload) {
     }
 }
 
+// export function saveCurrPage(payload) {
+//     return {
+//         type: SAVE_CURR_PAGE, payload,
+//     }
+// }
+
+
 export function clearFilterByName() {
     // Limpio el filtro por nombre
     return {
@@ -161,6 +170,21 @@ export const postVidegame = (payload) => {
         }
     };
 }
+
+export function clearDetails() {
+    // Ejecuta al salir de la consulta de detalle:
+    return {
+        type: CLEAR_DETAIL,
+    }
+}
+export function setDetail() {
+    // Ejecuta al salir de la consulta de detalle:
+    return {
+        type: SET_CLEAR_DETAIL,
+    }
+}
+
+
 
 
 
@@ -235,11 +259,6 @@ export function setDataLoaded(payload) {
     }
 }
 
-export function clearDetails() {
-    return {
-        type: CLEAR_DETAIL,
-    }
-}
 
 
 export function resetAll() {
@@ -248,8 +267,7 @@ export function resetAll() {
 
 export function setCurrPage(payload) {
     return {
-        type: SET_CURR_PAGE,
-        payload
+        type: SET_CURR_PAGE, payload,
     }
 }
 

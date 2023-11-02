@@ -7,7 +7,7 @@ import Pagination from "../../components/Pagination/Pagination";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { getGenres, getPlatforms, setListoMostrar, getVideogames, setDataLoaded, setCurrPage } from "../../redux/actions";
+import { setDetail, getGenres, getPlatforms, setListoMostrar, getVideogames, setDataLoaded, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
@@ -25,7 +25,11 @@ const Home = () => {
     let allVideogames = useSelector((state) => state.videogames);
     // Acá llegan los posibles mensajes de error de actions:
     let errors = useSelector((state) => state.errors);
-    const [aux, setAux] = useState(false); // para forzar la actualización del DOM en los componentes
+    // Desde acá recupero la página actual, para cuando rootea y se pierde el valor:
+    let curPage = useSelector((state) => state.curPage);
+    let prevDetail = useSelector((state) => state.prevDetail); // prueba para avisar qu vengo de detail
+    // Aux para refrescar el DOM:
+    const [aux, setAux] = useState(false);
 
     useEffect(() => {
         if (!dataLoaded) { // no hay datos previos. Los obtengo
@@ -33,9 +37,31 @@ const Home = () => {
             dispatch(getGenres()); // Obtengo todos los géneros
             dispatch(getPlatforms()); // Obtengo todas las plataformas
             dispatch(getVideogames('3')) // Obtengo todos los videojuegos BD + API
+            console.log("10")
             setCurrentPage(1);
+        } else {
+            // Recupero la página en que estaba. No debe ser mayor que el máximo de páginas disponibles:
+            // const totPages = Math.ceil(allVideogames.length / videogamesPerPage);
+            // console.log("totPages: ", totPages, ",curPage: ", curPage);
+            // if (totPages < curPage) {
+            //     console.log("HOME set 1");
+            //     setCurrentPage(1);
+            // } {
+
+            // Setear sólo si es de retorno de detalles, pero caso contrario ver de forzarlo a 1:
+            if (prevDetail) {
+                console.log("HOME vengo de detail set to ", curPage);
+                setCurrentPage(curPage);
+                dispatch(setDetail(false));
+
+            } else {
+                console.log("HOME set to ", curPage);
+                setCurrentPage(1);
+
+            }
+            // }
         }
-    }, []);
+    }, [aux]);
 
     // Lógica para el componente de paginado:
     const [currentPage, setCurrentPage] = useState(1); // siempre comienza en página 1
@@ -49,6 +75,7 @@ const Home = () => {
         currentGame = [];
     }
     const paginado = (pageNumber) => { // manejado desde el componente Pagination
+        console.log("HACE PAGINADO ", pageNumber)
         setCurrentPage(pageNumber);
         dispatch(setCurrPage(pageNumber)); // memorizo la página actual para cuando salga de la vista y regrese:
     };
@@ -56,9 +83,13 @@ const Home = () => {
     if (listoMostrar && firstLoad > 1) { // firstLoad es para evitar doble renderizado en la carga inicial
         return (
             <div className={container}>
+                {/* <Nav aux={aux} setAux={setAux} />
+                <FilterOrder aux={aux} setAux={setAux} currentPage={currentPage} setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
+                <Cards aux={aux} setAux={setAux} currentGame={currentGame} currentPage={currentPage} setCurrentPage={setCurrentPage} /> */}
                 <Nav aux={aux} setAux={setAux} />
                 <FilterOrder aux={aux} setAux={setAux} setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
                 <Cards aux={aux} setAux={setAux} currentGame={currentGame} />
+
                 <Pagination
                     videogamePerPage={videogamesPerPage}
                     allVideogames={allVideogames.length}

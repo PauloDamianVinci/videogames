@@ -12,7 +12,14 @@ const Pagination = (props) => {
     }
 
     const HandlePage = (number) => {
-        paginado(number);
+        if (number > totPages) {
+            paginado(1);
+        } else {
+            paginado(number);
+        }
+
+
+
     }
 
     const HandlePrev = () => {

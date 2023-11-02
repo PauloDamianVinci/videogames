@@ -27,6 +27,8 @@ import {
     FILTER_BY_NAME,
     CLEAR_FILTER_BY_NAME,
     RESET_FILTER_ORDER,
+    SAVE_CURR_PAGE,
+    SET_CLEAR_DETAIL,
 } from "./actions";
 
 const initialState = {
@@ -55,6 +57,7 @@ const initialState = {
     listoMostrar: false, // flag para que home refresque registros mostrando reloj
     firstLoad: 0, // contador de ocurrencias, evita el doble renderizado al comienzo
     errors: '', // guardo los mensajes de error para mostrar en la pag.
+    prevDetail: false, // prueba, aviso a home para que no se quivoque con la paginació
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -128,6 +131,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 ...state,
                 videogames: filteredByName,
                 filteredVideogames: filteredByName,
+                curPage: '1',
                 // Establezco el filtro actual para recordar al combinar con otros a futuro:
                 filters: {
                     ...state.filters,
@@ -266,6 +270,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 ...state,
                 videogames: state.allVideogames,
                 filteredVideogames: state.allVideogames,
+                curPage: '1',
                 filters: {
                     ...state.filters,
                     genre: "All",
@@ -286,6 +291,27 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 firstLoad: state.firstLoad + 1,
                 errors: '',
             };
+        case SET_CURR_PAGE:
+            return {
+                ...state,
+                curPage: payload,
+            };
+        case CLEAR_DETAIL:
+            // Sale de la consulta de detalle.
+            return {
+                ...state,
+                detail: [],
+                prevDetail: true,
+            }
+        case SET_CLEAR_DETAIL:
+            // Sale de la consulta de detalle.
+            return {
+                ...state,
+                prevDetail: false,
+            }
+
+
+
 
 
 
@@ -326,11 +352,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 firstLoad: 0,
             };
 
-        case SET_CURR_PAGE:
-            return {
-                ...state,
-                curPage: payload,
-            };
         case SET_CURR_RATING:
             return {
                 ...state,
@@ -411,11 +432,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 detail: payload,
                 errors: '',
             };
-        case CLEAR_DETAIL:
-            return {
-                ...state,
-                detail: [],
-            }
         default:
             return { ...state };
     }

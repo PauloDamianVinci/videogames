@@ -10,7 +10,7 @@ import style from "./FilterOrder.module.css";
 const { container, containerFiltrosOrigenGenero, texto, containerOrdenRatingAlfa, contButton, button } = style;
 const FilterOrder = (props) => {
     const dispatch = useDispatch();
-    const { setCurrentPage, dataLoaded, aux, setAux } = props;
+    const { currentPage, setCurrentPage, dataLoaded, aux, setAux } = props;
     const [selectedOptionRating, setSelectedOptionRating] = useState('');
     const [selectedOptionAZ, setSelectedOptionAZ] = useState('');
     const [selectedOrigin, setSelectedOrigin] = useState('All');
@@ -34,15 +34,15 @@ const FilterOrder = (props) => {
         setSelectedOrigin(curCreate);
         setSelectedOptionRating(curRating);
         setSelectedOptionAZ(curAzza);
-        //console.log("FILTROS - USEEFECT ACTUALIZO ESTADOS")
     }, [aux]);
 
     //Función de filtrado por origen de los datos:
     function handleOriginData(e) {
         setSelectedOrigin(e.target.value);
         dispatch(filterOriginData(e.target.value));
-        setAux(!aux); // es para forzar el refresco del DOM
         setCurrentPage(1);
+        //setCurrPage(1);
+        setAux(!aux); // es para forzar el refresco del DOM
     }
     //Función de filtrado por género:
     function handleFilterByGenre(e) {
@@ -50,6 +50,7 @@ const FilterOrder = (props) => {
         dispatch(filterVideogamesByGenre(e.target.value))
         setAux(!aux); // es para forzar el refresco del DOM
         setCurrentPage(1);
+        //setCurrPage(1);
     }
     //Función de ordenamiento por rating:
     function handleOrderRating(e) {
@@ -57,6 +58,7 @@ const FilterOrder = (props) => {
         dispatch(orderByRating(e.target.value));
         setAux(!aux); // es para forzar el refresco del DOM
         setCurrentPage(1);
+        //setCurrPage(1);
     }
     //Función de ordenamiento por orden alfabético:
     function handleOrderAZ(e) {
@@ -64,11 +66,14 @@ const FilterOrder = (props) => {
         dispatch(orderByAZ(e.target.value));
         setAux(!aux); // es para forzar el refresco del DOM
         setCurrentPage(1);
+        //setCurrPage(1);
+
     }
     // Función de reset de filtros y ordenamientos:
     function handleReset() {
         dispatch(resetFilterAndOrder());
         setCurrentPage(1);
+        //setCurrPage(1);
         setAux(!aux); // es para forzar el refresco del DOM
     }
 

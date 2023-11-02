@@ -70,7 +70,16 @@ const Detail = () => {
         }
     }
 
-    // PASAR A INGLES
+    function handleBack() {
+        // Regreso a la pantalla principal, pero limpio filtros porque agregué nuevos datos
+        // y merecen ser ordenados desde cero:
+        //dispatch(resetFilterAndOrder());
+        //setCurrentPage(1);
+        //setAux(!aux); // es para forzar el refresco del DOM
+        navigate(-1);
+        //navigate('/home');
+    }
+
 
     return (
         <div className={container}>
@@ -89,7 +98,7 @@ const Detail = () => {
                     <h2 className={features}>Rating: {rating}</h2>
                     <h3 className={features}>Genres: {genreList}</h3>
                     <h3 className={features}>Platforms: {platformList}</h3>
-                    <button className={features} onClick={() => navigate(-1)}>Back</button>
+                    <button className={features} onClick={() => handleBack()}>Back</button>
                 </div>
             ) : null}
         </div>
