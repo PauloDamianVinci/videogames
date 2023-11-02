@@ -1,5 +1,7 @@
 // hooks, routers, reducers:
 import { useNavigate } from "react-router-dom";
+import { resetAll } from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 // Estilos:
 import style from "./Error.module.css";
 const { container, mainTitle, secondText, img, contButton, button } = style;
@@ -10,6 +12,7 @@ const ROOT = import.meta.env.VITE_ROOT || '/';
 
 const Error = (props) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const { message } = props;
     let imgShow = '';
@@ -18,7 +21,11 @@ const Error = (props) => {
     } else {
         imgShow = IMG_404;
     }
-    //console.log(imgShow);
+
+    function handleOriginData() {
+        dispatch(resetAll());
+        navigate(ROOT);
+    }
 
     return (
         <div className={container}>
@@ -26,7 +33,7 @@ const Error = (props) => {
             <img className={img} src={imgShow} alt="" />
             <h2 className={secondText}>{message}</h2>
             <p className={contButton} href="/">
-                <button className={button} onClick={() => navigate(ROOT)} >Restart</button>
+                <button className={button} onClick={() => handleOriginData()} >Restart</button>
             </p>
         </div >
     )

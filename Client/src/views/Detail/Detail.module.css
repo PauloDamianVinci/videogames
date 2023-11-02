@@ -1,27 +1,99 @@
 .container {
-    background-color: rgba(172, 48, 48, 0.774);
-    font-size: 6px;
+    background-color: rgba(207, 236, 40, 0.849);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
-.mainTitle {
-    background-color: rgba(106, 48, 172, 0.774);
-    font-size: 6px;
-}
-
-.secondText {
-    background-color: rgba(13, 45, 148, 0.897);
-    font-size: 6px;
-}
-
-.startButton {
-    background-color: rgba(16, 180, 131, 0.774);
-    font-size: 6px;
-    ;
+.containerSec {
+    background-color: rgba(40, 43, 236, 0.849);
+    /* margin-top: 10%; */
+    color: rgb(255, 255, 254);
 }
 
 .imgBack {
-    background-color: rgba(212, 149, 30, 0.774);
-    max-width: 40%;
-    height: auto;
-    font-size: 6px;
+    background-color: rgba(135, 136, 146, 0.849);
+    /* margin-top: 10%; */
+    display: flex;
+    color: rgb(255, 255, 254);
+    min-width: 200px;
+    max-width: 400px;
 }
+
+.img {
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.features {
+    margin: 0px;
+    color: rgb(253, 249, 5);
+    font-family: "Courier New", Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+.contButton {
+    background-image: linear-gradient(to right, #006175 0%, #1fcab3 100%);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #1fcab3;
+    display: block;
+    height: 60%;
+    font-size: 2.0em;
+    padding: 4px;
+    text-decoration: none;
+    width: 90%;
+    margin-left: 8px;
+    margin-left: 1px;
+}
+
+.contButton:hover {
+    color: #fff;
+}
+
+.contButton .button {
+    align-items: center;
+    background: #0e0e10;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+    color: #1fcab3;
+    font-size: 1em;
+}
+
+.contButton:hover .button {
+    background: transparent;
+    color: #fff;
+}
+
+/* @media (max-width: 880px) {
+    .mainTitle {
+        font-size: 5em;
+    }
+}
+
+@media (max-width: 630px) {
+    .mainTitle {
+        top: 20%;
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 430px) {
+    .mainTitle {
+        top: 10%;
+        font-size: 1.5em;
+    }
+
+    .secondText {
+        margin: 10px;
+        font-size: 1em;
+    }
+
+} */

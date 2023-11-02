@@ -37,7 +37,7 @@ const initialState = {
     filteredVideogames: [], // filteredVideogames: resultados de búsquedas
     genres: [], // están todos los géneros obtenidos desde el back.
     platforms: [], // están todas las plataformas obtenidos desde el back.
-    detail: [], // están los detalles de una búsqueda por id
+    //detail: [], // están los detalles de una búsqueda por id
     filters: { // es para que la lógica de los filtros respete las combinaciones previas
         genre: "All",
         create: "All",
@@ -66,13 +66,13 @@ const rootReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 genres: payload,
-                errors: '',
+                //errors: '',
             };
         case GET_PLATFORMS:
             return {
                 ...state,
                 platforms: payload,
-                errors: '',
+                //errors: '',
             };
         case GET_VIDEOGAMES:
             return {
@@ -83,7 +83,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 listoMostrar: true,
                 dataLoaded: true,
                 firstLoad: state.firstLoad + 1,
-                errors: '',
+                //errors: '',
             };
         case SET_ERROR_MSG:
             return {
@@ -289,7 +289,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 listoMostrar: false,
                 dataLoaded: false,
                 firstLoad: state.firstLoad + 1,
-                errors: '',
+                //errors: '',
             };
         case SET_CURR_PAGE:
             return {
@@ -297,14 +297,14 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 curPage: payload,
             };
         case CLEAR_DETAIL:
-            // Sale de la consulta de detalle.
+            // Avisa que sale de la consulta de detalle.
             return {
                 ...state,
-                detail: [],
+                //detail: [],
                 prevDetail: true,
             }
         case SET_CLEAR_DETAIL:
-            // Sale de la consulta de detalle.
+            // Home avisa que supo sobre la salida de la consulta de detalle.
             return {
                 ...state,
                 prevDetail: false,
@@ -344,7 +344,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 listoMostrar: true,
                 dataLoaded: true,
                 firstLoad: state.firstLoad + 1,
-                errors: '',
+                //errors: '',
             };
         case SET_FIRST_BUSQUEDA:
             return {
@@ -426,12 +426,12 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 firstLoad: 0,
                 errors: '',
             };
-        case GET_VIDEOGAME_BY_ID:
-            return {
-                ...state,
-                detail: payload,
-                errors: '',
-            };
+        // case GET_VIDEOGAME_BY_ID:
+        //     return {
+        //         ...state,
+        //         detail: payload,
+        //         //errors: '',
+        //     };
         default:
             return { ...state };
     }

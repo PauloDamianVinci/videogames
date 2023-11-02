@@ -52,9 +52,10 @@ export const getGenres = () => {
                 payload: data,
             });
         } catch (error) {
+            console.log(error);
             return dispatch({
                 type: SET_ERROR_MSG,
-                payload: "Error fetching genres:" + error.message,
+                payload: "Error fetching genres: " + error.message,
             });
         }
     };
@@ -73,7 +74,7 @@ export const getPlatforms = () => {
             console.error("Error fetching platforms:", error.message);
             return dispatch({
                 type: SET_ERROR_MSG,
-                payload: "Error fetching platforms:" + error.message,
+                payload: "Error fetching platforms: " + error.message,
             });
         }
     };
@@ -91,7 +92,7 @@ export const getVideogames = (payload) => {
         } catch (error) {
             return dispatch({
                 type: SET_ERROR_MSG,
-                payload: "Error fetching videogames:" + error.message,
+                payload: "Error fetching videogames: " + error.message,
             });
         }
     };
@@ -165,7 +166,7 @@ export const postVidegame = (payload) => {
             console.error("Error posting videogame:", error.message);
             return dispatch({
                 type: SET_ERROR_MSG,
-                payload: "Error posting videogame:" + error.message,
+                payload: "Error posting videogame: " + error.message,
             });
         }
     };
@@ -178,7 +179,7 @@ export function clearDetails() {
     }
 }
 export function setDetail() {
-    // Ejecuta al salir de la consulta de detalle:
+    // Home avisa que supo sobre la salida de la consulta de detalle:
     return {
         type: SET_CLEAR_DETAIL,
     }
@@ -242,7 +243,7 @@ export function getVideogameById(id) {
             console.error("Error fetching details:", error.message);
             return dispatch({
                 type: SET_ERROR_MSG,
-                payload: "Error fetching details:" + error.message,
+                payload: "Error fetching details: " + error.message,
             });
         }
     };

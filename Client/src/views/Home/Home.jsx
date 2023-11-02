@@ -40,26 +40,15 @@ const Home = () => {
             console.log("10")
             setCurrentPage(1);
         } else {
-            // Recupero la página en que estaba. No debe ser mayor que el máximo de páginas disponibles:
-            // const totPages = Math.ceil(allVideogames.length / videogamesPerPage);
-            // console.log("totPages: ", totPages, ",curPage: ", curPage);
-            // if (totPages < curPage) {
-            //     console.log("HOME set 1");
-            //     setCurrentPage(1);
-            // } {
-
-            // Setear sólo si es de retorno de detalles, pero caso contrario ver de forzarlo a 1:
+            // Recupero la página en que estaba. Setear sólo si es de retorno desde detalles, pero caso contrario ver de forzarlo a 1:
             if (prevDetail) {
-                console.log("HOME vengo de detail set to ", curPage);
+                //console.log("HOME vengo de detail set to ", curPage);
                 setCurrentPage(curPage);
                 dispatch(setDetail(false));
-
             } else {
-                console.log("HOME set to ", curPage);
+                //console.log("HOME set to ", curPage);
                 setCurrentPage(1);
-
             }
-            // }
         }
     }, [aux]);
 
@@ -75,21 +64,25 @@ const Home = () => {
         currentGame = [];
     }
     const paginado = (pageNumber) => { // manejado desde el componente Pagination
-        console.log("HACE PAGINADO ", pageNumber)
+        // console.log("HACE PAGINADO ", pageNumber)
         setCurrentPage(pageNumber);
         dispatch(setCurrPage(pageNumber)); // memorizo la página actual para cuando salga de la vista y regrese:
     };
 
-    if (listoMostrar && firstLoad > 1) { // firstLoad es para evitar doble renderizado en la carga inicial
+    if (errors) {
         return (
             <div className={container}>
-                {/* <Nav aux={aux} setAux={setAux} />
-                <FilterOrder aux={aux} setAux={setAux} currentPage={currentPage} setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
-                <Cards aux={aux} setAux={setAux} currentGame={currentGame} currentPage={currentPage} setCurrentPage={setCurrentPage} /> */}
+                <div className={containerSec}>
+                    <Error message={errors} />
+                </div >
+            </div>
+        );
+    } else if (listoMostrar && firstLoad > 1) { // firstLoad es para evitar doble renderizado en la carga inicial
+        return (
+            <div className={container}>
                 <Nav aux={aux} setAux={setAux} />
                 <FilterOrder aux={aux} setAux={setAux} setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
                 <Cards aux={aux} setAux={setAux} currentGame={currentGame} />
-
                 <Pagination
                     videogamePerPage={videogamesPerPage}
                     allVideogames={allVideogames.length}
@@ -97,14 +90,6 @@ const Home = () => {
                     currentPage={currentPage}
                 />
             </div >
-        );
-    } else if (errors) {
-        return (
-            <div className={container}>
-                <div className={containerSec}>
-                    <Error message={errors} />
-                </div >
-            </div>
         );
     } else {
         return (
