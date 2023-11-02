@@ -31,26 +31,35 @@ const Home = () => {
     // Aux para refrescar el DOM:
     const [aux, setAux] = useState(false);
 
+
+    // useEffect(() => {
+    //     dispatch(setListoMostrar())
+    //         .then(dispatch(getGenres()))
+    //         .then(dispatch(getPlatforms()))
+    //         .then(dispatch(getVideogames('3')))
+    //         .then(() => {
+    //             setLoading(false);
+    //         });
+    // }, [dispatch]);
+
+
     useEffect(() => {
         if (!dataLoaded) { // no hay datos previos. Los obtengo
             dispatch(setListoMostrar()); // para que muestre el reloj de espera
             dispatch(getGenres()); // Obtengo todos los géneros
             dispatch(getPlatforms()); // Obtengo todas las plataformas
             dispatch(getVideogames('3')) // Obtengo todos los videojuegos BD + API
-            console.log("10")
             setCurrentPage(1);
         } else {
             // Recupero la página en que estaba. Setear sólo si es de retorno desde detalles, pero caso contrario ver de forzarlo a 1:
             if (prevDetail) {
-                //console.log("HOME vengo de detail set to ", curPage);
                 setCurrentPage(curPage);
                 dispatch(setDetail(false));
             } else {
-                //console.log("HOME set to ", curPage);
                 setCurrentPage(1);
             }
         }
-    }, [aux]);
+    }, [dispatch, aux]);
 
     // Lógica para el componente de paginado:
     const [currentPage, setCurrentPage] = useState(1); // siempre comienza en página 1

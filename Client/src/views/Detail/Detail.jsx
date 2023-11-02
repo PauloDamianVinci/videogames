@@ -13,9 +13,9 @@ const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
 const VG_VIDEOGAMES = API_URL_BASE + VG_V;
 // Estilos:
 import style from "./Detail.module.css";
-const { container, containerSec, imgBack, img, features, contButton, button } = style;
+const { containerData, separador, thirdText, container, img, imgWait, containerSec, containerImg, containerMainTitle, secondText, contButton, button, descripcion } = style;
 // Funciones:
-import formatDate from "../../functions/formatDate";
+//import formatDate from "../../functions/formatDate";
 
 const Detail = () => {
     const navigate = useNavigate()
@@ -38,10 +38,10 @@ const Detail = () => {
     useEffect(() => {
         setIsLoading(true);
         const endpoint = VG_VIDEOGAMES + "/" + id;
-        //dispatch(getVideogameById(id));
+        //const varrta=dispatch(getVideogameById(id));
         axios(endpoint)
             .then(({ data }) => {
-                console.log(data);
+                //console.log(data);
                 if (data[0].name) {
                     // Obtengo los datos:
                     if (data[0].name) setName(data[0].name);
@@ -49,14 +49,14 @@ const Detail = () => {
                     if (data[0].released_date) setReleased_date(data[0].released_date);
                     if (data[0].rating) setRating(data[0].rating);
                     // La lista de géneros y plataformas se arma diferente según el origen:
-                    console.log("GEN: ", data[0].Genres)
-                    console.log("PLT: ", data[0].Platforms)
+                    // console.log("GEN: ", data[0].Genres)
+                    // console.log("PLT: ", data[0].Platforms)
                     if (isNaN(id)) { // desde BD
-                        console.log("BD");
+                        //console.log("BD");
                         setGenreList(data[0].Genres.map(genre => genre.name).join(" - "));
                         setPlatformList(data[0].Platforms.map(plat => plat.name).join(" - "));
                     } else { //desde API
-                        console.log("API");
+                        //console.log("API");
                         setGenreList(data[0].Genres.map(genre => genre).join(" - "));
                         setPlatformList(data[0].Platforms.map(plat => plat).join(" - "));
                     }
@@ -98,22 +98,31 @@ const Detail = () => {
     return (
         <div className={container}>
             {isLoading ? (
-                <div className={imgBack}>
-                    <img className={imgBack} src={IMG_ESPERA} alt="" />
+                <div className={containerSec}>
+                    <img className={imgWait} src={IMG_ESPERA} alt="" />
                 </div >
             ) : name ? (
-                <div className={containerSec}>
-                    <div className={imgBack}>
+                <div className={containerData}>
+                    <div className={containerImg}>
                         <img className={img} src={image} alt="" />
                     </div>
-                    <h2 className={features}>{name}</h2>
-                    <h2 className={features}>ID {id}</h2>
-                    <h2 className={features}>Source: {originDB}</h2>
-                    <h2 className={features}>{description}</h2>
-                    <h2 className={features}>Released date: {released_date}</h2>
-                    <h2 className={features}>Rating: {rating}</h2>
-                    <h3 className={features}>Genres: {genreList}</h3>
-                    <h3 className={features}>Platforms: {platformList}</h3>
+                    <div className={containerMainTitle}>
+                        <h2 className={thirdText}>ID {id}</h2>
+                        <span className={separador}></span>
+                        <h2 className={thirdText}>{name}</h2>
+                        <span className={separador}></span>
+                        <h2 className={thirdText}>Rating (0-10): {rating}</h2>
+                    </div>
+                    <span className={separador}></span>
+                    <h2 className={secondText}>Released date: {released_date}</h2>
+                    <span className={separador}></span>
+                    <h2 className={descripcion}>{description}</h2>
+                    <span className={separador}></span>
+                    <h2 className={secondText}>Source: {originDB}</h2>
+                    <span className={separador}></span>
+                    <h3 className={secondText}>Genres: {genreList}</h3>
+                    <span className={separador}></span>
+                    <h3 className={secondText}>Platforms: {platformList}</h3>
                     <div className={contButton}>
                         <button className={button} onClick={() => handleBack()}>Back</button>
                     </div>
