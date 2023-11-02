@@ -12,6 +12,10 @@ VITE_VG_GENRES=/genres
 VITE_VG_PLATFORMS=/platforms
 VITE_VG_VER_BACK=/versionback
 
+VITE MY_LINKEDIN=https://www.linkedin.com/in/paulo-damian-vinci/
+VITE MY_GITHUB=https://github.com/PauloDamianVinci/videogames
+
+
 VITE_IMG_LAND=https://res.cloudinary.com/dvptbowso/image/upload/v1698325374/PI_Videogames/kz8p9lhd8um6gygfaiiw.jpg
 VITE_IMG_ESPERA=https://res.cloudinary.com/dvptbowso/image/upload/v1698777476/PI_Videogames/Loading_ba8kpk.gif
 VITE_IMG_404=https://res.cloudinary.com/dvptbowso/image/upload/v1698321515/PI_Videogames/eyac5tzue8glkxdaazv5.jpg
@@ -19,3 +23,5 @@ VITE_IMG_ERROR=https://res.cloudinary.com/dvptbowso/image/upload/v1698838632/PI_
 VITE_IMG_ERR_DETAIL=https://res.cloudinary.com/dvptbowso/image/upload/v1698321616/PI_Videogames/z5vlw60eehnm9xg9wzb6.png
 VITE_IMG_ABOUT=https://res.cloudinary.com/dvptbowso/image/upload/v1698321837/PI_Videogames/sn7z4wl8vrz8wgh27cgj.jpg
 VITE_IMG_LOGO_NAV=https://res.cloudinary.com/dvptbowso/image/upload/v1698428619/PI_Videogames/ImgNav_wahbi5.jpg
+VITE_IMG_LINKEDIN=https://res.cloudinary.com/dvptbowso/image/upload/v1698955234/PI_Videogames/linkedin_rcu8fi.svg
+VITE_IMG_GITHUB=https://res.cloudinary.com/dvptbowso/image/upload/v1698955206/PI_Videogames/github_yrvlrv.svg

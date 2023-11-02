@@ -19,12 +19,12 @@ const Create = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     //Obtengo géneros y plataformas, los ordeno alfabéticamente:
-    let genres = useSelector((state) => state.genres);
+    let genres = useSelector((state) => state?.genres);
     let genresOrdered = orderArray(genres);
-    let platforms = useSelector((state) => state.platforms);
+    let platforms = useSelector((state) => state?.platforms);
     let platformsOrdered = orderArray(platforms);
     // Obtengo los posibles errores:
-    let errorCreate = useSelector((state) => state.errors);
+    let errorCreate = useSelector((state) => state?.errors);
     const [huboAlta, setHuboAlta] = useState(false);
 
     // LIMPIAR ESOS ESTADOS!!!!

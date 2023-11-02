@@ -18,7 +18,7 @@ const Search = (props) => {
     const { aux, setAux } = props;
     const dispatch = useDispatch();
     const [name, setName] = useState('');
-    let curName = useSelector((state) => state.filters.name);
+    let curName = useSelector((state) => state?.filters.name);
 
     useEffect(() => {
         setName(curName);

@@ -20,15 +20,15 @@ const FilterOrder = (props) => {
 
     // Funciones:
     //import orderArray from "../../functions/orderArray";
-    let genres = useSelector((state) => state.genres); // tengo en el store todos los géneros
+    let genres = useSelector((state) => state?.genres); // tengo en el store todos los géneros
     let genresOrdered = orderArray(genres);
 
 
     // Obtengo los estados de los filtros actuales:
-    let curGenre = useSelector((state) => state.filters.genre);
-    let curCreate = useSelector((state) => state.filters.create);
-    let curRating = useSelector((state) => state.filters.rating);
-    let curAzza = useSelector((state) => state.filters.azza);
+    let curGenre = useSelector((state) => state?.filters.genre);
+    let curCreate = useSelector((state) => state?.filters.create);
+    let curRating = useSelector((state) => state?.filters.rating);
+    let curAzza = useSelector((state) => state?.filters.azza);
     useEffect(() => {
         setSelectedGenre(curGenre);
         setSelectedOrigin(curCreate);
