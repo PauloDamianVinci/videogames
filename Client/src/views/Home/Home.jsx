@@ -41,24 +41,25 @@ const Home = () => {
 
     useEffect(() => {
         if (!dataLoaded) { // no hay datos previos. Los obtengo
-
-            console.log("HOME ");
+            console.log("HOME CARGA SIN DATOS PREVIOS!!!!");
             dispatch(setListoMostrar()); // para que muestre el reloj de espera
             dispatch(getGenres()); // Obtengo todos los géneros
             dispatch(getPlatforms()); // Obtengo todas las plataformas
-            dispatch(getVideogames('3')) // Obtengo todos los videojuegos BD + API
+            dispatch(getVideogames('3')); // Obtengo todos los videojuegos BD + API
             setCurrentPage(1);
         } else {
             // Recupero la página en que estaba. Setear sólo si es de retorno
             // desde detalles, pero caso contrario ver de forzarlo a 1:
             if (prevDetail) {
+                console.log("01 - hay PrevDetail: SET page ", curPage);
                 setCurrentPage(curPage);
                 dispatch(setDetail(false));
             } else {
+                console.log("02 - NO PrevDetail: SET page 1");
                 setCurrentPage(1);
             }
         }
-    }, [dispatch, aux]);
+    }, [aux]);
 
     // Lógica para el componente de paginado:
     const [currentPage, setCurrentPage] = useState(1); // siempre comienza en página 1

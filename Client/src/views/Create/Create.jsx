@@ -2,7 +2,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { clearDetails, resetFilterAndOrder, setCurrRating, setCurrAZ, setCurrGenre, getGenres, setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setCurrOrigin, setCurrPage } from "../../redux/actions";
+import { getVideogames, clearDetails, resetFilterAndOrder, setCurrRating, setCurrAZ, setCurrGenre, getGenres, setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setCurrOrigin, setCurrPage } from "../../redux/actions";
 // Funciones:
 import validations from "./validations";
 import orderArray from "../../functions/orderArray";
@@ -56,37 +56,36 @@ const Create = () => {
             return;
         }
         dispatch(postVidegame(gameData));
-
-
-        console.log("2");
-
         if (errorCreate) {
-            console.log("ERRRR");
             window.alert("Error: ", errorCreate);
         } else {
             setHuboAlta(true);
+            setGameData({
+                name: "",
+                description: "",
+                image: "",
+                released_date: "",
+                rating: "",
+                genre: [],
+                platform: [],
+            });
+
             window.alert("Game created!");
         }
-        // PROBAR QUE HOME MUESTRE EL ERROR SIEMPRE
-        setGameData({
-            name: "",
-            description: "",
-            image: "",
-            released_date: "",
-            rating: "",
-            genre: [],
-            platform: [],
-        });
     }
 
     function handleBack() {
         // Regreso a la pantalla principal, pero limpio filtros porque agregué nuevos datos
         // y merecen ser ordenados desde cero:
         if (huboAlta) {
+            // reinicio los filtros y ordenamientos:
+            //dispatch(getVideogames('2')); // Obtengo todos los videojuegos de BD
             dispatch(resetFilterAndOrder());
+
         } else {
             dispatch(clearDetails()); // limpio la posible consulta previa
         }
+        //dispatch(clearDetails()); // limpio la posible consulta previa
         navigate(-1);
     }
 

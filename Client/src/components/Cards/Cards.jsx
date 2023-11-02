@@ -7,7 +7,7 @@ const Cards = (props) => {
    const { currentGame, aux, setAux } = props;
    const { container } = style;
 
-   //console.log("CARDS: ", currentGame)
+   console.log("CARDS: ", currentGame)
    return (
       <div className={container}>
          {currentGame.map((el) => {

@@ -50,7 +50,6 @@ const About = () => {
         navigate(-1);
     }
     const redirectToExternalSite = (site) => {
-        console.log(site);
         window.open(site, '_blank');
     };
 

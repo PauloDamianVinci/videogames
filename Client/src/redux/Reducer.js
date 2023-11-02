@@ -8,9 +8,7 @@ import {
     ORDER_BY_AZ,
     RESET,
     RESET_ALL,
-    GET_VIDEOGAME_BY_ID,
     CLEAR_DETAIL,
-    // DATA_LOADED,
     SET_CURR_PAGE,
     SET_CURR_RATING,
     SET_CURR_AZ,
@@ -27,7 +25,6 @@ import {
     FILTER_BY_NAME,
     CLEAR_FILTER_BY_NAME,
     RESET_FILTER_ORDER,
-    SAVE_CURR_PAGE,
     SET_CLEAR_DETAIL,
 } from "./actions";
 
@@ -62,17 +59,19 @@ const initialState = {
 
 const rootReducer = (state = initialState, { type, payload }) => {
     switch (type) {
-        case GET_GENRES:
+        case POST_GAME:
+            console.log("POST GAME: ", payload);
             return {
                 ...state,
-                genres: payload,
+                allVideogames: [...state.allVideogames, payload],
+                videogames: [...state.allVideogames, payload],
+                filteredVideogames: [...state.allVideogames, payload],
+                //listoMostrar: false,
+                //dataLoaded: false,
+                firstLoad: state.firstLoad + 1,
                 //errors: '',
-            };
-        case GET_PLATFORMS:
-            return {
-                ...state,
-                platforms: payload,
-                //errors: '',
+                curPage: '1',
+                prevDetail: false,
             };
         case GET_VIDEOGAMES:
             return {
@@ -83,6 +82,19 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 listoMostrar: true,
                 dataLoaded: true,
                 firstLoad: state.firstLoad + 1,
+                //errors: '',
+            };
+
+        case GET_GENRES:
+            return {
+                ...state,
+                genres: payload,
+                //errors: '',
+            };
+        case GET_PLATFORMS:
+            return {
+                ...state,
+                platforms: payload,
                 //errors: '',
             };
         case SET_ERROR_MSG:
@@ -96,11 +108,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 listoMostrar: false,
             };
         case FILTER_BY_NAME:
-            //console.log("NAME: ", payload)
-            // console.log("FILTER_BY_NAME: ")
-            // console.log("ORIGIN: ", state.filters.create)
-            // console.log("GENRE: ", state.filters.genre)
-            // console.log("NAME: ", payload, " NAME de antes: ", state.filters.name)
             const filteredByName = state.allVideogames.filter((elem) => {
                 // Respeto el tipo de filtro de género existente:
                 const genreMatch =
@@ -121,12 +128,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 // (elem.name.toLowerCase().trim() === payload.toLowerCase().trim() && elem.name);
                 return NameMatch && genreMatch && createMatch; // va al filtro si cumple todas las condiciones
             });
-
-            // (state.filters.name === "") ||
-            // (elem.name.toLowerCase() === payload.toLowerCase());
-            // console.log("filteredByName: ", filteredByName)
-            // console.log("todos: ", state.allVideogames)
-
             return {
                 ...state,
                 videogames: filteredByName,
@@ -271,6 +272,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 videogames: state.allVideogames,
                 filteredVideogames: state.allVideogames,
                 curPage: '1',
+                prevDetail: false,
                 filters: {
                     ...state.filters,
                     genre: "All",
@@ -280,18 +282,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     name: "",
                 },
             };
-        case POST_GAME:
-            console.log("POST GAME");
-            return {
-                ...state,
-                allVideogames: payload,
-                videogames: payload,
-                filteredVideogames: payload,
-                listoMostrar: false,
-                dataLoaded: false,
-                firstLoad: state.firstLoad + 1,
-                //errors: '',
-            };
         case SET_CURR_PAGE:
             return {
                 ...state,
@@ -299,9 +289,9 @@ const rootReducer = (state = initialState, { type, payload }) => {
             };
         case CLEAR_DETAIL:
             // Avisa que sale de la consulta de detalle.
+            //console.log("PrevDetail TRUE!!!!")
             return {
                 ...state,
-                //detail: [],
                 prevDetail: true,
             }
         case SET_CLEAR_DETAIL:
@@ -392,16 +382,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     azza: "",
                     name: "",
                 },
-                // dataLoaded: false, // flag para saber si tengo previamente cargados los videojuegos y géneros
-                // curPage: '1', // recuerdo el número de página para cuando regrese a la página
-                // curOptionRating: '', // recuerdo el criterio de ordenamiento para cuando regrese a la página
-                // curOptionAZ: '', // recuerdo el criterio de ordenamiento para cuando regrese a la página
-                // curGenre: 'All', // recuerdo el filtro de género para cuando regrese a la página
-                // curOrigin: 'All', // recuerdo el origen de datos para cuando regrese a la página
-                // origenBusqueda: '3', // guardo el origen de la búsqueda por nombre. 1: BD, 2: API, 3: ambas
-                // //listoMostrar: false,
-                // //firstLoad: 0,
-                // errors: '',
             };
         case RESET_ALL:
             return {

@@ -34,6 +34,7 @@
     text-align: center;
     justify-content: center;
     margin-left: 10px;
+    margin-top: 10px;
 }
 
 .mainText {
@@ -152,7 +153,7 @@
 
 @media (max-width: 490px) {
     .contButton {
-        margin-top: 15%;
+        margin-top: 25%;
         width: 100%;
         font-size: 1.2em;
     }

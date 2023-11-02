@@ -79,6 +79,9 @@ const Detail = () => {
                 }
             })
             .finally(() => {
+                console.log("detail DETAIL");
+                dispatch(clearDetails()) // limpio la posible consulta previa
+
                 setIsLoading(false);
             })
             .catch((error) => {
@@ -86,9 +89,10 @@ const Detail = () => {
                 setImage(IMG_ERROR);
             });
 
-        return () => {
-            dispatch(clearDetails()) // limpio la posible consulta previa
-        }
+        // return () => {
+        //     console.log("detail DETAIL");
+        //     dispatch(clearDetails()) // limpio la posible consulta previa
+        //    }
     }, []);
 
     function handleBack() {

@@ -52,7 +52,6 @@ export const getGenres = () => {
                 payload: data,
             });
         } catch (error) {
-            console.log(error);
             return dispatch({
                 type: SET_ERROR_MSG,
                 payload: "Error fetching genres: " + error.message,
@@ -158,8 +157,25 @@ export const postVidegame = (payload) => {
     return async (dispatch) => {
         try {
             const { data } = await axios.post(endpoint, payload);
+            console.log("previo: ", payload);
+            // Agreg el valor 'id' al objeto 'payload' para tener el nuevo registro
+            // completo sin necesidad de hacer un llamado y que me traiga todo:
+            const aux = {
+                id: data.id,
+                name: payload.name,
+                image: payload.image,
+                description: payload.description,
+                released_date: payload.released_date,
+                rating: payload.rating,
+                // Platforms: payload.platform && payload.platform.map(el => el),
+                // Genres: payload.genre && payload.genre.map(el => el),
+                Platforms: payload.platform && payload.platform.map(el => ({ name: el })),
+                Genres: payload.genre && payload.genre.map(el => ({ name: el })),
+                OriginDB: true,
+            }
             return dispatch({
-                type: POST_GAME, payload,
+                type: POST_GAME,
+                payload: aux,
             });
 
         } catch (error) {

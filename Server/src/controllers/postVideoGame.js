@@ -9,11 +9,6 @@ const postVideoGame = async (req, res) => {
     showLog(`postVideoGame`);
     try {
         if (!name || !description || !image || !released_date || !rating || !platform || !genre) { throw Error("Data missing"); }
-        // let esRepe = false;
-        // esRepe = await Videogame.findOne({
-        //     where: { name: name, },
-        // });
-        // if (esRepe) { throw Error("It already exists"); }
         const [VideogameCreated, created] = await Videogame.findOrCreate({
             where: { name, description, image, released_date, rating, OriginDB: true },
         });
@@ -23,10 +18,14 @@ const postVideoGame = async (req, res) => {
         let platformCreated = await Platform.findAll({
             where: { name: platform }
         })
+        // Obtengo el ID para devolver al front:
+        const createdVideogameId = VideogameCreated.id;
+        showLog(`ID: ${createdVideogameId}`);
+
         //Agrego los datos relacionados:
         VideogameCreated.addGenre(genreCreated);
         VideogameCreated.addPlatform(platformCreated);
-        return res.status(200).json({ "created": "ok" });
+        return res.status(200).json({ "created": "ok", "id": createdVideogameId });
     } catch (err) {
         showLog(`ERROR-> ${err.message}`);
         return res.status(500).send(err.message);
