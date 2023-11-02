@@ -16,32 +16,28 @@ const { container, containerSec, text, img } = style;
 
 const Home = () => {
     const dispatch = useDispatch();
-
-    // Estos valores se usan para cargar todos los videojuegos desde API y BD la primera vez:
-    let dataLoaded = useSelector((state) => state.dataLoaded);
-    let firstLoad = useSelector((state) => state.firstLoad);
-    let listoMostrar = useSelector((state) => state.listoMostrar);
-    // Estos valores los usa el componente de paginación:
-    let allVideogames = useSelector((state) => state.videogames);
-    // Acá llegan los posibles mensajes de error de actions:
-    let errors = useSelector((state) => state.errors);
-    // Desde acá recupero la página actual, para cuando rootea y se pierde el valor:
-    let curPage = useSelector((state) => state.curPage);
-    let prevDetail = useSelector((state) => state.prevDetail); // prueba para avisar qu vengo de detail
     // Aux para refrescar el DOM:
     const [aux, setAux] = useState(false);
-
 
     // useEffect(() => {
     //     dispatch(setListoMostrar())
     //         .then(dispatch(getGenres()))
-    //         .then(dispatch(getPlatforms()))
-    //         .then(dispatch(getVideogames('3')))
     //         .then(() => {
     //             setLoading(false);
     //         });
     // }, [dispatch]);
 
+    // Estos valores se usan para cargar todos los videojuegos desde API y BD la primera vez:
+    let dataLoaded = useSelector((state) => state?.dataLoaded);
+    let firstLoad = useSelector((state) => state?.firstLoad);
+    let listoMostrar = useSelector((state) => state?.listoMostrar);
+    // Estos valores los usa el componente de paginación:
+    let allVideogames = useSelector((state) => state.videogames);
+    // Acá llegan los posibles mensajes de error de actions:
+    let errors = useSelector((state) => state?.errors);
+    // Desde acá recupero la página actual, para cuando rootea y se pierde el valor:
+    let curPage = useSelector((state) => state?.curPage);
+    let prevDetail = useSelector((state) => state?.prevDetail); // prueba para avisar qu vengo de detail
 
     useEffect(() => {
         if (!dataLoaded) { // no hay datos previos. Los obtengo

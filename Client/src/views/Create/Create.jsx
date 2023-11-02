@@ -8,9 +8,12 @@ import validations from "./validations";
 import orderArray from "../../functions/orderArray";
 // Variables de entorno:
 const IMG_HELP = import.meta.env.VITE_IMG_ABOUT || '/src/assets/Face.jpg';
+// Variables de entorno:
+const IMG_LOGO_NAV = import.meta.env.VITE_IMG_LOGO_NAV || '/src/assets/ImgNav.jpeg';
+
 // Estilos: 
 import style from "./Create.module.css";
-const { container, mainTitle, secondText, startButton, imgBack } = style;
+const { containerImg, img, linkText, ratingText, dateText, label, contButtonShort, selectCombo, mainText, container, contButton, button, containerData, errorsCreate } = style;
 
 const Create = () => {
     const navigate = useNavigate();
@@ -44,14 +47,24 @@ const Create = () => {
     });
 
     const handleSubmit = async (e) => {
+        console.log("PASA");
         e.preventDefault();
         const formErrors = validations(gameData);
         setErrors(formErrors);
-        if (Object.keys(formErrors).length !== 0) { return; }
+        if (Object.keys(formErrors).length !== 0) {
+            //window.alert("Review those details more carefully!");
+            return;
+        }
+
+        console.log("1");
         dispatch(postVidegame(gameData));
+        console.log("2");
+
         if (errorCreate) {
+            console.log("ERRRR");
             window.alert("Error: ", errorCreate);
         } else {
+            console.log("OK ERRRR");
             window.alert("Game created!");
         }
         // PROBAR QUE HOME MUESTRE EL ERROR SIEMPRE
@@ -147,9 +160,19 @@ const Create = () => {
 
     return (
         <form className={container} onSubmit={handleSubmit}>
-            <div className={container}>
-                <label htmlFor="name">Name:</label>
-                <input
+
+
+            <div className={containerImg}>
+                <h2 className={containerData}>Let's create!</h2>
+                <img className={img} src={IMG_LOGO_NAV} alt="" />
+            </div>
+
+
+
+
+            <div className={containerData}>
+                <label className={label} htmlFor="name">Name:</label>
+                <input className={mainText}
                     name="name"
                     type="text"
                     placeholder="Name"
@@ -157,12 +180,12 @@ const Create = () => {
                     onChange={handleChange}
                     id="name"
                 />
-                <span className={container}>{errors.name}</span>
+                <span className={errorsCreate}>{errors.name}</span>
             </div>
 
-            <div className={container}>
-                <label htmlFor="description">description:</label>
-                <textarea
+            <div className={containerData}>
+                <label className={label} htmlFor="description">Description:</label>
+                <textarea className={mainText}
                     name="description"
                     placeholder="Description"
                     value={gameData.description}
@@ -171,49 +194,55 @@ const Create = () => {
                     maxLength="150"
                     rows="4"
                 />
-                <span className={container}>{errors.description}</span>
+                <span className={errorsCreate}>{errors.description}</span>
             </div>
-            <div className={container}>
-                <label htmlFor="image">image:</label>
-                <input
+            <div className={containerData}>
+                <label className={label} htmlFor="image">Image:</label>
+                <input className={linkText}
                     name="image"
                     type="text"
-                    placeholder="Image link"
+                    placeholder="link"
                     value={gameData.image}
                     onChange={handleChange}
                     id="image"
                 />
-                <span className={container}>{errors.image}</span>
+                <span className={errorsCreate}>{errors.image}</span>
+
+                <div className={contButton}>
+                    <button className={button} onClick={() => handlePasteLink()} >Please, give me a link</button>
+                </div>
+
+
             </div>
-            <div className={container}>
-                <label htmlFor="released_date">released:</label>
-                <input
+            <div className={containerData}>
+                <label className={label} htmlFor="released_date">Released date:</label>
+                <input className={dateText}
                     name="released_date"
                     type="text"
-                    placeholder='Released (yyyy-mm-dd)'
+                    placeholder='(yyyy-mm-dd)'
                     value={gameData.released_date}
                     onChange={handleChange}
                     id="released_date"
                 />
-                <span className={container}>{errors.released_date}</span>
+                <span className={errorsCreate}>{errors.released_date}</span>
             </div>
-            <div className={container}>
-                <label htmlFor="rating">rating:</label>
-                <input
+            <div className={containerData}>
+                <label className={label} htmlFor="rating">Rating:</label>
+                <input className={ratingText}
                     name="rating"
                     type="text"
-                    placeholder='Rating (1-10)'
+                    placeholder='(1-10)'
                     value={gameData.rating}
                     onChange={handleChange}
                     id="rating"
                 />
-                <span className={container}>{errors.rating}</span>
+                <span className={errorsCreate}>{errors.rating}</span>
             </div>
 
-            <div className={container}>
+            <div className={containerData}>
                 {/* Selección de géneros: */}
-                <label className={container} htmlFor="genre">Genre/s</label>
-                <select className={container}
+                <label className={label} htmlFor="genre">Genre/s</label>
+                <select className={selectCombo}
                     name="genre"
                     multiple
                     value={gameData.genre}
@@ -226,27 +255,22 @@ const Create = () => {
                     ))}
                 </select>
 
-                <div className={container}>
+                <div className={label}>
                     Selected Genre/s: {" "}
                     {gameData.genre.map((genre) => (
                         <span key={genre}>
                             {` ${genre}`}
-                            <button
-                                className={container}
-                                onClick={() => handleRemoveGenre(genre)}
-                            >
-                                x
-                            </button>
+                            <button className={contButtonShort} onClick={() => handleRemoveGenre(genre)}>x</button>
                         </span>
                     ))}
                 </div>
 
-                <span className={container}>{errors.genre}</span>
+                <span className={errorsCreate}>{errors.genre}</span>
             </div>
-            <div className={container}>
+            <div className={containerData}>
                 {/* Selección de plataformas: */}
-                <label className={container} htmlFor="platform">Platform/s</label>
-                <select className={container}
+                <label className={label} htmlFor="platform">Platform/s</label>
+                <select className={selectCombo}
                     name="platform"
                     multiple
                     value={gameData.platform}
@@ -259,37 +283,32 @@ const Create = () => {
                     ))}
                 </select>
 
-                <div className={container}>
+                <div className={label}>
                     Selected Platform/s: {" "}
                     {gameData.platform.map((platform) => (
                         <span key={platform}>
                             {` ${platform}`}
-                            <button
-                                className={container}
-                                onClick={() => handleRemovePlatform(platform)}
-                            >
-                                x
-                            </button>
+                            <button className={contButtonShort} onClick={() => handleRemovePlatform(platform)}>x</button>
                         </span>
                     ))}
                 </div>
 
-                <span className={container}>{errors.platform}</span>
-            </div>
-
-            <div className={container}>
-                <button className={startButton} onClick={() => handlePasteLink()} >Sample paste</button>
+                <span className={errorsCreate}>{errors.platform}</span>
             </div>
 
 
-            <div className={container}>
-                <button className={startButton} onClick={() => handleBack()} >Don't wanna play anymore</button>
-            </div>
 
 
-            <p className={container} href="/">
-                <button className={container} type="submit">Create game!</button>
+
+            <p className={contButton} href="/">
+                <button className={button} type="submit">Create game!</button>
             </p>
+
+            <div className={contButton}>
+                <button className={button} onClick={() => handleBack()} >Don't wanna play anymore</button>
+            </div>
+
+
         </form >
     )
 }

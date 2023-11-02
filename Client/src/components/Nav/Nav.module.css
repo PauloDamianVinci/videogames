@@ -18,7 +18,7 @@
 }
 
 .containerImg {
-    background-color: rgb(26, 235, 235);
+    /* background-color: rgb(26, 235, 235); */
     position: relative;
     display: flex;
     justify-content: center;

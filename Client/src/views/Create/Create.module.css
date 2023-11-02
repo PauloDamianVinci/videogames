@@ -1,19 +1,165 @@
 .container {
-    background-color: rgba(172, 48, 48, 0.774);
+    background-color: rgba(49, 40, 40, 0.534);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
 }
 
-.mainTitle {
-    background-color: rgba(106, 48, 172, 0.774);
+.containerImg {
+    background-color: #0e0e10;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 200px;
+    color: #1fcab3;
+    font-family: "Courier New", Helvetica, sans-serif;
+    font-size: 2em;
 }
 
-.secondText {
-    background-color: rgba(13, 45, 148, 0.897);
+.img {
+    position: relative;
+    display: flex;
+    min-width: 200px;
+    max-height: 300px;
+    width: 100%;
 }
 
-.startButton {
-    background-color: rgba(16, 180, 131, 0.774);
+.containerData {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-left: 10px;
 }
 
-.imgBack {
-    background-color: rgba(212, 149, 30, 0.774);
+.mainText {
+    /* color: rgb(112, 5, 253); */
+    font-family: "Courier New", Helvetica, sans-serif;
+    font-size: 1em;
+    text-align: left;
+    max-width: 400px;
+}
+
+.dateText {
+    font-family: "Courier New", Helvetica, sans-serif;
+    font-size: 1em;
+    text-align: left;
+    max-width: 100px;
+}
+
+.ratingText {
+    font-family: "Courier New", Helvetica, sans-serif;
+    font-size: 1em;
+    text-align: left;
+    max-width: 40px;
+}
+
+.linkText {
+    font-family: "Courier New", Helvetica, sans-serif;
+    font-size: 1em;
+    text-align: left;
+    max-width: 600px;
+}
+
+.label {
+    color: #1fcab3;
+    font-family: "Courier New", Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: left;
+}
+
+.errorsCreate {
+    color: rgb(253, 249, 5);
+    font-family: "Courier New", Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.selectCombo {
+    font-family: "Courier New", Helvetica, sans-serif;
+    font-size: 1em;
+    text-align: left;
+    max-width: 300px;
+}
+
+.contButton {
+    background-image: linear-gradient(to right, #006175 0%, #1fcab3 100%);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #1fcab3;
+    display: block;
+    height: 60px;
+    font-size: 1.5em;
+    padding: 4px;
+    text-decoration: none;
+    width: 60%;
+    margin-left: 50%;
+    margin-top: 8%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contButton:hover {
+    color: #fff;
+}
+
+.contButton .button {
+    align-items: center;
+    background: #0e0e10;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+    color: #1fcab3;
+    font-size: 1em;
+}
+
+.contButton:hover .button {
+    background: transparent;
+    color: #fff;
+}
+
+.contButtonShort {
+    background-image: linear-gradient(to right, #006175 0%, #1fcab3 100%);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #1fcab3;
+    height: 30px;
+    width: 30px;
+    font-size: 1em;
+    text-decoration: none;
+    /* transform: translate(-50%, -50%); */
+    background: #0e0e10;
+    transition: background 0.5s ease;
+    color: #1fcab3;
+    margin-left: 4px;
+}
+
+.contButtonShort:hover {
+    color: #fff;
+}
+
+@media (max-width: 490px) {
+    .contButton {
+        margin-top: 15%;
+        width: 100%;
+        font-size: 1.2em;
+    }
+
+    .containerImg {
+        justify-content: left;
+        font-size: 1em;
+    }
+
 }
