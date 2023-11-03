@@ -39,6 +39,7 @@ const Search = (props) => {
                     value={name}
                     onChange={handleInputChange}
                     id="name"
+                    autocomplete="name"
                 />
             </div>
         </div >

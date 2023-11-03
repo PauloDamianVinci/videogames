@@ -24,6 +24,7 @@ const getPlatforms = async (req, res) => {
             })
         }
         const resp = await Platform.findAll();
+        showLog(`getPlatforms OK`);
         res.status(200).json(resp);
     } catch (err) {
         showLog(`getPlatforms ERROR-> ${err.message}`);

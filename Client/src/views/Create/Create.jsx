@@ -1,15 +1,20 @@
 // ! Creación de videojuego
+import axios from 'axios';
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { paginacionPendiente, postVidegame, resetFilterAndOrder } from "../../redux/actions";
+import { postVidegame, paginacionPendiente, resetFilterAndOrder } from "../../redux/actions";
 // Funciones:
 import validations from "./validations";
 import orderArray from "../../functions/orderArray";
 // Variables de entorno:
 const IMG_HELP = import.meta.env.VITE_IMG_ABOUT || '/src/assets/Face.jpg';
 const IMG_LOGO_NAV = import.meta.env.VITE_IMG_LOGO_NAV || '/src/assets/ImgNav.jpeg';
+const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
+const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
+const VG_VIDEOGAMES = API_URL_BASE + VG_V;
+
 // Estilos: 
 import style from "./Create.module.css";
 const { containerImg, img, linkText, ratingText, dateText, label, contButtonShort, selectCombo, mainText, container, contButton, button, containerData, errorsCreate } = style;
@@ -52,22 +57,46 @@ const Create = () => {
         if (Object.keys(formErrors).length !== 0) {
             return;
         }
-        dispatch(postVidegame(gameData));
-        if (errorCreate) {
-            window.alert("Error: ", errorCreate);
-        } else {
-            setHuboAlta(true);
-            setGameData({
-                name: "",
-                description: "",
-                image: "",
-                released_date: "",
-                rating: "",
-                genre: [],
-                platform: [],
+        // Verifico repetición de nombre y grabación mediante axios:
+        const endpoint = VG_VIDEOGAMES;
+        const { data } = axios.post(endpoint, gameData)
+            .then(({ data }) => {
+                const aux = {
+                    id: data.id,
+                    name: gameData.name,
+                    image: gameData.image,
+                    description: gameData.description,
+                    released_date: gameData.released_date,
+                    rating: gameData.rating,
+                    Platforms: gameData.platform && gameData.platform.map(el => ({ name: el })),
+                    Genres: gameData.genre && gameData.genre.map(el => ({ name: el })),
+                    OriginDB: true,
+                }
+                dispatch(postVidegame(aux)); // actualizo el store con el nuevo registro
+                setHuboAlta(true);
+                setGameData({
+                    name: "",
+                    description: "",
+                    image: "",
+                    released_date: "",
+                    rating: "",
+                    genre: [],
+                    platform: [],
+                });
+                window.alert("Game created!");
+            })
+            .finally(() => {
+
+            })
+            .catch((error) => {
+                let msg = '';
+                if (!error.response) {
+                    msg = error;
+                } else {
+                    msg = "error " + error.response.status + " - " + error.response.data;
+                }
+                window.alert(msg);
             });
-            window.alert("Game created!");
-        }
     }
 
     function handleBack() {
@@ -157,7 +186,7 @@ const Create = () => {
                 <img className={img} src={IMG_LOGO_NAV} alt="" />
             </div>
             <div className={containerData}>
-                <label className={label} htmlFor="name">Name:</label>
+                <label for="name" className={label} htmlFor="name">Name:</label>
                 <input className={mainText}
                     name="name"
                     type="text"
@@ -165,15 +194,12 @@ const Create = () => {
                     value={gameData.name}
                     onChange={handleChange}
                     id="name"
+                    autocomplete="name"
                 />
                 <span className={errorsCreate}>{errors.name}</span>
-                <div className={contButton}>
-                    <button className={button} onClick={() => handlePasteLink()} >Give me one!</button>
-                </div>
-
             </div>
             <div className={containerData}>
-                <label className={label} htmlFor="description">Description:</label>
+                <label for="description" className={label} htmlFor="description">Description:</label>
                 <textarea className={mainText}
                     name="description"
                     placeholder="Description"
@@ -186,7 +212,7 @@ const Create = () => {
                 <span className={errorsCreate}>{errors.description}</span>
             </div>
             <div className={containerData}>
-                <label className={label} htmlFor="image">Image:</label>
+                <label for="image" className={label} htmlFor="image">Image:</label>
                 <input className={linkText}
                     name="image"
                     type="text"
@@ -201,7 +227,7 @@ const Create = () => {
                 </div>
             </div>
             <div className={containerData}>
-                <label className={label} htmlFor="released_date">Released date:</label>
+                <label for="released_date" className={label} htmlFor="released_date">Released date:</label>
                 <input className={dateText}
                     name="released_date"
                     type="text"
@@ -213,7 +239,7 @@ const Create = () => {
                 <span className={errorsCreate}>{errors.released_date}</span>
             </div>
             <div className={containerData}>
-                <label className={label} htmlFor="rating">Rating:</label>
+                <label for="rating" className={label} htmlFor="rating">Rating:</label>
                 <input className={ratingText}
                     name="rating"
                     type="text"
@@ -226,12 +252,13 @@ const Create = () => {
             </div>
             <div className={containerData}>
                 {/* Selección de géneros: */}
-                <label className={label} htmlFor="genre">Genre/s</label>
+                <label for="genre" className={label} htmlFor="genre">Genre/s</label>
                 <select className={selectCombo}
                     name="genre"
                     multiple
                     value={gameData.genre}
                     onChange={handleSelectGenre}
+                    id="genre"
                 >
                     {genres.map((genre) => (
                         <option key={genre.id} value={genre.name}>
@@ -252,12 +279,13 @@ const Create = () => {
             </div>
             <div className={containerData}>
                 {/* Selección de plataformas: */}
-                <label className={label} htmlFor="platform">Platform/s</label>
+                <label for="platform" className={label} htmlFor="platform">Platform/s</label>
                 <select className={selectCombo}
                     name="platform"
                     multiple
                     value={gameData.platform}
                     onChange={handleSelectPlatform}
+                    id="platform"
                 >
                     {platforms.map((plat) => (
                         <option key={plat.id} value={plat.name}>
@@ -277,7 +305,10 @@ const Create = () => {
                 <span className={errorsCreate}>{errors.platform}</span>
             </div>
             <p className={contButton} href="/">
-                <button className={button} type="submit">Create game!</button>
+                {/* <button className={button} type="submit" disabled={formSubmitted}> */}
+                <button className={button} type="submit" >
+                    Create game!
+                </button>
             </p>
             <div className={contButton}>
                 <button className={button} onClick={() => handleBack()} >Don't wanna play anymore</button>

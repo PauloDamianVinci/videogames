@@ -13,5 +13,5 @@ conn.sync({ alter: true }).then(() => {
         showLog(`Server running into ${PORT} Port. DB Connection: ${conSegura}`);
     });
 })
-    .catch(err => console.log(err))
+    .catch(err => showLog(err))
 

@@ -19,6 +19,7 @@ const deleteVideoGame = async (req, res) => {
         await videogameToDelete.removePlatforms(videogameToDelete.Platforms);
         // Finalmente elimino el videojuego:
         await videogameToDelete.destroy();
+        showLog(`deleteVideoGame OK`);
         return res.status(200).json({ "deleted": "ok" });
     } catch (err) {
         showLog(`deleteVideoGame ERROR-> ${err.message}`);

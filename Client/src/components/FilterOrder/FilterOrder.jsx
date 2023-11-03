@@ -71,19 +71,20 @@ const FilterOrder = (props) => {
         <div>
             <div className={container}>
                 {/* Filtrado por origen de datos: */}
-                <div className={containerFiltrosOrigenGenero}>
+                <div className={containerFiltrosOrigenGenero} >
                     <h2 className={texto} >Origin:</h2>
                     <select onChange={handleOriginData} value=
-                        {selectedOrigin}>
+                        {selectedOrigin} id="origin">
                         <option value="All">All</option>
                         <option value="False">Api</option>
                         <option value="True">Database</option>
+
                     </select>
                 </div>
                 {/* Filtrado por género: */}
                 <div className={containerFiltrosOrigenGenero}>
                     <h2 className={texto}>Genre:</h2>
-                    <select onChange={handleFilterByGenre} value={selectedGenre}>
+                    <select onChange={handleFilterByGenre} value={selectedGenre} id="genre">
                         <option value="All">All</option>
                         {genres.map((genre) => {
                             return (
@@ -92,6 +93,7 @@ const FilterOrder = (props) => {
                                 </option>
                             );
                         })}
+
                     </select>
                 </div>
                 {/* Ordenamiento alafabético: */}

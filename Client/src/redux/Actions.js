@@ -17,6 +17,7 @@ export const FILTER_BY_NAME = 'FILTER_BY_NAME';
 export const CLEAR_FILTER_BY_NAME = 'CLEAR_FILTER_BY_NAME';
 export const RESET_FILTER_ORDER = 'RESET_FILTER_ORDER';
 export const REMOVE_CARD = 'REMOVE_CARD';
+//export const VERIFICA_REPE = 'VERIFICA_REPE;'
 // Variables de entorno:
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
 const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
@@ -27,6 +28,12 @@ const VG_VIDEOGAMES = API_URL_BASE + VG_V;
 const VG_GENRES = API_URL_BASE + VG_G;
 const VG_PLATFORMS = API_URL_BASE + VG_P;
 const VG_REMOVE = API_URL_BASE + VG_R;
+
+export function postVidegame(payload) {
+    return {
+        type: POST_GAME, payload,
+    }
+}
 
 export function removeCard(payload) {
     const endpoint = VG_REMOVE + "/" + payload;
@@ -144,38 +151,6 @@ export function orderByAZ(payload) {
 
 export function resetFilterAndOrder() {
     return { type: RESET_FILTER_ORDER }
-}
-
-export const postVidegame = (payload) => {
-    const endpoint = VG_VIDEOGAMES;
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.post(endpoint, payload);
-            // Agreg el valor 'id' al objeto 'payload' para tener el nuevo registro
-            // completo sin necesidad de hacer un llamado y que me traiga todo:
-            const aux = {
-                id: data.id,
-                name: payload.name,
-                image: payload.image,
-                description: payload.description,
-                released_date: payload.released_date,
-                rating: payload.rating,
-                Platforms: payload.platform && payload.platform.map(el => ({ name: el })),
-                Genres: payload.genre && payload.genre.map(el => ({ name: el })),
-                OriginDB: true,
-            }
-            return dispatch({
-                type: POST_GAME,
-                payload: aux,
-            });
-
-        } catch (error) {
-            return dispatch({
-                type: SET_ERROR_MSG,
-                payload: "Error posting videogame: " + error.message,
-            });
-        }
-    };
 }
 
 export function paginacionPendiente(payload) {

@@ -41,13 +41,6 @@ const initialState = {
 
 const rootReducer = (state = initialState, { type, payload }) => {
     switch (type) {
-        case REMOVE_CARD:
-            return {
-                ...state,
-                allVideogames: state.allVideogames.filter(item => item.id !== payload),
-                videogames: state.videogames.filter(item => item.id !== payload),
-                filteredVideogames: state.filteredVideogames.filter(item => item.id !== payload),
-            };
         case POST_GAME:
             return {
                 ...state,
@@ -56,6 +49,13 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 filteredVideogames: [...state.allVideogames, payload],
                 curPage: '1',
                 pagPending: false,
+            };
+        case REMOVE_CARD:
+            return {
+                ...state,
+                allVideogames: state.allVideogames.filter(item => item.id !== payload),
+                videogames: state.videogames.filter(item => item.id !== payload),
+                filteredVideogames: state.filteredVideogames.filter(item => item.id !== payload),
             };
         case GET_VIDEOGAMES:
             return {

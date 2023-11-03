@@ -12,7 +12,6 @@ const getGenres = async (req, res) => {
         response = await axios.get(`${videogamesApiUrl}/genres?key=${apiKey}`)
         const dataRes = response.data.results;
         const allGenres = dataRes.map(el => {
-            //showLog(el.id), ", ", el.id;
             return {
                 id: el.id,
                 name: el.name,
@@ -25,6 +24,7 @@ const getGenres = async (req, res) => {
             })
         }
         const resp = await Genre.findAll();
+        showLog(`getGenres OK`);
         res.status(200).json(resp);
     } catch (err) {
         showLog(`getGenres ERROR-> ${err.message}`);

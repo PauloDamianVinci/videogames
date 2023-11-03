@@ -1,4 +1,4 @@
-// ! Almacena un nuevo videojuego en base de datos.
+// ! Almacena un nuevo videojuego en base de datos, si no es repetido.
 const { Videogame } = require('../DB_connection');
 const { Genre } = require('../DB_connection');
 const { Platform } = require('../DB_connection');
@@ -9,8 +9,19 @@ const postVideoGame = async (req, res) => {
     showLog(`postVideoGame`);
     try {
         if (!name || !description || !image || !released_date || !rating || !platform || !genre) { throw Error("Data missing"); }
+        // Verifico si ya existe un registro con el mismo nombre:
+        const nameLowercase = name.toLowerCase();
+        const existingVideogame = await Videogame.findOne({
+            where: { name: nameLowercase },
+        });
+        //if (existingVideogame) { throw new Error("The game name already exists. Choose another one."); }
+        if (existingVideogame) {
+            showLog(`postVideoGame: The game ${name} already exists`);
+            return res.status(409).send(`The game ${name} already exists. Choose another one.`);
+        }
+        // Si no existe creo el registro:
         const [VideogameCreated, created] = await Videogame.findOrCreate({
-            where: { name, description, image, released_date, rating, OriginDB: true },
+            where: { name: nameLowercase, description, image, released_date, rating, OriginDB: true },
         });
         let genreCreated = await Genre.findAll({
             where: { name: genre }
@@ -23,6 +34,7 @@ const postVideoGame = async (req, res) => {
         //Agrego los datos relacionados:
         VideogameCreated.addGenre(genreCreated);
         VideogameCreated.addPlatform(platformCreated);
+        showLog(`postVideoGame OK`);
         return res.status(200).json({ "created": "ok", "id": createdVideogameId });
     } catch (err) {
         showLog(`postVideoGame ERROR-> ${err.message}`);

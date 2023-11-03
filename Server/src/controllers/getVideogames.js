@@ -37,6 +37,7 @@ const getVideogames = async (req, res) => {
                     resp = await getFromAPI(id, search);
                 }
         }
+        showLog(`getVideogames OK`);
         res.status(200).json(resp);
     } catch (err) {
         showLog(`getVideogames ERROR-> ${err.message}`);
