@@ -75,7 +75,7 @@ const About = () => {
                 </div>
                 <div className={info}>
                     <p className={secondText}>
-                        Version:
+                        Versions:
                     </p>
                     <p className={secondText}>
                         Frontend: {versionFront} -  Backend: {versionBack}

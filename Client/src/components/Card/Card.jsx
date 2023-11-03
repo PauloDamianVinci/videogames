@@ -39,11 +39,11 @@ const Card = (props) => {
         if (rating) {
             setRatingShow(rating);
         };
-        if (isNaN(id)) { // desde BD
-            setGenreList(genresV.map(genre => genre.name).join(' - '));
-        } else { //desde API
-            setGenreList(genresV.map(genre => genre).join(" - "));
-        }
+        //if (isNaN(id)) { // desde BD
+        setGenreList(genresV.map(genre => genre.name).join(' - '));
+        //} else { //desde API
+        //   setGenreList(genresV.map(genre => genre).join(" - "));
+        //}
         setIsLoading(false);
     }, []);
 

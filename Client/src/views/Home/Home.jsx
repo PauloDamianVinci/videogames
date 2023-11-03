@@ -52,7 +52,14 @@ const Home = () => {
             // desde detalles, pero caso contrario ver de forzarlo a 1:
             if (prevDetail) {
                 console.log("01 - hay PrevDetail: SET page ", curPage);
-                setCurrentPage(curPage);
+                const totPages = Math.ceil(allVideogames.length / videogamesPerPage);
+                if (curPage > totPages) {
+                    setCurrentPage(1);
+                    console.log("01.1 - totPages: ", totPages, " RESET a 1");
+                } else {
+                    setCurrentPage(curPage);
+                    console.log("01.2 - hay PrevDetail: SET page ", curPage);
+                }
                 dispatch(setDetail(false));
             } else {
                 console.log("02 - NO PrevDetail: SET page 1");

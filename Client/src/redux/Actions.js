@@ -157,7 +157,7 @@ export const postVidegame = (payload) => {
     return async (dispatch) => {
         try {
             const { data } = await axios.post(endpoint, payload);
-            console.log("previo: ", payload);
+            //console.log("previo: ", payload);
             // Agreg el valor 'id' al objeto 'payload' para tener el nuevo registro
             // completo sin necesidad de hacer un llamado y que me traiga todo:
             const aux = {

@@ -15,7 +15,7 @@ const VG_VIDEOGAMES = API_URL_BASE + VG_V;
 import style from "./Detail.module.css";
 const { containerData, separador, thirdText, container, img, imgWait, containerSec, containerImg, containerMainTitle, secondText, contButton, button, descripcion } = style;
 // Funciones:
-//import formatDate from "../../functions/formatDate";
+import formatDate from "../../functions/formatDate";
 
 const Detail = () => {
     const navigate = useNavigate()
@@ -46,20 +46,26 @@ const Detail = () => {
                     // Obtengo los datos:
                     if (data[0].name) setName(data[0].name);
                     if (data[0].description) setDescription(data[0].description);
-                    if (data[0].released_date) setReleased_date(data[0].released_date);
+
+
+                    // Filtrar:
+                    if (data[0].released_date) setReleased_date(formatDate(data[0].released_date));
+
+
+
                     if (data[0].rating) setRating(data[0].rating);
                     // La lista de géneros y plataformas se arma diferente según el origen:
                     // console.log("GEN: ", data[0].Genres)
                     // console.log("PLT: ", data[0].Platforms)
-                    if (isNaN(id)) { // desde BD
-                        //console.log("BD");
-                        setGenreList(data[0].Genres.map(genre => genre.name).join(" - "));
-                        setPlatformList(data[0].Platforms.map(plat => plat.name).join(" - "));
-                    } else { //desde API
-                        //console.log("API");
-                        setGenreList(data[0].Genres.map(genre => genre).join(" - "));
-                        setPlatformList(data[0].Platforms.map(plat => plat).join(" - "));
-                    }
+                    //if (isNaN(id)) { // desde BD
+                    //console.log("BD");
+                    setGenreList(data[0].Genres.map(genre => genre.name).join(" - "));
+                    setPlatformList(data[0].Platforms.map(plat => plat.name).join(" - "));
+                    // } else { //desde API
+                    //     //console.log("API");
+                    //     setGenreList(data[0].Genres.map(genre => genre).join(" - "));
+                    //     setPlatformList(data[0].Platforms.map(plat => plat).join(" - "));
+                    // }
                     // Adapto el dato origen:
                     data[0].OriginDB ? setOriginDB("Database") : setOriginDB("API");
                     // Testeo el link de la imagen:

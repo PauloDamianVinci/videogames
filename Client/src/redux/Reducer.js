@@ -60,7 +60,7 @@ const initialState = {
 const rootReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case POST_GAME:
-            console.log("POST GAME: ", payload);
+            //console.log("POST GAME: ", payload);
             return {
                 ...state,
                 allVideogames: [...state.allVideogames, payload],

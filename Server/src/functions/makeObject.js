@@ -18,8 +18,14 @@ const makeObject = (data, iteraciones) => {
                 description: '', // este dato no viene pero lo mantengo por compatibilidad
                 released_date: data[i].released,
                 rating: data[i].rating,
-                Platforms: data[i].platforms && data[i].platforms.map(el => el.platform.name),
-                Genres: data[i].genres && data[i].genres.map(el => el.name),
+                //Platforms: data[i].platforms && data[i].platforms.map(el => el.platform.name),
+
+                Platforms: data[i].platforms && data[i].platforms.map(el => ({ name: el.platform.name })),
+
+
+                //Genres: data[i].genres && data[i].genres.map(el => el.name),
+                Genres: data[i].genres && data[i].genres.map(el => ({ name: el.name })),
+
                 OriginDB: false,
             }
             salida.push(aux);
@@ -37,8 +43,12 @@ const makeObject = (data, iteraciones) => {
             description: data.description_raw, // este dato no viene pero lo mantengo por compatibilidad
             released_date: data.released,
             rating: data.rating,
-            Platforms: data.platforms && data.platforms.map(el => el.platform.name),
-            Genres: data.genres && data.genres.map(el => el.name),
+            //Platforms: data.platforms && data.platforms.map(el => el.platform.name),
+            Platforms: data.platforms && data.platforms.map(el => ({ name: el.platform.name })),
+            //Genres: data.genres && data.genres.map(el => el.name),
+            Genres: data.genres && data.genres.map(el => ({ name: el.name })),
+
+
             OriginDB: false,
         }
         salida.push(aux);
