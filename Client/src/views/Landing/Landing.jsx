@@ -1,4 +1,4 @@
-// ! Vista inicial del programa.
+// Vista inicial del programa.
 // hooks, routers, reducers:
 import { useNavigate } from "react-router-dom";
 // Estilos:
