@@ -70,6 +70,13 @@ const Detail = () => {
     }, []);
 
     function handleBack() {
+        setName('');
+        setDescription('');
+        setReleased_date('');
+        setRating('');
+        setOriginDB('');
+        setGenreList('');
+        setPlatformList('');
         navigate(-1);
     }
 

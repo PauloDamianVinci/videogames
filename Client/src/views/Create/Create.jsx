@@ -186,7 +186,7 @@ const Create = () => {
                 <img className={img} src={IMG_LOGO_NAV} alt="" />
             </div>
             <div className={containerData}>
-                <label for="name" className={label} htmlFor="name">Name:</label>
+                <label className={label} htmlFor="name">Name:</label>
                 <input className={mainText}
                     name="name"
                     type="text"
@@ -194,12 +194,12 @@ const Create = () => {
                     value={gameData.name}
                     onChange={handleChange}
                     id="name"
-                    autocomplete="name"
+                    autoComplete="name"
                 />
                 <span className={errorsCreate}>{errors.name}</span>
             </div>
             <div className={containerData}>
-                <label for="description" className={label} htmlFor="description">Description:</label>
+                <label className={label} htmlFor="description">Description:</label>
                 <textarea className={mainText}
                     name="description"
                     placeholder="Description"
@@ -212,7 +212,7 @@ const Create = () => {
                 <span className={errorsCreate}>{errors.description}</span>
             </div>
             <div className={containerData}>
-                <label for="image" className={label} htmlFor="image">Image:</label>
+                <label className={label} htmlFor="image">Image:</label>
                 <input className={linkText}
                     name="image"
                     type="text"
@@ -227,7 +227,7 @@ const Create = () => {
                 </div>
             </div>
             <div className={containerData}>
-                <label for="released_date" className={label} htmlFor="released_date">Released date:</label>
+                <label className={label} htmlFor="released_date">Released date:</label>
                 <input className={dateText}
                     name="released_date"
                     type="text"
@@ -239,7 +239,7 @@ const Create = () => {
                 <span className={errorsCreate}>{errors.released_date}</span>
             </div>
             <div className={containerData}>
-                <label for="rating" className={label} htmlFor="rating">Rating:</label>
+                <label className={label} htmlFor="rating">Rating:</label>
                 <input className={ratingText}
                     name="rating"
                     type="text"
@@ -252,7 +252,7 @@ const Create = () => {
             </div>
             <div className={containerData}>
                 {/* Selección de géneros: */}
-                <label for="genre" className={label} htmlFor="genre">Genre/s</label>
+                <label className={label} htmlFor="genre">Genre/s</label>
                 <select className={selectCombo}
                     name="genre"
                     multiple
@@ -279,7 +279,7 @@ const Create = () => {
             </div>
             <div className={containerData}>
                 {/* Selección de plataformas: */}
-                <label for="platform" className={label} htmlFor="platform">Platform/s</label>
+                <label className={label} htmlFor="platform">Platform/s</label>
                 <select className={selectCombo}
                     name="platform"
                     multiple
