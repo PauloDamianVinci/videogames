@@ -1,3 +1,4 @@
+//! Componente que mapea los videojuegos y los muestra de a uno cargando el componente card. Llamado desde Home.
 // Componentes:
 import Card from "../Card/Card.jsx";
 // Estilos:

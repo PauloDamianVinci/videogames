@@ -1,4 +1,4 @@
-// Se realizan las diversas funciones de obtención de videojuegos.
+// ! Realiza las diversas funciones de obtención de videojuegos.
 require('dotenv').config();
 const axios = require('axios');
 const { Videogame, Genre, Platform } = require('../DB_connection');

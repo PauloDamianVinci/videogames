@@ -1,4 +1,4 @@
-// Se almacena un nuevo videojuego en base de datos.
+// ! Almacena un nuevo videojuego en base de datos.
 const { Videogame } = require('../DB_connection');
 const { Genre } = require('../DB_connection');
 const { Platform } = require('../DB_connection');

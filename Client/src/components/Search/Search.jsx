@@ -1,3 +1,4 @@
+// ! Componente de búsqueda. Funciona a medida que se va tipeando.
 // hooks, routers, reducers:
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";

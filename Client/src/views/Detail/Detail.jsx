@@ -1,3 +1,4 @@
+// ! Visualización de detalles de un videojuego.
 import axios from 'axios';
 // hooks, routers, reducers:
 import { useParams, useNavigate } from "react-router-dom";

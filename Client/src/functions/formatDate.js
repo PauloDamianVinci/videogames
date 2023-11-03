@@ -1,4 +1,4 @@
-// Devuelvo la fecha en el formato de salida correcto "YYYY/MM/DD":
+// ! Devuelvo la fecha en el formato de salida correcto "YYYY/MM/DD":
 
 const formatDate = (data) => {
     let fecha = data;

@@ -1,3 +1,5 @@
+// ! Vista principal del programa. Obtiene los videojuegos, géneros y plataformas al inicio. Luego renderiza
+// ! el nav, las cards, los filtros y también gestiona la paginación.
 // Componentes:
 import Error from "../../views/Error/Error";
 import Nav from "../../components/Nav/Nav";

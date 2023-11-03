@@ -1,3 +1,4 @@
+// ! Creación de videojuego
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
@@ -166,6 +167,10 @@ const Create = () => {
                     id="name"
                 />
                 <span className={errorsCreate}>{errors.name}</span>
+                <div className={contButton}>
+                    <button className={button} onClick={() => handlePasteLink()} >Give me one!</button>
+                </div>
+
             </div>
             <div className={containerData}>
                 <label className={label} htmlFor="description">Description:</label>

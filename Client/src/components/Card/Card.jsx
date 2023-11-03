@@ -1,3 +1,4 @@
+// ! Componente de visualización de un videojuego. Llamado desde Cards.
 // hooks, routers, reducers:
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";

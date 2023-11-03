@@ -1,3 +1,4 @@
+// ! Componente de navegación. Se muestra arriba de la página. Incluye al componente Search. Llamado desde Home.
 // hooks, routers, reducers:
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";

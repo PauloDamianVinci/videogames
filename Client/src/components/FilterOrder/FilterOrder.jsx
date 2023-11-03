@@ -1,3 +1,4 @@
+// ! Componente encargado de filtrar y ordenar los videojuegos. Llamado desde Home.
 // hooks, routers, reducers:
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,5 +1,5 @@
-// Cargo y devuelvo los datos recibidos en el objeto. Se usa para los videojuegos, ya que
-// pueden solicitarse de diferentes maneras.
+// ! Carga los datos recibidos en un objeto formateado que emula la estructura de los 
+// ! que genera la BD. De esta manera se unifica la llegada de datos al front.
 
 const makeObject = (data, iteraciones) => {
     if (iteraciones > 1) {

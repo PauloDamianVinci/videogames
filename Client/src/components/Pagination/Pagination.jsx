@@ -1,3 +1,4 @@
+// ! Encargado de mostrar la paginación. Llamado desde Home.
 // Estilos:
 import style from "./Pagination.module.css";
 const { mainText, container, contButton, button, buttonChosen, containerSec } = style;

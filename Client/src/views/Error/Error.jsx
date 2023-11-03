@@ -1,3 +1,4 @@
+// ! Esta vista sirve para mostrar errores generales y también para el error 404 al cargar una página errónea.
 // hooks, routers, reducers:
 import { useNavigate } from "react-router-dom";
 import { resetAll } from "../../redux/actions";

@@ -1,4 +1,4 @@
-// Se obtiene la versión del programa.
+// ! Obtiene la versión del programa.
 const packageJson = require('../../package.json');
 const showLog = require("../functions/showLog");
 
