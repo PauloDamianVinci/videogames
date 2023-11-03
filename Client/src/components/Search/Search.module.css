@@ -1,7 +1,3 @@
-.containerHidden {
-    display: none;
-}
-
 .container {
     background-color: rgba(109, 110, 103, 0.849);
     display: flex;
@@ -14,7 +10,6 @@
 }
 
 .containerSec {
-    /* background-color: rgb(16, 82, 204); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +17,6 @@
 }
 
 .mainTitle {
-    /* position: absolute; */
     top: 30%;
     left: 50%;
     color: rgb(255, 255, 254);

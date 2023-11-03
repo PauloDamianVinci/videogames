@@ -49,7 +49,6 @@
     width: 70px;
 }
 
-
 .containerImgGit {
     position: relative;
     display: flex;
@@ -136,7 +135,6 @@
 }
 
 @media (max-width: 430px) {
-
     .contButton {
         margin-top: 20px;
         width: 100%;

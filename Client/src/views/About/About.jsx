@@ -1,10 +1,9 @@
 import axios from 'axios';
 // hooks, routers, reducers:
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { paginacionPendiente } from "../../redux/actions";
-import { Link } from 'react-router-dom'
 // Variables de entorno:
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
 const VG_BACK = import.meta.env.VITE_VG_VER_BACK || '/versionback';
@@ -14,7 +13,6 @@ const IMG_LINK = import.meta.env.VITE_IMG_LINKEDIN || '/src/assets/linkedin.svg'
 const IMG_GIT = import.meta.env.VITE_IMG_GITHUB || '/src/assets/github.svg';
 const MY_LNK = import.meta.env.MY_LINKEDIN || 'https://www.linkedin.com/in/paulo-damian-vinci/';
 const MY_GIT = import.meta.env.MY_GITHUB || 'https://github.com/PauloDamianVinci/videogames';
-
 // Estilos:
 import style from "./About.module.css";
 const { container, containerData, containerImgAbout, info, imgGit, containerImg, img, imgLink, description, mainText, secondText, contButton, button } = style;
@@ -46,12 +44,9 @@ const About = () => {
     }, []);
 
     function handleBack() {
-        dispatch(paginacionPendiente(true)); // para conservar la página actual
+        dispatch(paginacionPendiente(true)); // para conservar la página actual en home
         navigate(-1);
     }
-    const redirectToExternalSite = (site) => {
-        window.open(site, '_blank');
-    };
 
     return (
         <div className={container}>
@@ -89,5 +84,6 @@ const About = () => {
         </div>
     )
 };
+
 export default About;
 

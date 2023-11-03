@@ -13,8 +13,8 @@ const ROOT = import.meta.env.VITE_ROOT || '/';
 const Error = (props) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
     const { message } = props;
+
     let imgShow = '';
     if (message) {
         imgShow = IMG_ERROR;
@@ -40,5 +40,4 @@ const Error = (props) => {
 
 }
 
-
-export default Error
+export default Error;

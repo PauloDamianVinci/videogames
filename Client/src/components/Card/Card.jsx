@@ -1,15 +1,12 @@
 // hooks, routers, reducers:
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { removeCard } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-import { paginacionPendiente } from "../../redux/actions";
-
+import { removeCard, paginacionPendiente } from "../../redux/actions";
 // Variables de entorno:
 const DETAIL_BASE = import.meta.env.VITE_DETAIL_BASE || '/detail';
 const IMG_ERROR = import.meta.env.VITE_IMG_ERR_DETAIL || '/src/assets/NoPhoto.png';
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
-
 // Estilos:
 import style from "./Card.module.css";
 const { buttonRemove, container, containerImg, img, contButton, button, containerFeatures, featuresCardName, featuresCardGenre } = style;
@@ -23,31 +20,21 @@ const Card = (props) => {
     const [genreList, setGenreList] = useState('');
     const [imgShow, setImgShow] = useState(IMG_ESPERA);
     const [nameShow, setNameShow] = useState('Not found');
-    const [ratingShow, setRatingShow] = useState('Not found');
     const [isBD, setIsBD] = useState(false);
     const [isHandling, setIsHandling] = useState(false);
 
     useEffect(() => {
-        // Las listas se llenaron diferente según el origen. Las trato por separado:
+        // testeo el link de la imagen:
         if (image) {
-            // testeo el link de la imagen:
             const imageTest = new Image();
             imageTest.src = image;
-            imageTest.onload = () => {
-                setImgShow(imageTest.src);
-            };
-            imageTest.onerror = () => {
-                setImgShow(IMG_ERROR);
-            };
+            imageTest.onload = () => { setImgShow(imageTest.src); };
+            imageTest.onerror = () => { setImgShow(IMG_ERROR); };
         };
         if (name) {
             setNameShow(name);
         };
-        if (rating) {
-            setRatingShow(rating);
-        };
         setGenreList(genresV.map(genre => genre.name).join(' - '));
-
         // Permito borrar las cards de la DB:
         if (isNaN(id)) { // desde BD
             setIsBD(true);
@@ -58,26 +45,19 @@ const Card = (props) => {
     }, []);
 
     const handleDelete = () => {
-        if (isHandling) {
-            console.log("OCUPADO");
-            return;
-        };
+        if (isHandling) { return; };
         setIsHandling(true);
-        //console.log("id a remover: ", id);
         dispatch(removeCard(id));
-        dispatch(paginacionPendiente(true)); // para conservar la página actual
-
-
+        dispatch(paginacionPendiente(true)); // para conservar la página actual en home
         setAux(!aux);
         setIsHandling(false);
     };
 
-    //console.log("CARD PAGE ", currentPage)
     return (
         <div className={container}>
             {isLoading ? (
                 <div className={container}>
-                    {/* <div clg className={img} src={IMG_ESPERA} alt="" /> */}
+                    <div>...</div>
                 </div >
             ) : name ? (
                 <div className={container}>

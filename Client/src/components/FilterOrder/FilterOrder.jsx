@@ -1,34 +1,29 @@
 // hooks, routers, reducers:
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-//import { useDispatch, useSelector } from "react-redux";
 import { resetFilterAndOrder, filterOriginData, filterVideogamesByGenre, orderByRating, orderByAZ, setCurrPage } from "../../redux/actions";
 // Funciones:
 import orderArray from "../../functions/orderArray";
 // Estilos:
 import style from "./FilterOrder.module.css";
 const { container, containerFiltrosOrigenGenero, texto, containerOrdenRatingAlfa, contButton, button } = style;
+
 const FilterOrder = (props) => {
     const dispatch = useDispatch();
-    const { currentPage, setCurrentPage, dataLoaded, aux, setAux } = props;
+    const { aux, setAux, setCurrentPage } = props;
     const [selectedOptionRating, setSelectedOptionRating] = useState('');
     const [selectedOptionAZ, setSelectedOptionAZ] = useState('');
     const [selectedOrigin, setSelectedOrigin] = useState('All');
     const [selectedGenre, setSelectedGenre] = useState('All');
-    const [isLoading, setIsLoading] = useState(true);
-    const [isSelectDisabled, setISelectDisabled] = useState(false);
-
-    // Funciones:
-    //import orderArray from "../../functions/orderArray";
-    let genres = useSelector((state) => state?.genres); // tengo en el store todos los géneros
+    // Obtengo los géneros:
+    let genres = useSelector((state) => state?.genres);
     let genresOrdered = orderArray(genres);
-
-
     // Obtengo los estados de los filtros actuales:
     let curGenre = useSelector((state) => state?.filters.genre);
     let curCreate = useSelector((state) => state?.filters.create);
     let curRating = useSelector((state) => state?.filters.rating);
     let curAzza = useSelector((state) => state?.filters.azza);
+
     useEffect(() => {
         setSelectedGenre(curGenre);
         setSelectedOrigin(curCreate);
@@ -41,40 +36,34 @@ const FilterOrder = (props) => {
         setSelectedOrigin(e.target.value);
         dispatch(filterOriginData(e.target.value));
         setCurrentPage(1);
-        //setCurrPage(1);
-        setAux(!aux); // es para forzar el refresco del DOM
+        setAux(!aux);
     }
     //Función de filtrado por género:
     function handleFilterByGenre(e) {
         setSelectedGenre(e.target.value);
         dispatch(filterVideogamesByGenre(e.target.value))
-        setAux(!aux); // es para forzar el refresco del DOM
         setCurrentPage(1);
-        //setCurrPage(1);
+        setAux(!aux);
     }
     //Función de ordenamiento por rating:
     function handleOrderRating(e) {
         setSelectedOptionRating(e.target.value);
         dispatch(orderByRating(e.target.value));
-        setAux(!aux); // es para forzar el refresco del DOM
         setCurrentPage(1);
-        //setCurrPage(1);
+        setAux(!aux);
     }
     //Función de ordenamiento por orden alfabético:
     function handleOrderAZ(e) {
         setSelectedOptionAZ(e.target.value);
         dispatch(orderByAZ(e.target.value));
-        setAux(!aux); // es para forzar el refresco del DOM
         setCurrentPage(1);
-        //setCurrPage(1);
-
+        setAux(!aux);
     }
     // Función de reset de filtros y ordenamientos:
     function handleReset() {
         dispatch(resetFilterAndOrder());
         setCurrentPage(1);
-        //setCurrPage(1);
-        setAux(!aux); // es para forzar el refresco del DOM
+        setAux(!aux);
     }
 
     return (

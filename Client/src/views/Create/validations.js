@@ -3,11 +3,9 @@ const validator = (input) => {
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/; // URL válida
     const ratingRegex = /^\d+(\.\d{1,2})?$/ // entero y dos decimales 
     const releasedRegex = /^\d{4}-\d{2}-\d{2}$/ // formato AAAA-MM-DD
-
     const image = input.image
     const released_date = input.released_date
     const rating = input.rating
-
 
     if (!input.name) {
         errors.name = 'Name required';
@@ -53,8 +51,6 @@ const validator = (input) => {
         errors.released_date = 'Released date: incorrect format';
     }
 
-
-
     if (isNaN(rating)) {
         errors.rating = 'Rating not valid';
     }
@@ -76,4 +72,5 @@ const validator = (input) => {
     }
     return errors;
 }
+
 export default validator;

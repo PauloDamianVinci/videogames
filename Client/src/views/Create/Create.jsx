@@ -1,6 +1,6 @@
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { paginacionPendiente, postVidegame, resetFilterAndOrder } from "../../redux/actions";
 // Funciones:
@@ -8,9 +8,7 @@ import validations from "./validations";
 import orderArray from "../../functions/orderArray";
 // Variables de entorno:
 const IMG_HELP = import.meta.env.VITE_IMG_ABOUT || '/src/assets/Face.jpg';
-// Variables de entorno:
 const IMG_LOGO_NAV = import.meta.env.VITE_IMG_LOGO_NAV || '/src/assets/ImgNav.jpeg';
-
 // Estilos: 
 import style from "./Create.module.css";
 const { containerImg, img, linkText, ratingText, dateText, label, contButtonShort, selectCombo, mainText, container, contButton, button, containerData, errorsCreate } = style;
@@ -26,14 +24,12 @@ const Create = () => {
     // Obtengo los posibles errores:
     let errorCreate = useSelector((state) => state?.errors);
     const [huboAlta, setHuboAlta] = useState(false);
-
-    // LIMPIAR ESOS ESTADOS!!!!
     const [gameData, setGameData] = useState({
-        name: "juego 0001",
-        description: "desc juego 01",
-        image: "https://res.cloudinary.com/dvptbowso/image/upload/v1698321837/PI_Videogames/sn7z4wl8vrz8wgh27cgj.jpg",
-        released_date: "2020-01-01",
-        rating: "2",
+        name: "",
+        description: "",
+        image: "",
+        released_date: "",
+        rating: "",
         genre: [],
         platform: [],
     });
@@ -69,7 +65,6 @@ const Create = () => {
                 genre: [],
                 platform: [],
             });
-
             window.alert("Game created!");
         }
     }
@@ -79,11 +74,9 @@ const Create = () => {
         // y merecen ser ordenados desde cero:
         if (huboAlta) {
             // reinicio los filtros y ordenamientos:
-            //dispatch(getVideogames('2')); // Obtengo todos los videojuegos de BD
             dispatch(resetFilterAndOrder());
-
         } else {
-            dispatch(paginacionPendiente(true)); // para conservar la página actual
+            dispatch(paginacionPendiente(true)); // para conservar la página actual en home
         }
         navigate(-1);
     }
@@ -158,16 +151,10 @@ const Create = () => {
 
     return (
         <form className={container} onSubmit={handleSubmit}>
-
-
             <div className={containerImg}>
                 <h2 className={containerData}>Let's create!</h2>
                 <img className={img} src={IMG_LOGO_NAV} alt="" />
             </div>
-
-
-
-
             <div className={containerData}>
                 <label className={label} htmlFor="name">Name:</label>
                 <input className={mainText}
@@ -180,7 +167,6 @@ const Create = () => {
                 />
                 <span className={errorsCreate}>{errors.name}</span>
             </div>
-
             <div className={containerData}>
                 <label className={label} htmlFor="description">Description:</label>
                 <textarea className={mainText}
@@ -205,12 +191,9 @@ const Create = () => {
                     id="image"
                 />
                 <span className={errorsCreate}>{errors.image}</span>
-
                 <div className={contButton}>
                     <button className={button} onClick={() => handlePasteLink()} >Please, give me a link</button>
                 </div>
-
-
             </div>
             <div className={containerData}>
                 <label className={label} htmlFor="released_date">Released date:</label>
@@ -236,7 +219,6 @@ const Create = () => {
                 />
                 <span className={errorsCreate}>{errors.rating}</span>
             </div>
-
             <div className={containerData}>
                 {/* Selección de géneros: */}
                 <label className={label} htmlFor="genre">Genre/s</label>
@@ -252,7 +234,6 @@ const Create = () => {
                         </option>
                     ))}
                 </select>
-
                 <div className={label}>
                     Selected Genre/s: {" "}
                     {gameData.genre.map((genre) => (
@@ -262,7 +243,6 @@ const Create = () => {
                         </span>
                     ))}
                 </div>
-
                 <span className={errorsCreate}>{errors.genre}</span>
             </div>
             <div className={containerData}>
@@ -280,7 +260,6 @@ const Create = () => {
                         </option>
                     ))}
                 </select>
-
                 <div className={label}>
                     Selected Platform/s: {" "}
                     {gameData.platform.map((platform) => (
@@ -290,26 +269,16 @@ const Create = () => {
                         </span>
                     ))}
                 </div>
-
                 <span className={errorsCreate}>{errors.platform}</span>
             </div>
-
-
-
-
-
             <p className={contButton} href="/">
                 <button className={button} type="submit">Create game!</button>
             </p>
-
             <div className={contButton}>
                 <button className={button} onClick={() => handleBack()} >Don't wanna play anymore</button>
             </div>
-
-
         </form >
     )
-
 };
 
 export default Create;

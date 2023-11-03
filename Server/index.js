@@ -10,7 +10,6 @@ SECURE ? conSegura = 'SECURE' : conSegura = 'NOT SECURE';
 
 conn.sync({ alter: true }).then(() => {
     server.listen(PORT, () => {
-        //console.log(`Server running into ${PORT} Port. DB Connection: ${conSegura}`);
         showLog(`Server running into ${PORT} Port. DB Connection: ${conSegura}`);
     });
 })

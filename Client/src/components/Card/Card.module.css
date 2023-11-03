@@ -9,7 +9,6 @@
 }
 
 .containerFeatures {
-    /* background-color: rgb(204, 16, 148); */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -43,7 +42,6 @@
 }
 
 .featuresCardName {
-    /* background-color: rgb(172, 164, 169); */
     color: rgb(255, 255, 254);
     font-family: "Helvetica", Helvetica, sans-serif;
     font-size: 1.2em;
@@ -52,7 +50,6 @@
 }
 
 .featuresCardGenre {
-    /* background-color: rgb(226, 135, 191); */
     color: rgb(255, 255, 254);
     font-family: "Helvetica", Helvetica, sans-serif;
     font-size: 1em;

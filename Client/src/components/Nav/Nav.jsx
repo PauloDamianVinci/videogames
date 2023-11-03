@@ -1,14 +1,13 @@
 // hooks, routers, reducers:
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { resetAll } from "../../redux/actions";
 // Componentes:
 import Search from "../../components/Search/Search";
 // Estilos:
 import style from "./Nav.module.css";
 const { container, containerSec, containerImg, img, contButton, button, mainTitle } = style;
+
 // Variables de entorno:
 const CREATE = import.meta.env.VITE_CREATE || '/create';
 const ABOUT = import.meta.env.VITE_ABOUT || '/about';
@@ -20,8 +19,6 @@ const Nav = (props) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    //let nombreBusqueda = useSelector((state) => state.nombreBusqueda);
-
     const handleExit = () => {
         // Salgo al landing. Restablezco el store antes:
         dispatch(resetAll());
@@ -29,13 +26,7 @@ const Nav = (props) => {
     }
 
     function handleShowCreate() {
-        // Permito ir al alta de video juego solamente si no estoy dentro de una búsqueda por nombre:
-        // if (nombreBusqueda) {
-        //     window.alert("Not allowed: please clear search, then try again");
-        //     return;
-        // } else {
         navigate(CREATE);
-        // }
     }
 
     return (

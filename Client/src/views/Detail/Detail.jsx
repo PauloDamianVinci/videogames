@@ -2,8 +2,8 @@ import axios from 'axios';
 // hooks, routers, reducers:
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getVideogameById, paginacionPendiente } from "../../redux/actions";
-import { useDispatch, useSelector } from "react-redux";
+import { paginacionPendiente } from "../../redux/actions";
+import { useDispatch } from "react-redux";
 // Variables de entorno:
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
 const ERROR = import.meta.env.VITE_ERROR || '/error';
@@ -20,8 +20,8 @@ import formatDate from "../../functions/formatDate";
 const Detail = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const [isLoading, setIsLoading] = useState(true);
     const { id } = useParams();
+    const [isLoading, setIsLoading] = useState(true);
     const [name, setName] = useState("Not found");
     const [description, setDescription] = useState("Not found");
     const [released_date, setReleased_date] = useState("Not found");
@@ -30,18 +30,14 @@ const Detail = () => {
     const [image, setImage] = useState("Not found");
     const [genreList, setGenreList] = useState("Not found");
     const [platformList, setPlatformList] = useState("Not found");
-    const [genres, setGenres] = useState({});
-    const [platforms, setPlatforms] = useState({});
 
     if (!id) { navigate(`${ERROR}`); }; // mando al error en caso de que ingresen manualmente a esta dirección sin id
 
     useEffect(() => {
         setIsLoading(true);
         const endpoint = VG_VIDEOGAMES + "/" + id;
-        //const varrta=dispatch(getVideogameById(id));
         axios(endpoint)
             .then(({ data }) => {
-                console.log(data);
                 if (data[0].name) {
                     // Obtengo los datos:
                     if (data[0].name) setName(data[0].name);
@@ -63,8 +59,7 @@ const Detail = () => {
                 }
             })
             .finally(() => {
-                console.log("paginacionPendiente ");
-                dispatch(paginacionPendiente(true)); // para conservar la página actual
+                dispatch(paginacionPendiente(true)); // para conservar la página actual en home
                 setIsLoading(false);
             })
             .catch((error) => {

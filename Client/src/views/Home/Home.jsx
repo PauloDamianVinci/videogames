@@ -16,17 +16,7 @@ const { container, containerSec, text, img } = style;
 
 const Home = () => {
     const dispatch = useDispatch();
-    // Aux para refrescar el DOM:
     const [aux, setAux] = useState(false);
-
-    // useEffect(() => {
-    //     dispatch(setListoMostrar())
-    //         .then(dispatch(getGenres()))
-    //         .then(() => {
-    //             setLoading(false);
-    //         });
-    // }, [dispatch]);
-
     // Estos valores se usan para cargar todos los videojuegos desde API y BD la primera vez:
     let dataLoaded = useSelector((state) => state?.dataLoaded);
     let firstLoad = useSelector((state) => state?.firstLoad);
@@ -41,28 +31,22 @@ const Home = () => {
 
     useEffect(() => {
         if (!dataLoaded) { // no hay datos previos. Los obtengo
-            console.log("HOME CARGA SIN DATOS PREVIOS!!!!");
             dispatch(setListoMostrar()); // para que muestre el reloj de espera
             dispatch(getGenres()); // Obtengo todos los géneros
             dispatch(getPlatforms()); // Obtengo todas las plataformas
             dispatch(getVideogames('3')); // Obtengo todos los videojuegos BD + API
             setCurrentPage(1);
         } else {
-            // Recupero la página en que estaba. Setear sólo si es de retorno
-            // desde detalles, pero caso contrario ver de forzarlo a 1:
+            // Recupero la página en que estaba:
             if (pagPending) {
-                console.log("01 - hay pagPending: SET page ", curPage, ", Tot reg: ", allVideogames.length);
                 const totPages = Math.ceil(allVideogames.length / videogamesPerPage);
                 if (curPage > totPages) {
                     setCurrentPage(1);
-                    console.log("01.1 - totPages: ", totPages, " RESET a 1");
                 } else {
                     setCurrentPage(curPage);
-                    console.log("01.2 - hay pagPending: SET page ", curPage);
                 }
                 dispatch(paginacionPendiente(false));
             } else {
-                console.log("02 - NO pagPending: SET page 1, Tot reg: ", allVideogames.length);
                 setCurrentPage(1);
             }
         }
@@ -80,7 +64,6 @@ const Home = () => {
         currentGame = [];
     }
     const paginado = (pageNumber) => { // manejado desde el componente Pagination
-        console.log("HACE PAGINADO ", pageNumber)
         setCurrentPage(pageNumber);
         dispatch(setCurrPage(pageNumber)); // memorizo la página actual para cuando salga de la vista y regrese:
     };
@@ -97,14 +80,13 @@ const Home = () => {
         return (
             <div className={container}>
                 <Nav aux={aux} setAux={setAux} />
-                <FilterOrder aux={aux} setAux={setAux} setCurrentPage={setCurrentPage} dataLoaded={dataLoaded} />
+                <FilterOrder aux={aux} setAux={setAux} setCurrentPage={setCurrentPage} />
                 <Cards aux={aux} setAux={setAux} currentGame={currentGame} />
                 <Pagination
                     videogamePerPage={videogamesPerPage}
                     allVideogames={allVideogames.length}
                     paginado={paginado}
                     currentPage={currentPage}
-                    aux={aux}
                 />
             </div >
         );

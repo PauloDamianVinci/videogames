@@ -14,7 +14,6 @@
 }
 
 .containerFiltrosOrigenGenero {
-    /* background-color: rgb(43, 68, 105); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +23,6 @@
 }
 
 .texto {
-    /* background-color: rgb(204, 16, 16); */
     top: 30%;
     left: 50%;
     color: rgb(255, 255, 254);
@@ -35,7 +33,6 @@
 }
 
 .containerOrdenRatingAlfa {
-    /* background-color: rgb(20, 143, 46); */
     display: flex;
     justify-content: center;
     align-items: center;
