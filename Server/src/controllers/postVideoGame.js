@@ -20,14 +20,13 @@ const postVideoGame = async (req, res) => {
         })
         // Obtengo el ID para devolver al front:
         const createdVideogameId = VideogameCreated.id;
-        showLog(`ID: ${createdVideogameId}`);
-
+        //showLog(`ID: ${createdVideogameId}`);
         //Agrego los datos relacionados:
         VideogameCreated.addGenre(genreCreated);
         VideogameCreated.addPlatform(platformCreated);
         return res.status(200).json({ "created": "ok", "id": createdVideogameId });
     } catch (err) {
-        showLog(`ERROR-> ${err.message}`);
+        showLog(`postVideoGame ERROR-> ${err.message}`);
         return res.status(500).send(err.message);
     }
 }

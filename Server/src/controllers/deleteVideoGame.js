@@ -21,7 +21,7 @@ const deleteVideoGame = async (req, res) => {
         await videogameToDelete.destroy();
         return res.status(200).json({ "deleted": "ok" });
     } catch (err) {
-        showLog(`ERROR-> ${err.message}`);
+        showLog(`deleteVideoGame ERROR-> ${err.message}`);
         return res.status(500).send(err.message);
     }
 }

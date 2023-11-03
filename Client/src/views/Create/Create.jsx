@@ -2,7 +2,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getVideogames, clearDetails, resetFilterAndOrder, setCurrRating, setCurrAZ, setCurrGenre, getGenres, setRefreshHome, postVidegame, setNombreBusqueda, setOrigenBusqueda, setCurrOrigin, setCurrPage } from "../../redux/actions";
+import { paginacionPendiente, postVidegame, resetFilterAndOrder } from "../../redux/actions";
 // Funciones:
 import validations from "./validations";
 import orderArray from "../../functions/orderArray";
@@ -83,9 +83,8 @@ const Create = () => {
             dispatch(resetFilterAndOrder());
 
         } else {
-            dispatch(clearDetails()); // limpio la posible consulta previa
+            dispatch(paginacionPendiente(true)); // para conservar la página actual
         }
-        //dispatch(clearDetails()); // limpio la posible consulta previa
         navigate(-1);
     }
 

@@ -26775,3 +26775,428 @@
 2/11/2023, 22:32:57 - getVideogames
 2/11/2023, 22:32:57 - by id=57c44334-16e8-4dc3-ace1-14a5cdae1697 (DB)
 2/11/2023, 22:33:01 - deleteVideoGame 1c9ce42e-dd0b-4d7a-93ab-08a9b6921936
+3/11/2023, 10:04:54 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:08:17 - getPlatforms
+3/11/2023, 10:08:17 - getGenres
+3/11/2023, 10:08:17 - getVideogames
+3/11/2023, 10:08:17 - all (DB)
+3/11/2023, 10:08:17 - all (API)
+3/11/2023, 10:08:18 - getGenres
+3/11/2023, 10:08:18 - - part 1/5
+3/11/2023, 10:08:18 - getPlatforms
+3/11/2023, 10:08:20 - - part 2/5
+3/11/2023, 10:08:21 - - part 3/5
+3/11/2023, 10:08:22 - - part 4/5
+3/11/2023, 10:08:24 - - part 5/5
+3/11/2023, 10:08:24 - getVideogames
+3/11/2023, 10:08:24 - all (DB)
+3/11/2023, 10:08:24 - all (API)
+3/11/2023, 10:08:25 - - part 1/5
+3/11/2023, 10:08:26 - - part 2/5
+3/11/2023, 10:08:28 - - part 3/5
+3/11/2023, 10:08:29 - - part 4/5
+3/11/2023, 10:08:30 - - part 5/5
+3/11/2023, 10:08:39 - getGenres
+3/11/2023, 10:08:39 - getPlatforms
+3/11/2023, 10:08:39 - getVideogames
+3/11/2023, 10:08:39 - all (DB)
+3/11/2023, 10:08:39 - all (API)
+3/11/2023, 10:08:39 - getGenres
+3/11/2023, 10:08:40 - getPlatforms
+3/11/2023, 10:08:40 - - part 1/5
+3/11/2023, 10:08:41 - - part 2/5
+3/11/2023, 10:08:42 - - part 3/5
+3/11/2023, 10:08:44 - - part 4/5
+3/11/2023, 10:08:45 - - part 5/5
+3/11/2023, 10:08:45 - getVideogames
+3/11/2023, 10:08:45 - all (DB)
+3/11/2023, 10:08:45 - all (API)
+3/11/2023, 10:08:46 - - part 1/5
+3/11/2023, 10:08:48 - - part 2/5
+3/11/2023, 10:08:48 - - part 3/5
+3/11/2023, 10:08:49 - - part 4/5
+3/11/2023, 10:08:52 - - part 5/5
+3/11/2023, 10:08:56 - getVideogames
+3/11/2023, 10:08:56 - by id=57c44334-16e8-4dc3-ace1-14a5cdae1697 (DB)
+3/11/2023, 10:08:56 - getVideogames
+3/11/2023, 10:08:56 - by id=57c44334-16e8-4dc3-ace1-14a5cdae1697 (DB)
+3/11/2023, 10:09:01 - getVideogames
+3/11/2023, 10:09:01 - by id=4806 (API)
+3/11/2023, 10:09:02 - getVideogames
+3/11/2023, 10:09:02 - by id=4806 (API)
+3/11/2023, 10:09:09 - by id=5563 (API)
+3/11/2023, 10:09:09 - getVideogames
+3/11/2023, 10:09:10 - getVideogames
+3/11/2023, 10:09:10 - by id=5563 (API)
+3/11/2023, 10:10:55 - getGenres
+3/11/2023, 10:10:55 - getPlatforms
+3/11/2023, 10:10:55 - getVideogames
+3/11/2023, 10:10:55 - all (DB)
+3/11/2023, 10:10:55 - all (API)
+3/11/2023, 10:10:56 - getGenres
+3/11/2023, 10:10:56 - getPlatforms
+3/11/2023, 10:10:56 - - part 1/5
+3/11/2023, 10:10:57 - - part 2/5
+3/11/2023, 10:10:59 - getGenres
+3/11/2023, 10:10:59 - getPlatforms
+3/11/2023, 10:10:59 - getVideogames
+3/11/2023, 10:10:59 - all (DB)
+3/11/2023, 10:10:59 - all (API)
+3/11/2023, 10:10:59 - - part 3/5
+3/11/2023, 10:11:00 - getGenres
+3/11/2023, 10:11:00 - getPlatforms
+3/11/2023, 10:11:00 - - part 1/5
+3/11/2023, 10:11:00 - - part 4/5
+3/11/2023, 10:11:01 - - part 5/5
+3/11/2023, 10:11:01 - - part 2/5
+3/11/2023, 10:11:03 - - part 3/5
+3/11/2023, 10:11:04 - - part 4/5
+3/11/2023, 10:11:05 - getGenres
+3/11/2023, 10:11:05 - getPlatforms
+3/11/2023, 10:11:05 - all (DB)
+3/11/2023, 10:11:05 - getVideogames
+3/11/2023, 10:11:05 - all (API)
+3/11/2023, 10:11:05 - - part 5/5
+3/11/2023, 10:11:06 - getPlatforms
+3/11/2023, 10:11:06 - getGenres
+3/11/2023, 10:11:06 - - part 1/5
+3/11/2023, 10:11:07 - - part 2/5
+3/11/2023, 10:11:08 - - part 3/5
+3/11/2023, 10:11:10 - - part 4/5
+3/11/2023, 10:11:11 - - part 5/5
+3/11/2023, 10:11:11 - getVideogames
+3/11/2023, 10:11:11 - all (DB)
+3/11/2023, 10:11:11 - all (API)
+3/11/2023, 10:11:14 - - part 1/5
+3/11/2023, 10:11:14 - - part 2/5
+3/11/2023, 10:11:16 - - part 3/5
+3/11/2023, 10:11:17 - - part 4/5
+3/11/2023, 10:11:18 - - part 5/5
+3/11/2023, 10:11:24 - getVideogames
+3/11/2023, 10:11:24 - by id=19301 (API)
+3/11/2023, 10:11:25 - getVideogames
+3/11/2023, 10:11:25 - by id=19301 (API)
+3/11/2023, 10:12:07 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:12:09 - getGenres
+3/11/2023, 10:12:09 - getPlatforms
+3/11/2023, 10:12:09 - getVideogames
+3/11/2023, 10:12:09 - all (DB)
+3/11/2023, 10:12:09 - all (API)
+3/11/2023, 10:12:10 - getGenres
+3/11/2023, 10:12:10 - getPlatforms
+3/11/2023, 10:12:10 - - part 1/5
+3/11/2023, 10:12:11 - - part 2/5
+3/11/2023, 10:12:12 - - part 3/5
+3/11/2023, 10:12:13 - - part 4/5
+3/11/2023, 10:12:14 - - part 5/5
+3/11/2023, 10:12:14 - getVideogames
+3/11/2023, 10:12:14 - all (DB)
+3/11/2023, 10:12:14 - all (API)
+3/11/2023, 10:12:15 - - part 1/5
+3/11/2023, 10:12:16 - - part 2/5
+3/11/2023, 10:12:17 - - part 3/5
+3/11/2023, 10:12:18 - - part 4/5
+3/11/2023, 10:12:19 - - part 5/5
+3/11/2023, 10:12:26 - getVideogames
+3/11/2023, 10:12:26 - by id=19301 (API)
+3/11/2023, 10:12:26 - getVideogames
+3/11/2023, 10:12:26 - by id=19301 (API)
+3/11/2023, 10:13:10 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:13:11 - getGenres
+3/11/2023, 10:13:11 - getPlatforms
+3/11/2023, 10:13:11 - getVideogames
+3/11/2023, 10:13:11 - all (DB)
+3/11/2023, 10:13:11 - all (API)
+3/11/2023, 10:13:12 - getGenres
+3/11/2023, 10:13:12 - getPlatforms
+3/11/2023, 10:13:13 - - part 1/5
+3/11/2023, 10:13:14 - - part 2/5
+3/11/2023, 10:13:15 - - part 3/5
+3/11/2023, 10:13:17 - - part 4/5
+3/11/2023, 10:13:18 - - part 5/5
+3/11/2023, 10:13:18 - getVideogames
+3/11/2023, 10:13:18 - all (DB)
+3/11/2023, 10:13:18 - all (API)
+3/11/2023, 10:13:19 - - part 1/5
+3/11/2023, 10:13:20 - - part 2/5
+3/11/2023, 10:13:21 - - part 3/5
+3/11/2023, 10:13:22 - - part 4/5
+3/11/2023, 10:13:23 - - part 5/5
+3/11/2023, 10:13:30 - getVideogames
+3/11/2023, 10:13:30 - by id=19301 (API)
+3/11/2023, 10:13:31 - getVideogames
+3/11/2023, 10:13:31 - by id=19301 (API)
+3/11/2023, 10:17:55 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:18:15 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:18:52 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:19:23 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:19:28 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:19:39 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:19:49 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:20:04 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:20:10 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:20:26 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:21:03 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:21:23 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:21:27 - Server running into 3001 Port. DB Connection: NOT SECURE
+3/11/2023, 10:44:45 - getGenres
+3/11/2023, 10:44:45 - getPlatforms
+3/11/2023, 10:44:45 - getVideogames all (DB)
+3/11/2023, 10:44:45 - getVideogames all (API)
+3/11/2023, 10:44:46 - getGenres
+3/11/2023, 10:44:46 - getPlatforms
+3/11/2023, 10:44:47 - - part 1/5
+3/11/2023, 10:44:48 - - part 2/5
+3/11/2023, 10:44:49 - - part 3/5
+3/11/2023, 10:44:50 - - part 4/5
+3/11/2023, 10:44:52 - - part 5/5
+3/11/2023, 10:44:52 - getVideogames all (DB)
+3/11/2023, 10:44:52 - getVideogames all (API)
+3/11/2023, 10:44:53 - - part 1/5
+3/11/2023, 10:44:54 - - part 2/5
+3/11/2023, 10:44:55 - - part 3/5
+3/11/2023, 10:44:57 - - part 4/5
+3/11/2023, 10:44:58 - - part 5/5
+3/11/2023, 10:45:10 - getVideogames by id=19301 (API)
+3/11/2023, 10:45:11 - getVideogames by id=19301 (API)
+3/11/2023, 10:46:22 - getVideogames by id=19301 (API)
+3/11/2023, 10:46:31 - getGenres
+3/11/2023, 10:46:31 - getPlatforms
+3/11/2023, 10:46:31 - getVideogames all (DB)
+3/11/2023, 10:46:31 - getVideogames all (API)
+3/11/2023, 10:46:32 - getPlatforms
+3/11/2023, 10:46:32 - getGenres
+3/11/2023, 10:46:33 - - part 1/5
+3/11/2023, 10:46:34 - - part 2/5
+3/11/2023, 10:46:35 - - part 3/5
+3/11/2023, 10:46:36 - - part 4/5
+3/11/2023, 10:46:37 - - part 5/5
+3/11/2023, 10:46:37 - getVideogames all (DB)
+3/11/2023, 10:46:38 - getVideogames all (API)
+3/11/2023, 10:46:38 - - part 1/5
+3/11/2023, 10:46:39 - - part 2/5
+3/11/2023, 10:46:40 - - part 3/5
+3/11/2023, 10:46:41 - - part 4/5
+3/11/2023, 10:46:42 - - part 5/5
+3/11/2023, 10:46:47 - getVideogames by id=19301 (API)
+3/11/2023, 10:46:48 - getVideogames by id=19301 (API)
+3/11/2023, 10:47:03 - getGenres
+3/11/2023, 10:47:03 - getPlatforms
+3/11/2023, 10:47:03 - getVideogames all (DB)
+3/11/2023, 10:47:04 - getVideogames all (API)
+3/11/2023, 10:47:04 - getGenres
+3/11/2023, 10:47:04 - getPlatforms
+3/11/2023, 10:47:05 - - part 1/5
+3/11/2023, 10:47:06 - - part 2/5
+3/11/2023, 10:47:07 - - part 3/5
+3/11/2023, 10:47:09 - - part 4/5
+3/11/2023, 10:47:10 - - part 5/5
+3/11/2023, 10:47:10 - getVideogames all (DB)
+3/11/2023, 10:47:10 - getVideogames all (API)
+3/11/2023, 10:47:11 - - part 1/5
+3/11/2023, 10:47:12 - - part 2/5
+3/11/2023, 10:47:13 - - part 3/5
+3/11/2023, 10:47:15 - - part 4/5
+3/11/2023, 10:47:16 - - part 5/5
+3/11/2023, 10:47:27 - getVideogames by id=19301 (API)
+3/11/2023, 10:47:28 - getVideogames by id=19301 (API)
+3/11/2023, 10:49:31 - getGenres
+3/11/2023, 10:49:31 - getPlatforms
+3/11/2023, 10:49:31 - getVideogames all (DB)
+3/11/2023, 10:49:31 - getVideogames all (API)
+3/11/2023, 10:49:32 - getGenres
+3/11/2023, 10:49:32 - getPlatforms
+3/11/2023, 10:49:33 - - part 1/5
+3/11/2023, 10:49:33 - - part 2/5
+3/11/2023, 10:49:35 - - part 3/5
+3/11/2023, 10:49:35 - - part 4/5
+3/11/2023, 10:49:36 - - part 5/5
+3/11/2023, 10:49:36 - getVideogames all (DB)
+3/11/2023, 10:49:36 - getVideogames all (API)
+3/11/2023, 10:49:38 - - part 1/5
+3/11/2023, 10:49:39 - - part 2/5
+3/11/2023, 10:49:40 - - part 3/5
+3/11/2023, 10:49:41 - - part 4/5
+3/11/2023, 10:49:43 - - part 5/5
+3/11/2023, 10:49:46 - getVideogames by id=19301 (API)
+3/11/2023, 10:49:47 - getVideogames by id=19301 (API)
+3/11/2023, 10:52:35 - getVideogames by id=19301 (API)
+3/11/2023, 10:52:40 - getGenres
+3/11/2023, 10:52:40 - getPlatforms
+3/11/2023, 10:52:40 - getVideogames all (DB)
+3/11/2023, 10:52:40 - getVideogames all (API)
+3/11/2023, 10:52:40 - getGenres
+3/11/2023, 10:52:41 - - part 1/5
+3/11/2023, 10:52:41 - getPlatforms
+3/11/2023, 10:52:41 - - part 2/5
+3/11/2023, 10:52:43 - - part 3/5
+3/11/2023, 10:52:44 - - part 4/5
+3/11/2023, 10:52:46 - - part 5/5
+3/11/2023, 10:52:46 - getVideogames all (DB)
+3/11/2023, 10:52:46 - getVideogames all (API)
+3/11/2023, 10:52:47 - - part 1/5
+3/11/2023, 10:52:49 - - part 2/5
+3/11/2023, 10:52:51 - - part 3/5
+3/11/2023, 10:52:52 - - part 4/5
+3/11/2023, 10:52:53 - - part 5/5
+3/11/2023, 10:53:00 - getVideogames by id=19301 (API)
+3/11/2023, 10:53:01 - getVideogames by id=19301 (API)
+3/11/2023, 10:53:56 - getVideogames by id=19301 (API)
+3/11/2023, 10:54:01 - getGenres
+3/11/2023, 10:54:01 - getPlatforms
+3/11/2023, 10:54:01 - getVideogames all (DB)
+3/11/2023, 10:54:01 - getVideogames all (API)
+3/11/2023, 10:54:02 - getGenres
+3/11/2023, 10:54:02 - getPlatforms
+3/11/2023, 10:54:02 - - part 1/5
+3/11/2023, 10:54:04 - - part 2/5
+3/11/2023, 10:54:05 - - part 3/5
+3/11/2023, 10:54:06 - - part 4/5
+3/11/2023, 10:54:07 - - part 5/5
+3/11/2023, 10:54:07 - getVideogames all (DB)
+3/11/2023, 10:54:07 - getVideogames all (API)
+3/11/2023, 10:54:09 - - part 1/5
+3/11/2023, 10:54:10 - - part 2/5
+3/11/2023, 10:54:11 - - part 3/5
+3/11/2023, 10:54:12 - - part 4/5
+3/11/2023, 10:54:14 - - part 5/5
+3/11/2023, 10:54:25 - getVideogames by id=19301 (API)
+3/11/2023, 10:54:26 - getVideogames by id=19301 (API)
+3/11/2023, 10:55:39 - getGenres
+3/11/2023, 10:55:39 - getPlatforms
+3/11/2023, 10:55:39 - getVideogames all (DB)
+3/11/2023, 10:55:39 - getVideogames all (API)
+3/11/2023, 10:55:40 - getGenres
+3/11/2023, 10:55:40 - getPlatforms
+3/11/2023, 10:55:40 - - part 1/5
+3/11/2023, 10:55:43 - - part 2/5
+3/11/2023, 10:55:44 - - part 3/5
+3/11/2023, 10:55:45 - - part 4/5
+3/11/2023, 10:55:47 - - part 5/5
+3/11/2023, 10:55:47 - getVideogames all (DB)
+3/11/2023, 10:55:47 - getVideogames all (API)
+3/11/2023, 10:55:48 - - part 1/5
+3/11/2023, 10:55:49 - - part 2/5
+3/11/2023, 10:55:50 - - part 3/5
+3/11/2023, 10:55:52 - - part 4/5
+3/11/2023, 10:55:53 - - part 5/5
+3/11/2023, 10:55:58 - getVideogames by id=19301 (API)
+3/11/2023, 10:55:59 - getVideogames by id=19301 (API)
+3/11/2023, 10:56:07 - getVideogames by id=19710 (API)
+3/11/2023, 10:56:08 - getVideogames by id=19710 (API)
+3/11/2023, 10:56:25 - getVideogames by id=13535 (API)
+3/11/2023, 10:56:26 - getVideogames by id=13535 (API)
+3/11/2023, 10:56:34 - getVideogames by id=3543 (API)
+3/11/2023, 10:56:35 - getVideogames by id=3543 (API)
+3/11/2023, 10:56:50 - getVideogames by id=3696 (API)
+3/11/2023, 10:56:51 - getVideogames by id=3696 (API)
+3/11/2023, 10:57:03 - getVideogames by id=17540 (API)
+3/11/2023, 10:57:03 - getVideogames by id=17540 (API)
+3/11/2023, 10:57:23 - getVideogames by id=3387 (API)
+3/11/2023, 10:57:24 - getVideogames by id=3387 (API)
+3/11/2023, 10:57:36 - getVideogames by id=70145a86-fc9b-4fcf-b870-6ddd1d154511 (DB)
+3/11/2023, 10:57:36 - getVideogames by id=70145a86-fc9b-4fcf-b870-6ddd1d154511 (DB)
+3/11/2023, 10:59:53 - getVideogames by id=17540 (API)
+3/11/2023, 10:59:56 - getVideogames by id=17540 (API)
+3/11/2023, 11:01:22 - postVideoGame
+3/11/2023, 11:01:43 - getVideogames by id=ef521103-80ac-4f4c-9924-99da1f709305 (DB)
+3/11/2023, 11:01:43 - getVideogames by id=ef521103-80ac-4f4c-9924-99da1f709305 (DB)
+3/11/2023, 11:01:52 - deleteVideoGame 0fba0108-6236-4392-831e-7927031d568a
+3/11/2023, 11:02:06 - deleteVideoGame ccbce9f7-cf9b-46f8-886c-096ff3d3d938
+3/11/2023, 11:02:07 - deleteVideoGame 78ea8689-bbfe-4d54-8434-c641eb7a4a99
+3/11/2023, 11:02:08 - deleteVideoGame 3b0a9598-5079-489a-af45-3fed421043c9
+3/11/2023, 11:02:09 - deleteVideoGame 57842d53-7c61-452b-9a1b-5cfd0901d791
+3/11/2023, 11:02:11 - deleteVideoGame 57c44334-16e8-4dc3-ace1-14a5cdae1697
+3/11/2023, 11:02:12 - deleteVideoGame 7120f72d-6f20-4af1-bf53-0a5a9a1754d8
+3/11/2023, 11:02:15 - deleteVideoGame 2594fc7e-713e-4eb3-aa11-27b0b044225e
+3/11/2023, 11:02:26 - deleteVideoGame 7650d0f8-6f05-42bd-88d2-0be95126331c
+3/11/2023, 11:03:35 - getGenres
+3/11/2023, 11:03:35 - getPlatforms
+3/11/2023, 11:03:35 - getVideogames all (DB)
+3/11/2023, 11:03:35 - getVideogames all (API)
+3/11/2023, 11:03:36 - getGenres
+3/11/2023, 11:03:36 - getPlatforms
+3/11/2023, 11:03:36 - - part 1/5
+3/11/2023, 11:03:38 - - part 2/5
+3/11/2023, 11:03:39 - - part 3/5
+3/11/2023, 11:03:40 - - part 4/5
+3/11/2023, 11:03:42 - - part 5/5
+3/11/2023, 11:03:45 - getGenres
+3/11/2023, 11:03:45 - getPlatforms
+3/11/2023, 11:03:45 - getVideogames all (DB)
+3/11/2023, 11:03:45 - getVideogames all (API)
+3/11/2023, 11:03:46 - getGenres
+3/11/2023, 11:03:46 - getPlatforms
+3/11/2023, 11:03:46 - - part 1/5
+3/11/2023, 11:03:48 - - part 2/5
+3/11/2023, 11:03:49 - - part 3/5
+3/11/2023, 11:03:50 - - part 4/5
+3/11/2023, 11:03:53 - - part 5/5
+3/11/2023, 11:03:53 - getVideogames all (DB)
+3/11/2023, 11:03:53 - getVideogames all (API)
+3/11/2023, 11:03:55 - - part 1/5
+3/11/2023, 11:03:56 - - part 2/5
+3/11/2023, 11:03:58 - - part 3/5
+3/11/2023, 11:03:59 - - part 4/5
+3/11/2023, 11:04:00 - - part 5/5
+3/11/2023, 11:04:02 - getVersionBack 
+3/11/2023, 11:04:02 - getVersionBack 
+3/11/2023, 11:04:33 - deleteVideoGame 5266ac97-5618-494a-88ec-33dd76b4375f
+3/11/2023, 11:05:15 - getPlatforms
+3/11/2023, 11:05:15 - getGenres
+3/11/2023, 11:05:15 - getVideogames all (DB)
+3/11/2023, 11:05:15 - getVideogames all (API)
+3/11/2023, 11:05:16 - - part 1/5
+3/11/2023, 11:05:18 - - part 2/5
+3/11/2023, 11:05:19 - - part 3/5
+3/11/2023, 11:05:21 - - part 4/5
+3/11/2023, 11:05:22 - - part 5/5
+3/11/2023, 11:05:55 - getGenres
+3/11/2023, 11:05:55 - getPlatforms
+3/11/2023, 11:05:55 - getVideogames all (DB)
+3/11/2023, 11:05:55 - getVideogames all (API)
+3/11/2023, 11:05:56 - getGenres
+3/11/2023, 11:05:56 - getPlatforms
+3/11/2023, 11:05:56 - - part 1/5
+3/11/2023, 11:05:57 - - part 2/5
+3/11/2023, 11:05:58 - - part 3/5
+3/11/2023, 11:06:00 - - part 4/5
+3/11/2023, 11:06:01 - - part 5/5
+3/11/2023, 11:06:01 - getVideogames all (DB)
+3/11/2023, 11:06:01 - getVideogames all (API)
+3/11/2023, 11:06:02 - - part 1/5
+3/11/2023, 11:06:04 - - part 2/5
+3/11/2023, 11:06:04 - - part 3/5
+3/11/2023, 11:06:06 - - part 4/5
+3/11/2023, 11:06:07 - - part 5/5
+3/11/2023, 11:06:16 - deleteVideoGame f24c85e7-48d4-434e-b717-3a20123a172a
+3/11/2023, 11:06:55 - getGenres
+3/11/2023, 11:06:55 - getPlatforms
+3/11/2023, 11:06:55 - getVideogames all (DB)
+3/11/2023, 11:06:55 - getVideogames all (API)
+3/11/2023, 11:06:56 - getGenres
+3/11/2023, 11:06:56 - getPlatforms
+3/11/2023, 11:06:56 - - part 1/5
+3/11/2023, 11:06:58 - - part 2/5
+3/11/2023, 11:06:58 - - part 3/5
+3/11/2023, 11:07:00 - - part 4/5
+3/11/2023, 11:07:01 - - part 5/5
+3/11/2023, 11:07:01 - getVideogames all (DB)
+3/11/2023, 11:07:01 - getVideogames all (API)
+3/11/2023, 11:07:02 - - part 1/5
+3/11/2023, 11:07:03 - - part 2/5
+3/11/2023, 11:07:04 - - part 3/5
+3/11/2023, 11:07:05 - - part 4/5
+3/11/2023, 11:07:06 - - part 5/5
+3/11/2023, 11:07:12 - deleteVideoGame bc8681f0-5d29-47be-9a25-bc3604a23240
+3/11/2023, 11:07:30 - deleteVideoGame 17b31a32-3418-4c4c-99bb-b9e4f7812149
+3/11/2023, 11:07:37 - deleteVideoGame 4851e8cf-9ff7-44a7-a401-d5289d4662a5
+3/11/2023, 11:07:47 - getVideogames by id=5583 (API)
+3/11/2023, 11:07:48 - getVideogames by id=5583 (API)
+3/11/2023, 11:08:02 - deleteVideoGame ea6730a4-7318-4c8a-bf39-bd5abf2b63f1
+3/11/2023, 11:08:28 - getVideogames by id=ef33c376-b775-4df2-930c-050826ab8c67 (DB)
+3/11/2023, 11:08:28 - getVideogames by id=ef33c376-b775-4df2-930c-050826ab8c67 (DB)
+3/11/2023, 11:08:32 - deleteVideoGame ef33c376-b775-4df2-930c-050826ab8c67
+3/11/2023, 11:08:45 - getVersionBack 
+3/11/2023, 11:08:45 - getVersionBack 
+3/11/2023, 11:08:57 - postVideoGame

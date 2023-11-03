@@ -22,7 +22,7 @@ export const SET_REFRESH_HOME = 'SET_REFRESH_HOME'
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME'
 export const POST_GAME = 'POST_GAME'
 export const GET_VIDEOGAME_BY_ID = 'GET_VIDEOGAME_BY_ID'
-export const CLEAR_DETAIL = 'CLEAR_DETAIL'
+export const PAG_PENDING = 'PAG_PENDING'
 export const SET_LISTO_MOSTRAR = 'SET_LISTO_MOSTRAR'
 export const SET_FIRST_BUSQUEDA = 'SET_FIRST_BUSQUEDA';
 export const SET_ERROR_MSG = 'SET_ERROR_MSG';
@@ -105,6 +105,7 @@ export const getPlatforms = () => {
 
 export const getVideogames = (payload) => {
     const endpoint = VG_VIDEOGAMES + "/?source=" + payload;
+    console.log("getVideogames: ", endpoint);
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint);
@@ -213,18 +214,20 @@ export const postVidegame = (payload) => {
 }
 
 
-export function clearDetails() {
-    // Ejecuta al salir de la consulta de detalle:
+export function paginacionPendiente(payload) {
+    console.log("action pagPending: ", payload);
     return {
-        type: CLEAR_DETAIL,
+        type: PAG_PENDING, payload,
     }
 }
-export function setDetail() {
-    // Home avisa que supo sobre la salida de la consulta de detalle:
-    return {
-        type: SET_CLEAR_DETAIL,
-    }
-}
+
+
+// export function setDetail() {
+//     // Home avisa que supo sobre la salida de la consulta de detalle:
+//     return {
+//         type: SET_CLEAR_DETAIL,
+//     }
+// }
 
 
 
@@ -313,37 +316,37 @@ export function setCurrPage(payload) {
     }
 }
 
-export function setCurrRating(payload) {
-    return {
-        type: SET_CURR_RATING,
-        payload
-    }
-}
-export function setCurrAZ(payload) {
-    return {
-        type: SET_CURR_AZ,
-        payload
-    }
-}
-export function setCurrGenre(payload) {
-    return {
-        type: SET_CURR_GENRE,
-        payload
-    }
-}
-export function setCurrOrigin(payload) {
-    return {
-        type: SET_CURR_ORIGIN,
-        payload
-    }
-}
+// export function setCurrRating(payload) {
+//     return {
+//         type: SET_CURR_RATING,
+//         payload
+//     }
+// }
+// export function setCurrAZ(payload) {
+//     return {
+//         type: SET_CURR_AZ,
+//         payload
+//     }
+// }
+// export function setCurrGenre(payload) {
+//     return {
+//         type: SET_CURR_GENRE,
+//         payload
+//     }
+// }
+// export function setCurrOrigin(payload) {
+//     return {
+//         type: SET_CURR_ORIGIN,
+//         payload
+//     }
+// }
 
-export function setNombreBusqueda(payload) {
-    return {
-        type: SET_NAME_SEARCH,
-        payload
-    }
-}
+// export function setNombreBusqueda(payload) {
+//     return {
+//         type: SET_NAME_SEARCH,
+//         payload
+//     }
+// }
 
 export function setOrigenBusqueda(payload) {
     return {
@@ -352,11 +355,11 @@ export function setOrigenBusqueda(payload) {
     }
 }
 
-export function setRefreshHome(payload) {
-    return {
-        type: SET_REFRESH_HOME,
-        payload
-    }
-}
+// export function setRefreshHome(payload) {
+//     return {
+//         type: SET_REFRESH_HOME,
+//         payload
+//     }
+// }
 
 

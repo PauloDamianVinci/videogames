@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { clearFilterByName, filterVideogamesByName, setNombreBusqueda, setOrigenBusqueda, resetAll, setCurrOrigin, setCurrPage } from "../../redux/actions";
+import { clearFilterByName, filterVideogamesByName, setOrigenBusqueda, resetAll, setCurrPage } from "../../redux/actions";
 // Estilos:
 import style from "./Search.module.css";
 const { input, container, containerSec, containerHidden, contButton, button, mainTitle } = style;

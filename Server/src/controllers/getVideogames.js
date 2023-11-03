@@ -17,7 +17,7 @@ const getVideogames = async (req, res) => {
         const { id } = req.params;
         const { source, search } = req.query;
         let resp;
-        showLog(`getVideogames`);
+        //showLog(`getVideogames`);
         switch (source) {
             case '1': // origen DB
                 resp = await getFromDB(id, search);
@@ -40,7 +40,7 @@ const getVideogames = async (req, res) => {
         }
         res.status(200).json(resp);
     } catch (err) {
-        showLog(`ERROR-> ${err.message}`);
+        showLog(`getVideogames ERROR-> ${err.message}`);
         return res.status(500).send(err.message);
     }
 };
@@ -50,7 +50,7 @@ const getFromDB = async (idV, nameV) => {
     try {
         let reg;
         if (idV) { // por id
-            showLog(`by id=${idV} (DB)`);
+            showLog(`getVideogames by id=${idV} (DB)`);
             reg = await Videogame.findAll({
                 attributes: ["id", "name", "image", "description", "released_date", "rating", "OriginDB"],
                 where: { id: idV },
@@ -68,7 +68,7 @@ const getFromDB = async (idV, nameV) => {
                 ]
             });
         } else if (nameV) { // por nombre. No es case sensitive y además es aproximada.
-            showLog(`by name=${nameV} (DB)`);
+            showLog(`getVideogames by name=${nameV} (DB)`);
             reg = await Videogame.findAll({
                 attributes: ["id", "name", "image", "description", "released_date", "rating", "OriginDB"],
                 where: {
@@ -90,7 +90,7 @@ const getFromDB = async (idV, nameV) => {
                 ]
             });
         } else { // trae todos los videojuegos
-            showLog(`all (DB)`);
+            showLog(`getVideogames all (DB)`);
             reg = await Videogame.findAll({
                 attributes: ["id", "name", "image", "description", "released_date", "rating", "OriginDB"],
                 include: [
@@ -111,7 +111,7 @@ const getFromDB = async (idV, nameV) => {
         };
         return reg;
     } catch (err) {
-        showLog(`ERROR-> ${err.message}`);
+        showLog(`getFromDB ERROR-> ${err.message}`);
         return err.message;
     }
 };
@@ -123,7 +123,7 @@ const getFromAPI = async (idV, nameV) => {
         let dataRes;
         let res;
         if (idV) { // por id
-            showLog(`by id=${idV} (API)`);
+            showLog(`getVideogames by id=${idV} (API)`);
             response = await axios.get(`${videogamesApiUrl}/games/${idV}?key=${apiKey}`)
             dataRes = response.data;
             res = makeObject(dataRes, 1);
@@ -134,7 +134,7 @@ const getFromAPI = async (idV, nameV) => {
         } else { // trae todos los videojuegos
             // Como la API responde 20 juegos por vez, lo consulto 5 veces y le tiro a 
             // la sgte e link next que me devuelve:
-            showLog(`all (API)`);
+            showLog(`getVideogames all (API)`);
             let objTotal = [];
             let endPointTMP = `${videogamesApiUrl}/games?key=${apiKey}`;
             for (let i = 1; i <= 5; i++) {
@@ -149,7 +149,7 @@ const getFromAPI = async (idV, nameV) => {
         };
         return res;
     } catch (err) {
-        showLog(`ERROR-> ${err.message}`);
+        showLog(`getFromAPI ERROR-> ${err.message}`);
         return err.message;
     }
 };

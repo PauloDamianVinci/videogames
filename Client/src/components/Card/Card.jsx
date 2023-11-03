@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { removeCard } from "../../redux/actions";
 import { useDispatch } from "react-redux";
+import { paginacionPendiente } from "../../redux/actions";
+
 // Variables de entorno:
 const DETAIL_BASE = import.meta.env.VITE_DETAIL_BASE || '/detail';
 const IMG_ERROR = import.meta.env.VITE_IMG_ERR_DETAIL || '/src/assets/NoPhoto.png';
@@ -63,6 +65,9 @@ const Card = (props) => {
         setIsHandling(true);
         //console.log("id a remover: ", id);
         dispatch(removeCard(id));
+        dispatch(paginacionPendiente(true)); // para conservar la página actual
+
+
         setAux(!aux);
         setIsHandling(false);
     };

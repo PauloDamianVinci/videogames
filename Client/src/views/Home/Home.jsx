@@ -7,7 +7,7 @@ import Pagination from "../../components/Pagination/Pagination";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { setDetail, getGenres, getPlatforms, setListoMostrar, getVideogames, setCurrPage } from "../../redux/actions";
+import { paginacionPendiente, getGenres, getPlatforms, setListoMostrar, getVideogames, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
@@ -37,7 +37,7 @@ const Home = () => {
     let errors = useSelector((state) => state?.errors);
     // Desde acá recupero la página actual, para cuando rootea y se pierde el valor:
     let curPage = useSelector((state) => state?.curPage);
-    let prevDetail = useSelector((state) => state?.prevDetail); // prueba para avisar qu vengo de detail
+    let pagPending = useSelector((state) => state?.pagPending); // prueba para avisar qu vengo de detail
 
     useEffect(() => {
         if (!dataLoaded) { // no hay datos previos. Los obtengo
@@ -50,19 +50,19 @@ const Home = () => {
         } else {
             // Recupero la página en que estaba. Setear sólo si es de retorno
             // desde detalles, pero caso contrario ver de forzarlo a 1:
-            if (prevDetail) {
-                console.log("01 - hay PrevDetail: SET page ", curPage, ", Tot reg: ", allVideogames.length);
+            if (pagPending) {
+                console.log("01 - hay pagPending: SET page ", curPage, ", Tot reg: ", allVideogames.length);
                 const totPages = Math.ceil(allVideogames.length / videogamesPerPage);
                 if (curPage > totPages) {
                     setCurrentPage(1);
                     console.log("01.1 - totPages: ", totPages, " RESET a 1");
                 } else {
                     setCurrentPage(curPage);
-                    console.log("01.2 - hay PrevDetail: SET page ", curPage);
+                    console.log("01.2 - hay pagPending: SET page ", curPage);
                 }
-                dispatch(setDetail(false));
+                dispatch(paginacionPendiente(false));
             } else {
-                console.log("02 - NO PrevDetail: SET page 1, Tot reg: ", allVideogames.length);
+                console.log("02 - NO pagPending: SET page 1, Tot reg: ", allVideogames.length);
                 setCurrentPage(1);
             }
         }

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearDetails } from "../../redux/actions";
+import { paginacionPendiente } from "../../redux/actions";
 import { Link } from 'react-router-dom'
 // Variables de entorno:
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
@@ -46,7 +46,7 @@ const About = () => {
     }, []);
 
     function handleBack() {
-        dispatch(clearDetails()); // limpio la posible consulta previa
+        dispatch(paginacionPendiente(true)); // para conservar la página actual
         navigate(-1);
     }
     const redirectToExternalSite = (site) => {

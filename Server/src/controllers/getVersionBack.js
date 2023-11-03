@@ -8,7 +8,7 @@ const getVersionBack = async (req, res) => {
         showLog("getVersionBack ", version);
         return res.status(200).json({ version: version });
     } catch (err) {
-        showLog(`ERROR-> ${err.message}`);
+        showLog(`getVersionBack ERROR-> ${err.message}`);
         return res.status(err.response.status).send(err.message);
     }
 };

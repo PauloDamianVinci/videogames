@@ -2,7 +2,7 @@ import axios from 'axios';
 // hooks, routers, reducers:
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getVideogameById, clearDetails } from "../../redux/actions";
+import { getVideogameById, paginacionPendiente } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 // Variables de entorno:
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
@@ -41,64 +41,36 @@ const Detail = () => {
         //const varrta=dispatch(getVideogameById(id));
         axios(endpoint)
             .then(({ data }) => {
-                //console.log(data);
+                console.log(data);
                 if (data[0].name) {
                     // Obtengo los datos:
                     if (data[0].name) setName(data[0].name);
                     if (data[0].description) setDescription(data[0].description);
-
-
-                    // Filtrar:
                     if (data[0].released_date) setReleased_date(formatDate(data[0].released_date));
-
-
-
                     if (data[0].rating) setRating(data[0].rating);
-                    // La lista de géneros y plataformas se arma diferente según el origen:
-                    // console.log("GEN: ", data[0].Genres)
-                    // console.log("PLT: ", data[0].Platforms)
-                    //if (isNaN(id)) { // desde BD
-                    //console.log("BD");
                     setGenreList(data[0].Genres.map(genre => genre.name).join(" - "));
                     setPlatformList(data[0].Platforms.map(plat => plat.name).join(" - "));
-                    // } else { //desde API
-                    //     //console.log("API");
-                    //     setGenreList(data[0].Genres.map(genre => genre).join(" - "));
-                    //     setPlatformList(data[0].Platforms.map(plat => plat).join(" - "));
-                    // }
-                    // Adapto el dato origen:
                     data[0].OriginDB ? setOriginDB("Database") : setOriginDB("API");
                     // Testeo el link de la imagen:
                     if (data[0].image) {
-                        // Testeo el link de la imagen:
                         const imageTest = new Image();
                         imageTest.src = data[0].image;
-                        imageTest.onload = () => {
-                            setImage(imageTest.src);
-                        };
-                        imageTest.onerror = () => {
-                            setImage(IMG_ERROR);
-                        };
+                        imageTest.onload = () => { setImage(imageTest.src); };
+                        imageTest.onerror = () => { setImage(IMG_ERROR); };
                     }
                 } else {
                     window.alert('Detail not found');
                 }
             })
             .finally(() => {
-                console.log("detail DETAIL");
-                dispatch(clearDetails()) // limpio la posible consulta previa
-
+                console.log("paginacionPendiente ");
+                dispatch(paginacionPendiente(true)); // para conservar la página actual
                 setIsLoading(false);
             })
             .catch((error) => {
                 setName(error.message);
                 setImage(IMG_ERROR);
             });
-
-        // return () => {
-        //     console.log("detail DETAIL");
-        //     dispatch(clearDetails()) // limpio la posible consulta previa
-        //    }
     }, []);
 
     function handleBack() {
