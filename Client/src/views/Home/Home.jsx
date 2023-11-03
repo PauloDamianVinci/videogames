@@ -1,11 +1,11 @@
 // ! Vista principal del programa. Obtiene los videojuegos, géneros y plataformas al inicio. Luego renderiza
 // ! el nav, las cards, los filtros y también gestiona la paginación.
 // Componentes:
-import Error from "../../views/Error/Error";
-import Nav from "../../components/Nav/Nav";
-import FilterOrder from "../../components/FilterOrder/FilterOrder";
-import Cards from "../../components/Cards/Cards";
-import Pagination from "../../components/Pagination/Pagination";
+import Error from "../../views/Error/Error.jsx";
+import Nav from "../../components/Nav/Nav.jsx";
+import FilterOrder from "../../components/FilterOrder/FilterOrder.jsx";
+import Cards from "../../components/Cards/Cards.jsx";
+import Pagination from "../../components/Pagination/Pagination.jsx";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
@@ -97,6 +97,10 @@ const Home = () => {
             <div className={container}>
                 <div className={containerSec}>
                     <img className={img} src={IMG_ESPERA} alt="" />
+
+
+
+
                 </div >
             </div>
         );

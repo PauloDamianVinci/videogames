@@ -1,10 +1,10 @@
 // Vistas:
-import Landing from "./views/Landing/landing";
-import Home from "./views/Home/Home";
-import Create from "./views/Create/Create";
-import Detail from "./views/Detail/Detail";
-import About from "./views/About/About";
-import Error from "./views/Error/Error";
+import Landing from "./views/Landing/Landing.jsx";
+import Home from "./views/Home/Home.jsx";
+import Create from "./views/Create/Create.jsx";
+import Detail from "./views/Detail/Detail.jsx";
+import About from "./views/About/About.jsx";
+import Error from "./views/Error/Error.jsx";
 // hooks, routers, reducers:
 import { Route, Routes } from "react-router-dom";
 // Variables de entorno:
