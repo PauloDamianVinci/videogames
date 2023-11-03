@@ -31,6 +31,7 @@ export const CLEAR_FILTER_BY_NAME = 'CLEAR_FILTER_BY_NAME';
 export const RESET_FILTER_ORDER = 'RESET_FILTER_ORDER';
 export const SAVE_CURR_PAGE = 'SAVE_CURR_PAGE';
 export const SET_CLEAR_DETAIL = 'SET_CLEAR_DETAIL';
+export const REMOVE_CARD = 'REMOVE_CARD';
 
 
 // Variables de entorno:
@@ -38,9 +39,32 @@ const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001
 const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
 const VG_G = import.meta.env.VITE_VG_GENRES || '/genres';
 const VG_P = import.meta.env.VITE_VG_PLATFORMS || '/platforms';
+const VG_R = import.meta.env.VITE_VG_REMOVE || '/remove';
 const VG_VIDEOGAMES = API_URL_BASE + VG_V;
 const VG_GENRES = API_URL_BASE + VG_G;
 const VG_PLATFORMS = API_URL_BASE + VG_P;
+const VG_REMOVE = API_URL_BASE + VG_R;
+
+export function removeCard(payload) {
+    const endpoint = VG_REMOVE + "/" + payload;
+    //console.log("endpoint: ", endpoint);
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.delete(endpoint);
+            //console.log("OK, a reducer - ", data);
+            return dispatch({
+                type: REMOVE_CARD,
+                payload: payload,
+            });
+        } catch (error) {
+            return dispatch({
+                type: SET_ERROR_MSG,
+                payload: "Error removing card: " + error.message,
+            });
+        }
+    };
+}
+
 
 export const getGenres = () => {
     const endpoint = VG_GENRES;
@@ -187,6 +211,7 @@ export const postVidegame = (payload) => {
         }
     };
 }
+
 
 export function clearDetails() {
     // Ejecuta al salir de la consulta de detalle:

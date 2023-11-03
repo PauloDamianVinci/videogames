@@ -1,15 +1,30 @@
+// hooks, routers, reducers:
+import { useState, useEffect } from "react";
 // Estilos:
 import style from "./Pagination.module.css";
 const { mainText, container, contButton, button, buttonChosen, containerSec } = style;
 
 const Pagination = (props) => {
-    const { videogamePerPage, allVideogames, paginado, currentPage } = props;
-
+    const { videogamePerPage, allVideogames, paginado, currentPage, aux } = props;
     const pgNum = []
     const totPages = Math.ceil(allVideogames / videogamePerPage);
     for (let i = 0; i < totPages; i++) {
         pgNum.push(i + 1)
     }
+
+    // const [pgNum, setPgNum] = useState([]);
+    // const [totPages, setTotPages] = useState(0);
+
+    // useEffect(() => {
+    //     //const pgNum = []
+    //     setPgNum([]);
+    //     //const totPages = Math.ceil(allVideogames / videogamePerPage);
+    //     setTotPages(Math.ceil(allVideogames / videogamePerPage));
+    //     for (let i = 0; i < totPages; i++) {
+    //         //pgNum.push(i + 1)
+    //         setPgNum(prevState => [...prevState, i + 1]);
+    //     }
+    // }, [aux]);
 
     const HandlePage = (number) => {
         if (number > totPages) {
@@ -17,9 +32,6 @@ const Pagination = (props) => {
         } else {
             paginado(number);
         }
-
-
-
     }
 
     const HandlePrev = () => {

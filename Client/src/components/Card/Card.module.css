@@ -31,6 +31,17 @@
     height: 140px;
 }
 
+.buttonRemove {
+    position: absolute;
+    background-color: rgba(15, 15, 15, 0);
+    border: 0px;
+    width: 20px;
+    height: 20px;
+    top: 0%;
+    left: 79%;
+    font-size: 24px;
+}
+
 .featuresCardName {
     /* background-color: rgb(172, 164, 169); */
     color: rgb(255, 255, 254);

@@ -51,7 +51,7 @@ const Home = () => {
             // Recupero la página en que estaba. Setear sólo si es de retorno
             // desde detalles, pero caso contrario ver de forzarlo a 1:
             if (prevDetail) {
-                console.log("01 - hay PrevDetail: SET page ", curPage);
+                console.log("01 - hay PrevDetail: SET page ", curPage, ", Tot reg: ", allVideogames.length);
                 const totPages = Math.ceil(allVideogames.length / videogamesPerPage);
                 if (curPage > totPages) {
                     setCurrentPage(1);
@@ -62,7 +62,7 @@ const Home = () => {
                 }
                 dispatch(setDetail(false));
             } else {
-                console.log("02 - NO PrevDetail: SET page 1");
+                console.log("02 - NO PrevDetail: SET page 1, Tot reg: ", allVideogames.length);
                 setCurrentPage(1);
             }
         }
@@ -80,7 +80,7 @@ const Home = () => {
         currentGame = [];
     }
     const paginado = (pageNumber) => { // manejado desde el componente Pagination
-        // console.log("HACE PAGINADO ", pageNumber)
+        console.log("HACE PAGINADO ", pageNumber)
         setCurrentPage(pageNumber);
         dispatch(setCurrPage(pageNumber)); // memorizo la página actual para cuando salga de la vista y regrese:
     };
@@ -104,6 +104,7 @@ const Home = () => {
                     allVideogames={allVideogames.length}
                     paginado={paginado}
                     currentPage={currentPage}
+                    aux={aux}
                 />
             </div >
         );

@@ -26,6 +26,7 @@ import {
     CLEAR_FILTER_BY_NAME,
     RESET_FILTER_ORDER,
     SET_CLEAR_DETAIL,
+    REMOVE_CARD,
 } from "./actions";
 
 const initialState = {
@@ -59,17 +60,24 @@ const initialState = {
 
 const rootReducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case REMOVE_CARD:
+            //console.log("REMOVER PENDING!!!! ");
+            return {
+                ...state,
+                allVideogames: state.allVideogames.filter(item => item.id !== payload),
+                videogames: state.allVideogames.filter(item => item.id !== payload),
+                filteredVideogames: state.allVideogames.filter(item => item.id !== payload),
+                firstLoad: state.firstLoad + 1,
+                curPage: '1',
+                prevDetail: false,
+            };
         case POST_GAME:
-            //console.log("POST GAME: ", payload);
             return {
                 ...state,
                 allVideogames: [...state.allVideogames, payload],
                 videogames: [...state.allVideogames, payload],
                 filteredVideogames: [...state.allVideogames, payload],
-                //listoMostrar: false,
-                //dataLoaded: false,
                 firstLoad: state.firstLoad + 1,
-                //errors: '',
                 curPage: '1',
                 prevDetail: false,
             };
