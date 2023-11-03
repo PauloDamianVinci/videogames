@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { resetAll } from "../../redux/actions";
 // Componentes:
-import Search from "../../components/Search/Search";
+import Search from "../../components/Search/Search.jsx";
 // Estilos:
 import style from "./Nav.module.css";
 const { container, containerSec, containerImg, img, contButton, button, mainTitle } = style;
