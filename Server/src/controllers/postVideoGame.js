@@ -20,7 +20,6 @@ const postVideoGame = async (req, res) => {
         })
         // Obtengo el ID para devolver al front:
         const createdVideogameId = VideogameCreated.id;
-        //showLog(`ID: ${createdVideogameId}`);
         //Agrego los datos relacionados:
         VideogameCreated.addGenre(genreCreated);
         VideogameCreated.addPlatform(platformCreated);

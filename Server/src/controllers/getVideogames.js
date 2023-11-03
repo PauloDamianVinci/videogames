@@ -17,7 +17,6 @@ const getVideogames = async (req, res) => {
         const { id } = req.params;
         const { source, search } = req.query;
         let resp;
-        //showLog(`getVideogames`);
         switch (source) {
             case '1': // origen DB
                 resp = await getFromDB(id, search);
@@ -67,7 +66,7 @@ const getFromDB = async (idV, nameV) => {
                     },
                 ]
             });
-        } else if (nameV) { // por nombre. No es case sensitive y además es aproximada.
+        } else if (nameV) { // por nombre. No es case sensitive.
             showLog(`getVideogames by name=${nameV} (DB)`);
             reg = await Videogame.findAll({
                 attributes: ["id", "name", "image", "description", "released_date", "rating", "OriginDB"],
