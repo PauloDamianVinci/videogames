@@ -137,18 +137,14 @@ const getFromAPI = async (idV, nameV) => {
             showLog(`getVideogames all (API)`);
             let objTotal = [];
             let endPointTMP = `${videogamesApiUrl}/games?key=${apiKey}`;
-
-
-            // PORUEBA VERCEL: SOLO TRAIGO UNA VEZ:
-
-            // for (let i = 1; i <= 5; i++) {
-            response = await axios.get(endPointTMP);
-            dataRes = response.data.results;
-            objTotal = [...objTotal, ...dataRes];
-            next = response.data.next;
-            showLog(`- part ${i}/5`);
-            endPointTMP = next;
-            // }
+            for (let i = 1; i <= 5; i++) {
+                response = await axios.get(endPointTMP);
+                dataRes = response.data.results;
+                objTotal = [...objTotal, ...dataRes];
+                next = response.data.next;
+                showLog(`- part ${i}/5`);
+                endPointTMP = next;
+            }
             res = makeObject(objTotal, 100); // búsqueda limitada a 100 resultados
         };
         return res;

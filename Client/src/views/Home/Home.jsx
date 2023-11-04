@@ -79,7 +79,7 @@ const Home = () => {
         return (
             <Error message={errors} />
         );
-    } else if (listoMostrar && firstLoad > 1) { // firstLoad es para evitar doble renderizado en la carga inicial
+    } else if (listoMostrar && firstLoad > 0) { // firstLoad es para evitar doble renderizado en la carga inicial
         return (
             <div className={container}>
                 <Nav aux={aux} setAux={setAux} />
