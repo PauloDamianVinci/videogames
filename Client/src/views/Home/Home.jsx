@@ -45,33 +45,25 @@ const Home = () => {
         if (!dataLoaded && !requestMade) { // no hay datos previos. Los obtengo
             requestMade = true;
             dispatch(setListoMostrar()); // para que muestre el reloj de espera
-            console.log("Pido géneros...");
             axios.get(VG_GENRES) // Géneros
                 .then(dataGen => {
-                    console.log("Llegó: ", dataGen.data);
                     dispatch(getGenres(dataGen.data)); // actualizo el store
-                    console.log("Pido plataformas...");
                     return axios.get(VG_PLATFORMS);
                 })
                 .then(dataPlatforms => { // PLataformas
-                    console.log("Llegó: ", dataPlatforms.data);
                     dispatch(getPlatforms(dataPlatforms.data)); // actualizo el store
-                    console.log("Pido videogames...");
                     return axios.get(VG_VIDEOGAMES + "/?source=3");
                 })
                 .then(dataVideogames => { // videojuegos
-                    console.log("Llegó: ");
                     dispatch(getVideogames(dataVideogames.data)); // actualizo el store
                 })
                 .catch(error => {
-                    console.log("error: ", error);
                     let msg = '';
                     if (!error.response) {
                         msg = error.message;
                     } else {
                         msg = "Error fetching data: " + error.response.status + " - " + error.response.data;
                     }
-                    console.log("error queda: ", msg);
                     dispatch(showError(msg)); // actualizo el store
                 });
             setCurrentPage(1);
