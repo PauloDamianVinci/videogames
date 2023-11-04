@@ -1,5 +1,6 @@
 // ! Vista principal del programa. Obtiene los videojuegos, géneros y plataformas al inicio. Luego renderiza
 // ! el nav, las cards, los filtros y también gestiona la paginación.
+import axios from 'axios';
 // Componentes:
 import Error from "../../views/Error/Error.jsx";
 import Nav from "../../components/Nav/Nav.jsx";
@@ -9,10 +10,16 @@ import Pagination from "../../components/Pagination/Pagination.jsx";
 // hooks, routers, reducers:
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { paginacionPendiente, getGenres, getPlatforms, setListoMostrar, getVideogames, setCurrPage } from "../../redux/actions";
+import { getGenres, getPlatforms, getVideogames, showError, paginacionPendiente, setListoMostrar, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
-const CANT_LOADS = parseInt(import.meta.env.VITE_CANT_REP_LOADS) || 1;
+const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
+const VG_G = import.meta.env.VITE_VG_GENRES || '/genres';
+const VG_GENRES = API_URL_BASE + VG_G;
+const VG_P = import.meta.env.VITE_VG_PLATFORMS || '/platforms';
+const VG_PLATFORMS = API_URL_BASE + VG_P;
+const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
+const VG_VIDEOGAMES = API_URL_BASE + VG_V;
 // Estilos:
 import style from "./Home.module.css";
 const { mainTitle, containerLoading, container, img } = style;
@@ -22,24 +29,51 @@ const Home = () => {
     const [aux, setAux] = useState(false);
     // Estos valores se usan para cargar todos los videojuegos desde API y BD la primera vez:
     let dataLoaded = useSelector((state) => state?.dataLoaded);
-    let firstLoad = useSelector((state) => state?.firstLoad);
     let listoMostrar = useSelector((state) => state?.listoMostrar);
     // Estos valores los usa el componente de paginación:
     let allVideogames = useSelector((state) => state.videogames);
     // Acá llegan los posibles mensajes de error de actions:
     let errors = useSelector((state) => state?.errors);
-    // Desde acá recupero la página actual, para cuando rootea y se pierde el valor:
+    // Desde acá recupero la página actual:
     let curPage = useSelector((state) => state?.curPage);
     let pagPending = useSelector((state) => state?.pagPending);
     // Para la carga incial, obtengo el mensaje de hasta dónde llegué a obtener:
     let msgLoad = useSelector((state) => state?.msgLoad);
+    let requestMade = false; // evito llamados en paralelo al pedir los datos iniciales
 
     useEffect(() => {
-        if (!dataLoaded) { // no hay datos previos. Los obtengo
+        if (!dataLoaded && !requestMade) { // no hay datos previos. Los obtengo
+            requestMade = true;
             dispatch(setListoMostrar()); // para que muestre el reloj de espera
-            dispatch(getGenres()); // Obtengo todos los géneros
-            dispatch(getPlatforms()); // Obtengo todas las plataformas
-            dispatch(getVideogames('3')); // Obtengo todos los videojuegos BD + API
+            console.log("Pido géneros...");
+            axios.get(VG_GENRES) // Géneros
+                .then(dataGen => {
+                    console.log("Llegó: ", dataGen.data);
+                    dispatch(getGenres(dataGen.data)); // actualizo el store
+                    console.log("Pido plataformas...");
+                    return axios.get(VG_PLATFORMS);
+                })
+                .then(dataPlatforms => { // PLataformas
+                    console.log("Llegó: ", dataPlatforms.data);
+                    dispatch(getPlatforms(dataPlatforms.data)); // actualizo el store
+                    console.log("Pido videogames...");
+                    return axios.get(VG_VIDEOGAMES + "/?source=3");
+                })
+                .then(dataVideogames => { // videojuegos
+                    console.log("Llegó: ");
+                    dispatch(getVideogames(dataVideogames.data)); // actualizo el store
+                })
+                .catch(error => {
+                    console.log("error: ", error);
+                    let msg = '';
+                    if (!error.response) {
+                        msg = error.message;
+                    } else {
+                        msg = "Error fetching data: " + error.response.status + " - " + error.response.data;
+                    }
+                    console.log("error queda: ", msg);
+                    dispatch(showError(msg)); // actualizo el store
+                });
             setCurrentPage(1);
         } else {
             // Recupero la página en que estaba:
@@ -77,7 +111,7 @@ const Home = () => {
         return (
             <Error message={errors} />
         );
-    } else if (listoMostrar && firstLoad > CANT_LOADS) { // firstLoad es para evitar doble renderizado en la carga inicial
+    } else if (listoMostrar) {
         return (
             <div className={container}>
                 <Nav aux={aux} setAux={setAux} />

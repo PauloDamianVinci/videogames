@@ -14,7 +14,6 @@ const IMG_LOGO_NAV = import.meta.env.VITE_IMG_LOGO_NAV || '/src/assets/ImgNav.jp
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
 const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
 const VG_VIDEOGAMES = API_URL_BASE + VG_V;
-
 // Estilos: 
 import style from "./Create.module.css";
 const { labelTitle, containerSelect, mainTextErrorRating, mainTextRating, mainTextError, containerTitle, img, linkText, ratingText, dateText, label, contButtonShort, selectCombo, mainText, container, contButton, button, containerData, errorsCreate } = style;
@@ -183,7 +182,6 @@ const Create = () => {
         <form className={container} onSubmit={handleSubmit}>
             <h2 className={containerTitle}>Let's create!</h2>
             <div className={containerData}>
-                {/* <label className={label} htmlFor="name">Name:</label> */}
                 <input className={`${errors.name ? mainTextError : mainText}`}
                     name="name"
                     type="text"
@@ -193,10 +191,7 @@ const Create = () => {
                     id="name"
                     autoComplete="name"
                 />
-
             </div>
-
-
             <div className={containerData}>
                 <textarea className={`${errors.name ? mainTextError : mainText}`}
                     name="description"
@@ -208,20 +203,7 @@ const Create = () => {
                     rows="4"
                 />
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
             <div className={containerData}>
-                {/* <label className={label} htmlFor="image">Image:</label> */}
                 <input className={`${errors.image ? mainTextError : mainText}`}
                     name="image"
                     type="text"
@@ -230,13 +212,11 @@ const Create = () => {
                     onChange={handleChange}
                     id="image"
                 />
-
                 <div className={contButton}>
                     <button className={button} onClick={() => handlePasteLink()} >Gimme me a link</button>
                 </div>
             </div>
             <div className={containerData}>
-                {/* <label className={label} htmlFor="released_date">Released date:</label> */}
                 <input className={`${errors.released_date ? mainTextError : mainText}`}
                     name="released_date"
                     type="text"
@@ -248,7 +228,6 @@ const Create = () => {
 
             </div>
             <div className={containerData}>
-                {/* <label className={label} htmlFor="rating">Rating:</label> */}
                 <input className={`${errors.rating ? mainTextErrorRating : mainTextRating}`}
                     name="rating"
                     type="text"
@@ -257,7 +236,6 @@ const Create = () => {
                     onChange={handleChange}
                     id="rating"
                 />
-
             </div>
             <div className={containerSelect}>
                 {/* Selección de géneros: */}
@@ -284,7 +262,6 @@ const Create = () => {
                         </span>
                     ))}
                 </div>
-
             </div>
             <div className={containerSelect}>
                 {/* Selección de plataformas: */}
@@ -311,7 +288,6 @@ const Create = () => {
                         </span>
                     ))}
                 </div>
-
             </div>
             <span className={errorsCreate}>{errors.name}</span>
             <span className={errorsCreate}>{errors.description}</span>
@@ -320,11 +296,7 @@ const Create = () => {
             <span className={errorsCreate}>{errors.rating}</span>
             <span className={errorsCreate}>{errors.genre}</span>
             <span className={errorsCreate}>{errors.platform}</span>
-
-
             <p className={contButton} href="/">
-
-                {/* <button className={button} type="submit" disabled={formSubmitted}> */}
                 <button className={button} type="submit" >
                     Create game!
                 </button>

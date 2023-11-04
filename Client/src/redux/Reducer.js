@@ -34,7 +34,6 @@ const initialState = {
     dataLoaded: false, // flag para saber si tengo previamente cargados los videojuegos y géneros
     curPage: '1', // recuerdo el número de página para cuando regrese a la página
     listoMostrar: false, // flag para que home refresque registros mostrando reloj
-    firstLoad: 0, // contador de ocurrencias, evita el doble renderizado al comienzo
     errors: '', // guardo los mensajes de error para mostrar en la pag.
     pagPending: false, // prueba, aviso a home para que no se quivoque con la paginación
     msgLoad: '' // indico en qué etapa de carga inicial está el programa
@@ -66,7 +65,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 filteredVideogames: payload,
                 listoMostrar: true,
                 dataLoaded: true,
-                firstLoad: state.firstLoad + 1,
                 msgLoad: "Videogames",
             };
         case GET_GENRES:

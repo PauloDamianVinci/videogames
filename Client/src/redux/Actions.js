@@ -17,17 +17,34 @@ export const FILTER_BY_NAME = 'FILTER_BY_NAME';
 export const CLEAR_FILTER_BY_NAME = 'CLEAR_FILTER_BY_NAME';
 export const RESET_FILTER_ORDER = 'RESET_FILTER_ORDER';
 export const REMOVE_CARD = 'REMOVE_CARD';
-//export const VERIFICA_REPE = 'VERIFICA_REPE;'
 // Variables de entorno:
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
-const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
-const VG_G = import.meta.env.VITE_VG_GENRES || '/genres';
-const VG_P = import.meta.env.VITE_VG_PLATFORMS || '/platforms';
 const VG_R = import.meta.env.VITE_VG_REMOVE || '/remove';
-const VG_VIDEOGAMES = API_URL_BASE + VG_V;
-const VG_GENRES = API_URL_BASE + VG_G;
-const VG_PLATFORMS = API_URL_BASE + VG_P;
 const VG_REMOVE = API_URL_BASE + VG_R;
+
+export function getGenres(payload) {
+    return {
+        type: GET_GENRES, payload,
+    }
+}
+
+export function getPlatforms(payload) {
+    return {
+        type: GET_PLATFORMS, payload,
+    }
+}
+
+export function getVideogames(payload) {
+    return {
+        type: GET_VIDEOGAMES, payload,
+    }
+}
+
+export function showError(payload) {
+    return {
+        type: SET_ERROR_MSG, payload,
+    }
+}
 
 export function postVidegame(payload) {
     return {
@@ -48,60 +65,6 @@ export function removeCard(payload) {
             return dispatch({
                 type: SET_ERROR_MSG,
                 payload: "Error removing card: " + error.message,
-            });
-        }
-    };
-}
-
-export const getGenres = () => {
-    const endpoint = VG_GENRES;
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(endpoint);
-            return dispatch({
-                type: GET_GENRES,
-                payload: data,
-            });
-        } catch (error) {
-            return dispatch({
-                type: SET_ERROR_MSG,
-                payload: "Error fetching genres: " + error.message,
-            });
-        }
-    };
-}
-
-export const getPlatforms = () => {
-    const endpoint = VG_PLATFORMS;
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(endpoint);
-            return dispatch({
-                type: GET_PLATFORMS,
-                payload: data,
-            });
-        } catch (error) {
-            return dispatch({
-                type: SET_ERROR_MSG,
-                payload: "Error fetching platforms: " + error.message,
-            });
-        }
-    };
-}
-
-export const getVideogames = (payload) => {
-    const endpoint = VG_VIDEOGAMES + "/?source=" + payload;
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(endpoint);
-            return dispatch({
-                type: GET_VIDEOGAMES,
-                payload: data,
-            });
-        } catch (error) {
-            return dispatch({
-                type: SET_ERROR_MSG,
-                payload: "Error fetching videogames: " + error.message,
             });
         }
     };
