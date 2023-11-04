@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import { paginacionPendiente, getGenres, getPlatforms, setListoMostrar, getVideogames, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
+const CANT_LOADS = parseInt(import.meta.env.VITE_CANT_REP_LOADS) || 1;
 // Estilos:
 import style from "./Home.module.css";
 const { mainTitle, containerLoading, container, img } = style;
@@ -30,11 +31,8 @@ const Home = () => {
     // Desde acá recupero la página actual, para cuando rootea y se pierde el valor:
     let curPage = useSelector((state) => state?.curPage);
     let pagPending = useSelector((state) => state?.pagPending);
-
-    //TEST
+    // Para la carga incial, obtengo el mensaje de hasta dónde llegué a obtener:
     let msgLoad = useSelector((state) => state?.msgLoad);
-
-
 
     useEffect(() => {
         if (!dataLoaded) { // no hay datos previos. Los obtengo
@@ -79,7 +77,7 @@ const Home = () => {
         return (
             <Error message={errors} />
         );
-    } else if (listoMostrar && firstLoad > 0) { // firstLoad es para evitar doble renderizado en la carga inicial
+    } else if (listoMostrar && firstLoad > CANT_LOADS) { // firstLoad es para evitar doble renderizado en la carga inicial
         return (
             <div className={container}>
                 <Nav aux={aux} setAux={setAux} />
@@ -98,10 +96,6 @@ const Home = () => {
             <div className={containerLoading}>
                 <img className={img} src={IMG_ESPERA} alt="" />
                 <h1 className={mainTitle}>{msgLoad}</h1>
-                <span> ----- </span>
-                <h2 className={mainTitle}>listoMostrar: {listoMostrar}</h2>
-                <span> ----- </span>
-                <h2 className={mainTitle}>firstLoad: {firstLoad}</h2>
             </div>
         );
     }

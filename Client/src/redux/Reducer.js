@@ -37,7 +37,7 @@ const initialState = {
     firstLoad: 0, // contador de ocurrencias, evita el doble renderizado al comienzo
     errors: '', // guardo los mensajes de error para mostrar en la pag.
     pagPending: false, // prueba, aviso a home para que no se quivoque con la paginación
-    msgLoad: '' // indico en qué etapa de carga está el programa
+    msgLoad: '' // indico en qué etapa de carga inicial está el programa
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
