@@ -1,5 +1,5 @@
 
-![PauloLogo](https://res.cloudinary.com/dvptbowso/image/upload/v1698321837/PI_Videogames/sn7z4wl8vrz8wgh27cgj.jpg)
+![PauloLogo](https://res.cloudinary.com/dvptbowso/image/upload/v1699135564/PI_Videogames/Face_pv1j2j.jpg)
 
 # **PI Video Games**
 
