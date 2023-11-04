@@ -893,3 +893,6 @@
 4/11/2023, 16:20:49 - cb546394d1b84c418611a07508ddf047: getGenres OK
 4/11/2023, 16:20:54 - cb546394d1b84c418611a07508ddf047: getPlatforms OK
 4/11/2023, 16:21:15 - cb546394d1b84c418611a07508ddf047: getPlatforms OK
+4/11/2023, 16:44:28 - cb546394d1b84c418611a07508ddf047: Server running into 3001 Port. DB Connection: SECURE
+4/11/2023, 16:45:51 - cb546394d1b84c418611a07508ddf047: Server running into 3001 Port. DB Connection: SECURE
+4/11/2023, 16:51:18 - cb546394d1b84c418611a07508ddf047: Server running into 3001 Port. DB Connection: SECURE

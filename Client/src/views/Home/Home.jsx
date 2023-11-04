@@ -80,7 +80,6 @@ const Home = () => {
             <Error message={errors} />
         );
     } else if (listoMostrar && firstLoad > 1) { // firstLoad es para evitar doble renderizado en la carga inicial
-        //console.log(currentGame);
         return (
             <div className={container}>
                 <Nav aux={aux} setAux={setAux} />
@@ -99,6 +98,10 @@ const Home = () => {
             <div className={containerLoading}>
                 <img className={img} src={IMG_ESPERA} alt="" />
                 <h1 className={mainTitle}>{msgLoad}</h1>
+                <span> ----- </span>
+                <h2 className={mainTitle}>listoMostrar: {listoMostrar}</h2>
+                <span> ----- </span>
+                <h2 className={mainTitle}>firstLoad: {firstLoad}</h2>
             </div>
         );
     }
