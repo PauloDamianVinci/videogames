@@ -37,6 +37,7 @@ const initialState = {
     firstLoad: 0, // contador de ocurrencias, evita el doble renderizado al comienzo
     errors: '', // guardo los mensajes de error para mostrar en la pag.
     pagPending: false, // prueba, aviso a home para que no se quivoque con la paginación
+    msgLoad: '' // indico en qué etapa de carga está el programa
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -66,16 +67,19 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 listoMostrar: true,
                 dataLoaded: true,
                 firstLoad: state.firstLoad + 1,
+                msgLoad: "Videogames",
             };
         case GET_GENRES:
             return {
                 ...state,
                 genres: payload,
+                msgLoad: "Genres",
             };
         case GET_PLATFORMS:
             return {
                 ...state,
                 platforms: payload,
+                msgLoad: "Platforms",
             };
         case SET_ERROR_MSG:
             return {
@@ -86,6 +90,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 listoMostrar: false,
+                msgload: "Flagged",
             };
         case FILTER_BY_NAME:
             const filteredByName = state.allVideogames.filter((elem) => {

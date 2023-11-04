@@ -14,7 +14,7 @@ import { paginacionPendiente, getGenres, getPlatforms, setListoMostrar, getVideo
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
 import style from "./Home.module.css";
-const { containerLoading, container, containerSec, text, img } = style;
+const { mainTitle, containerLoading, container, img } = style;
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -29,7 +29,12 @@ const Home = () => {
     let errors = useSelector((state) => state?.errors);
     // Desde acá recupero la página actual, para cuando rootea y se pierde el valor:
     let curPage = useSelector((state) => state?.curPage);
-    let pagPending = useSelector((state) => state?.pagPending); // prueba para avisar qu vengo de detail
+    let pagPending = useSelector((state) => state?.pagPending);
+
+    //TEST
+    let msgLoad = useSelector((state) => state?.msgLoad);
+
+
 
     useEffect(() => {
         if (!dataLoaded) { // no hay datos previos. Los obtengo
@@ -93,6 +98,7 @@ const Home = () => {
         return (
             <div className={containerLoading}>
                 <img className={img} src={IMG_ESPERA} alt="" />
+                <h1 className={mainTitle}>{msgLoad}</h1>
             </div>
         );
     }
