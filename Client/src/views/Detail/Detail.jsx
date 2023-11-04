@@ -14,7 +14,7 @@ const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
 const VG_VIDEOGAMES = API_URL_BASE + VG_V;
 // Estilos:
 import style from "./Detail.module.css";
-const { containerData, separador, thirdText, container, img, imgWait, containerSec, containerImg, containerMainTitle, secondText, contButton, button, descripcion } = style;
+const { thirdText, container, img, imgWait, containerLoading, secondText, contButton, button, descripcion } = style;
 // Funciones:
 import formatDate from "../../functions/formatDate";
 
@@ -80,41 +80,32 @@ const Detail = () => {
         navigate(-1);
     }
 
-    return (
-        <div className={container}>
-            {isLoading ? (
-                <div className={containerSec}>
-                    <img className={imgWait} src={IMG_ESPERA} alt="" />
-                </div >
-            ) : name ? (
-                <div className={containerData}>
-                    <div className={containerImg}>
-                        <img className={img} src={image} alt="" />
-                    </div>
-                    <div className={containerMainTitle}>
-                        <h2 className={thirdText}>ID {id}</h2>
-                        <span className={separador}></span>
-                        <h2 className={thirdText}>{name}</h2>
-                        <span className={separador}></span>
-                        <h2 className={thirdText}>Rating (0-10): {rating}</h2>
-                    </div>
-                    <span className={separador}></span>
-                    <h2 className={secondText}>Released date: {released_date}</h2>
-                    <span className={separador}></span>
-                    <h2 className={descripcion}>{description}</h2>
-                    <span className={separador}></span>
-                    <h2 className={secondText}>Source: {originDB}</h2>
-                    <span className={separador}></span>
-                    <h3 className={secondText}>Genres: {genreList}</h3>
-                    <span className={separador}></span>
-                    <h3 className={secondText}>Platforms: {platformList}</h3>
-                    <div className={contButton}>
-                        <button className={button} onClick={() => handleBack()}>Back</button>
-                    </div>
+    if (isLoading) {
+        return (
+            <div className={containerLoading}>
+                <img className={imgWait} src={IMG_ESPERA} alt="" />
+            </div >
+        );
+    } else {
+        return (
+            <div className={container}>
+                <img className={img} src={image} alt="" />
+                <h2 className={thirdText}>ID {id}</h2>
+                <h2 className={thirdText}>{name}</h2>
+                <h2 className={thirdText}>Rating (0-10): {rating}</h2>
+                <h2 className={thirdText}>Released date: {released_date}</h2>
+                <h2 className={descripcion}>{description}</h2>
+                <h2 className={secondText}>Source: {originDB}</h2>
+                <h3 className={secondText}>Genres: {genreList}</h3>
+                <h3 className={secondText}>Platforms: {platformList}</h3>
+                <div className={contButton}>
+                    <button className={button} onClick={() => handleBack()}>Back</button>
                 </div>
-            ) : null}
-        </div>
-    );
+            </div>
+        );
+    }
+
+
 }
 
 export default Detail;

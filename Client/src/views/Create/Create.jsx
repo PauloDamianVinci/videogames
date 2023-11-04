@@ -17,7 +17,7 @@ const VG_VIDEOGAMES = API_URL_BASE + VG_V;
 
 // Estilos: 
 import style from "./Create.module.css";
-const { containerImg, img, linkText, ratingText, dateText, label, contButtonShort, selectCombo, mainText, container, contButton, button, containerData, errorsCreate } = style;
+const { labelTitle, containerSelect, mainTextErrorRating, mainTextRating, mainTextError, containerTitle, img, linkText, ratingText, dateText, label, contButtonShort, selectCombo, mainText, container, contButton, button, containerData, errorsCreate } = style;
 
 const Create = () => {
     const navigate = useNavigate();
@@ -181,13 +181,10 @@ const Create = () => {
 
     return (
         <form className={container} onSubmit={handleSubmit}>
-            <div className={containerImg}>
-                <h2 className={containerData}>Let's create!</h2>
-                <img className={img} src={IMG_LOGO_NAV} alt="" />
-            </div>
+            <h2 className={containerTitle}>Let's create!</h2>
             <div className={containerData}>
-                <label className={label} htmlFor="name">Name:</label>
-                <input className={mainText}
+                {/* <label className={label} htmlFor="name">Name:</label> */}
+                <input className={`${errors.name ? mainTextError : mainText}`}
                     name="name"
                     type="text"
                     placeholder="Name"
@@ -196,11 +193,12 @@ const Create = () => {
                     id="name"
                     autoComplete="name"
                 />
-                <span className={errorsCreate}>{errors.name}</span>
+
             </div>
+
+
             <div className={containerData}>
-                <label className={label} htmlFor="description">Description:</label>
-                <textarea className={mainText}
+                <textarea className={`${errors.name ? mainTextError : mainText}`}
                     name="description"
                     placeholder="Description"
                     value={gameData.description}
@@ -209,50 +207,61 @@ const Create = () => {
                     maxLength="150"
                     rows="4"
                 />
-                <span className={errorsCreate}>{errors.description}</span>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
             <div className={containerData}>
-                <label className={label} htmlFor="image">Image:</label>
-                <input className={linkText}
+                {/* <label className={label} htmlFor="image">Image:</label> */}
+                <input className={`${errors.image ? mainTextError : mainText}`}
                     name="image"
                     type="text"
-                    placeholder="link"
+                    placeholder="Image URL"
                     value={gameData.image}
                     onChange={handleChange}
                     id="image"
                 />
-                <span className={errorsCreate}>{errors.image}</span>
+
                 <div className={contButton}>
-                    <button className={button} onClick={() => handlePasteLink()} >Please, give me a link</button>
+                    <button className={button} onClick={() => handlePasteLink()} >Gimme me a link</button>
                 </div>
             </div>
             <div className={containerData}>
-                <label className={label} htmlFor="released_date">Released date:</label>
-                <input className={dateText}
+                {/* <label className={label} htmlFor="released_date">Released date:</label> */}
+                <input className={`${errors.released_date ? mainTextError : mainText}`}
                     name="released_date"
                     type="text"
-                    placeholder='(yyyy-mm-dd)'
+                    placeholder='Released date (yyyy-mm-dd)'
                     value={gameData.released_date}
                     onChange={handleChange}
                     id="released_date"
                 />
-                <span className={errorsCreate}>{errors.released_date}</span>
+
             </div>
             <div className={containerData}>
-                <label className={label} htmlFor="rating">Rating:</label>
-                <input className={ratingText}
+                {/* <label className={label} htmlFor="rating">Rating:</label> */}
+                <input className={`${errors.rating ? mainTextErrorRating : mainTextRating}`}
                     name="rating"
                     type="text"
-                    placeholder='(1-10)'
+                    placeholder='Rating (1-10)'
                     value={gameData.rating}
                     onChange={handleChange}
                     id="rating"
                 />
-                <span className={errorsCreate}>{errors.rating}</span>
+
             </div>
-            <div className={containerData}>
+            <div className={containerSelect}>
                 {/* Selección de géneros: */}
-                <label className={label} htmlFor="genre">Genre/s</label>
+                <label className={labelTitle} htmlFor="genre">Genre/s</label>
                 <select className={selectCombo}
                     name="genre"
                     multiple
@@ -267,7 +276,7 @@ const Create = () => {
                     ))}
                 </select>
                 <div className={label}>
-                    Selected Genre/s: {" "}
+                    Selected: {" "}
                     {gameData.genre.map((genre) => (
                         <span key={genre}>
                             {` ${genre}`}
@@ -275,11 +284,11 @@ const Create = () => {
                         </span>
                     ))}
                 </div>
-                <span className={errorsCreate}>{errors.genre}</span>
+
             </div>
-            <div className={containerData}>
+            <div className={containerSelect}>
                 {/* Selección de plataformas: */}
-                <label className={label} htmlFor="platform">Platform/s</label>
+                <label className={labelTitle} htmlFor="platform">Platform/s</label>
                 <select className={selectCombo}
                     name="platform"
                     multiple
@@ -294,7 +303,7 @@ const Create = () => {
                     ))}
                 </select>
                 <div className={label}>
-                    Selected Platform/s: {" "}
+                    Selected: {" "}
                     {gameData.platform.map((platform) => (
                         <span key={platform}>
                             {` ${platform}`}
@@ -302,9 +311,19 @@ const Create = () => {
                         </span>
                     ))}
                 </div>
-                <span className={errorsCreate}>{errors.platform}</span>
+
             </div>
+            <span className={errorsCreate}>{errors.name}</span>
+            <span className={errorsCreate}>{errors.description}</span>
+            <span className={errorsCreate}>{errors.image}</span>
+            <span className={errorsCreate}>{errors.released_date}</span>
+            <span className={errorsCreate}>{errors.rating}</span>
+            <span className={errorsCreate}>{errors.genre}</span>
+            <span className={errorsCreate}>{errors.platform}</span>
+
+
             <p className={contButton} href="/">
+
                 {/* <button className={button} type="submit" disabled={formSubmitted}> */}
                 <button className={button} type="submit" >
                     Create game!

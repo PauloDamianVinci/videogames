@@ -14,7 +14,7 @@ import { paginacionPendiente, getGenres, getPlatforms, setListoMostrar, getVideo
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
 import style from "./Home.module.css";
-const { container, containerSec, text, img } = style;
+const { containerLoading, container, containerSec, text, img } = style;
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -72,13 +72,10 @@ const Home = () => {
 
     if (errors) {
         return (
-            <div className={container}>
-                <div className={containerSec}>
-                    <Error message={errors} />
-                </div >
-            </div>
+            <Error message={errors} />
         );
     } else if (listoMostrar && firstLoad > 1) { // firstLoad es para evitar doble renderizado en la carga inicial
+        //console.log(currentGame);
         return (
             <div className={container}>
                 <Nav aux={aux} setAux={setAux} />
@@ -94,14 +91,8 @@ const Home = () => {
         );
     } else {
         return (
-            <div className={container}>
-                <div className={containerSec}>
-                    <img className={img} src={IMG_ESPERA} alt="" />
-
-
-
-
-                </div >
+            <div className={containerLoading}>
+                <img className={img} src={IMG_ESPERA} alt="" />
             </div>
         );
     }
