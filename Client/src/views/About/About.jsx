@@ -12,8 +12,8 @@ const VG_VER_BACK = API_URL_BASE + VG_BACK;
 const IMG_ABOUT = import.meta.env.VITE_IMG_ABOUT || '/src/assets/Face.jpg';
 const IMG_LINK = import.meta.env.VITE_IMG_LINKEDIN || '/src/assets/LINKEDIN.PNG';
 const IMG_GIT = import.meta.env.VITE_IMG_GITHUB || '/src/assets/GIT.PNG';
-const MY_LNK = import.meta.env.MY_LINKEDIN || 'https://www.linkedin.com/in/paulo-damian-vinci/';
-const MY_GIT = import.meta.env.MY_GITHUB || 'https://github.com/PauloDamianVinci/videogames';
+const MY_LNK = import.meta.env.VITE_MY_LINKEDIN || 'https://www.linkedin.com/in/paulo-damian-vinci/';
+const MY_GIT = import.meta.env.VITE_MY_LINKEDIN || 'https://github.com/PauloDamianVinci/videogames';
 // Estilos:
 import style from "./About.module.css";
 const { container, containerData, containerNet, imgGit, img, imgLink, mainText, secondText, contButton, button } = style;
