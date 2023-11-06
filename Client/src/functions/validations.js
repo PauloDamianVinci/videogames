@@ -1,7 +1,11 @@
+//! Validaciones del form de creación de videojuego.
+
 const validator = (input) => {
     let errors = {}
-    const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/; // URL válida
-    const ratingRegex = /^\d+(\.\d{1,2})?$/ // entero y dos decimales 
+    // URL válida
+    const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+    // entero y dos decimales 
+    const ratingRegex = /^\d+(\.\d{1,2})?$/
     // formato AAAA-MM-DD:
     const releasedRegex = /^(?:19|20)\d\d-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1\d|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)$/;
     const image = input.image

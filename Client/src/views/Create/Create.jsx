@@ -3,7 +3,7 @@ import axios from 'axios';
 // Componentes:
 import VideogameFields from "../../components/VideogameFields/VideogameFields.jsx";
 // hooks, routers, reducers:
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { postVidegame, paginacionPendiente, resetFilterAndOrder } from "../../redux/actions";

@@ -38,14 +38,6 @@ const initialState = {
     errors: '', // guardo los mensajes de error para mostrar en la pag.
     pagPending: false, // prueba, aviso a home para que no se quivoque con la paginación
     msgLoad: '', // indico en qué etapa de carga inicial está el programa
-    cardEdit: { // almaceno los datos de la card a editar
-        genre: "All",
-        create: "All",
-        rating: "",
-        azza: "",
-        name: "",
-    },
-
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {

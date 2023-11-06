@@ -2,7 +2,7 @@
 // hooks, routers, reducers:
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { resetFilterAndOrder, filterOriginData, filterVideogamesByGenre, orderByRating, orderByAZ, setCurrPage } from "../../redux/actions";
+import { resetFilterAndOrder, filterOriginData, filterVideogamesByGenre, orderByRating, orderByAZ } from "../../redux/actions";
 // Funciones:
 import orderArray from "../../functions/orderArray";
 // Estilos:
@@ -78,7 +78,6 @@ const FilterOrder = (props) => {
                         <option value="All">All</option>
                         <option value="False">Api</option>
                         <option value="True">Database</option>
-
                     </select>
                 </div>
                 {/* Filtrado por género: */}
@@ -93,7 +92,6 @@ const FilterOrder = (props) => {
                                 </option>
                             );
                         })}
-
                     </select>
                 </div>
                 {/* Ordenamiento alafabético: */}

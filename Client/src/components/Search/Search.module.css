@@ -1,5 +1,4 @@
 .container {
-    /* background-color: rgba(109, 110, 103, 0.849); */
     display: flex;
     justify-content: space-around;
     align-items: flex-start;

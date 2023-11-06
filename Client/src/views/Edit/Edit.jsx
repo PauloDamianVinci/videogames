@@ -17,7 +17,6 @@ const VG_VIDEOGAMES = API_URL_BASE + VG_V;
 const ERROR = import.meta.env.VITE_ERROR || '/error';
 const VG_E = import.meta.env.VITE_VG_EDIT || '/edit';
 const VG_EDIT_GAME = API_URL_BASE + VG_E;
-
 // Estilos: 
 import style from "./Edit.module.css";
 const { container, contButton, button, containerFields, containerTitle } = style;

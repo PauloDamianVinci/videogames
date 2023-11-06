@@ -2,7 +2,7 @@
 // hooks, routers, reducers:
 import { useNavigate } from "react-router-dom";
 import { resetAll } from "../../redux/actions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // Estilos:
 import style from "./Error.module.css";
 const { container, mainTitle, secondText, img, contButton, button } = style;

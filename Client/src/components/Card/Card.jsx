@@ -11,12 +11,13 @@ const IMG_ERROR = import.meta.env.VITE_IMG_ERR_DETAIL || '/src/assets/NoPhoto.pn
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
 import style from "./Card.module.css";
-const { buttonEdit, buttonRemove, container, containerImg, img, contButton, button, containerFeatures, featuresCardName, featuresCardGenre } = style;
+const { buttonEdit, buttonRemove, container, containerImg, img, contButton, button, containerFeatures,
+    featuresCardName, featuresCardGenre } = style;
 
 const Card = (props) => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const { id, name, image, genresV, rating, aux, setAux } = props;
+    const { id, name, image, genresV, aux, setAux } = props;
     const [isLoading, setIsLoading] = useState(true);
     const linkDetail = `${DETAIL_BASE}/${id}`;
     const linkEdit = `${EDIT_BASE}/${id}`;
@@ -27,7 +28,7 @@ const Card = (props) => {
     const [isHandling, setIsHandling] = useState(false);
 
     useEffect(() => {
-        // testeo el link de la imagen:
+        // Testeo el link de la imagen:
         if (image) {
             const imageTest = new Image();
             imageTest.src = image;
@@ -38,7 +39,7 @@ const Card = (props) => {
             setNameShow(name);
         };
         setGenreList(genresV.map(genre => genre.name).join(' - '));
-        // Permito borrar las cards de la DB:
+        // Permito borrar y editar las cards de la DB:
         if (isNaN(id)) { // desde BD
             setIsBD(true);
         } else { // desde API

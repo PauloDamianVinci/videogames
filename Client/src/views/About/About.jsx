@@ -23,11 +23,9 @@ const About = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
     const versionFront = packageJson.version;
-    const [isLoading, setIsLoading] = useState(true);
     const [versionBack, setVersionBack] = useState('');
 
     useEffect(() => {
-        setIsLoading(true);
         const endpoint = VG_VER_BACK;
         axios(endpoint)
             .then(({ data }) => {
@@ -36,9 +34,6 @@ const About = () => {
                 } else {
                     window.alert("Error while obtaining backend version");
                 }
-            })
-            .finally(() => {
-                setIsLoading(false);
             })
             .catch((error) => {
             });

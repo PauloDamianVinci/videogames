@@ -18,9 +18,9 @@ const postVideoGame = async (req, res) => {
             showLog(`postVideoGame: the game ${name} already exists`);
             return res.status(409).send(`The game ${name} already exists. Choose another one.`);
         }
-        // Si no existe creo el registro:
+        // Creo el registro si no existe:
         const [VideogameCreated, created] = await Videogame.findOrCreate({
-            where: { name: nameLowercase, description, image, released_date, rating, OriginDB: true },
+            where: { name: name, description, image, released_date, rating, OriginDB: true },
         });
         let genreCreated = await Genre.findAll({
             where: { name: genre }

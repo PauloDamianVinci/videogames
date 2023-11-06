@@ -1,164 +1,83 @@
 const app = require('../src/app');
 const session = require('supertest');
 const agent = session(app);
+const { Videogame } = require('../src/DB_connection');
 
-const arr = {
-    id: 1,
-    name: 'Rick Sanchez',
-    status: 'Alive',
-    species: 'Human',
-    gender: 'Male',
-    origin: {
-        name: 'Earth (C-137)',
-        url: 'https://rickandmortyapi.com/api/location/1',
-    },
-    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-};
-
-const arr2 = {
-    id: 2,
-    name: 'Morty Smith',
-    status: 'Alive',
-    species: 'Human',
-    gender: 'Male',
-    origin: {
-        name: 'unknown',
-        url: '',
-    },
-    image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-}
-
-const arr3 = {
-    id: 3,
-    name: 'Summer Smith',
-    status: 'Alive',
-    species: 'Human',
-    gender: 'Female',
-    origin: {
-        name: 'Earth (Replacement Dimension)',
-        url: 'https://rickandmortyapi.com/api/location/20',
-    },
-    image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
-}
-
-describe("Test de RUTAS", () => {
+describe("Testear RUTAS", () => {
     it("Responde con status: 200", async () => {
         let response = '';
-        response = await session(app).get('/rickandmorty/login/');
+        response = await session(app).get('/videogames/');
         expect(response.statusCode).toBe(200);
-
-        response = await session(app).post('/rickandmorty/fav/');
-        expect(response.statusCode).toBe(200);
-
-        response = await session(app).get('/rickandmorty/character/1');
+        response = await session(app).get('/videogames/videogames/?source=1');
         expect(response.statusCode).toBe(200);
     });
 });
 
-describe("GET /rickandmorty/character/:id", () => {
+describe("Obtener videojuego por nombre", () => {
     it("Responde con status: 200", async () => {
-        const response = await session(app).get('/rickandmorty/character/1');
+        const response = await session(app).get('/videogames/videogames/?source=1')
+            .query({ search: "Marvel's Spider-Man Remastered" });
         expect(response.statusCode).toBe(200);
     });
-    it('Responde un objeto con las propiedades: "id", "name", "species", "gender", "status", "origin" e "image"', async () => {
-        const response = await session(app).get('/rickandmorty/character/1');
+    it('Responde un array de objetos con las propiedades del videojuego de la API', async () => {
+        const response = await session(app).get('/videogames/videogames/?source=2')
+            .query({ search: "Marvel's Spider-Man Remastered" });
         expect(response.statusCode).toBe(200);
-        expect(response.body).toEqual(arr);
+        expect(Array.isArray(response.body)).toBe(true);
+        expect(response.body).toBeInstanceOf(Array);
     });
-    it("Si hay un error responde con status: 500", async () => {
-        const response = await session(app).get('/rickandmorty/character/pepe');
-        expect(response.statusCode).toBe(500);
+    it('Responde un array vacío cuando no hay coincidencias de nombre', async () => {
+        const response = await session(app).get('/videogames/videogames/?source=2')
+            .query({ search: "qwz" });
+        expect(response.statusCode).toBe(200);
+        expect(Array.isArray(response.body)).toBe(true);
+        expect(response.body).toEqual([]);
     });
 });
 
-describe("GET /rickandmorty/login", () => {
-    it('Responde un objeto con la propiedad: "access" = TRUE', async () => {
-        const response = await session(app).get('/rickandmorty/login')
-            .query({ user: 'erraticless@gmail.com', pass: '123456' });
+describe("Obtener videojuego por ID", () => {
+    it("Responde con status: 200", async () => {
+        const response = await session(app).get('/videogames/videogames/3498');
         expect(response.statusCode).toBe(200);
-        expect(response.body).toHaveProperty('access');
-        expect(response.body.access).toBe(true);
     });
-
-    it('Responde un objeto con la propiedad: "access" = FALSE', async () => {
-        const response = await session(app).get('/rickandmorty/login')
-            .query({ user: 'erraticless@gmail.om', pass: '123456' });
+    it('Responde un array de objetos con las propiedades del videojuego de la API', async () => {
+        const response = await session(app).get('/videogames/videogames/3498');
         expect(response.statusCode).toBe(200);
-        expect(response.body).toHaveProperty('access');
-        expect(response.body.access).toBe(false);
+        expect(Array.isArray(response.body)).toBe(true);
+        expect(response.body).toBeInstanceOf(Array);
     });
+    it('Responde un array vacío cuando no hay coincidencias de ID', async () => {
+        const response = await session(app).get('/videogames/videogames/22222222');
+        expect(response.statusCode).toBe(200);
+        const responseBody = JSON.parse(response.text);
 
+        expect(responseBody).toBe("Request failed with status code 404");
+    });
 });
 
-describe("POST /rickandmorty/fav", () => {
-    it('Debería devolver un arreglo con el elemento enviado en el body', async () => {
-        const elementoEnviado = arr2;
+
+describe('Crear un videojuego', () => {
+    it('Crea un registro en la tabla Videogames', async () => {
+        const nuevoVideogame = {
+            name: "Juego nuevo de prueba",
+            description: "Descripción del juego",
+            image: "https://res.cloudinary.com/dvptbowso/image/upload/v1699135564/PI_Videogames/Face_pv1j2j.jpg",
+            released_date: "2023-11-06",
+            rating: "4.5",
+            genre: ["Action", "Racing"],
+            platform: ["macOS", "PC", "Nintendo Switch", "Wii"],
+        };
         const response = await session(app)
-            .post('/rickandmorty/fav')
-            .send(elementoEnviado);
+            .post('/videogames/videogames')
+            .send(nuevoVideogame);
+        expect(response.status).toBe(200);
+    });
+    it('Responde un array de objetos con las propiedades del videojuego creado en la BD', async () => {
+        const response = await session(app).get('/videogames/videogames/?source=1')
+            .query({ search: "Juego nuevo de prueba" });
         expect(response.statusCode).toBe(200);
         expect(Array.isArray(response.body)).toBe(true);
-        expect(response.body).toContainEqual(elementoEnviado);
+        expect(response.body).toBeInstanceOf(Array);
     });
 
-    it('Debería devolver un arreglo que incluye un elemento enviado previamente', async () => {
-        const primerElemento = arr;
-        await session(app)
-            .post('/rickandmorty/fav')
-            .send(primerElemento);
-        const segundoElemento = arr2;
-        const response = await session(app)
-            .post('/rickandmorty/fav')
-            .send(segundoElemento);
-        expect(response.statusCode).toBe(200);
-        expect(Array.isArray(response.body)).toBe(true);
-        expect(response.body).toContainEqual(primerElemento);
-        expect(response.body).toContainEqual(segundoElemento);
-    });
-});
-
-
-describe("DELETE /rickandmorty/fav/:id", () => {
-    it('Debería devolver un arreglo con los elementos existentes en caso de no encontrar el id', async () => {
-        const nuevoFav1 = arr;
-        const nuevoFav2 = arr2;
-        const nuevoFav3 = arr3;
-        let response = '';
-        response = await session(app)
-            .post('/rickandmorty/fav')
-            .send(nuevoFav1);
-        response = await session(app)
-            .post('/rickandmorty/fav')
-            .send(nuevoFav2);
-        response = await session(app)
-            .post('/rickandmorty/fav')
-            .send(nuevoFav3);
-        response = await session(app)
-            .delete('/rickandmorty/fav/4')
-
-        expect(response.statusCode).toBe(200);
-        expect(Array.isArray(response.body)).toBe(true);
-    });
-
-    it('Debería devolver un arreglo con los elementos existentes, menos el eliminado', async () => {
-        const nuevoFav1 = arr;
-        const nuevoFav2 = arr2;
-        const nuevoFav3 = arr3;
-        let response = '';
-        response = await session(app)
-            .post('/rickandmorty/fav')
-            .send(nuevoFav1);
-        response = await session(app)
-            .post('/rickandmorty/fav')
-            .send(nuevoFav2);
-        response = await session(app)
-            .post('/rickandmorty/fav')
-            .send(nuevoFav3);
-        response = await session(app)
-            .delete('/rickandmorty/fav/2')
-
-        expect(response.statusCode).toBe(200);
-        expect(Array.isArray(response.body)).toBe(true);
-        expect(response.body).not.toContainEqual(2);
-    });
 });

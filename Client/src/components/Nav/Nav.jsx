@@ -8,7 +8,6 @@ import Search from "../../components/Search/Search.jsx";
 // Estilos:
 import style from "./Nav.module.css";
 const { container, containerSec, containerImg, img, contButton, button, mainTitle } = style;
-
 // Variables de entorno:
 const CREATE = import.meta.env.VITE_CREATE || '/create';
 const ABOUT = import.meta.env.VITE_ABOUT || '/about';
