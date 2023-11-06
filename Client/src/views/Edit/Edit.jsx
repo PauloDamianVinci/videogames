@@ -6,7 +6,7 @@ import VideogameFields from "../../components/VideogameFields/VideogameFields.js
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { editVidegame, paginacionPendiente } from "../../redux/actions";
+import { editVideogame, paginacionPendiente } from "../../redux/actions";
 // Funciones:
 import validations from "../../functions/validations";
 import formatDate from "../../functions/formatDate";
@@ -94,7 +94,7 @@ const Edit = (props) => {
                     Genres: gameData.genre && gameData.genre.map(el => ({ name: el })),
                     OriginDB: true,
                 }
-                dispatch(editVidegame(aux)); // actualizo el store con el nuevo registro
+                dispatch(editVideogame(aux)); // actualizo el store con el nuevo registro
                 setGameData({
                     name: "",
                     description: "",

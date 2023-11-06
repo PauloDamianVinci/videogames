@@ -63,7 +63,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     }
                     return game;
                 }),
-                curPage: '1',
                 pagPending: false,
             };
         case POST_GAME:
