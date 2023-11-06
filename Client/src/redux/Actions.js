@@ -17,10 +17,17 @@ export const FILTER_BY_NAME = 'FILTER_BY_NAME';
 export const CLEAR_FILTER_BY_NAME = 'CLEAR_FILTER_BY_NAME';
 export const RESET_FILTER_ORDER = 'RESET_FILTER_ORDER';
 export const REMOVE_CARD = 'REMOVE_CARD';
+export const EDIT_GAME = 'EDIT_GAME';
 // Variables de entorno:
 const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
 const VG_R = import.meta.env.VITE_VG_REMOVE || '/remove';
 const VG_REMOVE = API_URL_BASE + VG_R;
+
+export function editVidegame(payload) {
+    return {
+        type: EDIT_GAME, payload,
+    }
+}
 
 export function getGenres(payload) {
     return {

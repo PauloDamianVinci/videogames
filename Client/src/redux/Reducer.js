@@ -16,6 +16,7 @@ import {
     SET_ERROR_MSG,
     RESET_FILTER_ORDER,
     REMOVE_CARD,
+    EDIT_GAME,
 } from "./actions";
 
 const initialState = {
@@ -36,11 +37,43 @@ const initialState = {
     listoMostrar: false, // flag para que home refresque registros mostrando reloj
     errors: '', // guardo los mensajes de error para mostrar en la pag.
     pagPending: false, // prueba, aviso a home para que no se quivoque con la paginación
-    msgLoad: '' // indico en qué etapa de carga inicial está el programa
+    msgLoad: '', // indico en qué etapa de carga inicial está el programa
+    cardEdit: { // almaceno los datos de la card a editar
+        genre: "All",
+        create: "All",
+        rating: "",
+        azza: "",
+        name: "",
+    },
+
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case EDIT_GAME:
+            return {
+                ...state,
+                allVideogames: state.allVideogames.map((game) => {
+                    if (game.id === payload.id) {
+                        return payload;
+                    }
+                    return game;
+                }),
+                videogames: state.videogames.map((game) => {
+                    if (game.id === payload.id) {
+                        return payload;
+                    }
+                    return game;
+                }),
+                filteredVideogames: state.filteredVideogames.map((game) => {
+                    if (game.id === payload.id) {
+                        return payload;
+                    }
+                    return game;
+                }),
+                curPage: '1',
+                pagPending: false,
+            };
         case POST_GAME:
             return {
                 ...state,

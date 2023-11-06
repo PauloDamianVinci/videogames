@@ -14,9 +14,8 @@ const postVideoGame = async (req, res) => {
         const existingVideogame = await Videogame.findOne({
             where: { name: nameLowercase },
         });
-        //if (existingVideogame) { throw new Error("The game name already exists. Choose another one."); }
         if (existingVideogame) {
-            showLog(`postVideoGame: The game ${name} already exists`);
+            showLog(`postVideoGame: the game ${name} already exists`);
             return res.status(409).send(`The game ${name} already exists. Choose another one.`);
         }
         // Si no existe creo el registro:

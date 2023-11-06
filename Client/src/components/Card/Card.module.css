@@ -41,6 +41,17 @@
     font-size: 24px;
 }
 
+.buttonEdit {
+    position: absolute;
+    background-color: rgba(15, 15, 15, 0);
+    border: 0px;
+    width: 20px;
+    height: 20px;
+    top: 20%;
+    left: 79%;
+    font-size: 24px;
+}
+
 .featuresCardName {
     color: rgb(255, 255, 254);
     font-family: "Helvetica", Helvetica, sans-serif;

@@ -45,7 +45,9 @@ const Detail = () => {
                     if (data[0].description) setDescription(data[0].description);
                     if (data[0].released_date) setReleased_date(formatDate(data[0].released_date));
                     if (data[0].rating) setRating(data[0].rating);
+                    data[0].Genres.sort((a, b) => a.name.localeCompare(b.name));
                     setGenreList(data[0].Genres.map(genre => genre.name).join(" - "));
+                    data[0].Platforms.sort((a, b) => a.name.localeCompare(b.name));
                     setPlatformList(data[0].Platforms.map(plat => plat.name).join(" - "));
                     data[0].OriginDB ? setOriginDB("Database") : setOriginDB("API");
                     // Testeo el link de la imagen:
@@ -104,8 +106,6 @@ const Detail = () => {
             </div>
         );
     }
-
-
 }
 
 export default Detail;

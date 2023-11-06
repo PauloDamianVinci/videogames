@@ -6,11 +6,12 @@ import { useDispatch } from "react-redux";
 import { removeCard, paginacionPendiente } from "../../redux/actions";
 // Variables de entorno:
 const DETAIL_BASE = import.meta.env.VITE_DETAIL_BASE || '/detail';
+const EDIT_BASE = import.meta.env.VITE_EDIT_BASE || '/edit';
 const IMG_ERROR = import.meta.env.VITE_IMG_ERR_DETAIL || '/src/assets/NoPhoto.png';
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
 import style from "./Card.module.css";
-const { buttonRemove, container, containerImg, img, contButton, button, containerFeatures, featuresCardName, featuresCardGenre } = style;
+const { buttonEdit, buttonRemove, container, containerImg, img, contButton, button, containerFeatures, featuresCardName, featuresCardGenre } = style;
 
 const Card = (props) => {
     const navigate = useNavigate()
@@ -18,6 +19,7 @@ const Card = (props) => {
     const { id, name, image, genresV, rating, aux, setAux } = props;
     const [isLoading, setIsLoading] = useState(true);
     const linkDetail = `${DETAIL_BASE}/${id}`;
+    const linkEdit = `${EDIT_BASE}/${id}`;
     const [genreList, setGenreList] = useState('');
     const [imgShow, setImgShow] = useState(IMG_ESPERA);
     const [nameShow, setNameShow] = useState('Not found');
@@ -54,6 +56,10 @@ const Card = (props) => {
         setIsHandling(false);
     };
 
+    const handleEdit = () => {
+        navigate(linkEdit);
+    };
+
     return (
         <div className={container}>
             {isLoading ? (
@@ -65,6 +71,7 @@ const Card = (props) => {
                     <div className={containerImg}>
                         <img className={img} src={imgShow} alt="" />
                         {isBD ? (<button className={buttonRemove} onClick={handleDelete}>❌</button>) : (null)}
+                        {isBD ? (<button className={buttonEdit} onClick={handleEdit}>✍🏻</button>) : (null)}
                     </div>
                     <div className={containerFeatures}>
                         <h2 className={featuresCardName}>{nameShow}</h2>
@@ -78,6 +85,7 @@ const Card = (props) => {
             }
         </div >
     )
+
 }
 
 export default Card;
