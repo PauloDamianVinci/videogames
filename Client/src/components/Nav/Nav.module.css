@@ -11,7 +11,7 @@
 .containerSec {
     display: flex;
     justify-content: center;
-    min-width: 200px;
+    min-width: 350px;
     max-width: 600px;
     align-items: center;
 }
@@ -20,7 +20,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    min-width: 200px;
+    min-width: 350px;
     max-width: 250px;
 }
 
@@ -28,7 +28,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    min-width: 200px;
+    min-width: 350px;
 }
 
 .mainTitle {

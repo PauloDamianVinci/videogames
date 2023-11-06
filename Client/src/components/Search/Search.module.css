@@ -6,7 +6,7 @@
     text-align: center;
     flex-wrap: wrap;
     max-width: 300px;
-    min-width: 200px;
+    min-width: 350px;
 }
 
 .containerSec {
@@ -21,7 +21,7 @@
     font-family: "Courier New", Helvetica, sans-serif;
     font-size: 1.5em;
     text-align: left;
-    min-width: 200px;
+    min-width: 350px;
     width: 100%;
     border: 3px solid #1fcab3;
     border-radius: 10px;
@@ -31,7 +31,7 @@
 
 .mainText {
     text-align: left;
-    min-width: 200px;
+    min-width: 350px;
     width: 100%;
     border: 2px solid #1fcab3;
     border-radius: 10px;
