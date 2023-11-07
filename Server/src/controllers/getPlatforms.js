@@ -1,4 +1,4 @@
-// ! Obtienen y almacena en BD las plataformas.
+// ! Obtiene y almacena en BD las plataformas.
 require('dotenv').config();
 const axios = require('axios');
 const { Platform } = require('../DB_connection');
