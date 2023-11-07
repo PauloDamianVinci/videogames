@@ -20,11 +20,11 @@ import {
 } from "./actions";
 
 const initialState = {
-    allVideogames: [], // están todos los videojuegos obtenidos desde el back. Sólo se actualiza cuando cambian desde la BD o si se hace búsqueda por nombre
+    allVideogames: [], // están todos los videojuegos obtenidos desde el back
     videogames: [], // están los videojuegos que se muestran en pantalla luego de filtros y ordenamientos
-    filteredVideogames: [], // filteredVideogames: resultados de búsquedas
-    genres: [], // están todos los géneros obtenidos desde el back.
-    platforms: [], // están todas las plataformas obtenidos desde el back.
+    filteredVideogames: [], // resultados de búsquedas
+    genres: [], // están todos los géneros obtenidos desde el back
+    platforms: [], // están todas las plataformas obtenidos desde el back
     filters: { // es para que la lógica de los filtros respete las combinaciones previas
         genre: "All",
         create: "All",
