@@ -28,9 +28,38 @@ const App = () => {
         <Route path={EDIT} element={<Edit />} />
         <Route path={ABOUT} element={<About />} />
         <Route path={ERROR} element={<Error />} />
-        <Route path="*" element={<Error />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   );
 }
+
+function ErrorPage() {
+  return (
+    <div>
+      <h1>Página no encontrada</h1>
+      <p>La página que estás buscando no existe.</p>
+      {/* <Link to={ROOT}>Volver a la página de inicio</Link> */}
+    </div>
+  );
+}
+
 export default App;
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Routes>
+//         <Route path={ROOT} element={<Landing />} />
+//         <Route path={HOME} element={<Home />} />
+//         <Route path={CREATE} element={<Create />} />
+//         <Route path={DETAIL} element={<Detail />} />
+//         <Route path={EDIT} element={<Edit />} />
+//         <Route path={ABOUT} element={<About />} />
+//         <Route path={ERROR} element={<Error />} />
+//         <Route path="*" element={<Error />} />
+//       </Routes>
+//     </div>
+//   );
+// }
+// export default App;
