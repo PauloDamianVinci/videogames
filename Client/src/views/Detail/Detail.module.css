@@ -30,6 +30,7 @@
 
 .img:hover {
     filter: saturate(180%);
+    transition: all .5s ease-in-out;
 }
 
 .secondText {

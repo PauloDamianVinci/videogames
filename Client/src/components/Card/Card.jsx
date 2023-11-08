@@ -11,7 +11,7 @@ const IMG_ERROR = import.meta.env.VITE_IMG_ERR_DETAIL || '/src/assets/NoPhoto.pn
 const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
 // Estilos:
 import style from "./Card.module.css";
-const { buttonEdit, buttonRemove, container, containerImg, img, contButton, button, containerFeatures,
+const { buttonEdit, buttonRemove, container, containerImg, img, containerFeatures,
     featuresCardName, featuresCardGenre } = style;
 
 const Card = (props) => {
@@ -70,16 +70,13 @@ const Card = (props) => {
             ) : name ? (
                 <div className={container}>
                     <div className={containerImg}>
-                        <img className={img} src={imgShow} alt="" />
+                        <img className={img} src={imgShow} onClick={() => navigate(linkDetail)} alt="" />
                         {isBD ? (<button className={buttonRemove} onClick={handleDelete}>❌</button>) : (null)}
                         {isBD ? (<button className={buttonEdit} onClick={handleEdit}>✍🏻</button>) : (null)}
                     </div>
                     <div className={containerFeatures}>
-                        <h2 className={featuresCardName}>{nameShow}</h2>
-                        <h2 className={featuresCardGenre}>{genreList}</h2>
-                        <div className={contButton}>
-                            <button className={button} onClick={() => navigate(linkDetail)} >Details</button>
-                        </div>
+                        <h2 className={featuresCardName} onClick={() => navigate(linkDetail)}>{nameShow} </h2>
+                        <h2 className={featuresCardGenre} onClick={() => navigate(linkDetail)}>{genreList}</h2>
                     </div>
                 </div>
             ) : null

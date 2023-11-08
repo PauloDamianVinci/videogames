@@ -31,6 +31,11 @@
     min-width: 350px;
 }
 
+.containerImg:hover {
+    filter: saturate(180%);
+    transition: all .5s ease-in-out;
+}
+
 .mainTitle {
     position: absolute;
     top: 30%;

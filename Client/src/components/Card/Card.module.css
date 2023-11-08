@@ -4,7 +4,7 @@
     transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     overflow: hidden;
     width: 200px;
-    height: 320px;
+    height: 290px;
     border: 2px solid #1fcab3;
 }
 
@@ -14,7 +14,7 @@
     justify-content: flex-end;
     color: antiquewhite;
     width: 200px;
-    height: 170px;
+    height: 150px;
 }
 
 .containerImg {
@@ -23,6 +23,7 @@
 
 .containerImg:hover {
     filter: saturate(180%);
+    transition: all .5s ease-in-out;
 }
 
 .img {
@@ -66,40 +67,4 @@
     font-size: 1em;
     width: 100%;
     height: 250px;
-}
-
-.contButton {
-    background-image: linear-gradient(to right, #006175 0%, #1fcab3 100%);
-    border-radius: 10px;
-    box-sizing: border-box;
-    color: #1fcab3;
-    display: block;
-    height: 60%;
-    font-size: 2.0em;
-    padding: 2px;
-    text-decoration: none;
-    width: 90%;
-    margin-left: 8px;
-}
-
-.contButton:hover {
-    color: #fff;
-}
-
-.contButton .button {
-    align-items: center;
-    background: #0e0e10;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    transition: background 0.5s ease;
-    width: 100%;
-    color: #1fcab3;
-    font-size: 1em;
-}
-
-.contButton:hover .button {
-    background: transparent;
-    color: #fff;
 }

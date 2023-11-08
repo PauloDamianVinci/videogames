@@ -12,7 +12,7 @@ const { container, containerSec, containerImg, img, contButton, button, mainTitl
 const CREATE = import.meta.env.VITE_CREATE || '/create';
 const ABOUT = import.meta.env.VITE_ABOUT || '/about';
 const ROOT = import.meta.env.VITE_ROOT || '/';
-const IMG_LOGO_NAV = import.meta.env.VITE_IMG_LOGO_NAV || '/src/assets/ImgNav.jpeg';
+const IMG_LOGO_NAV = import.meta.env.VITE_IMG_LOGO_NAV || '/src/assets/ImgNav.png';
 
 const Nav = (props) => {
     const { aux, setAux } = props;

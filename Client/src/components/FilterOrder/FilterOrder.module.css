@@ -1,9 +1,6 @@
-.containerHidden {
-    display: none;
-}
-
 .container {
-    background-color: rgba(109, 110, 103, 0.849);
+    /* background-color: rgba(109, 110, 103, 0.849); */
+    background-color: rgba(24, 37, 26, 0.692);
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -11,6 +8,9 @@
     flex-wrap: wrap;
     min-width: 350px;
     margin-top: 1px;
+
+    border-radius: 10px;
+    border: 2px solid #1fcab3;
 }
 
 .containerFiltrosOrigenGenero {
@@ -30,6 +30,23 @@
     font-size: 1em;
     padding-left: 5px;
     padding-right: 5px;
+}
+
+.textoSelect {
+    top: 30%;
+    left: 50%;
+    color: rgb(255, 255, 254);
+    font-family: "Helvetica", Helvetica, sans-serif;
+    font-size: 1em;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.radioOrderRating {
+    /* width: 20px;
+    height: 20px;
+    border: 2px solid #1fcab3;
+    border-radius: 50%; */
 }
 
 .containerOrdenRatingAlfa {
@@ -52,7 +69,9 @@
     padding: 4px;
     text-decoration: none;
     width: 6em;
-    margin: 0%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    margin-right: 0.5%;
 }
 
 .contButton:hover {

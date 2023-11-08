@@ -7,7 +7,7 @@ import { resetFilterAndOrder, filterOriginData, filterVideogamesByGenre, orderBy
 import orderArray from "../../functions/orderArray";
 // Estilos:
 import style from "./FilterOrder.module.css";
-const { container, containerFiltrosOrigenGenero, texto, containerOrdenRatingAlfa, contButton, button } = style;
+const { radioOrderRating, container, containerFiltrosOrigenGenero, texto, textoSelect, containerOrdenRatingAlfa, contButton, button } = style;
 
 const FilterOrder = (props) => {
     const dispatch = useDispatch();
@@ -96,9 +96,10 @@ const FilterOrder = (props) => {
                 </div>
                 {/* Ordenamiento alafabético: */}
                 <div className={containerOrdenRatingAlfa}>
-                    <h2 className={texto}>Order:</h2>
-                    <label>
+                    <h2 className={texto}>Name order:</h2>
+                    <label className={textoSelect}>
                         <input
+                            className={radioOrderRating}
                             type="radio"
                             name="AZ"
                             value="AZ"
@@ -107,8 +108,9 @@ const FilterOrder = (props) => {
                         />
                         A-Z
                     </label>
-                    <label>
+                    <label className={textoSelect}>
                         <input
+                            className={radioOrderRating}
                             type="radio"
                             name="ZA"
                             value="ZA"
@@ -121,8 +123,9 @@ const FilterOrder = (props) => {
                 {/* Ordenamiento por rating: */}
                 <div className={containerOrdenRatingAlfa}>
                     <h2 className={texto}>Rating:</h2>
-                    <label>
+                    <label className={textoSelect}>
                         <input
+                            className={radioOrderRating}
                             type="radio"
                             name="Ascending"
                             value="Ascending"
@@ -131,8 +134,9 @@ const FilterOrder = (props) => {
                         />
                         Ascending
                     </label>
-                    <label>
+                    <label className={textoSelect}>
                         <input
+                            className={radioOrderRating}
                             type="radio"
                             name="Descending"
                             value="Descending"
