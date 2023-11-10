@@ -3,7 +3,7 @@
 
 # **PI Video Games**
 
-Este proyecto forma parte del curso FullStack de Henry. El objetivo principal de este proyecto individual es crear una aplicación que permita consultar información sobre videojuegos.
+Este proyecto individual forma parte del curso FullStack de Henry. Su objetivo principal es crear una aplicación que permita consultar información sobre videojuegos.
 
 ## **🧾 Principales funcionalidades**
 
