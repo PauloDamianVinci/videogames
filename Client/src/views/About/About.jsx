@@ -1,4 +1,4 @@
-// ! Vista con información del programa y del desarrollador. Obtiene y la versión del backend.
+// ! Vista con información del programa y del desarrollador. Obtiene la versión del backend.
 import axios from 'axios';
 // hooks, routers, reducers:
 import { useNavigate, Link } from "react-router-dom";
