@@ -9,9 +9,9 @@ import { useNavigate } from "react-router-dom";
 import { postVidegame, paginacionPendiente, resetFilterAndOrder } from "../../redux/actions";
 // Funciones:
 import validations from "../../functions/validations";
-const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
-const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
-const VG_VIDEOGAMES = API_URL_BASE + VG_V;
+// Variables de entorno:
+import useParamsEnv from "../../hooks/useParamsEnv.js";
+const { VG_VIDEOGAMES } = useParamsEnv();
 // Estilos: 
 import style from "./Create.module.css";
 const { container, contButton, button, containerFields, containerTitle } = style;

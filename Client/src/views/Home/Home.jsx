@@ -12,14 +12,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { getGenres, getPlatforms, getVideogames, showError, paginacionPendiente, setListoMostrar, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
-const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
-const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
-const VG_G = import.meta.env.VITE_VG_GENRES || '/genres';
-const VG_GENRES = API_URL_BASE + VG_G;
-const VG_P = import.meta.env.VITE_VG_PLATFORMS || '/platforms';
-const VG_PLATFORMS = API_URL_BASE + VG_P;
-const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
-const VG_VIDEOGAMES = API_URL_BASE + VG_V;
+import useParamsEnv from "../../hooks/useParamsEnv.js";
+const { IMG_ESPERA, VG_GENRES, VG_PLATFORMS, VG_VIDEOGAMES } = useParamsEnv();
 // Estilos:
 import style from "./Home.module.css";
 const { mainTitle, containerLoading, container, img } = style;
@@ -67,7 +61,7 @@ const Home = () => {
                     dispatch(showError(msg)); // actualizo el store
                 });
             setCurrentPage(1);
-        } else {
+        } else if (dataLoaded) {
             // Recupero la página en que estaba:
             if (pagPending) {
                 const totPages = Math.ceil(allVideogames.length / videogamesPerPage);
@@ -96,7 +90,7 @@ const Home = () => {
     }
     const paginado = (pageNumber) => { // manejado desde el componente Pagination
         setCurrentPage(pageNumber);
-        dispatch(setCurrPage(pageNumber)); // memorizo la página actual para cuando salga de la vista y regrese:
+        dispatch(setCurrPage(pageNumber)); // memorizo la página actual para cuando salga de la vista y regrese
     };
 
     if (errors) {

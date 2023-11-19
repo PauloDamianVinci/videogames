@@ -9,13 +9,8 @@ import Error from "./views/Error/Error.jsx";
 // hooks, routers, reducers:
 import { Route, Routes } from "react-router-dom";
 // Variables de entorno:
-const ROOT = import.meta.env.VITE_ROOT || '/';
-const HOME = import.meta.env.VITE_HOME || '/home';
-const CREATE = import.meta.env.VITE_CREATE || '/create';
-const DETAIL = import.meta.env.VITE_DETAIL || '/detail/:id';
-const EDIT = import.meta.env.VITE_EDIT || '/edit/:id';
-const ABOUT = import.meta.env.VITE_ABOUT || '/about';
-const ERROR = import.meta.env.VITE_ERROR || '/error';
+import useParamsEnv from "./hooks/useParamsEnv.js";
+const { ROOT, HOME, CREATE, DETAIL, EDIT, ABOUT, ERROR } = useParamsEnv();
 
 const App = () => {
   return (

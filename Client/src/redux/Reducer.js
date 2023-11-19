@@ -33,7 +33,7 @@ const initialState = {
         name: "",
     },
     dataLoaded: false, // flag para saber si tengo previamente cargados los videojuegos y géneros
-    curPage: '1', // recuerdo el número de página para cuando regrese a la página
+    curPage: 1, // recuerdo el número de página para cuando regrese a la página
     listoMostrar: false, // flag para que home refresque registros mostrando reloj
     errors: '', // guardo los mensajes de error para mostrar en la pag.
     pagPending: false, // prueba, aviso a home para que no se quivoque con la paginación

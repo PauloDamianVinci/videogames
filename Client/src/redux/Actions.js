@@ -19,9 +19,8 @@ export const RESET_FILTER_ORDER = 'RESET_FILTER_ORDER';
 export const REMOVE_CARD = 'REMOVE_CARD';
 export const EDIT_GAME = 'EDIT_GAME';
 // Variables de entorno:
-const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
-const VG_R = import.meta.env.VITE_VG_REMOVE || '/remove';
-const VG_REMOVE = API_URL_BASE + VG_R;
+import useParamsEnv from "../hooks/useParamsEnv";
+const { VG_REMOVE } = useParamsEnv();
 
 export function editVideogame(payload) {
     return {

@@ -6,12 +6,8 @@ import { useState, useEffect } from "react";
 import { paginacionPendiente } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 // Variables de entorno:
-const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
-const ERROR = import.meta.env.VITE_ERROR || '/error';
-const IMG_ERROR = import.meta.env.VITE_IMG_ERR_DETAIL || '/src/assets/NoPhoto.png';
-const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
-const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
-const VG_VIDEOGAMES = API_URL_BASE + VG_V;
+import useParamsEnv from "../../hooks/useParamsEnv.js";
+const { ERROR, IMG_ERROR, IMG_ESPERA, VG_VIDEOGAMES } = useParamsEnv();
 // Estilos:
 import style from "./Detail.module.css";
 const { thirdText, container, img, imgWait, containerLoading, secondText, contButton, button, descripcion } = style;

@@ -11,12 +11,8 @@ import { editVideogame, paginacionPendiente } from "../../redux/actions";
 import validations from "../../functions/validations";
 import formatDate from "../../functions/formatDate";
 // Variables de entorno:
-const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
-const VG_V = import.meta.env.VITE_VG_VIDEOGAMES || '/videogames';
-const VG_VIDEOGAMES = API_URL_BASE + VG_V;
-const ERROR = import.meta.env.VITE_ERROR || '/error';
-const VG_E = import.meta.env.VITE_VG_EDIT || '/edit';
-const VG_EDIT_GAME = API_URL_BASE + VG_E;
+import useParamsEnv from "../../hooks/useParamsEnv.js";
+const { VG_VIDEOGAMES, ERROR, VG_EDIT_GAME } = useParamsEnv();
 // Estilos: 
 import style from "./Edit.module.css";
 const { container, contButton, button, containerFields, containerTitle } = style;

@@ -6,7 +6,8 @@ import { useState, useEffect } from "react";
 import validations from "../../functions/validations";
 import orderArray from "../../functions/orderArray";
 // Variables de entorno:
-const IMG_HELP = import.meta.env.VITE_IMG_ABOUT || '/src/assets/Face.jpg';
+import useParamsEnv from "../../hooks/useParamsEnv.js";
+const { IMG_HELP } = useParamsEnv();
 // Estilos: 
 import style from "./VideogameFields.module.css";
 const { labelTitle, containerSelect, mainTextErrorRating, mainTextRating, mainTextError, label,

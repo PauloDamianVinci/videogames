@@ -5,10 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeCard, paginacionPendiente } from "../../redux/actions";
 // Variables de entorno:
-const DETAIL_BASE = import.meta.env.VITE_DETAIL_BASE || '/detail';
-const EDIT_BASE = import.meta.env.VITE_EDIT_BASE || '/edit';
-const IMG_ERROR = import.meta.env.VITE_IMG_ERR_DETAIL || '/src/assets/NoPhoto.png';
-const IMG_ESPERA = import.meta.env.VITE_IMG_ESPERA || '/src/assets/Loading.gif';
+import useParamsEnv from "../../hooks/useParamsEnv.js";
+const { DETAIL_BASE, EDIT_BASE, IMG_ERROR, IMG_ESPERA } = useParamsEnv();
 // Estilos:
 import style from "./Card.module.css";
 const { buttonEdit, buttonRemove, container, containerImg, img, containerFeatures,

@@ -9,10 +9,8 @@ import Search from "../../components/Search/Search.jsx";
 import style from "./Nav.module.css";
 const { container, containerSec, containerImg, img, contButton, button, mainTitle } = style;
 // Variables de entorno:
-const CREATE = import.meta.env.VITE_CREATE || '/create';
-const ABOUT = import.meta.env.VITE_ABOUT || '/about';
-const ROOT = import.meta.env.VITE_ROOT || '/';
-const IMG_LOGO_NAV = import.meta.env.VITE_IMG_LOGO_NAV || '/src/assets/ImgNav.png';
+import useParamsEnv from "../../hooks/useParamsEnv.js";
+const { CREATE, ABOUT, ROOT, IMG_LOGO_NAV } = useParamsEnv();
 
 const Nav = (props) => {
     const { aux, setAux } = props;

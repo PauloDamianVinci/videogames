@@ -7,9 +7,8 @@ import { useDispatch } from "react-redux";
 import style from "./Error.module.css";
 const { container, mainTitle, secondText, img, contButton, button } = style;
 // Variables de entorno:
-const IMG_404 = import.meta.env.VITE_IMG_404 || '/src/assets/Error404.jpeg';
-const IMG_ERROR = import.meta.env.VITE_IMG_ERROR || '/src/assets/Error.jpeg';
-const ROOT = import.meta.env.VITE_ROOT || '/';
+import useParamsEnv from "../../hooks/useParamsEnv.js";
+const { IMG_404, IMG_ERROR, ROOT } = useParamsEnv();
 
 const Error = (props) => {
     const navigate = useNavigate();
