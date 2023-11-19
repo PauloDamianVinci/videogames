@@ -1,13 +1,6 @@
-require('dotenv').config();
 require('pg'); // requerido por Vercel para el deploy
 const { Sequelize } = require('sequelize');
-// Parámetros de entorno:
-const DB_USER = process.env.DB_USER || 'postgres';
-const DB_PASSWORD = process.env.DB_PASSWORD || 'admin';
-const DB_HOST = process.env.DB_HOST || 'localhost';
-const DB_PORT = process.env.DB_PORT || 5432;
-const DB_NAME = process.env.DB_NAME || 'videogames';
-const SECURE = process.env.SECURE || false;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, SECURE } = require('./functions/paramsEnv');
 // Definición de modelos:
 const VideogameModel = require('../src/models/Videogame');
 const GenreModel = require('../src/models/Genre');

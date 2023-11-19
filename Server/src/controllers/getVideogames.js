@@ -1,9 +1,7 @@
 // ! Realiza las diversas funciones de obtención de videojuegos.
-require('dotenv').config();
 const axios = require('axios');
 const { Videogame, Genre, Platform } = require('../DB_connection');
-const videogamesApiUrl = process.env.videogamesApiUrl || 'https://api.rawg.io/api';
-const apiKey = process.env.API_KEY || 'cb546394d1b84c418611a07508ddf047';
+const { videogamesApiUrl, apiKey } = require('../functions/paramsEnv');
 const showLog = require("../functions/showLog");
 const { Op } = require('sequelize');
 const makeObject = require("../functions/makeObject");

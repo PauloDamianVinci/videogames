@@ -1,8 +1,5 @@
 // !  Muestra el log por consola y también lo guarda en un archivo, si se habilita por parámetro.
-require('dotenv').config();
-const apiKey = process.env.API_KEY || 'cb546394d1b84c418611a07508ddf047';
-
-const log = process.env.LOG || true;
+const { apiKey, log } = require('../functions/paramsEnv');
 const fs = require('fs');
 
 const showLog = (text) => {

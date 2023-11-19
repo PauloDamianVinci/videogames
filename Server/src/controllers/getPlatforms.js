@@ -1,9 +1,7 @@
 // ! Obtiene y almacena en BD las plataformas.
-require('dotenv').config();
 const axios = require('axios');
 const { Platform } = require('../DB_connection');
-const videogamesApiUrl = process.env.videogamesApiUrl || 'https://api.rawg.io/api';
-const apiKey = process.env.API_KEY || 'cb546394d1b84c418611a07508ddf047';
+const { videogamesApiUrl, apiKey } = require('../functions/paramsEnv');
 const showLog = require("../functions/showLog");
 
 const getPlatforms = async (req, res) => {
