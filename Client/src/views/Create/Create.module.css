@@ -16,7 +16,7 @@
 
     @media (min-width: 900px) {
         /* En la parte superior de la pantalla */
-        top: 10%;
+        top: 1%;
         left: 50%;
         transform: translate(-50%, 0);
     }
