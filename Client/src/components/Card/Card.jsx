@@ -46,13 +46,19 @@ const Card = (props) => {
         setIsLoading(false);
     }, []);
 
+
+    function endDelete() {
+        setAux(!aux);
+        setIsHandling(false);
+    }
+
     const handleDelete = () => {
         if (isHandling) { return; };
         setIsHandling(true);
         dispatch(removeCard(id));
         dispatch(paginacionPendiente(true)); // para conservar la página actual en home
-        setAux(!aux);
-        setIsHandling(false);
+        // Establezco un pequeño tiempo de espera para que home pueda consultar el valor de allVideogames correctamente:
+        setTimeout(endDelete, 500);
     };
 
     const handleEdit = () => {
@@ -69,8 +75,8 @@ const Card = (props) => {
                 <div className={container}>
                     <div className={containerImg}>
                         <img className={img} src={imgShow} onClick={() => navigate(linkDetail)} alt="" />
-                        {isBD ? (<button className={buttonRemove} onClick={handleDelete}>❌</button>) : (null)}
-                        {isBD ? (<button className={buttonEdit} onClick={handleEdit}>✍🏻</button>) : (null)}
+                        {isBD ? (<button className={buttonRemove} onClick={handleDelete}>❎</button>) : (null)}
+                        {isBD ? (<button className={buttonEdit} onClick={handleEdit}>✅</button>) : (null)}
                     </div>
                     <div className={containerFeatures}>
                         <h2 className={featuresCardName} onClick={() => navigate(linkDetail)}>{nameShow} </h2>

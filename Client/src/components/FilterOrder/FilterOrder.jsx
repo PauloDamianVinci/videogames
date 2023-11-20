@@ -76,8 +76,8 @@ const FilterOrder = (props) => {
                     <select onChange={handleOriginData} value=
                         {selectedOrigin} id="origin">
                         <option value="All">All</option>
-                        <option value="False">Api</option>
-                        <option value="True">Database</option>
+                        <option value="False">Created by others</option>
+                        <option value="True">Created by me</option>
                     </select>
                 </div>
                 {/* Filtrado por género: */}
@@ -122,7 +122,7 @@ const FilterOrder = (props) => {
                 </div>
                 {/* Ordenamiento por rating: */}
                 <div className={containerOrdenRatingAlfa}>
-                    <h2 className={texto}>Rating:</h2>
+                    <h2 className={texto}>Rating order:</h2>
                     <label className={textoSelect}>
                         <input
                             className={radioOrderRating}
@@ -131,8 +131,7 @@ const FilterOrder = (props) => {
                             value="Ascending"
                             checked={selectedOptionRating === 'Ascending'}
                             onChange={handleOrderRating}
-                        />
-                        Ascending
+                        />⬆️
                     </label>
                     <label className={textoSelect}>
                         <input
@@ -142,8 +141,7 @@ const FilterOrder = (props) => {
                             value="Descending"
                             checked={selectedOptionRating === 'Descending'}
                             onChange={handleOrderRating}
-                        />
-                        Descending
+                        />⬇️
                     </label>
                 </div>
                 <div className={contButton}>
