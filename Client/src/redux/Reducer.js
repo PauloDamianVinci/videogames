@@ -36,7 +36,7 @@ const initialState = {
     curPage: 1, // recuerdo el número de página para cuando regrese a la página
     listoMostrar: false, // flag para que home refresque registros mostrando reloj
     errors: '', // guardo los mensajes de error para mostrar en la pag.
-    pagPending: false, // prueba, aviso a home para que no se quivoque con la paginación
+    pagPending: false, // prueba, aviso a home para que no se equivoque con la paginación
     msgLoad: '', // indico en qué etapa de carga inicial está el programa
 };
 
