@@ -1,6 +1,6 @@
 // ! Devuelvo la fecha en el formato de salida correcto "YYYY/MM/DD":
 
-const formatDate = (data) => {
+const getFormatDate = (data) => {
     let fecha = data;
     let fechaFormateada;
     const dia = fecha.substring(8, 10);
@@ -10,4 +10,4 @@ const formatDate = (data) => {
     return fechaFormateada;
 }
 
-export default formatDate;
+export default getFormatDate;

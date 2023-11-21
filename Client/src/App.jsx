@@ -9,8 +9,8 @@ import Error from "./views/Error/Error.jsx";
 // hooks, routers, reducers:
 import { Route, Routes } from "react-router-dom";
 // Variables de entorno:
-import useParamsEnv from "./hooks/useParamsEnv.js";
-const { ROOT, HOME, CREATE, DETAIL, EDIT, ABOUT, ERROR } = useParamsEnv();
+import getParamsEnv from "./functions/getParamsEnv.js";
+const { ROOT, HOME, CREATE, DETAIL, EDIT, ABOUT, ERROR } = getParamsEnv();
 
 const App = () => {
   return (

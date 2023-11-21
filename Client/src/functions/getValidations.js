@@ -1,6 +1,6 @@
 //! Validaciones del form de creación de videojuego.
 
-const validator = (input) => {
+const getValidations = (input) => {
     let errors = {}
     // URL válida
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
@@ -82,4 +82,4 @@ const validator = (input) => {
     return errors;
 }
 
-export default validator;
+export default getValidations;

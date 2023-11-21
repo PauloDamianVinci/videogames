@@ -8,11 +8,11 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { editVideogame, paginacionPendiente } from "../../redux/actions";
 // Funciones:
-import validations from "../../functions/validations";
-import formatDate from "../../functions/formatDate";
+import getValidations from "../../functions/getValidations.js";
+import getFormatDate from "../../functions/getFormatDate.js";
 // Variables de entorno:
-import useParamsEnv from "../../hooks/useParamsEnv.js";
-const { VG_VIDEOGAMES, ERROR, VG_EDIT_GAME } = useParamsEnv();
+import getParamsEnv from "../../functions/getParamsEnv.js";
+const { VG_VIDEOGAMES, ERROR, VG_EDIT_GAME } = getParamsEnv();
 // Estilos: 
 import style from "./Edit.module.css";
 const { container, contButton, button, containerFields, containerTitle } = style;
@@ -55,7 +55,7 @@ const Edit = (props) => {
                         name: data[0].name,
                         description: data[0].description,
                         image: data[0].image,
-                        released_date: formatDate(data[0].released_date),
+                        released_date: getFormatDate(data[0].released_date),
                         rating: data[0].rating,
                         genre: data[0].Genres.map(genre => genre.name),
                         platform: data[0].Platforms.map(plat => plat.name),
@@ -71,7 +71,7 @@ const Edit = (props) => {
     }, []);
 
     const handleEdit = async () => {
-        const formErrors = validations(gameData);
+        const formErrors = getValidations(gameData);
         setErrors(formErrors);
         if (Object.keys(formErrors).length !== 0) {
             return;

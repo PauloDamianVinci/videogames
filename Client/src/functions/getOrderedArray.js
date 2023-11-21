@@ -1,6 +1,6 @@
 // ! Devuelvo el arry de objetos ordenado por la propiedad name:
 
-const orderArray = (data) => {
+const getOrderedArray = (data) => {
     data.sort((a, b) => {
         const nombreA = a.name.toLowerCase();
         const nombreB = b.name.toLowerCase();
@@ -14,4 +14,4 @@ const orderArray = (data) => {
     });
 }
 
-export default orderArray;
+export default getOrderedArray;

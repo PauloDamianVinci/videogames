@@ -1,5 +1,5 @@
 //! Unico lugar donde obtengo las variables de entorno.
-export default function useParamsEnv() {
+export default function getParamsEnv() {
     const API_URL_BASE = import.meta.env.VITE_API_URL_BASE || 'http://localhost:3001/videogames';
     const VG_G = import.meta.env.VITE_VG_GENRES || '/genres';
     const VG_GENRES = API_URL_BASE + VG_G;

@@ -6,8 +6,8 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { paginacionPendiente } from "../../redux/actions";
 // Variables de entorno:
-import useParamsEnv from "../../hooks/useParamsEnv.js";
-const { VG_VER_BACK, IMG_ABOUT, IMG_LINK, IMG_GIT, MY_LNK, MY_GIT } = useParamsEnv();
+import getParamsEnv from "../../functions/getParamsEnv.js";
+const { VG_VER_BACK, IMG_ABOUT, IMG_LINK, IMG_GIT, MY_LNK, MY_GIT } = getParamsEnv();
 // Estilos:
 import style from "./About.module.css";
 const { container, containerData, containerNet, imgGit, img, imgLink, mainText, secondText, contButton, button } = style;

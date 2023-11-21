@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeCard, paginacionPendiente } from "../../redux/actions";
 // Variables de entorno:
-import useParamsEnv from "../../hooks/useParamsEnv.js";
-const { DETAIL_BASE, EDIT_BASE, IMG_ERROR, IMG_ESPERA } = useParamsEnv();
+import getParamsEnv from "../../functions/getParamsEnv.js";
+const { DETAIL_BASE, EDIT_BASE, IMG_ERROR, IMG_ESPERA } = getParamsEnv();
 // Estilos:
 import style from "./Card.module.css";
 const { buttonEdit, buttonRemove, container, containerImg, img, containerFeatures,

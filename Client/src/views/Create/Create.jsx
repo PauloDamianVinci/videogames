@@ -8,10 +8,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { postVidegame, paginacionPendiente, resetFilterAndOrder } from "../../redux/actions";
 // Funciones:
-import validations from "../../functions/validations";
+import getValidations from "../../functions/getValidations.js";
 // Variables de entorno:
-import useParamsEnv from "../../hooks/useParamsEnv.js";
-const { VG_VIDEOGAMES } = useParamsEnv();
+import getParamsEnv from "../../functions/getParamsEnv.js";
+const { VG_VIDEOGAMES } = getParamsEnv();
 // Estilos: 
 import style from "./Create.module.css";
 const { container, contButton, button, containerFields, containerTitle } = style;
@@ -42,7 +42,7 @@ const Create = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const formErrors = validations(gameData);
+        const formErrors = getValidations(gameData);
         setErrors(formErrors);
         if (Object.keys(formErrors).length !== 0) {
             return;

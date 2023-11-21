@@ -9,8 +9,8 @@ import Search from "../../components/Search/Search.jsx";
 import style from "./Nav.module.css";
 const { container, containerSec, containerImg, img, contButton, button, mainTitle } = style;
 // Variables de entorno:
-import useParamsEnv from "../../hooks/useParamsEnv.js";
-const { CREATE, ABOUT, ROOT, IMG_LOGO_NAV } = useParamsEnv();
+import getParamsEnv from "../../functions/getParamsEnv.js";
+const { CREATE, ABOUT, ROOT, IMG_LOGO_NAV } = getParamsEnv();
 
 const Nav = (props) => {
     const { aux, setAux } = props;

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { resetFilterAndOrder, filterOriginData, filterVideogamesByGenre, orderByRating, orderByAZ } from "../../redux/actions";
 // Funciones:
-import orderArray from "../../functions/orderArray";
+import getOrderedArray from "../../functions/getOrderedArray.js";
 // Estilos:
 import style from "./FilterOrder.module.css";
 const { radioOrderRating, container, containerFiltrosOrigenGenero, texto, textoSelect, containerOrdenRatingAlfa, contButton, button } = style;
@@ -18,7 +18,7 @@ const FilterOrder = (props) => {
     const [selectedGenre, setSelectedGenre] = useState('All');
     // Obtengo los géneros:
     let genres = useSelector((state) => state?.genres);
-    let genresOrdered = orderArray(genres);
+    let genresOrdered = getOrderedArray(genres);
     // Obtengo los estados de los filtros actuales:
     let curGenre = useSelector((state) => state?.filters.genre);
     let curCreate = useSelector((state) => state?.filters.create);

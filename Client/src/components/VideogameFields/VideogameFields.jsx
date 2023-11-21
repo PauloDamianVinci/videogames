@@ -3,11 +3,11 @@
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 // Funciones:
-import validations from "../../functions/validations";
-import orderArray from "../../functions/orderArray";
+import getValidations from "../../functions/getValidations.js";
+import getOrderedArray from "../../functions/getOrderedArray.js";
 // Variables de entorno:
-import useParamsEnv from "../../hooks/useParamsEnv.js";
-const { IMG_HELP } = useParamsEnv();
+import getParamsEnv from "../../functions/getParamsEnv.js";
+const { IMG_HELP } = getParamsEnv();
 // Estilos: 
 import style from "./VideogameFields.module.css";
 const { labelTitle, containerSelect, mainTextErrorRating, mainTextRating, mainTextError, label,
@@ -18,9 +18,9 @@ const VideogameFields = (props) => {
     const [esEdit, setEsEdit] = useState(false);
     //Obtengo géneros y plataformas, los ordeno alfabéticamente:
     let genres = useSelector((state) => state?.genres);
-    let genresOrdered = orderArray(genres);
+    let genresOrdered = getOrderedArray(genres);
     let platforms = useSelector((state) => state?.platforms);
-    let platformsOrdered = orderArray(platforms);
+    let platformsOrdered = getOrderedArray(platforms);
 
     useEffect(() => {
         if (gameData.name) {
@@ -44,7 +44,7 @@ const VideogameFields = (props) => {
             ...prevInput,
             genre: [...prevInput.genre, selectedGenre],
         }));
-        setErrors(validations({
+        setErrors(getValidations({
             ...gameData,
             genre: [...gameData.genre, selectedGenre],
         }));
@@ -58,7 +58,7 @@ const VideogameFields = (props) => {
             ...prevInput,
             platform: [...prevInput.platform, selectedPlatform],
         }));
-        setErrors(validations({
+        setErrors(getValidations({
             ...gameData,
             platform: [...gameData.platform, selectedPlatform],
         }));
@@ -93,7 +93,7 @@ const VideogameFields = (props) => {
             ...gameData,
             [property]: value
         });
-        setErrors(validations({ ...gameData, [property]: value }))
+        setErrors(getValidations({ ...gameData, [property]: value }))
     }
 
     return (

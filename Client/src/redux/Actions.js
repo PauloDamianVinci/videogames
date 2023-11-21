@@ -19,8 +19,8 @@ export const RESET_FILTER_ORDER = 'RESET_FILTER_ORDER';
 export const REMOVE_CARD = 'REMOVE_CARD';
 export const EDIT_GAME = 'EDIT_GAME';
 // Variables de entorno:
-import useParamsEnv from "../hooks/useParamsEnv";
-const { VG_REMOVE } = useParamsEnv();
+import getParamsEnv from "../functions/getParamsEnv.js";
+const { VG_REMOVE } = getParamsEnv();
 
 export function editVideogame(payload) {
     return {

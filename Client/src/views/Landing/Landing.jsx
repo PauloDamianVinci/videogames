@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import style from "./Landing.module.css";
 const { container, containerImg, mainTitle, secondText, img, contButton, button } = style;
 // Variables de entorno:
-import useParamsEnv from "../../hooks/useParamsEnv.js";
-const { HOME, LAND } = useParamsEnv();
+import getParamsEnv from "../../functions/getParamsEnv.js";
+const { HOME, LAND } = getParamsEnv();
 
 const Landing = () => {
     const navigate = useNavigate();

@@ -2,7 +2,7 @@
 require('dotenv').config();
 
 const videogamesApiUrl = process.env.videogamesApiUrl || 'https://api.rawg.io/api';
-const apiKey = process.env.API_KEY || 'cb546394d1b84c418611a07508ddf047';
+const apiKey = process.env.API_KEY || 'e06b3029c99749edb7567fccf682835c';
 const DB_USER = process.env.DB_USER || 'postgres';
 const DB_PASSWORD = process.env.DB_PASSWORD || 'admin';
 const DB_HOST = process.env.DB_HOST || 'localhost';

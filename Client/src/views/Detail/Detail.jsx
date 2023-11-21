@@ -6,13 +6,13 @@ import { useState, useEffect } from "react";
 import { paginacionPendiente } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 // Variables de entorno:
-import useParamsEnv from "../../hooks/useParamsEnv.js";
-const { ERROR, IMG_ERROR, IMG_ESPERA, VG_VIDEOGAMES } = useParamsEnv();
+import getParamsEnv from "../../functions/getParamsEnv.js";
+const { ERROR, IMG_ERROR, IMG_ESPERA, VG_VIDEOGAMES } = getParamsEnv();
 // Estilos:
 import style from "./Detail.module.css";
 const { thirdText, container, img, imgWait, containerLoading, secondText, contButton, button, descripcion } = style;
 // Funciones:
-import formatDate from "../../functions/formatDate";
+import getFormatDate from "../../functions/getFormatDate.js";
 
 const Detail = () => {
     const navigate = useNavigate()
@@ -30,6 +30,7 @@ const Detail = () => {
 
     if (!id) { navigate(`${ERROR}`); }; // mando al error en caso de que ingresen manualmente a esta dirección sin id
 
+
     useEffect(() => {
         setIsLoading(true);
         const endpoint = VG_VIDEOGAMES + "/" + id;
@@ -39,7 +40,7 @@ const Detail = () => {
                     // Obtengo los datos:
                     if (data[0].name) setName(data[0].name);
                     if (data[0].description) setDescription(data[0].description);
-                    if (data[0].released_date) setReleased_date(formatDate(data[0].released_date));
+                    if (data[0].released_date) setReleased_date(getFormatDate(data[0].released_date));
                     if (data[0].rating) setRating(data[0].rating);
                     data[0].Genres.sort((a, b) => a.name.localeCompare(b.name));
                     setGenreList(data[0].Genres.map(genre => genre.name).join(" - "));

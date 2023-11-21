@@ -12,8 +12,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { getGenres, getPlatforms, getVideogames, showError, paginacionPendiente, setListoMostrar, setCurrPage } from "../../redux/actions";
 // Variables de entorno:
-import useParamsEnv from "../../hooks/useParamsEnv.js";
-const { IMG_ESPERA, VG_GENRES, VG_PLATFORMS, VG_VIDEOGAMES } = useParamsEnv();
+import getParamsEnv from "../../functions/getParamsEnv.js";
+const { IMG_ESPERA, VG_GENRES, VG_PLATFORMS, VG_VIDEOGAMES } = getParamsEnv();
 // Estilos:
 import style from "./Home.module.css";
 const { mainTitle, containerLoading, container, img } = style;
