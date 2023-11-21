@@ -3,6 +3,7 @@ const { Videogame } = require('../DB_connection');
 const { Genre } = require('../DB_connection');
 const { Platform } = require('../DB_connection');
 const showLog = require("../functions/showLog");
+const { Op } = require('sequelize');
 
 const postVideoGame = async (req, res) => {
     const { name, description, image, released_date, rating, platform, genre } = req.body;
@@ -12,7 +13,7 @@ const postVideoGame = async (req, res) => {
         // Verifico si ya existe un registro con el mismo nombre:
         const nameLowercase = name.toLowerCase();
         const existingVideogame = await Videogame.findOne({
-            where: { name: nameLowercase },
+            where: { name: { [Op.iLike]: nameLowercase } },
         });
         if (existingVideogame) {
             showLog(`postVideoGame: the game ${name} already exists`);
