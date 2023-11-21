@@ -1,4 +1,4 @@
-//! Unico lugar donde obtengo las variables de entorno.
+//! Unico lugar donde obtengo las variables de entorno. Ya cambié el apiKey porque consumí los del mes.
 require('dotenv').config();
 
 const videogamesApiUrl = process.env.videogamesApiUrl || 'https://api.rawg.io/api';
