@@ -9,7 +9,7 @@ const DB_HOST = process.env.DB_HOST || 'localhost';
 const DB_PORT = process.env.DB_PORT || 5432;
 const DB_NAME = process.env.DB_NAME || 'videogames';
 const SECURE = process.env.SECURE || false;
-const log = process.env.LOG || true;
+const MUST_LOG = process.env.MUST_LOG || 1;
 const PORT = process.env.PORT || 3001;
 
 module.exports = {
@@ -22,5 +22,5 @@ module.exports = {
     DB_NAME,
     SECURE,
     PORT,
-    log
+    MUST_LOG
 };

@@ -7,4 +7,4 @@ API_KEY=e06b3029c99749edb7567fccf682835c
 PORT=3001
 videogamesApiUrl=https://api.rawg.io/api
 SECURE=true
-LOG=false
+MUST_LOG=0
