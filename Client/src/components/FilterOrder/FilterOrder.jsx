@@ -2,7 +2,7 @@
 // hooks, routers, reducers:
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { resetFilterAndOrder, filterOriginData, filterVideogamesByGenre, orderByRating, orderByAZ } from "../../redux/actions";
+import { resetOrder, resetFilterAndOrder, filterOriginData, filterVideogamesByGenre, orderByRating, orderByAZ } from "../../redux/actions";
 // Funciones:
 import getOrderedArray from "../../functions/getOrderedArray.js";
 // Estilos:
@@ -48,6 +48,8 @@ const FilterOrder = (props) => {
     }
     //Función de ordenamiento por rating:
     function handleOrderRating(e) {
+        // Quito el otro criterio de ordenamiento:
+        dispatch(resetOrder());
         setSelectedOptionRating(e.target.value);
         dispatch(orderByRating(e.target.value));
         setCurrentPage(1);
@@ -55,6 +57,8 @@ const FilterOrder = (props) => {
     }
     //Función de ordenamiento por orden alfabético:
     function handleOrderAZ(e) {
+        // Quito el otro criterio de ordenamiento:
+        dispatch(resetOrder());
         setSelectedOptionAZ(e.target.value);
         dispatch(orderByAZ(e.target.value));
         setCurrentPage(1);

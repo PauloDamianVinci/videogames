@@ -17,6 +17,7 @@ import {
     RESET_FILTER_ORDER,
     REMOVE_CARD,
     EDIT_GAME,
+    RESET_ORDER
 } from "./actions";
 
 const initialState = {
@@ -36,7 +37,7 @@ const initialState = {
     curPage: 1, // recuerdo el número de página para cuando regrese a la página
     listoMostrar: false, // flag para que home refresque registros mostrando reloj
     errors: '', // guardo los mensajes de error para mostrar en la pag.
-    pagPending: false, // prueba, aviso a home para que no se equivoque con la paginación
+    pagPending: false, // aviso a home para que no se equivoque con la paginación
     msgLoad: '', // indico en qué etapa de carga inicial está el programa
 };
 
@@ -132,10 +133,33 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     (elem.name.toLowerCase().includes(payload.toLowerCase().trim()));
                 return NameMatch && genreMatch && createMatch; // va al filtro si cumple todas las condiciones
             });
+            // Respeto el orden existente:
+            let FilterAndOrderedName = '';
+            if (state.filters.azza) {
+                FilterAndOrderedName = filteredByName.slice().sort((a, b) => {
+                    if (state.filters.azza === "AZ") {
+                        return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+                    } else if (state.filters.azza === "ZA") {
+                        return b.name.toLowerCase().localeCompare(a.name.toLowerCase());
+                    }
+                    return 0;
+                });
+            } else if (state.filters.rating) {
+                FilterAndOrderedName = filteredByName.slice().sort((a, b) => {
+                    if (state.filters.rating === "Ascending") {
+                        return a.rating - b.rating;
+                    } else if (state.filters.rating === "Descending") {
+                        return b.rating - a.rating;
+                    }
+                    return 0;
+                });
+            } else {
+                FilterAndOrderedName = filteredByName;
+            }
             return {
                 ...state,
-                videogames: filteredByName,
-                filteredVideogames: filteredByName,
+                videogames: FilterAndOrderedName,
+                filteredVideogames: FilterAndOrderedName,
                 curPage: '1',
                 // Establezco el filtro actual para recordar al combinar con otros a futuro:
                 filters: {
@@ -157,10 +181,33 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     (state.filters.create === "False" && !elem.OriginDB);
                 return genreMatch && createMatch; // va al filtro si cumple ambas condiciones
             });
+            // Respeto el orden existente:
+            let FilterAndOrderedNameClear = '';
+            if (state.filters.azza) {
+                FilterAndOrderedNameClear = filtered.slice().sort((a, b) => {
+                    if (state.filters.azza === "AZ") {
+                        return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+                    } else if (state.filters.azza === "ZA") {
+                        return b.name.toLowerCase().localeCompare(a.name.toLowerCase());
+                    }
+                    return 0;
+                });
+            } else if (state.filters.rating) {
+                FilterAndOrderedNameClear = filtered.slice().sort((a, b) => {
+                    if (state.filters.rating === "Ascending") {
+                        return a.rating - b.rating;
+                    } else if (state.filters.rating === "Descending") {
+                        return b.rating - a.rating;
+                    }
+                    return 0;
+                });
+            } else {
+                FilterAndOrderedNameClear = filtered;
+            }
             return {
                 ...state,
-                videogames: filtered,
-                filteredVideogames: filtered,
+                videogames: FilterAndOrderedNameClear,
+                filteredVideogames: FilterAndOrderedNameClear,
                 // Establezco el filtro actual para recordar al combinar con otros a futuro:
                 filters: {
                     ...state.filters,
@@ -184,10 +231,33 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     (payload === "False" && !elem.OriginDB);
                 return NameMatch && genreMatch && createMatch; // va al filtro si cumple todas las condiciones
             });
+            // Respeto el orden existente:
+            let FilterAndOrderedOrigin = '';
+            if (state.filters.azza) {
+                FilterAndOrderedOrigin = filteredByOrigin.slice().sort((a, b) => {
+                    if (state.filters.azza === "AZ") {
+                        return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+                    } else if (state.filters.azza === "ZA") {
+                        return b.name.toLowerCase().localeCompare(a.name.toLowerCase());
+                    }
+                    return 0;
+                });
+            } else if (state.filters.rating) {
+                FilterAndOrderedOrigin = filteredByOrigin.slice().sort((a, b) => {
+                    if (state.filters.rating === "Ascending") {
+                        return a.rating - b.rating;
+                    } else if (state.filters.rating === "Descending") {
+                        return b.rating - a.rating;
+                    }
+                    return 0;
+                });
+            } else {
+                FilterAndOrderedOrigin = filteredByOrigin;
+            }
             return {
                 ...state,
-                videogames: filteredByOrigin,
-                filteredVideogames: filteredByOrigin,
+                videogames: FilterAndOrderedOrigin,
+                filteredVideogames: FilterAndOrderedOrigin,
                 // Establezco el filtro actual para recordar al combinar con otros a futuro:
                 filters: {
                     ...state.filters,
@@ -211,10 +281,33 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     elem.Genres?.some((genre) => genre === payload);
                 return NameMatch && genreMatch && createMatch; // va al filtro si cumple todas las condiciones
             });
+            // Respeto el orden existente:
+            let FilterAndOrderedGenre = '';
+            if (state.filters.azza) {
+                FilterAndOrderedGenre = filteredByGenre.slice().sort((a, b) => {
+                    if (state.filters.azza === "AZ") {
+                        return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+                    } else if (state.filters.azza === "ZA") {
+                        return b.name.toLowerCase().localeCompare(a.name.toLowerCase());
+                    }
+                    return 0;
+                });
+            } else if (state.filters.rating) {
+                FilterAndOrderedGenre = filteredByGenre.slice().sort((a, b) => {
+                    if (state.filters.rating === "Ascending") {
+                        return a.rating - b.rating;
+                    } else if (state.filters.rating === "Descending") {
+                        return b.rating - a.rating;
+                    }
+                    return 0;
+                });
+            } else {
+                FilterAndOrderedGenre = filteredByGenre;
+            }
             return {
                 ...state,
-                videogames: filteredByGenre,
-                filteredVideogames: filteredByGenre,
+                videogames: FilterAndOrderedGenre,
+                filteredVideogames: FilterAndOrderedGenre,
                 // Establezco el filtro actual para recordar al combinar con otros a futuro:
                 filters: {
                     ...state.filters,
@@ -255,6 +348,15 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 filters: {
                     ...state.filters,
                     azza: payload,
+                },
+            };
+        case RESET_ORDER:
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    rating: "",
+                    azza: "",
                 },
             };
         case RESET_FILTER_ORDER:

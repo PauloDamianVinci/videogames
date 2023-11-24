@@ -18,6 +18,7 @@ export const CLEAR_FILTER_BY_NAME = 'CLEAR_FILTER_BY_NAME';
 export const RESET_FILTER_ORDER = 'RESET_FILTER_ORDER';
 export const REMOVE_CARD = 'REMOVE_CARD';
 export const EDIT_GAME = 'EDIT_GAME';
+export const RESET_ORDER = 'RESET_ORDER';
 // Variables de entorno:
 import getParamsEnv from "../functions/getParamsEnv.js";
 const { VG_REMOVE } = getParamsEnv();
@@ -116,6 +117,10 @@ export function orderByAZ(payload) {
     return {
         type: ORDER_BY_AZ, payload,
     }
+}
+
+export function resetOrder() {
+    return { type: RESET_ORDER }
 }
 
 export function resetFilterAndOrder() {
